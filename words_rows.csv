@@ -1,0 +1,1595 @@
+created_at,word,language,user_id,translation,status
+2024-06-13 07:31:40.795998+00,🆔,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,indicate,learning
+2024-06-13 07:28:25.339399+00,👑,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,credibility,learning
+2024-06-18 05:45:01.78034+00,📚,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,creation,learning
+2024-06-18 05:47:46.862585+00,📟,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,terminology,learning
+2024-06-13 07:34:14.407567+00,🦑,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,jargon,learning
+2024-06-13 07:34:58.034972+00,🏋️‍♂️,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,exercise,learning
+2025-01-26 17:43:41.472925+00,#월,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,#month,learning
+2024-11-28 05:33:09.91512+00,100MB,Tiktok Slang,85db5d88-12d5-49f7-8793-a0d2f62ac738,100 megabytes,learning
+2024-09-30 22:34:27.778859+00,170달러,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,170 dollars,learning
+2025-03-12 02:23:38.590748+00,28,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,28,learning
+2025-01-30 18:58:41.435861+00,6월,Korean,4c17cf78-13c4-413e-89af-a2185c750396,June,learning
+2024-12-24 01:11:24.681096+00,API,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,API,learning
+2024-12-07 13:37:31.618652+00,APILADO,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,STACKED,learning
+2024-09-30 22:25:19.52927+00,ASI,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,ASI,learning
+2024-10-31 13:15:36.010477+00,Abrir,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,Open,learning
+2024-09-01 22:30:29.105792+00,Accessible,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,Available,learning
+2024-08-23 19:24:33.732455+00,Acuéstate,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,Lie down,learning
+2024-09-05 05:55:21.148705+00,Aimer,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,To like,learning
+2024-11-05 08:04:57.932252+00,Alemán,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,German,learning
+2024-12-23 21:10:35.415303+00,Anfrage,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,request,learning
+2025-01-27 19:17:18.853024+00,Antiquated,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,Old,learning
+2025-01-20 11:48:13.3457+00,App,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,app,learning
+2024-12-23 21:06:06.985202+00,App,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,app,learning
+2024-08-21 12:06:27.532681+00,Apple,Spanish,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,Apple,learning
+2025-01-29 06:02:54.275948+00,Asistir,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,Attend,learning
+2024-11-20 01:20:04.864405+00,BURGERS,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,talent,learning
+2025-01-30 19:56:57.992637+00,Bear,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,Keep,learning
+2024-12-29 21:25:23.394282+00,Bedingung,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,condition,learning
+2024-12-29 19:46:56.464766+00,Beta-Version,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Beta version,learning
+2024-10-09 00:46:28.354657+00,Bezeichnung,German,e42db482-b3fb-4d49-82ac-448f63744dd5,designation,learning
+2024-12-25 21:51:50.642373+00,Binärdateien,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,binaries,learning
+2024-12-30 22:21:28.173907+00,BlendModes,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,BlendModes,learning
+2024-07-23 01:52:25.880593+00,Bonjour,French,c2077ddf-5633-4149-aef9-1fb60a51a9a1,Hello,learning
+2024-12-26 12:29:30.049905+00,Bretter,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,boards,learning
+2025-02-21 12:37:37.64458+00,CANGREJO,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,CRAB,learning
+2024-12-06 08:16:29.005364+00,Catalina,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,Catalina,learning
+2025-01-21 04:52:37.856512+00,Circumventing,SAT Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,Cheating,learning
+2024-11-27 02:36:36.484246+00,Comment,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,Gobbler,learning
+2025-01-20 11:45:45.074773+00,Community,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,community,learning
+2024-11-28 05:20:29.949395+00,Competence,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,Glizzy competence,learning
+2025-01-21 07:09:58.135548+00,Compose,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,Write,learning
+2024-11-26 06:30:38.068218+00,Congrizzulations,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,Congratulations,learning
+2024-08-23 19:24:08.719422+00,Consejo,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,Tip,learning
+2024-10-10 19:59:47.735681+00,Datum,German,aa91db2c-f855-4999-8869-4d89e04df77b,date,learning
+2024-06-26 21:34:25.870096+00,Denota,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,denotes,learning
+2024-12-30 15:39:06.438555+00,Display,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,display,learning
+2024-10-31 16:13:24.501838+00,Einsätze,German,e42db482-b3fb-4d49-82ac-448f63744dd5,stakes,learning
+2025-01-21 07:07:15.525595+00,Encompasses,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,Surrounds,learning
+2024-12-30 20:14:46.283381+00,Entscheide,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Decide,learning
+2025-01-21 07:05:54.774389+00,Enumerated,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,counted,learning
+2024-08-02 09:41:30.343763+00,Equity,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,Ownership interest in a company,learning
+2024-11-30 03:57:04.489476+00,Eres,Spanish,733578cf-dce4-4101-b3c7-82d697019353,You are,learning
+2024-10-08 17:56:35.752025+00,Estimado,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,Esteemed,learning
+2024-08-21 11:46:14.965198+00,Fackel,German,5a8b8dfa-5cc0-465c-a606-0b97a1efd403,torch,learning
+2025-01-20 11:49:59.347021+00,Fans,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,fans,learning
+2024-12-23 21:08:02.876039+00,Farben,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,colors,learning
+2024-11-24 21:46:52.759144+00,Felicidades,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,Congratulations,learning
+2024-11-07 19:07:24.320917+00,Fisch,German,e42db482-b3fb-4d49-82ac-448f63744dd5,fish,learning
+2025-01-24 06:17:46.317307+00,Flex City,Tiktok Slang,630ecd5b-ef55-443c-ae04-6b34b0212e88,A place or state of being where one shows off or boasts about achievements or possessions,learning
+2024-06-29 23:12:23.507506+00,Flug,German,f9034378-44b5-4ab5-babd-dfe40c4ca89b,flight,learning
+2025-01-03 20:30:30.720291+00,Freunde,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,friends,learning
+2024-12-30 15:24:33.219549+00,Fähigkeit,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,ability,learning
+2024-12-25 12:59:53.020211+00,Garage,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,garage,learning
+2024-11-28 04:48:59.414329+00,Garantía,Spanish,733578cf-dce4-4101-b3c7-82d697019353,Warranty,learning
+2024-11-07 15:24:46.598197+00,Gesamte,German,e42db482-b3fb-4d49-82ac-448f63744dd5,Total,learning
+2024-10-31 15:57:08.947629+00,Gleichgewicht,German,e42db482-b3fb-4d49-82ac-448f63744dd5,balance,learning
+2024-11-26 09:05:36.502497+00,Glizzy,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,Hot dog or sausage,learning
+2024-11-20 20:35:01.264348+00,Glizzy Hands,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,Atrioc,learning
+2024-11-20 20:35:41.199127+00,Glizzy gobblers,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,hot dog eaters,learning
+2024-11-20 20:35:17.676909+00,Glizzys,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,everyone,learning
+2024-08-21 12:14:35.399571+00,Gracias,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,Thank you,learning
+2024-08-21 12:10:22.553751+00,Gratitude,GRE Vocabulary,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,Thankfulness,learning
+2025-01-20 11:45:07.626923+00,Grenze,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,border,learning
+2024-10-17 05:40:57.842126+00,Guarda,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,View,learning
+2024-10-18 21:40:32.95911+00,HANEUL,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,HANEUL,learning
+2024-12-26 12:23:35.781112+00,Haken,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,hook,learning
+2024-09-24 18:33:55.428923+00,Halloween,Portuguese,c1846c5c-aef1-44dc-919f-3cb36e24e88a,Halloween,learning
+2024-12-25 18:26:18.730489+00,Hergestellt,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Made,learning
+2024-10-31 13:10:48.296386+00,Hola,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,Hello,learning
+2025-01-13 09:37:42.986426+00,Horario,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,Schedule,learning
+2024-12-29 19:48:54.601711+00,ID,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,ID,learning
+2024-11-12 19:57:54.792093+00,Impara,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,Learn,learning
+2025-01-21 07:04:32.212372+00,Incorporate,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,Load,learning
+2025-01-20 19:00:24.8265+00,Indubitably,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,Without a doubt,learning
+2024-11-13 16:35:13.424394+00,Inizia,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,Start,learning
+2024-12-25 19:52:56.352467+00,Installer,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,installer,learning
+2024-12-26 11:41:37.715536+00,Kleidung,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,clothes,learning
+2024-11-19 05:49:08.111708+00,Krinky Krongemas,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,CUDA support,learning
+2024-06-27 22:51:08.341191+00,Kurse,German,f9034378-44b5-4ab5-babd-dfe40c4ca89b,courses,learning
+2024-08-24 17:28:57.485017+00,LIT,Tiktok Slang,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,exciting,learning
+2024-09-19 18:32:45.233892+00,LOCURA,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,MADNESS,learning
+2024-12-30 15:24:47.824157+00,Lampe,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,lamp,learning
+2024-12-25 18:20:29.25211+00,Lesezeichen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,bookmark,learning
+2024-10-31 19:04:15.972028+00,Link,German,e42db482-b3fb-4d49-82ac-448f63744dd5,link,learning
+2024-08-21 06:18:46.75757+00,Lire,French,28c8d175-7fb0-4514-9365-75256aa62bc4,To read,learning
+2024-12-30 15:26:11.291708+00,Lärm,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,noise,learning
+2024-11-28 05:28:43.220212+00,MB,Tiktok Slang,85db5d88-12d5-49f7-8793-a0d2f62ac738,megabytes,learning
+2024-08-21 11:45:53.421902+00,Mann,German,5a8b8dfa-5cc0-465c-a606-0b97a1efd403,man,learning
+2024-12-25 19:51:49.094221+00,Methode,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,method,learning
+2025-02-06 01:39:07.554481+00,Michigan,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,Michigan,learning
+2024-11-26 05:52:37.00679+00,Miss Info,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,Miss Information,learning
+2024-12-24 01:05:55.223656+00,Mitgliedschaft,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,membership,learning
+2025-01-07 16:57:14.737288+00,Modularisierung,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,modularization,learning
+2024-12-23 21:20:33.188056+00,Montag,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Monday,learning
+2024-12-30 15:52:37.099029+00,Möglichkeit,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,possibility,learning
+2024-07-01 02:39:20.056237+00,No,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,No,learning
+2024-12-25 18:22:58.994148+00,Nutzen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to use,learning
+2025-01-21 07:12:06.217982+00,Nvidia,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,hardware,learning
+2024-12-24 01:09:45.489226+00,Oberfläche,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,interface,learning
+2024-12-29 19:46:20.192145+00,Pipeline,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Pipeline,learning
+2024-12-25 19:10:59.41171+00,Platz,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,space,learning
+2025-01-22 00:23:22.723142+00,Professeur,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,Teacher,learning
+2024-11-21 02:26:53.025408+00,Publicar,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,Post,learning
+2024-09-18 18:13:25.831746+00,Revancha,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Rematch,learning
+2025-01-20 11:47:25.516791+00,Risiko,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,risk,learning
+2024-11-30 03:52:04.848987+00,SIGPIPE,Tamil,733578cf-dce4-4101-b3c7-82d697019353,SIGPIPE,learning
+2024-09-04 22:01:49.83175+00,SOUS,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,UNDER,learning
+2024-12-25 20:19:27.722434+00,Schichten,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,layers,learning
+2024-11-07 19:56:23.235879+00,Schwangerschaft,German,e42db482-b3fb-4d49-82ac-448f63744dd5,pregnancy,learning
+2025-01-17 02:42:58.837293+00,Senador,Spanish,733578cf-dce4-4101-b3c7-82d697019353,Senator,learning
+2024-12-17 04:20:37.290046+00,Siento,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,I feel,learning
+2024-11-26 09:17:47.090036+00,Sig,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,Sig,learning
+2024-08-22 09:53:36.154673+00,Sigue,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,Keep,learning
+2024-12-26 01:51:05.546642+00,Spannung,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,voltage,learning
+2024-06-28 23:59:43.440752+00,Spieler,German,f9034378-44b5-4ab5-babd-dfe40c4ca89b,players,learning
+2024-11-28 04:37:39.082517+00,Stories,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,Stories,learning
+2025-01-30 19:57:51.115634+00,Subsequently,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,afterwards,learning
+2025-02-21 13:53:44.447038+00,Suscríbete,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,Subscribe,learning
+2024-06-24 06:54:56.748711+00,Tag,German,85bf9e83-7471-4d20-8241-81c9c7287ca2,day,learning
+2024-06-29 16:07:09.972483+00,Tales,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,Such,learning
+2024-09-06 01:33:39.267954+00,Tedious,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Boring,learning
+2025-01-16 15:29:56.638518+00,Thermoschlangen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,thermosnakes,learning
+2024-12-23 21:06:25.561719+00,To-Do-App,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to-do app,learning
+2024-12-23 21:10:13.67135+00,Tracking,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,tracking,learning
+2024-11-12 22:22:02.763457+00,Trasforma,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,Transform,learning
+2025-01-06 09:10:45.660267+00,Typ,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Type,learning
+2024-08-29 18:50:26.892184+00,UNIDAD,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,UNIT,learning
+2024-08-02 09:45:22.850827+00,Utilize,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,Use,learning
+2025-01-20 11:48:30.952682+00,Vermögens,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,asset,learning
+2024-12-25 21:39:33.669879+00,Versprechen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Promise,learning
+2024-12-23 21:07:21.661744+00,Vorlagen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,templates,learning
+2025-01-03 00:21:05.195039+00,Webdesign,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Web Design,learning
+2024-06-30 01:44:11.689548+00,Werkzeuge,German,f9034378-44b5-4ab5-babd-dfe40c4ca89b,tools,learning
+2025-01-20 11:49:49.057286+00,Wirtschaft,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,economy,learning
+2024-12-30 20:05:27.665543+00,Wissen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,knowledge,learning
+2024-12-30 15:29:50.315533+00,Z-Wave,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,Z-Wave,learning
+2024-12-23 21:13:02.666079+00,Ziele,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,goals,learning
+2025-01-03 19:50:56.323123+00,Zielüberprüfung,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,goal review,learning
+2024-12-23 21:13:42.242977+00,abgedeckt,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,covered,learning
+2024-08-21 20:28:26.341583+00,abordaste,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,you approached,learning
+2024-07-17 00:12:53.119357+00,abril,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,April,learning
+2025-01-22 00:31:51.560926+00,absurdité,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,absurdity,learning
+2024-11-25 02:49:54.161758+00,absurdly,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,in a manner that is wildly unreasonable or illogical,learning
+2024-11-30 03:57:43.517222+00,abusador,Spanish,733578cf-dce4-4101-b3c7-82d697019353,abuser,learning
+2025-02-04 12:09:32.795053+00,accent,French,97ee4d37-9d30-480e-963b-3c6f948018ad,accent,learning
+2024-06-20 06:40:51.933509+00,acceso,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,access,learning
+2024-06-12 05:56:45.420524+00,accessibleway,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,accessible,learning
+2024-10-22 22:04:55.914626+00,acciones,Spanish,8f5668ce-f5b2-409a-9a80-b9cf0c17d306,stocks,learning
+2024-10-22 22:05:08.578339+00,acción,Spanish,8f5668ce-f5b2-409a-9a80-b9cf0c17d306,stock,learning
+2024-09-13 20:43:05.593518+00,acertar,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,to get right,learning
+2024-08-02 09:40:27.194231+00,achieved,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,accomplished,learning
+2024-09-04 22:05:09.894423+00,acordaron,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,they agreed,learning
+2024-08-02 09:45:59.213342+00,acquire,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,to get,learning
+2024-11-28 04:39:24.940461+00,addy,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,address,learning
+2025-01-30 19:17:20.171994+00,adept,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,skilled,learning
+2024-09-04 22:04:41.576111+00,adorable,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,adorable,learning
+2025-01-21 04:52:23.351499+00,advocate,SAT Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,suggest,learning
+2025-01-22 20:02:28.350296+00,adyacente,Spanish,733578cf-dce4-4101-b3c7-82d697019353,adjacent,learning
+2025-01-20 14:48:28.222234+00,affecte,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,affects,learning
+2025-01-30 19:21:50.056824+00,aforementioned,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,previously mentioned,learning
+2024-12-06 21:14:42.283802+00,agencia,Spanish,733578cf-dce4-4101-b3c7-82d697019353,agency,learning
+2024-08-24 19:30:14.972965+00,agradecimiento,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,thank you,learning
+2024-07-01 02:49:55.752139+00,aire,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,air,learning
+2024-06-26 21:02:13.256064+00,ajustar,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,adjust,learning
+2024-08-21 12:08:10.709902+00,alegría,Spanish,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,joy,learning
+2025-01-30 19:16:14.669416+00,algorithmic,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,related to algorithms or a step-by-step procedure for calculations,learning
+2024-12-03 23:25:33.295014+00,algoritmos,Portuguese,733578cf-dce4-4101-b3c7-82d697019353,algorithms,learning
+2024-08-12 13:53:17.029265+00,allocate,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,to assign or distribute (resources or duties),learning
+2024-11-22 00:26:56.431953+00,alta,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,high,learning
+2025-01-27 04:39:56.222382+00,alto,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,tall,learning
+2024-09-06 01:35:28.515238+00,ameliorates,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,makes better,learning
+2024-11-08 19:53:37.657261+00,amo,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,I love,learning
+2024-09-01 20:46:26.814426+00,amo,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,I love,learning
+2024-10-27 05:55:32.006866+00,amo,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,I love,learning
+2024-08-21 20:24:35.097373+00,amo,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,I love,learning
+2025-01-21 07:03:38.156004+00,amorphous,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,shapeless,learning
+2025-02-21 23:04:59.882869+00,amplificador,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,amplifier,learning
+2025-01-30 19:55:00.713169+00,analogous,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,similar,learning
+2024-08-21 06:19:10.031493+00,ananas,French,28c8d175-7fb0-4514-9365-75256aa62bc4,pineapple,learning
+2025-01-30 19:57:59.304303+00,ancillary,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,"providing necessary support to the primary activities or operation of an organization, institution, industry, or system",learning
+2024-10-31 15:51:07.427266+00,anfangen,German,e42db482-b3fb-4d49-82ac-448f63744dd5,to start,learning
+2024-09-11 06:59:59.881234+00,animamos,Spanish,f1f4bd58-a3d2-45da-8179-474f2368456b,we encourage,learning
+2025-01-21 07:06:49.992731+00,annotated,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,marked up,learning
+2025-01-21 07:08:28.954849+00,annotations,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,comments,learning
+2024-11-08 19:36:52.885038+00,annuler,French,630ecd5b-ef55-443c-ae04-6b34b0212e88,to cancel,learning
+2025-01-20 14:29:35.825309+00,annulé,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,repealed,learning
+2024-08-25 20:05:09.045652+00,annum,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,year,learning
+2025-01-27 19:17:36.10322+00,antiquated,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,outdated,learning
+2025-01-22 05:41:43.053442+00,antología,Spanish,733578cf-dce4-4101-b3c7-82d697019353,anthology,learning
+2024-10-31 15:49:12.027663+00,antworten,German,e42db482-b3fb-4d49-82ac-448f63744dd5,to answer,learning
+2025-01-13 19:54:00.498578+00,aplastar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to squash,learning
+2024-12-02 21:22:31.285836+00,aplicación,Spanish,733578cf-dce4-4101-b3c7-82d697019353,application,learning
+2025-01-20 14:27:01.267473+00,apocalyptique,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,apocalyptic,learning
+2025-02-04 15:51:49.258142+00,apparaîtra,French,97ee4d37-9d30-480e-963b-3c6f948018ad,will appear,learning
+2025-01-21 07:07:26.804433+00,appellation,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,title,learning
+2024-09-03 13:40:53.856901+00,application,French,97ee4d37-9d30-480e-963b-3c6f948018ad,application,learning
+2024-11-18 05:45:03.839091+00,appreciate,SAT Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to recognize the worth or significance of something,learning
+2025-01-27 19:18:54.605119+00,apprise,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,inform,learning
+2025-01-20 11:01:54.829877+00,aprende,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,learns,learning
+2025-01-20 11:15:02.52+00,aprendiendo,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,learning,learning
+2024-06-11 07:13:35.545101+00,ardhay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,hard,learning
+2025-01-13 20:00:14.191082+00,arreglar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to fix,learning
+2025-01-30 19:21:34.310669+00,articulated,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,said,learning
+2024-09-08 07:16:15.169574+00,articulated,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,expressed,learning
+2024-09-01 16:30:13.82917+00,artículos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,items,learning
+2024-06-26 21:31:05.703102+00,artículos,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,items,learning
+2025-01-30 19:57:28.807447+00,ascertain,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,determine,learning
+2025-01-20 16:04:59.885754+00,asesor financiero,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,financial advisor,learning
+2025-01-21 06:04:24.411321+00,asile,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,asylum,learning
+2025-01-20 02:15:36.05556+00,asombrosa,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,amazing,learning
+2024-11-30 01:21:57.373276+00,aspired,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,to have a strong desire or ambition to achieve something,learning
+2024-08-21 12:11:01.819642+00,assist,GRE Vocabulary,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,to help,learning
+2025-01-23 07:24:55.057242+00,attaque,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,attack,learning
+2025-01-20 18:50:54.822055+00,attempt,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,try,learning
+2025-02-04 15:47:59.490814+00,attendre,French,97ee4d37-9d30-480e-963b-3c6f948018ad,to expect,learning
+2024-11-30 01:20:20.529939+00,augment,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,to increase or enhance,learning
+2025-01-27 19:17:06.513919+00,augmented,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,increased,learning
+2025-01-17 06:07:27.415339+00,aula,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,classroom,learning
+2025-03-06 03:03:18.572648+00,aula,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,class,learning
+2024-07-17 00:13:12.065249+00,autobús,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,bus,learning
+2024-06-26 21:31:53.842433+00,aviso,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,advisory,learning
+2024-11-23 18:48:36.626804+00,ayudaremos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,we will help,learning
+2025-01-13 19:40:06.63747+00,aísla,Spanish,733578cf-dce4-4101-b3c7-82d697019353,isolates,learning
+2025-01-17 02:42:05.679097+00,bailes,Spanish,733578cf-dce4-4101-b3c7-82d697019353,balls,learning
+2024-12-09 23:37:26.240785+00,bala,Spanish,733578cf-dce4-4101-b3c7-82d697019353,bullet,learning
+2024-11-21 04:56:11.85079+00,bambino,Italian,35451fbe-281e-4ef7-9209-e70f1c3c5a03,child,learning
+2024-10-08 17:59:16.705357+00,banda sonora,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,soundtrack,learning
+2024-12-03 05:26:21.868885+00,beba,Spanish,733578cf-dce4-4101-b3c7-82d697019353,drink,learning
+2024-11-30 03:56:08.248986+00,bebés,Spanish,733578cf-dce4-4101-b3c7-82d697019353,babies,learning
+2025-01-01 21:41:27.406886+00,beginnen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to begin,learning
+2024-06-26 03:34:21.212704+00,benched,Tiktok Slang,819cbf66-fd47-4000-9e89-80c1736d1002,grounded,learning
+2025-01-20 16:03:55.015291+00,beneficiarán,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,will benefit,learning
+2024-11-25 06:55:39.604995+00,besoin,French,b0370423-4267-44c0-90ab-e026c5086c2e,need,learning
+2025-01-20 18:54:30.730117+00,bestowed,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,granted,learning
+2024-10-31 19:45:16.459528+00,betrifft,German,e42db482-b3fb-4d49-82ac-448f63744dd5,affects,learning
+2024-11-27 22:07:39.386492+00,bien,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,good,learning
+2024-11-30 03:53:23.533577+00,bien,Spanish,733578cf-dce4-4101-b3c7-82d697019353,well,learning
+2024-11-14 20:24:57.716163+00,bisogno,Italian,35451fbe-281e-4ef7-9209-e70f1c3c5a03,need,learning
+2024-10-15 19:54:38.627939+00,bisogno,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,need,learning
+2024-10-04 10:37:25.899773+00,bisogno,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,need,learning
+2025-01-20 02:15:16.846636+00,bloquean,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,lock out,learning
+2024-09-17 20:16:03.555793+00,boards,Tiktok Slang,732a92bd-8dec-43d9-83b8-50138871fe4f,pieces,learning
+2024-11-19 02:05:45.96239+00,boi,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,boy,learning
+2024-12-03 23:27:44.741638+00,bolsters,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,to support or strengthen,learning
+2024-08-22 11:33:42.923636+00,bon,French,97ee4d37-9d30-480e-963b-3c6f948018ad,good,learning
+2024-08-02 09:41:10.218744+00,born,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,nacer,learning
+2025-02-04 15:56:17.829096+00,bouton,French,97ee4d37-9d30-480e-963b-3c6f948018ad,button,learning
+2024-12-02 19:30:36.430489+00,brecha,Spanish,733578cf-dce4-4101-b3c7-82d697019353,gap,learning
+2024-08-05 05:53:52.789146+00,brillante,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,bright,learning
+2024-07-02 00:54:22.068651+00,broma,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,joke,learning
+2024-11-27 00:07:38.297573+00,brouillard,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,fog,learning
+2024-11-27 01:45:23.670104+00,buddies,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,collaborators,learning
+2024-08-21 20:27:56.370371+00,buena,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,good,learning
+2024-11-29 01:29:25.057968+00,burger,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,someone,learning
+2024-11-28 04:39:43.686743+00,burger,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,brick,learning
+2024-11-26 09:15:46.932778+00,burgez,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,stories,learning
+2024-11-26 09:17:03.044285+00,burgies,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,guestrooms,learning
+2024-11-26 09:12:17.714877+00,burgy,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,burger,learning
+2024-11-19 07:17:04.25208+00,burgzy,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,Greenburg,learning
+2024-11-18 05:40:05.109216+00,burgzy,GlizzyTalk,ff8b22f3-fa07-41cf-9d68-79caf67442d9,bad,learning
+2024-07-05 09:37:58.827516+00,cadre,GRE Vocabulary,907aa469-b058-4c5e-9cee-ed9dbcccc30b,team,learning
+2024-12-07 17:48:00.974896+00,caja,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,box,learning
+2024-11-28 04:59:40.943304+00,cambió,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,changed,learning
+2024-10-24 20:55:16.844106+00,campus,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,campus,learning
+2024-09-19 21:59:14.156517+00,camuflar,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to camouflage,learning
+2024-11-13 01:53:26.73172+00,candidatos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,candidates,learning
+2025-03-12 02:23:50.40649+00,caneta,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,pen,learning
+2024-08-24 17:27:41.755813+00,cap,Tiktok Slang,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,lie,learning
+2024-12-04 18:59:57.310153+00,capability,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,capacidad,learning
+2024-07-08 20:29:54.938857+00,capacidad,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,ability,learning
+2024-11-28 05:27:12.114724+00,capped,Tiktok Slang,85db5d88-12d5-49f7-8793-a0d2f62ac738,limited,learning
+2025-02-04 16:16:23.018258+00,caractéristiques,French,97ee4d37-9d30-480e-963b-3c6f948018ad,features,learning
+2024-08-21 22:17:58.061888+00,carga,Spanish,a801a028-f8ca-4b66-8e78-73a478180bfe,cargo,learning
+2024-11-08 19:54:34.054591+00,carriere,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,careers,learning
+2024-09-09 15:57:22.092039+00,casada,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,married,learning
+2024-06-26 09:11:43.551385+00,cash,Tiktok Slang,87916478-5b72-451a-8dc1-a26675edc202,money,learning
+2025-01-20 11:08:04.088814+00,categorizo,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,I categorize,learning
+2025-01-20 10:27:42.862504+00,categoría,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,category,learning
+2024-08-23 04:46:58.923042+00,ce,French,97ee4d37-9d30-480e-963b-3c6f948018ad,this,learning
+2024-08-21 12:12:49.811249+00,cerró,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,shut down,learning
+2025-01-29 06:06:16.760268+00,certificaciones,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,certifications,learning
+2024-09-04 22:04:38.9016+00,cesó,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,ceased,learning
+2024-08-27 09:05:13.300565+00,chien,French,97ee4d37-9d30-480e-963b-3c6f948018ad,dog,learning
+2025-01-27 19:14:26.61749+00,chromatic,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,color,learning
+2025-01-21 07:10:59.650068+00,chromaticity,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,color quality,learning
+2025-01-21 06:04:54.404501+00,cibles,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,targets,learning
+2025-01-30 19:55:17.408246+00,circumscribe,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,restrict,learning
+2024-10-17 05:07:18.858535+00,città,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,city,learning
+2024-09-06 01:33:23.116947+00,clandestine,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,secret,learning
+2024-11-25 22:46:38.48319+00,clase,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,class,learning
+2024-07-15 01:45:28.470315+00,clase,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,class,learning
+2024-06-26 05:31:55.198705+00,classe,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,class,learning
+2024-06-26 05:58:57.750913+00,classes,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,classes,learning
+2024-11-19 03:49:48.204209+00,classifier,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,classifier,learning
+2024-08-29 13:22:56.02237+00,clave,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,key,learning
+2024-11-28 04:53:24.747526+00,clips,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,clips,learning
+2024-07-20 20:42:46.945844+00,coco,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,coconut,learning
+2024-09-30 05:44:32.416629+00,codo,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,elbow,learning
+2025-01-21 07:14:49.0315+00,cognizance,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,awareness,learning
+2024-06-26 09:23:23.7061+00,coins,Tiktok Slang,87916478-5b72-451a-8dc1-a26675edc202,money,learning
+2025-01-31 07:23:51.882713+00,colaborar,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,to collaborate,learning
+2024-11-27 01:47:03.799922+00,collaborators,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,collaborators,learning
+2025-01-20 11:00:53.464765+00,colores,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,colors,learning
+2024-12-03 19:29:32.896337+00,combinados,Spanish,733578cf-dce4-4101-b3c7-82d697019353,combined,learning
+2024-10-08 17:57:19.674688+00,combo,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,combo,learning
+2024-07-13 19:36:58.878586+00,comerciales,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,commercials,learning
+2024-06-26 14:41:11.399715+00,comienzo,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,beginning,learning
+2024-08-06 11:48:39.249396+00,commence,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,to begin,learning
+2024-11-20 00:25:30.058649+00,commercializzato,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,marketed,learning
+2025-01-17 01:44:10.521366+00,comparando,Spanish,733578cf-dce4-4101-b3c7-82d697019353,comparing,learning
+2024-11-28 04:47:54.729899+00,compañero,Spanish,733578cf-dce4-4101-b3c7-82d697019353,coworker,learning
+2024-09-03 23:56:19.726669+00,compañero,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,partner,learning
+2024-11-20 00:25:49.452519+00,competent,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,krinky krongemas,learning
+2024-11-28 04:54:18.808061+00,competente,Spanish,733578cf-dce4-4101-b3c7-82d697019353,this is a long long long translation,learning
+2025-02-20 08:05:32.645781+00,complejas,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,complex,learning
+2024-11-27 00:09:31.691311+00,compléter,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,to supplement,learning
+2024-12-03 03:01:16.212617+00,comprar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to buy,learning
+2025-01-20 19:03:34.616491+00,comprise,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,consist of,learning
+2024-10-01 19:36:15.12802+00,conceito,Portuguese,a57d1f7e-9f1f-4f52-8e46-ff43760cc10a,concept,learning
+2025-01-30 19:17:07.56637+00,conceive,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,think,learning
+2024-08-23 12:58:09.808736+00,concert,French,97ee4d37-9d30-480e-963b-3c6f948018ad,concert,learning
+2025-01-30 19:56:13.145566+00,concluded,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,finished,learning
+2025-01-20 13:42:01.663996+00,conclusiones,Spanish,cb59a4c8-8f81-488e-8cb6-5d0f04d59e7e,conclusions,learning
+2025-01-23 07:26:31.84854+00,conditions,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,conditions,learning
+2025-01-27 19:15:59.626019+00,confer,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,to grant or bestow,learning
+2024-11-30 03:57:17.908847+00,confirma,Spanish,733578cf-dce4-4101-b3c7-82d697019353,confirms,learning
+2024-11-27 00:09:16.011974+00,consensus,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,consensus,learning
+2024-09-05 01:47:03.43841+00,consonantes,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,consonants,learning
+2025-01-27 19:14:59.404608+00,conspicuous,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,obvious,learning
+2024-08-05 05:56:31.093054+00,constitute,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,to make up or form,learning
+2024-08-22 08:44:55.817277+00,continuer,French,97ee4d37-9d30-480e-963b-3c6f948018ad,to continue,learning
+2024-11-27 23:55:06.373488+00,control,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,control,learning
+2024-10-08 17:59:29.974412+00,controles,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,controls,learning
+2024-10-08 17:55:54.280141+00,contáctame,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,contact me,learning
+2025-01-27 19:16:14.294688+00,converge,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,overlap,learning
+2025-01-30 19:16:00.960792+00,copious,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,abundant,learning
+2025-01-29 06:03:17.13157+00,correos electrónicos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,emails,learning
+2025-01-13 19:48:37.812429+00,cortafuegos,Spanish,733578cf-dce4-4101-b3c7-82d697019353,firewalls,learning
+2024-10-27 05:30:51.255671+00,creatore,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,creator,learning
+2024-07-01 02:39:13.222344+00,creo,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,think,learning
+2024-06-27 16:27:28.23368+00,cribs,Tiktok Slang,32ec67e0-cb78-4c25-8451-5fc0334f70f1,real estate,learning
+2024-08-18 03:44:14.161834+00,crucial,GRE Vocabulary,49453d9f-7f2e-47f8-9edd-5ad0e66d987b,critical,learning
+2025-01-23 07:53:44.830784+00,crédito,Spanish,733578cf-dce4-4101-b3c7-82d697019353,credit,learning
+2024-06-26 20:51:58.408923+00,crítica,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,criticism,learning
+2025-01-13 19:45:36.321161+00,crítico,Spanish,733578cf-dce4-4101-b3c7-82d697019353,critical,learning
+2024-06-25 02:18:54.234596+00,cuenta,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,account,learning
+2024-11-14 20:26:36.902338+00,culturale,Italian,35451fbe-281e-4ef7-9209-e70f1c3c5a03,cultural,learning
+2024-11-28 04:14:53.163652+00,curious,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,glizzy curious,learning
+2025-01-20 14:28:33.973838+00,cérémonie,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,ceremony,learning
+2024-12-08 16:05:57.175538+00,código,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,code,learning
+2025-01-17 02:51:27.165383+00,dados,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,data,learning
+2024-11-13 01:54:02.949821+00,debate,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,debate,learning
+2024-11-13 01:53:56.742485+00,debates,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,debates,learning
+2024-12-02 17:44:53.193118+00,decepcionante,Spanish,733578cf-dce4-4101-b3c7-82d697019353,disappointing,learning
+2024-12-02 17:48:05.296418+00,decides,Spanish,733578cf-dce4-4101-b3c7-82d697019353,you decide,learning
+2024-08-21 13:30:57.938883+00,decir,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,to say,learning
+2024-08-27 14:22:47.170744+00,decisión,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,decision,learning
+2024-12-03 02:55:59.859856+00,dedicación,Spanish,733578cf-dce4-4101-b3c7-82d697019353,dedication,learning
+2024-12-07 06:16:56.969484+00,dedicar,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,to dedicate,learning
+2025-01-17 02:48:35.065903+00,deferencia,Spanish,733578cf-dce4-4101-b3c7-82d697019353,deference,learning
+2025-01-13 19:55:55.862378+00,dejarme llevar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,go with the flow,learning
+2025-01-21 07:13:01.908583+00,delectable,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,tasty,learning
+2025-01-21 07:06:17.445506+00,delineate,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,specify,learning
+2025-01-20 19:03:26.693602+00,delineates,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,defines,learning
+2024-11-19 06:22:15.605669+00,delivered,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,delivered,learning
+2025-01-21 06:05:30.785008+00,demandeurs d'asile,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,asylum seekers,learning
+2025-01-10 11:10:26.152334+00,demuestras,Spanish,733578cf-dce4-4101-b3c7-82d697019353,you demonstrate,learning
+2024-07-27 11:17:22.235839+00,denote,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,represent,learning
+2025-01-27 19:16:29.422934+00,depicted,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,shown,learning
+2024-09-29 03:06:27.581734+00,depicts,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,to represent or show,learning
+2024-12-02 21:22:42.804123+00,derechos,Spanish,733578cf-dce4-4101-b3c7-82d697019353,rights,learning
+2024-11-30 02:56:45.417306+00,desafía,Spanish,733578cf-dce4-4101-b3c7-82d697019353,challenges,learning
+2024-11-30 03:52:43.360989+00,desastre,Spanish,733578cf-dce4-4101-b3c7-82d697019353,disaster,learning
+2024-12-01 18:27:31.615757+00,descuidado,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,neglected,learning
+2025-01-17 03:32:57.466014+00,desculpas,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,apologies,learning
+2024-09-30 05:36:24.459712+00,desorbitados,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,deorbited,learning
+2025-01-13 19:38:11.650469+00,desperdicio,Spanish,733578cf-dce4-4101-b3c7-82d697019353,waste,learning
+2024-12-02 18:55:37.802792+00,desplegar,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,deploy,learning
+2024-12-02 17:51:12.739851+00,destino,Spanish,733578cf-dce4-4101-b3c7-82d697019353,fate,learning
+2024-07-11 22:23:38.091641+00,destino,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,destiny,learning
+2025-02-21 18:38:15.21583+00,desvanece,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,fades out,learning
+2024-06-26 21:34:03.510702+00,detalle,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,detail,learning
+2024-10-08 17:56:21.444266+00,detalles,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,details,learning
+2024-06-11 05:31:41.587316+00,determinada,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,certain,learning
+2024-10-27 05:30:32.404452+00,dettagliato,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,detailed,learning
+2024-11-19 23:37:04.695782+00,diario,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,journal,learning
+2025-02-19 01:07:30.443706+00,dictionnaire,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,dictionary,learning
+2024-08-21 12:17:16.945965+00,dientes,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,teeth,learning
+2025-01-29 13:28:20.640019+00,diferenciador,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,differentiator,learning
+2024-07-07 02:38:18.029933+00,difícil,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,hard,learning
+2024-11-19 23:37:59.924975+00,digitalmente,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,digitally,learning
+2024-09-03 20:12:34.228332+00,dijo,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,said,learning
+2024-09-24 21:15:46.440248+00,dijo,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,said,learning
+2025-01-23 03:55:22.021698+00,diminutive,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,small,learning
+2024-11-28 05:14:49.558791+00,dinero,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,money,learning
+2024-09-17 20:16:23.17828+00,dips,Tiktok Slang,732a92bd-8dec-43d9-83b8-50138871fe4f,forfeits,learning
+2025-01-13 20:00:46.604744+00,dirección,Spanish,733578cf-dce4-4101-b3c7-82d697019353,management,learning
+2025-01-17 02:37:58.388668+00,direitos,Portuguese,733578cf-dce4-4101-b3c7-82d697019353,rights,learning
+2025-01-27 19:15:32.274526+00,disconcerting,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,causing one to feel unsettled,learning
+2024-08-21 12:33:27.174692+00,discours,French,97ee4d37-9d30-480e-963b-3c6f948018ad,speech,learning
+2025-01-22 00:32:34.840303+00,discréditent,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,discredit,learning
+2024-12-02 18:08:18.764615+00,discusión,Spanish,733578cf-dce4-4101-b3c7-82d697019353,argument,learning
+2024-06-20 06:40:17.681322+00,diseñada,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,designed,learning
+2024-12-02 18:12:57.358661+00,disfraz,Spanish,733578cf-dce4-4101-b3c7-82d697019353,costume,learning
+2024-08-02 09:44:15.482369+00,disintegrated,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,fell apart,learning
+2024-08-21 06:16:43.867492+00,distinguerait,French,28c8d175-7fb0-4514-9365-75256aa62bc4,would distinguish,learning
+2024-10-09 02:52:41.998807+00,diverso,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,different,learning
+2024-08-21 20:20:54.769548+00,divertido,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,fun,learning
+2024-11-20 00:15:22.586268+00,domanda,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,question,learning
+2025-01-21 06:26:37.710168+00,donateurs,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,donors,learning
+2024-06-26 05:19:27.854776+00,données,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,data,learning
+2024-09-05 17:02:18.296531+00,dope,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,good,learning
+2024-11-26 20:53:32.597112+00,drivin',GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,driven,learning
+2024-06-26 03:35:28.095402+00,dropped,Tiktok Slang,819cbf66-fd47-4000-9e89-80c1736d1002,announced,learning
+2024-06-25 02:20:41.247532+00,dude,Tiktok Slang,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,guy,learning
+2025-01-23 07:27:11.057905+00,début,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,beginning,learning
+2025-01-23 07:26:46.671912+00,déclarées,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,declared,learning
+2025-02-04 15:53:08.919868+00,définition,French,97ee4d37-9d30-480e-963b-3c6f948018ad,definition,learning
+2024-11-26 23:34:56.428542+00,dégager,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,to carve out,learning
+2024-12-01 05:30:17.827183+00,déjame,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,let me,learning
+2024-06-12 06:01:03.280742+00,earning-lay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,learning,learning
+2024-06-12 06:02:13.648505+00,earnlay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,learn,learning
+2024-08-24 19:29:00.641229+00,edad,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,age,learning
+2024-06-13 07:24:22.429352+00,edibilitycray,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,credibility,learning
+2024-10-29 23:25:15.690624+00,edición,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,editing,learning
+2024-11-13 23:47:58.867876+00,edificios,Spanish,958f292b-431d-429c-8127-4e790da96f5e,buildings,learning
+2024-11-19 23:55:30.71925+00,editor,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,editor,learning
+2024-12-23 21:07:00.93281+00,einfach,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,simple,learning
+2025-01-13 20:00:00.936157+00,ejemplo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,example,learning
+2025-01-21 07:11:17.282204+00,elect,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,choose,learning
+2024-11-28 04:39:55.714609+00,elevation,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,glam,learning
+2024-12-05 04:01:39.227189+00,eligen,Spanish,733578cf-dce4-4101-b3c7-82d697019353,choose,learning
+2025-01-29 06:04:00.301311+00,eliminados,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,delisted,learning
+2025-03-12 02:23:23.274778+00,eliminando,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,eliminating,learning
+2025-01-21 07:09:16.692864+00,elucidate,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,make clear,learning
+2025-01-21 07:12:01.783891+00,elucidation,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,explanation,learning
+2025-01-30 19:23:03.422278+00,elucidative,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,helpful,learning
+2024-11-28 04:22:33.162039+00,elusive target,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,unnamed ongoing work,learning
+2024-11-19 23:53:12.833561+00,email,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,email,learning
+2024-10-08 17:57:46.164719+00,emborracha,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,gets drunk,learning
+2024-06-26 21:32:32.256776+00,emitidos,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,issued,learning
+2024-12-03 05:29:08.259913+00,empecé,Spanish,733578cf-dce4-4101-b3c7-82d697019353,I started,learning
+2024-07-13 20:55:28.853826+00,empieza,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,start,learning
+2024-11-13 01:08:07.731274+00,empiezo,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,I start,learning
+2024-11-18 05:16:24.060852+00,empleado,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,employee,learning
+2024-11-28 04:59:30.618474+00,empresa,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,company,learning
+2025-01-30 19:18:44.946596+00,enamored,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,fond of,learning
+2024-06-26 21:34:18.211335+00,encabezado,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,header,learning
+2024-09-02 23:30:23.441297+00,encantador,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,lovely,learning
+2025-01-21 07:12:44.561404+00,encapsulated,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,stored,learning
+2024-06-26 21:10:04.059302+00,encontrarlos,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,to find them,learning
+2024-09-18 09:07:41.024311+00,encontró,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,found,learning
+2024-06-26 21:09:53.117982+00,encuentras,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,find,learning
+2024-07-19 01:17:45.825074+00,encuesta,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,poll,learning
+2025-01-21 07:08:01.940379+00,endow,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,provide,learning
+2025-01-23 07:24:15.217899+00,engagement,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,commitment,learning
+2025-01-29 06:02:44.414503+00,engañoso,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,misleading,learning
+2025-01-23 03:55:37.851294+00,engender,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,generate,learning
+2024-11-24 05:47:54.483532+00,enigmatic,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,mysterious,learning
+2025-01-20 19:00:02.493443+00,enigmatic,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,mysterious,learning
+2024-11-14 02:13:22.808233+00,enojada,Spanish,958f292b-431d-429c-8127-4e790da96f5e,mad,learning
+2025-01-17 03:07:56.648977+00,enseñable,Spanish,733578cf-dce4-4101-b3c7-82d697019353,teachable,learning
+2024-08-22 03:31:41.974311+00,enseñarte,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,to teach you,learning
+2025-01-21 07:10:16.927317+00,ensuing,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,following,learning
+2025-01-28 00:53:25.195718+00,entendemos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,we understand,learning
+2025-01-16 22:36:23.945293+00,entiendo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,I understand,learning
+2024-06-29 16:07:25.506772+00,entrar,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,enter,learning
+2024-11-22 06:18:48.664922+00,entrenado,Spanish,733578cf-dce4-4101-b3c7-82d697019353,trained,learning
+2024-09-11 18:56:32.913113+00,entrenador,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,coach,learning
+2025-01-24 07:04:05.824464+00,entrenar,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,to train,learning
+2024-09-25 22:05:43.594432+00,entrevistando,Portuguese,c1846c5c-aef1-44dc-919f-3cb36e24e88a,interviewing,learning
+2024-09-01 22:55:36.905351+00,envejecido,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,aged,learning
+2024-09-01 22:56:19.417598+00,envejeció,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,aged,learning
+2025-01-20 18:39:37.625595+00,ephemeral,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,lasting a very short time,learning
+2025-01-21 03:35:32.516411+00,equipe,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,team,learning
+2024-11-21 23:39:34.398072+00,equipo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,team,learning
+2024-10-31 19:04:28.147304+00,erklären,German,e42db482-b3fb-4d49-82ac-448f63744dd5,to explain,learning
+2024-10-31 15:52:22.127531+00,erkunden,German,e42db482-b3fb-4d49-82ac-448f63744dd5,to explore,learning
+2024-12-30 21:42:22.181186+00,erlauben,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to allow,learning
+2024-06-13 07:08:52.020389+00,erminalitytay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,terminology,learning
+2025-01-20 18:28:44.901314+00,erro,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,blunder,learning
+2025-01-30 19:58:53.705355+00,erroneous,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,wrong,learning
+2024-09-04 19:40:02.143512+00,escalones,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,steps,learning
+2024-09-10 18:09:23.334398+00,escepticismo,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,skepticism,learning
+2025-01-30 19:21:04.805464+00,eschew,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,avoid,learning
+2024-11-30 01:12:43.004671+00,escribes,Spanish,733578cf-dce4-4101-b3c7-82d697019353,you write,learning
+2025-01-22 06:14:58.282029+00,escribiría,Spanish,733578cf-dce4-4101-b3c7-82d697019353,would write,learning
+2024-06-25 02:19:17.125688+00,escuela,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,school,learning
+2024-11-28 05:00:56.388366+00,eslogan,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,slogan,learning
+2024-07-09 06:34:25.809807+00,esperan,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,hope,learning
+2024-09-18 18:30:03.616821+00,esperanza,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,hope,learning
+2024-11-19 23:53:51.788804+00,esperienza,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,experience,learning
+2024-07-11 15:11:07.166667+00,esto,Spanish,4c17cf78-13c4-413e-89af-a2185c750396,this,learning
+2024-12-02 19:17:09.433686+00,estrella,Spanish,733578cf-dce4-4101-b3c7-82d697019353,star,learning
+2024-09-02 23:31:53.148673+00,estudiaría,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,I would study,learning
+2025-01-28 00:52:25.764173+00,etapa,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,stage,learning
+2025-01-13 19:43:07.815466+00,etiquetar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to tag,learning
+2024-11-05 07:43:51.901281+00,europeo,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,European,learning
+2025-01-29 06:03:33.283596+00,evaluación,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,assessment,learning
+2024-06-28 09:43:18.323986+00,evaluation,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,assessment,learning
+2024-11-28 04:49:04.121529+00,evidencia,Spanish,733578cf-dce4-4101-b3c7-82d697019353,evidence,learning
+2024-06-13 07:24:04.09986+00,exampleway,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,example,learning
+2024-09-25 18:14:50.952274+00,excelente,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,excellent,learning
+2025-01-20 18:49:37.765191+00,execute,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,carry out,learning
+2025-01-30 19:16:56.796907+00,executed,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,done,learning
+2025-01-21 07:13:23.565477+00,exemplars,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,examples,learning
+2024-11-27 00:39:50.458618+00,exemple,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,example,learning
+2024-08-23 19:23:53.208725+00,exhala,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,breathe out,learning
+2024-11-28 05:17:02.30786+00,expeditious,GRE Vocabulary,85db5d88-12d5-49f7-8793-a0d2f62ac738,characterized by promptness and efficiency,learning
+2024-11-27 22:07:10.790874+00,experiencia,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,experience,learning
+2024-09-08 20:22:18.694168+00,extraordinary,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,remarkable,learning
+2025-01-23 03:55:48.867766+00,facilitates,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,supports,learning
+2024-11-28 04:50:51.890497+00,fallo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,this is a long long long translation,learning
+2024-10-31 13:10:21.259822+00,faltan,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,are missing,learning
+2024-08-24 17:27:21.93398+00,fam,Tiktok Slang,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,family,learning
+2025-01-19 01:21:37.605604+00,fantastical,GRE Vocabulary,85db5d88-12d5-49f7-8793-a0d2f62ac738,fantastic,learning
+2025-01-22 06:14:00.101373+00,fascinante,Spanish,733578cf-dce4-4101-b3c7-82d697019353,fascinating,learning
+2024-10-29 23:24:47.089297+00,fase,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,phase,learning
+2025-01-20 11:15:30.889565+00,fastidio,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,hassle,learning
+2025-01-21 07:01:26.085454+00,fathom,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,understand,learning
+2025-02-05 05:11:47.513168+00,fausses,French,97ee4d37-9d30-480e-963b-3c6f948018ad,fake,learning
+2024-08-25 20:03:47.794084+00,favorable,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,good,learning
+2024-12-12 09:21:20.546895+00,fervor,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,intense and passionate feeling,learning
+2024-09-24 18:34:26.382779+00,festa,Portuguese,c1846c5c-aef1-44dc-919f-3cb36e24e88a,party,learning
+2024-10-09 07:35:09.016531+00,fiammeggiante,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,fire,learning
+2024-11-13 01:53:38.933296+00,fila,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,row,learning
+2024-10-20 01:49:43.889645+00,file,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,file,learning
+2025-01-21 05:59:07.406493+00,filet,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,net,learning
+2024-12-08 16:05:47.018602+00,filtro,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,filter,learning
+2024-10-31 19:02:54.56753+00,finden,German,e42db482-b3fb-4d49-82ac-448f63744dd5,to find,learning
+2024-12-04 19:00:29.845916+00,flex,Tiktok Slang,733578cf-dce4-4101-b3c7-82d697019353,to show off,learning
+2024-09-05 23:36:27.356619+00,flex,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to show off,learning
+2025-01-28 00:52:13.566342+00,flexibilidad,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,flexibility,learning
+2025-01-30 19:18:56.544748+00,floundered,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,failed,learning
+2024-12-02 17:45:11.758474+00,flujo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,flow,learning
+2025-01-20 19:00:14.286124+00,folio,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,page,learning
+2024-11-20 16:39:11.106909+00,folla,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,crowd,learning
+2024-11-19 23:36:36.947704+00,fondatrice,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,founder,learning
+2024-11-13 23:48:56.234709+00,fondo,Spanish,958f292b-431d-429c-8127-4e790da96f5e,fund,learning
+2025-02-21 10:01:54.470395+00,formato,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,format,learning
+2024-10-09 07:34:54.826223+00,forte,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,strong,learning
+2025-01-13 19:42:09.427862+00,forzar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to force,learning
+2024-11-01 21:06:13.561062+00,frais,French,630ecd5b-ef55-443c-ae04-6b34b0212e88,fees,learning
+2024-09-08 23:12:56.174234+00,frases,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,phrases,learning
+2024-09-05 05:54:43.79734+00,froid,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,cold,learning
+2025-01-20 13:51:38.184572+00,frío,Spanish,cb59a4c8-8f81-488e-8cb6-5d0f04d59e7e,cold,learning
+2024-07-02 01:12:24.105755+00,fuego,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,fire,learning
+2024-09-08 23:10:39.081461+00,fuentes,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,sources,learning
+2024-06-11 05:23:23.330038+00,fuerza de voluntad,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,willpower,learning
+2024-09-23 22:03:06.05145+00,funciona,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,works,learning
+2024-08-21 12:09:19.190934+00,fundamental,GRE Vocabulary,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,fundamental,learning
+2024-08-22 03:22:21.062268+00,fácil,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,easy,learning
+2025-01-23 07:26:59.590826+00,félicité,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,congratulated,learning
+2024-08-21 21:26:48.224525+00,galletas,Spanish,37a42e29-e69b-43e8-b6eb-471124f7afea,cookies,learning
+2024-07-08 22:58:18.112722+00,ganador,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,winner,learning
+2024-07-10 00:50:11.310249+00,ganar,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,win,learning
+2024-10-31 15:50:47.619129+00,gehört,German,e42db482-b3fb-4d49-82ac-448f63744dd5,belongs to,learning
+2024-12-23 21:07:12.776293+00,genau,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,exactly,learning
+2024-11-27 22:06:56.996697+00,genial,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,cool,learning
+2024-12-30 15:33:15.622287+00,genießen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to enjoy,learning
+2024-07-02 00:14:26.224571+00,gente,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,people,learning
+2024-08-24 19:31:03.354302+00,gestionar,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,to manage,learning
+2025-01-01 12:29:36.11948+00,get to work,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,glizzy gobbling,learning
+2024-06-21 08:34:28.517823+00,gewinnen,German,85bf9e83-7471-4d20-8241-81c9c7287ca2,to win,learning
+2024-11-18 05:53:37.455822+00,ghost,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to suddenly cut off communication or disappear,learning
+2024-11-18 05:52:23.230327+00,gig,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,job,learning
+2024-10-27 04:25:56.01018+00,gioca,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,plays,learning
+2024-11-20 00:21:21.851593+00,giorno,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,day,learning
+2025-01-21 07:11:10.766327+00,glizataset,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,dataset,learning
+2024-11-26 09:05:19.207493+00,glizz,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,projects,learning
+2024-11-19 06:43:13.19529+00,glizzy,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,person,learning
+2024-11-18 22:52:59.083099+00,glizzy,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,hotdog,learning
+2024-11-20 00:25:58.297349+00,glizzy fingers,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,competent,learning
+2024-11-18 05:26:58.714223+00,glizzy fingers,GlizzyTalk,ff8b22f3-fa07-41cf-9d68-79caf67442d9,glizzy fingers,learning
+2024-11-26 20:59:18.124434+00,glizzy gobble,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,to experience,learning
+2024-11-26 08:46:36.426804+00,glizzy gobble,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,a type of glizzy (hot dog),learning
+2024-11-18 05:39:53.58492+00,glizzy gobble,GlizzyTalk,ff8b22f3-fa07-41cf-9d68-79caf67442d9,sue,learning
+2024-11-18 05:36:11.159534+00,glizzy gobbler,GlizzyTalk,ff8b22f3-fa07-41cf-9d68-79caf67442d9,employee,learning
+2024-11-27 01:45:27.791806+00,glizzy gobblers,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,collaborators,learning
+2024-11-27 01:49:25.108635+00,glizzy gobbling,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,working on,learning
+2024-11-18 22:57:53.419303+00,glizzy resign,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,to leave with a bit of flair,learning
+2024-11-28 05:13:18.46431+00,glizzy trials,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,glizzy trials,learning
+2024-11-20 01:18:06.227829+00,glizzy-fogotten,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,forgotten,learning
+2024-11-28 05:03:25.641321+00,glizzy-fried,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,remotely fried,learning
+2024-11-19 05:48:52.022069+00,glizzymages,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,images,learning
+2024-11-28 05:20:47.04515+00,glow up,Tiktok Slang,85db5d88-12d5-49f7-8793-a0d2f62ac738,an improvement or transformation,learning
+2024-06-26 09:11:53.715337+00,glow-up,Tiktok Slang,87916478-5b72-451a-8dc1-a26675edc202,valuation,learning
+2024-11-20 01:21:19.400203+00,glozzed,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,won,learning
+2024-11-26 20:25:15.637241+00,gobble,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,to think bigger,learning
+2024-11-28 05:11:35.076135+00,gobbled,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,discovered,learning
+2024-11-18 05:39:30.815012+00,gobbler,GlizzyTalk,ff8b22f3-fa07-41cf-9d68-79caf67442d9,writer,learning
+2024-11-25 05:38:57.340941+00,gobbling,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,eating fast,learning
+2024-07-19 08:24:41.96792+00,gobiernos,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,governments,learning
+2024-11-27 02:37:07.118156+00,google,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,google,learning
+2025-01-20 11:03:11.544883+00,gramática,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,grammar,learning
+2024-11-27 22:08:37.845802+00,grande,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,big,learning
+2024-07-08 23:01:23.472962+00,grandes,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,large,learning
+2024-11-28 04:27:09.415234+00,grind,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,work,learning
+2024-11-27 01:47:17.154891+00,grindin',GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,working,learning
+2024-09-02 23:34:03.525514+00,gritó,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,yelled,learning
+2024-11-26 09:16:46.785682+00,ground-glizzy,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,ground-story,learning
+2024-12-25 18:44:29.651494+00,grundlegende,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,basic,learning
+2024-09-24 21:45:26.703834+00,gráfico,Portuguese,c1846c5c-aef1-44dc-919f-3cb36e24e88a,chart,learning
+2024-09-03 00:04:24.549772+00,gusta,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,like,learning
+2024-11-30 01:16:59.428782+00,guía,Spanish,733578cf-dce4-4101-b3c7-82d697019353,guide,learning
+2024-11-27 00:37:24.215424+00,géométrie,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,geometry,learning
+2024-11-27 22:06:03.02418+00,habilidades,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,skills,learning
+2024-09-01 20:46:36.50486+00,hablas,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,you talk,learning
+2024-11-18 05:52:15.704456+00,half-ass,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,do something with little effort,learning
+2025-01-21 07:05:41.871763+00,haphazard,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,lacking any obvious principle of organization,learning
+2024-12-03 23:21:39.665165+00,hardware,Portuguese,733578cf-dce4-4101-b3c7-82d697019353,hardware,learning
+2024-06-26 20:53:12.949444+00,hay,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,there is,learning
+2024-11-27 22:05:54.11669+00,hermano,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,bro,learning
+2024-08-05 05:54:58.973113+00,higos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,figs,learning
+2025-01-21 07:37:08.252781+00,histoire,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,history,learning
+2024-12-02 19:22:59.64223+00,historia,Spanish,733578cf-dce4-4101-b3c7-82d697019353,history,learning
+2024-09-18 06:10:32.324802+00,hombre,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,man,learning
+2024-11-28 05:01:12.006566+00,horas,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,hours,learning
+2024-12-25 19:52:31.284436+00,hosten,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to host,learning
+2025-01-21 07:10:34.247088+00,hues,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,colors,learning
+2024-08-21 06:18:00.798364+00,huile,French,28c8d175-7fb0-4514-9365-75256aa62bc4,oil,learning
+2024-09-03 22:03:00.40289+00,humano,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,human,learning
+2024-08-21 09:42:23.086214+00,hôtel,French,97ee4d37-9d30-480e-963b-3c6f948018ad,hotel,learning
+2024-11-05 08:05:15.426377+00,idea,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,idea,learning
+2024-09-23 02:48:01.299699+00,idiomas,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,languages,learning
+2025-01-23 07:25:32.432415+00,ignorance,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,ignorance,learning
+2024-06-12 05:51:29.997223+00,illpowerway,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,willpower,learning
+2024-11-24 21:46:34.598922+00,importante,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,important,learning
+2025-01-30 20:01:10.108537+00,imposed,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,forced or applied,learning
+2025-01-22 00:25:02.686613+00,impressionnants,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,impressive,learning
+2025-01-17 02:42:22.346334+00,impuesto,Spanish,733578cf-dce4-4101-b3c7-82d697019353,tax,learning
+2025-01-20 14:30:02.300922+00,inauguration,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,inauguration,learning
+2024-06-26 21:09:35.665394+00,incluir,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,include,learning
+2024-11-30 02:13:54.87374+00,incredulidad,Spanish,733578cf-dce4-4101-b3c7-82d697019353,disbelief,learning
+2024-09-18 05:49:40.378825+00,increíble,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,awesome,learning
+2025-01-26 04:25:41.962434+00,indultarse,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to pardon oneself,learning
+2024-10-08 17:54:39.486197+00,industria,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,industry,learning
+2024-06-13 07:16:37.679542+00,industryway,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,industry,learning
+2024-11-30 02:18:54.16176+00,información,Spanish,733578cf-dce4-4101-b3c7-82d697019353,information,learning
+2024-11-28 05:14:57.041282+00,informe,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,report,learning
+2024-11-26 20:04:24.406468+00,ingredients,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,ingredients,learning
+2024-11-28 04:43:05.341339+00,ingresos,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,revenues,learning
+2024-06-13 07:07:57.075247+00,inguistslay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,linguists,learning
+2024-12-03 23:22:29.078469+00,iniciativas,Portuguese,733578cf-dce4-4101-b3c7-82d697019353,initiatives,learning
+2024-11-26 05:01:12.75406+00,initiating,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,glizzying,learning
+2025-01-30 19:19:21.322173+00,inoperative,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,not working,learning
+2024-11-21 07:34:18.763233+00,insidiosas,Spanish,733578cf-dce4-4101-b3c7-82d697019353,insidious,learning
+2024-12-30 15:14:09.66427+00,installiert,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,installed,learning
+2025-01-21 07:07:00.479296+00,instance,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,example,learning
+2025-01-23 03:56:00.743447+00,instantiate,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,create,learning
+2024-08-17 04:40:29.375088+00,instruct,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,to teach,learning
+2024-06-13 06:05:59.779386+00,integratesyay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,integrates,learning
+2025-01-27 04:39:48.437445+00,inteligente,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,intelligent,learning
+2024-12-05 21:45:56.54659+00,inteligentes,Spanish,733578cf-dce4-4101-b3c7-82d697019353,intelligent,learning
+2025-01-24 03:14:26.032658+00,intente,Spanish,733578cf-dce4-4101-b3c7-82d697019353,attempt,learning
+2024-12-02 22:24:14.805796+00,intercambio,Spanish,733578cf-dce4-4101-b3c7-82d697019353,exchange,learning
+2025-01-29 14:20:19.830607+00,interesado,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,stakeholder,learning
+2024-12-03 23:27:11.625199+00,interessante,Portuguese,733578cf-dce4-4101-b3c7-82d697019353,interesting,learning
+2024-11-28 05:01:43.35752+00,interfaz,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,interface,learning
+2024-12-18 09:04:13.526652+00,interrogate,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,to question formally,learning
+2025-02-20 08:07:28.575062+00,interés,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,interest,learning
+2025-01-21 07:01:37.377529+00,intricate,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,complex,learning
+2025-01-27 19:16:46.473764+00,intrinsic,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,inside,learning
+2025-01-23 07:23:02.262733+00,intéressant,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,interesting,learning
+2025-01-21 07:38:04.173787+00,intérêt,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,interest,learning
+2024-06-11 06:03:07.342247+00,ixteenthay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,sixteenth,learning
+2024-10-08 17:54:07.630894+00,jerga,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,jargon,learning
+2024-09-08 23:44:57.51026+00,jerga,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,jargon,learning
+2024-08-22 07:40:30.627117+00,jeux,French,97ee4d37-9d30-480e-963b-3c6f948018ad,games,learning
+2025-03-12 02:23:11.420038+00,jogador,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,player,learning
+2024-08-24 17:28:12.161927+00,jokin,Tiktok Slang,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,joking,learning
+2024-09-05 03:07:59.793988+00,jouer,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to play,learning
+2025-02-05 04:46:22.790317+00,joué,French,97ee4d37-9d30-480e-963b-3c6f948018ad,played,learning
+2024-12-07 13:37:15.125194+00,juego,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,game,learning
+2024-12-07 17:48:26.950794+00,juegos,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,games,learning
+2024-07-01 02:41:38.193911+00,jugando,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,playing,learning
+2024-08-21 21:25:15.542521+00,jugó,Spanish,37a42e29-e69b-43e8-b6eb-471124f7afea,played,learning
+2025-03-16 21:35:24.968213+00,juncture,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,a particular point in events or time,learning
+2024-06-20 06:41:03.098895+00,jurisdicción,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,jurisdiction,learning
+2024-08-22 13:41:39.423996+00,justice,French,97ee4d37-9d30-480e-963b-3c6f948018ad,justice,learning
+2025-01-20 19:04:26.336319+00,justification,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,justification,learning
+2024-09-08 06:52:39.503504+00,justification,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,justification,learning
+2024-11-19 02:05:30.490161+00,krinky krongemas,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,white jacket,learning
+2024-11-18 22:50:52.474243+00,krinky krongemas,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,year-end accolades,learning
+2025-01-21 07:12:49.00415+00,krongemas,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,categories,learning
+2024-06-29 23:11:54.141187+00,kurze,German,f9034378-44b5-4ab5-babd-dfe40c4ca89b,brief,learning
+2025-01-22 03:03:30.360646+00,l'Autre,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,the Other,learning
+2024-11-18 05:45:19.344753+00,lackadaisical,SAT Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,showing a lack of enthusiasm or determination,learning
+2025-01-30 20:00:55.267283+00,lamentation,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,complaining,learning
+2025-01-26 04:24:49.230927+00,lamentó,Spanish,733578cf-dce4-4101-b3c7-82d697019353,bemoaned,learning
+2024-09-30 05:38:12.579658+00,lanzados,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,launched,learning
+2024-07-02 00:06:25.905808+00,largo,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,long,learning
+2024-09-30 05:39:16.517733+00,launched,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to send off or set in motion,learning
+2024-11-26 07:15:15.794034+00,lavagoblin,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,lavageyser,learning
+2024-11-20 02:04:08.454171+00,lavorando,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,working,learning
+2024-11-13 08:31:41.617556+00,lavoro,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,work,learning
+2024-09-11 18:56:24.891184+00,lectores,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,readers,learning
+2024-07-05 20:55:51.09169+00,lectura,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,reading,learning
+2025-01-13 19:56:26.90041+00,lee,Spanish,733578cf-dce4-4101-b3c7-82d697019353,read,learning
+2024-08-24 19:28:45.107183+00,leer,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,to read,learning
+2025-01-17 02:41:53.920791+00,legado,Spanish,733578cf-dce4-4101-b3c7-82d697019353,legacy,learning
+2025-01-27 19:15:16.323005+00,legible,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,easier to read,learning
+2025-01-29 06:01:57.047302+00,legítima,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,legitimate,learning
+2024-11-28 04:59:19.986709+00,lema,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,slogan,learning
+2025-02-21 17:59:46.334626+00,lenguaje,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,language,learning
+2024-11-30 05:42:18.884048+00,lenguas,Spanish,733578cf-dce4-4101-b3c7-82d697019353,languages,learning
+2024-08-21 08:35:56.575103+00,leçons,French,97ee4d37-9d30-480e-963b-3c6f948018ad,lessons,learning
+2024-06-25 02:18:41.625807+00,lista,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,list,learning
+2024-09-05 05:54:29.293548+00,listes,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,lists,learning
+2024-11-27 01:24:04.372309+00,lit,Tiktok Slang,733578cf-dce4-4101-b3c7-82d697019353,exciting,learning
+2024-09-05 05:57:24.767297+00,lit,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,exciting,learning
+2024-08-21 14:58:51.490742+00,livre,French,97ee4d37-9d30-480e-963b-3c6f948018ad,book,learning
+2024-07-15 04:11:33.076567+00,llegue,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,arrive,learning
+2024-12-03 18:56:49.706266+00,llora,Spanish,733578cf-dce4-4101-b3c7-82d697019353,cries,learning
+2024-11-22 18:25:43.010127+00,locura,Spanish,733578cf-dce4-4101-b3c7-82d697019353,insanity,learning
+2025-01-19 04:13:55.762929+00,locuteur,French,a1fb5342-9fef-4fb7-9b1e-d77f0a79baa4,speaker,learning
+2024-08-02 10:48:20.395744+00,logramos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,we accomplished,learning
+2024-12-29 19:51:22.672452+00,lokalen Speicher,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,local storage,learning
+2024-08-24 03:26:26.195175+00,long,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,long,learning
+2024-06-11 07:00:59.695849+00,lowkey,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,"a subtle way of saying something, often understated",learning
+2024-09-06 01:33:11.703137+00,lowkey,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,not obvious,learning
+2024-08-21 14:59:31.452946+00,lu,French,97ee4d37-9d30-480e-963b-3c6f948018ad,read,learning
+2025-01-13 19:58:14.568263+00,luces,Spanish,733578cf-dce4-4101-b3c7-82d697019353,lights,learning
+2024-12-03 06:31:16.373021+00,luchado,Spanish,733578cf-dce4-4101-b3c7-82d697019353,battled,learning
+2024-09-03 00:08:53.561639+00,lugar,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,place,learning
+2024-09-11 18:55:50.909653+00,límites,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,boundaries,learning
+2024-08-24 19:29:45.878884+00,línea,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,line,learning
+2024-11-28 00:52:46.838172+00,lógica,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,logic,learning
+2025-01-29 06:05:48.522111+00,maduro,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,ripe,learning
+2024-08-05 05:55:48.604596+00,maintained,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,retained,learning
+2024-10-08 17:51:32.901685+00,make,Tiktok Slang,39344461-7e13-4d7f-a025-5dbe38eafbb3,to create,learning
+2024-12-08 01:31:45.018929+00,malevolencia,Spanish,733578cf-dce4-4101-b3c7-82d697019353,malevolence,learning
+2024-11-27 22:04:48.456637+00,mandarin,French,630ecd5b-ef55-443c-ae04-6b34b0212e88,mandarin,learning
+2024-11-27 22:07:17.993524+00,mandarín,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,mandarin,learning
+2024-11-30 02:18:45.813213+00,manejar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to handle,learning
+2024-09-30 21:29:25.766522+00,mapa,Portuguese,a57d1f7e-9f1f-4f52-8e46-ff43760cc10a,map,learning
+2024-12-02 19:21:48.895477+00,marcador,Spanish,733578cf-dce4-4101-b3c7-82d697019353,score,learning
+2025-01-29 13:07:24.685915+00,marco,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,framework,learning
+2024-09-02 23:36:54.244111+00,mejor,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,best,learning
+2024-07-15 02:25:43.437807+00,memoria,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,memory,learning
+2024-11-08 19:54:49.877233+00,merita,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,deserves,learning
+2024-12-04 11:58:57.496647+00,messaggio,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,text,learning
+2024-06-28 09:42:48.172546+00,meticulous,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,precise,learning
+2024-09-08 20:20:39.371569+00,micrófono,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,microphone,learning
+2024-09-03 00:09:22.40844+00,miedo,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,fear,learning
+2024-07-10 00:47:25.509459+00,mientras,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,meanwhile,learning
+2024-11-22 18:25:53.832642+00,mierda,Spanish,733578cf-dce4-4101-b3c7-82d697019353,shit,learning
+2024-09-30 22:24:44.644807+00,mismo,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,same,learning
+2024-11-22 01:06:11.528923+00,misoginia,Spanish,733578cf-dce4-4101-b3c7-82d697019353,misogyny,learning
+2025-01-17 06:08:05.657675+00,mitad,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,half,learning
+2024-10-20 06:37:16.341488+00,modelo,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,model,learning
+2024-11-30 03:07:12.955458+00,moderadas,Spanish,733578cf-dce4-4101-b3c7-82d697019353,moderate,learning
+2024-11-30 03:06:20.001719+00,modificando,Spanish,733578cf-dce4-4101-b3c7-82d697019353,modifying,learning
+2024-06-26 05:35:57.502287+00,modèle,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,model,learning
+2024-11-21 05:33:27.987742+00,molesta,Spanish,733578cf-dce4-4101-b3c7-82d697019353,upset,learning
+2024-09-24 18:31:37.565946+00,mortos,Portuguese,c1846c5c-aef1-44dc-919f-3cb36e24e88a,dead,learning
+2025-01-20 19:03:11.277243+00,most,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,extremely,learning
+2024-08-21 15:03:10.456644+00,mot,French,97ee4d37-9d30-480e-963b-3c6f948018ad,word,learning
+2024-11-27 22:05:03.427008+00,mots,French,630ecd5b-ef55-443c-ae04-6b34b0212e88,words,learning
+2024-08-27 14:19:05.272047+00,movimiento,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,move,learning
+2024-07-13 20:53:03.188361+00,mundo,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,world,learning
+2025-03-07 03:30:45.691579+00,myriad,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,many,learning
+2025-01-23 07:22:15.948355+00,mécanismes,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,mechanics,learning
+2024-09-05 05:56:29.305335+00,médicaments,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,drugs,learning
+2024-09-21 18:21:22.564975+00,móvil,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,mobile,learning
+2024-08-02 10:48:10.725342+00,nació,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,was born,learning
+2024-12-02 22:27:30.979032+00,nadie,Spanish,733578cf-dce4-4101-b3c7-82d697019353,nobody,learning
+2025-01-26 04:27:30.428227+00,nah,Tiktok Slang,733578cf-dce4-4101-b3c7-82d697019353,no,learning
+2025-02-21 09:48:35.632085+00,necesario,Spanish,332370f9-32c4-4440-9cc0-1b45ffac71a8,necessary,learning
+2024-09-08 23:04:15.301736+00,necesario,Spanish,35c50fc4-ac52-422c-9823-282758696d3f,necessary,learning
+2024-08-21 21:23:51.966622+00,necesario,Spanish,37a42e29-e69b-43e8-b6eb-471124f7afea,necessary,learning
+2024-08-17 04:47:35.249251+00,necesario,Spanish,49453d9f-7f2e-47f8-9edd-5ad0e66d987b,necessary,learning
+2024-09-08 23:44:28.110458+00,necesario,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,necessary,learning
+2024-10-22 21:50:16.909948+00,necesario,Spanish,8f5668ce-f5b2-409a-9a80-b9cf0c17d306,necessary,learning
+2024-11-13 23:44:52.094119+00,necesario,Spanish,958f292b-431d-429c-8127-4e790da96f5e,necessary,learning
+2024-08-21 17:13:17.951786+00,necesario,Spanish,a801a028-f8ca-4b66-8e78-73a478180bfe,necessary,learning
+2024-09-02 22:17:08.072201+00,necesario,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,necessary,learning
+2024-09-04 22:00:16.713985+00,necesario,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,necessary,learning
+2024-09-09 03:15:09.674837+00,necesario,Spanish,f1f4bd58-a3d2-45da-8179-474f2368456b,necessary,learning
+2024-10-22 21:51:33.297294+00,necesidad,Spanish,8f5668ce-f5b2-409a-9a80-b9cf0c17d306,need,learning
+2024-08-21 20:10:49.396662+00,necesidad,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,need,learning
+2024-09-30 21:28:29.939943+00,necessidade,Portuguese,a57d1f7e-9f1f-4f52-8e46-ff43760cc10a,need,learning
+2024-09-24 18:28:11.62564+00,necessidade,Portuguese,c1846c5c-aef1-44dc-919f-3cb36e24e88a,need,learning
+2024-08-27 14:37:53.757714+00,negado,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,denied,learning
+2024-09-09 18:21:45.615231+00,nivel,Spanish,dd8e019c-4f68-4f58-a2b8-d3eca2cde2b7,level,learning
+2024-10-08 17:57:29.641247+00,niveles,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,levels,learning
+2024-12-03 18:55:39.87497+00,nobleza,Spanish,733578cf-dce4-4101-b3c7-82d697019353,noblesse,learning
+2024-11-30 02:57:14.927167+00,nombrar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to name,learning
+2024-11-28 04:33:05.326363+00,noname,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,unnamed,learning
+2024-11-28 05:14:53.729934+00,normas,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,guidelines,learning
+2024-08-05 05:56:29.777506+00,noticias,Spanish,cd7531b5-929e-4a66-9f3f-0f85caa0b929,news,learning
+2024-09-19 01:42:48.388425+00,notion,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,idea,learning
+2024-08-02 09:38:42.73096+00,novel,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,new,learning
+2024-08-24 19:29:22.865017+00,novelas,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,novels,learning
+2024-06-26 21:14:32.445764+00,nube,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,cloud,learning
+2024-06-26 21:34:44.595268+00,nuevo,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,new,learning
+2024-12-23 21:02:16.393292+00,nötig,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,necessary,learning
+2024-08-21 11:44:09.604338+00,nötig,German,5a8b8dfa-5cc0-465c-a606-0b97a1efd403,necessary,learning
+2024-10-09 00:40:43.84964+00,nötig,German,e42db482-b3fb-4d49-82ac-448f63744dd5,necessary,learning
+2025-01-20 11:08:27.234111+00,números,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,numbers,learning
+2024-09-04 22:05:49.79046+00,números,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,issues,learning
+2024-09-29 03:01:21.518303+00,objective,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,goal,learning
+2024-12-06 04:06:48.38644+00,objetivo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,target,learning
+2024-09-03 23:39:36.845909+00,objetivo,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,target,learning
+2025-01-20 19:04:20.349666+00,oblique,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,slanted or inclined,learning
+2024-09-29 03:05:21.43058+00,obliterated,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,destroyed,learning
+2024-09-06 01:35:37.831044+00,observed,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,noticed,learning
+2025-01-20 18:58:31.866834+00,obsolete,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,no longer in use or out of date,learning
+2025-01-20 18:59:15.26503+00,obtain,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,get,learning
+2024-10-31 15:53:01.126053+00,offensichtlich,German,e42db482-b3fb-4d49-82ac-448f63744dd5,obvious,learning
+2024-09-03 22:04:52.136055+00,ojos,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,eyes,learning
+2025-01-20 19:04:12.860632+00,omitted,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,left out,learning
+2024-06-26 14:41:51.453003+00,on pause,Tiktok Slang,819cbf66-fd47-4000-9e89-80c1736d1002,suspended,learning
+2025-01-30 19:15:06.808304+00,onerous,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,burdensome,learning
+2024-12-01 05:21:11.504524+00,opciones,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,choices,learning
+2024-06-26 20:51:37.149771+00,opciones,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,options,learning
+2025-01-24 02:08:28.427101+00,operador,Spanish,733578cf-dce4-4101-b3c7-82d697019353,operator,learning
+2024-12-02 19:18:16.121657+00,opinión,Spanish,733578cf-dce4-4101-b3c7-82d697019353,opinion,learning
+2025-01-16 22:43:34.287137+00,oportunidades,Spanish,733578cf-dce4-4101-b3c7-82d697019353,opportunities,learning
+2024-08-29 19:10:40.928601+00,opt,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,choose,learning
+2024-11-18 05:45:32.781369+00,optimal,SAT Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,most favorable,learning
+2025-01-20 18:58:26.781474+00,optimize,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,"make the best or most effective use of (a situation, opportunity, or resource)",learning
+2024-09-01 23:09:40.56405+00,orfanato,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,orphanage,learning
+2025-01-20 15:50:41.539412+00,organizó,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,hosted,learning
+2024-09-17 18:40:25.335624+00,orgullosos,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,proud,learning
+2024-06-13 07:11:11.758599+00,ormafay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,formal,learning
+2024-06-12 05:51:12.907789+00,otflay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,a lot of,learning
+2024-11-23 04:08:01.749627+00,overtly,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,in a way that is open and observable,learning
+2024-06-25 02:18:29.356085+00,oído,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,heard,learning
+2024-11-27 22:08:23.859478+00,oír,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,to hear,learning
+2024-11-19 23:52:46.144132+00,pagare,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,to pay,learning
+2024-11-27 22:07:30.245379+00,palabra,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,word,learning
+2024-07-17 00:11:17.439387+00,pandemia,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,pandemic,learning
+2025-01-21 07:15:09.615565+00,pandemonium,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,chaos,learning
+2024-12-03 19:13:26.892504+00,papá,Spanish,733578cf-dce4-4101-b3c7-82d697019353,dad,learning
+2024-11-27 23:50:34.826621+00,paquetes,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,packs,learning
+2025-01-30 19:23:12.92526+00,parameters,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,constraints,learning
+2024-09-04 19:30:26.953471+00,paranoico,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,paranoid,learning
+2024-08-21 06:16:32.907242+00,parfum,French,28c8d175-7fb0-4514-9365-75256aa62bc4,perfume,learning
+2024-08-21 06:17:02.341981+00,parfums,French,28c8d175-7fb0-4514-9365-75256aa62bc4,perfumes,learning
+2024-11-24 21:46:16.6046+00,pasado,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,spent,learning
+2025-01-13 19:44:33.417671+00,paso,Spanish,733578cf-dce4-4101-b3c7-82d697019353,step,learning
+2025-01-20 11:47:57.538515+00,passiert,German,3321eded-48c7-4be3-a4bc-7acd84ceecb1,happens,learning
+2024-12-02 18:08:31.075026+00,pasó,Spanish,733578cf-dce4-4101-b3c7-82d697019353,went,learning
+2024-11-18 05:52:05.251378+00,pay,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,compensation,learning
+2024-07-21 22:40:59.598282+00,país,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,country,learning
+2024-09-03 00:08:42.78802+00,peligro,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,danger,learning
+2025-01-13 19:59:43.025344+00,pensar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to think,learning
+2024-12-30 03:10:22.223645+00,perdonado,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,forgiven,learning
+2024-11-26 07:32:24.960159+00,perfecto,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,perfect,learning
+2024-09-08 06:51:50.989054+00,perform,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to carry out,learning
+2025-01-30 19:22:27.718253+00,peripheries,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,edges,learning
+2024-09-08 07:16:06.264779+00,permit,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to allow,learning
+2024-11-24 05:47:48.362713+00,perplexed,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,confused,learning
+2024-10-18 17:10:12.269978+00,persona,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,person,learning
+2025-01-22 06:06:15.934128+00,personaje,Spanish,733578cf-dce4-4101-b3c7-82d697019353,character,learning
+2024-10-22 22:05:00.415961+00,personas,Spanish,8f5668ce-f5b2-409a-9a80-b9cf0c17d306,people,learning
+2025-01-30 19:20:15.315167+00,peruse,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,read thoroughly,learning
+2025-02-04 16:15:07.961628+00,phrase,French,97ee4d37-9d30-480e-963b-3c6f948018ad,sentence,learning
+2024-11-20 00:13:11.875086+00,piace,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,like,learning
+2024-08-23 12:57:35.137059+00,pianiste,French,97ee4d37-9d30-480e-963b-3c6f948018ad,pianist,learning
+2024-10-29 23:25:01.749312+00,pienso,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,I think,learning
+2024-11-27 00:40:28.497633+00,place,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,place,learning
+2024-09-30 13:31:10.942175+00,platine,French,97ee4d37-9d30-480e-963b-3c6f948018ad,platinum,learning
+2024-08-17 04:43:27.467825+00,población,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,population,learning
+2024-11-27 00:08:40.294879+00,poids,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,weights,learning
+2025-01-30 19:21:21.91936+00,populate,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,fill,learning
+2024-11-30 03:10:10.520419+00,populista,Spanish,733578cf-dce4-4101-b3c7-82d697019353,populist,learning
+2024-09-30 05:41:12.090899+00,portador,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,holder,learning
+2024-06-28 09:41:31.80454+00,potent,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,powerful,learning
+2025-02-06 01:39:44.296646+00,pouvoir,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,power,learning
+2024-08-22 13:41:07.25458+00,pouvoir,French,97ee4d37-9d30-480e-963b-3c6f948018ad,power,learning
+2025-01-16 22:36:48.610938+00,precio,Spanish,733578cf-dce4-4101-b3c7-82d697019353,price,learning
+2025-01-23 03:56:48.460331+00,precision,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,accuracy,learning
+2024-10-09 02:53:29.524949+00,preciso,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,accurate,learning
+2024-07-19 08:24:53.617343+00,pregunta,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,question,learning
+2024-09-20 18:45:45.972177+00,preguntas,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,questions,learning
+2024-07-10 10:04:52.909833+00,premier,French,c2077ddf-5633-4149-aef9-1fb60a51a9a1,first,learning
+2024-11-19 23:54:12.60378+00,prestare,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,to pay attention,learning
+2024-10-08 17:58:10.263791+00,presupuesto,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,budget,learning
+2024-11-27 01:49:42.127387+00,principles,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,glizzy,learning
+2025-01-29 13:09:05.899662+00,priorizarlos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,to prioritize,learning
+2024-12-24 00:30:10.065814+00,privat,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,private,learning
+2024-07-05 20:20:18.142532+00,problema,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,problem,learning
+2025-01-21 07:01:08.644802+00,procure,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,obtain,learning
+2025-01-20 19:01:03.046604+00,procured,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,received,learning
+2024-07-05 09:45:49.490694+00,prodigious,GRE Vocabulary,907aa469-b058-4c5e-9cee-ed9dbcccc30b,tremendous,learning
+2024-10-22 22:02:42.644707+00,productos,Spanish,8f5668ce-f5b2-409a-9a80-b9cf0c17d306,products,learning
+2025-01-20 18:58:20.545189+00,proffers,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,offers,learning
+2024-08-02 09:45:10.68772+00,profoundly,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,deeply,learning
+2024-09-30 22:24:44.484395+00,programa,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,program,learning
+2024-12-03 02:28:50.696547+00,programación,Spanish,733578cf-dce4-4101-b3c7-82d697019353,programming,learning
+2024-11-30 03:00:30.653218+00,progreso,Spanish,733578cf-dce4-4101-b3c7-82d697019353,progress,learning
+2025-01-17 02:42:47.427818+00,prohibición,Spanish,733578cf-dce4-4101-b3c7-82d697019353,ban,learning
+2025-01-20 18:40:08.138612+00,prolonged,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,extended in time,learning
+2025-01-20 14:27:36.652307+00,promis,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,promised,learning
+2024-11-28 05:15:45.721069+00,promulgated,GRE Vocabulary,85db5d88-12d5-49f7-8793-a0d2f62ac738,to make known or public,learning
+2024-11-13 23:50:12.25803+00,proyecto,Spanish,958f292b-431d-429c-8127-4e790da96f5e,project,learning
+2024-08-21 06:18:27.302881+00,préféré,French,28c8d175-7fb0-4514-9365-75256aa62bc4,favorite,learning
+2024-10-15 19:59:26.514652+00,pubblico,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,audience,learning
+2025-01-25 08:33:58.150708+00,publicación,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,post,learning
+2024-09-05 00:48:19.084015+00,publications,SAT Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,publications,learning
+2024-11-21 02:21:49.566+00,puede,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,can,learning
+2024-06-29 16:06:57.937679+00,puedes,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,can,learning
+2024-07-17 00:11:28.238862+00,puedes,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,can,learning
+2024-10-01 19:35:49.958894+00,pular,Portuguese,a57d1f7e-9f1f-4f52-8e46-ff43760cc10a,skip,learning
+2025-01-13 19:37:59.350029+00,pérdida,Spanish,733578cf-dce4-4101-b3c7-82d697019353,loss,learning
+2024-09-05 00:04:06.392753+00,póliza,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,policy,learning
+2024-11-30 03:58:15.288265+00,público,Spanish,733578cf-dce4-4101-b3c7-82d697019353,public,learning
+2024-06-26 05:31:21.220881+00,que,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,what,learning
+2025-01-24 03:16:14.946765+00,quedan,Spanish,733578cf-dce4-4101-b3c7-82d697019353,blank,learning
+2024-09-08 19:34:06.469276+00,quedan,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,they remain,learning
+2025-01-20 10:27:28.814888+00,quedarte,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,to fall behind,learning
+2024-09-25 20:50:27.893038+00,quemados,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,burnt out,learning
+2025-01-20 14:29:07.273044+00,rassemblement,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,rally,learning
+2025-01-24 07:06:52.251598+00,razón,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,reason,learning
+2024-11-30 02:29:43.364594+00,razón,Spanish,733578cf-dce4-4101-b3c7-82d697019353,reason,learning
+2024-08-24 17:28:38.120983+00,ready,Tiktok Slang,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,prepared,learning
+2024-11-20 01:57:42.142665+00,reazione,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,reaction,learning
+2024-08-21 12:07:11.533665+00,recaudación,Spanish,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,fundraising,learning
+2024-07-21 22:40:39.08709+00,rechazo,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,reject,learning
+2024-06-26 21:01:23.017522+00,recibiré,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,I will get,learning
+2024-11-12 20:00:10.358577+00,reclutatore,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,recruiter,learning
+2024-12-03 05:48:21.895901+00,recomendaciones,Spanish,733578cf-dce4-4101-b3c7-82d697019353,recommendations,learning
+2025-01-13 19:47:12.401909+00,recomienda,Spanish,733578cf-dce4-4101-b3c7-82d697019353,recommends,learning
+2025-01-29 06:06:53.687962+00,reconocido,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,recognized,learning
+2024-11-30 03:20:16.075678+00,reconocimiento,Spanish,733578cf-dce4-4101-b3c7-82d697019353,recognition,learning
+2024-08-05 05:54:18.130159+00,regencia,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,regency,learning
+2024-09-06 04:23:40.982741+00,regla,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,rule,learning
+2024-08-02 09:43:59.112977+00,regulating,GRE Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,regulating,learning
+2025-01-21 06:03:53.326334+00,rejeter,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,to reject,learning
+2024-09-02 18:01:34.335287+00,relacionarme,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,to relate,learning
+2024-09-06 01:33:32.707892+00,relaxed,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,chill,learning
+2025-01-20 18:54:43.162722+00,remunerate,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,pay,learning
+2024-12-04 22:48:34.885126+00,rencor,Spanish,733578cf-dce4-4101-b3c7-82d697019353,grudge,learning
+2024-10-28 20:08:20.028108+00,repetición,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,repetition,learning
+2024-11-26 09:15:37.603804+00,replaced,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,swapped,learning
+2024-11-30 03:59:06.193578+00,requisito,Spanish,733578cf-dce4-4101-b3c7-82d697019353,prerequisite,learning
+2025-01-17 02:52:44.366813+00,reservar,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,to reserve,learning
+2024-10-10 22:42:34.586964+00,reserved,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,retained,learning
+2024-06-20 06:41:11.041357+00,resident,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,residente,learning
+2025-02-03 01:45:45.005888+00,respect,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,respect,learning
+2024-12-03 02:52:31.863584+00,respetuoso,Spanish,733578cf-dce4-4101-b3c7-82d697019353,respectful,learning
+2025-01-21 07:13:47.589119+00,resplendent,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,beautiful,learning
+2024-06-20 06:40:07.682685+00,responsable,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,responsible,learning
+2025-01-13 19:53:01.580634+00,respuesta,Spanish,733578cf-dce4-4101-b3c7-82d697019353,answer,learning
+2024-06-26 05:37:43.461+00,ressources,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,resources,learning
+2025-01-22 05:46:10.063442+00,revelación,Spanish,733578cf-dce4-4101-b3c7-82d697019353,reveal,learning
+2024-09-04 22:06:22.128368+00,revista,Spanish,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,magazine,learning
+2024-12-02 23:05:38.400854+00,reí,Spanish,733578cf-dce4-4101-b3c7-82d697019353,I laughed,learning
+2024-11-19 23:41:56.695026+00,ricerca,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,search,learning
+2024-12-05 21:45:13.436558+00,ritmo,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,beat,learning
+2024-10-08 17:56:06.834356+00,rondas,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,rounds,learning
+2024-08-21 06:15:28.338815+00,rose,French,28c8d175-7fb0-4514-9365-75256aa62bc4,rose,learning
+2024-11-12 19:56:07.558518+00,routine,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,routine,learning
+2025-01-20 18:58:53.605537+00,rudimentary,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,basic,learning
+2024-11-28 05:39:35.976595+00,ruido,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,noise,learning
+2024-09-19 20:24:10.044061+00,rutina,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,routine,learning
+2024-11-27 22:04:39.215962+00,réussi,French,630ecd5b-ef55-443c-ae04-6b34b0212e88,succeeded,learning
+2024-07-09 22:34:01.188139+00,sabe,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,knows,learning
+2024-11-30 03:08:19.820824+00,sabor,Spanish,733578cf-dce4-4101-b3c7-82d697019353,flavor,learning
+2024-08-21 09:42:44.133267+00,sac,French,97ee4d37-9d30-480e-963b-3c6f948018ad,bag,learning
+2024-06-28 03:29:51.944859+00,saldo,Spanish,333b3d55-4005-489e-be23-e30fae4241c9,balance,learning
+2024-11-30 02:51:41.933696+00,salsa,Spanish,733578cf-dce4-4101-b3c7-82d697019353,sauce,learning
+2025-01-13 19:50:46.196991+00,salté,Spanish,733578cf-dce4-4101-b3c7-82d697019353,I jumped,learning
+2025-01-22 00:25:37.560517+00,satisfaisant,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,satisfying,learning
+2024-10-09 07:41:33.373156+00,scaricare,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,to download,learning
+2024-10-15 20:00:33.094538+00,scegliere,Italian,a5e848d3-8ada-4b2f-b0dc-ebb10b8823a3,to choose,learning
+2024-11-28 05:17:10.321828+00,scrutinized,GRE Vocabulary,85db5d88-12d5-49f7-8793-a0d2f62ac738,examined closely,learning
+2024-08-25 20:04:28.500755+00,seeking,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,looking for,learning
+2025-03-12 02:22:58.514277+00,segundo,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,second,learning
+2024-11-30 02:13:41.402001+00,selecciones,Spanish,733578cf-dce4-4101-b3c7-82d697019353,selections,learning
+2024-08-05 15:16:25.983616+00,select,SAT Vocabulary,534a6358-94ad-49d6-ba12-887a1c5d3e55,elegir,learning
+2024-09-30 05:39:02.429406+00,sent,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to send,learning
+2024-12-02 21:33:37.277827+00,sentado,Spanish,733578cf-dce4-4101-b3c7-82d697019353,benched,learning
+2024-08-27 15:02:31.483216+00,sentimientos,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,feelings,learning
+2024-09-30 05:39:28.62344+00,serve,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to provide,learning
+2024-09-30 05:39:56.401101+00,significant,GRE Vocabulary,ff8b22f3-fa07-41cf-9d68-79caf67442d9,important,learning
+2024-06-26 05:41:14.533674+00,signifient,French,85bf9e83-7471-4d20-8241-81c9c7287ca2,mean,learning
+2024-07-04 02:01:07.109855+00,siguiente,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,next,learning
+2024-11-30 03:04:48.178655+00,simpatizante,Spanish,733578cf-dce4-4101-b3c7-82d697019353,sympathizer,learning
+2025-01-21 07:11:46.788391+00,slurping,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,planning,learning
+2024-11-28 04:39:33.387413+00,snagged,GlizzyTalk,85db5d88-12d5-49f7-8793-a0d2f62ac738,acquired,learning
+2024-09-01 23:10:08.586552+00,sociedad,Spanish,8f4401f3-ff37-4bc2-b300-f6e55d230f69,society,learning
+2024-12-07 18:37:55.341515+00,sofá,Spanish,235da559-229a-4c19-978d-2fc670ca3ffa,couch,learning
+2024-11-01 21:06:04.946963+00,solde,French,630ecd5b-ef55-443c-ae04-6b34b0212e88,balance,learning
+2024-09-01 22:30:36.811548+00,solicit,GRE Vocabulary,4d45dd5a-c3db-4485-80d2-27738653aa95,to request,learning
+2024-11-22 21:32:02.786665+00,solicit,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,to request,learning
+2024-12-02 21:20:48.872541+00,solicitante,Spanish,733578cf-dce4-4101-b3c7-82d697019353,applicant,learning
+2025-01-20 19:00:34.008615+00,solitary,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,alone,learning
+2024-06-26 21:32:04.740115+00,solo,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,only,learning
+2024-11-27 00:40:42.697018+00,solution,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,solution,learning
+2024-12-08 00:27:41.530672+00,sorpresa,Spanish,733578cf-dce4-4101-b3c7-82d697019353,surprise,learning
+2024-08-13 02:46:20.072028+00,soumission,French,c2077ddf-5633-4149-aef9-1fb60a51a9a1,submission,learning
+2025-01-22 00:33:42.023376+00,soutenu,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,supported,learning
+2024-12-30 15:19:28.230035+00,sparen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to save,learning
+2024-10-22 08:32:43.608637+00,språk,Swedish,85db5d88-12d5-49f7-8793-a0d2f62ac738,languages,learning
+2024-06-26 09:29:46.452077+00,squad,Tiktok Slang,87916478-5b72-451a-8dc1-a26675edc202,team,learning
+2024-06-26 09:24:14.044719+00,stacks,Tiktok Slang,87916478-5b72-451a-8dc1-a26675edc202,money,learning
+2025-01-30 19:15:31.987618+00,stipulation,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,requirement,learning
+2024-08-21 18:57:48.367418+00,strategy,GRE Vocabulary,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,tactic,learning
+2024-10-27 03:57:06.775378+00,stressante,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,stressful,learning
+2025-01-14 20:00:57.453122+00,suave,Spanish,733578cf-dce4-4101-b3c7-82d697019353,smooth,learning
+2024-09-01 16:30:23.635438+00,sube,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,upload,learning
+2025-01-21 07:07:40.364395+00,succinct,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,brief,learning
+2025-01-26 04:25:20.033316+00,sugirió,Spanish,733578cf-dce4-4101-b3c7-82d697019353,suggested,learning
+2024-06-26 20:51:25.934485+00,supera,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,exceeds,learning
+2025-01-30 19:56:29.050709+00,superfluous,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,unnecessary,learning
+2024-11-28 04:53:14.1005+00,suposición,Spanish,733578cf-dce4-4101-b3c7-82d697019353,this is a long long long translation,learning
+2024-08-21 15:33:28.376586+00,surpassed,GRE Vocabulary,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,exceeded,learning
+2024-07-10 05:27:28.206447+00,sus,Tiktok Slang,0ebdecf7-9b3a-4df8-b8b2-273148f5074a,social media,learning
+2025-01-22 02:21:23.125759+00,sus,Tiktok Slang,630ecd5b-ef55-443c-ae04-6b34b0212e88,suspicious,learning
+2024-06-26 03:35:10.800041+00,sus,Tiktok Slang,819cbf66-fd47-4000-9e89-80c1736d1002,suspicious,learning
+2024-08-24 03:18:23.288789+00,sus,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,suspicious,learning
+2024-09-24 05:15:57.877337+00,synonym,German,732a92bd-8dec-43d9-83b8-50138871fe4f,synonymous,learning
+2024-11-30 05:42:04.615788+00,sé,Spanish,733578cf-dce4-4101-b3c7-82d697019353,I know,learning
+2024-11-27 00:41:07.327613+00,tangent,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,tangent,learning
+2025-01-17 02:36:20.499702+00,tanque,Spanish,733578cf-dce4-4101-b3c7-82d697019353,tank,learning
+2025-01-29 06:02:19.158866+00,tarifa,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,fee,learning
+2024-10-09 07:41:43.810638+00,tassa,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,fee,learning
+2024-11-13 08:02:45.761521+00,tastiera,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,keyboard,learning
+2024-11-28 05:18:01.964353+00,tea,Tiktok Slang,85db5d88-12d5-49f7-8793-a0d2f62ac738,gossip,learning
+2024-10-22 08:32:57.376088+00,team,Swedish,85db5d88-12d5-49f7-8793-a0d2f62ac738,team,learning
+2024-06-11 07:01:46.416896+00,technical terminology,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,🛠️📚,learning
+2024-12-30 17:52:13.182573+00,teilen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to share,learning
+2024-11-27 23:50:20.417685+00,tengo,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,I have,learning
+2025-01-20 18:39:57.5598+00,tenure,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,a period of time in which someone holds a position,learning
+2024-11-27 00:40:06.984869+00,termes,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,terms,learning
+2024-12-07 06:47:52.126396+00,terminar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,to finish,learning
+2024-09-29 03:05:04.571409+00,terminated,SAT Vocabulary,e3256652-546e-44a4-9966-5e9732699183,ended,learning
+2025-01-26 04:26:19.763599+00,terminó,Spanish,733578cf-dce4-4101-b3c7-82d697019353,terminated,learning
+2024-12-03 23:28:18.332609+00,ternary,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,composed of three parts,learning
+2024-06-26 07:32:22.331707+00,thru,Tiktok Slang,8963c7ff-4e29-4cd5-99ef-954d3dcfc772,through,learning
+2024-08-24 03:18:31.44917+00,thx,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,thank you,learning
+2024-07-15 08:44:53.989448+00,tiempo,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,time,learning
+2024-06-26 21:33:13.095534+00,tipo,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,type,learning
+2024-12-02 21:29:34.558398+00,tomamos,Spanish,733578cf-dce4-4101-b3c7-82d697019353,we took,learning
+2024-12-03 06:30:44.816109+00,tontería,Spanish,733578cf-dce4-4101-b3c7-82d697019353,foolishness,learning
+2024-07-08 22:56:36.033459+00,trabajado,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,worked,learning
+2024-12-02 19:16:55.644253+00,trabajando,Spanish,733578cf-dce4-4101-b3c7-82d697019353,working,learning
+2025-01-17 02:51:49.851599+00,trabajo,Spanish,733578cf-dce4-4101-b3c7-82d697019353,job,learning
+2024-11-28 04:55:11.805563+00,traicionar,Spanish,733578cf-dce4-4101-b3c7-82d697019353,this is a long long long translation,learning
+2025-01-30 19:58:46.001662+00,transgression,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,wrongdoing,learning
+2025-01-27 19:20:20.038736+00,transpire,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,happen,learning
+2024-11-28 04:54:54.331166+00,trato,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,deal,learning
+2024-11-19 23:17:12.139246+00,trazione,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,traction,learning
+2024-07-05 09:37:45.790654+00,trepidation,GRE Vocabulary,907aa469-b058-4c5e-9cee-ed9dbcccc30b,dread,learning
+2024-06-26 21:32:58.66597+00,tres,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,three,learning
+2024-09-03 22:04:13.071319+00,tres,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,three,learning
+2025-01-21 07:04:12.206225+00,tripartite,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,three-part,learning
+2024-11-23 00:35:36.049901+00,triumph,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,a great victory or achievement,learning
+2024-09-04 21:55:40.319776+00,trompent,French,ff8b22f3-fa07-41cf-9d68-79caf67442d9,cheat,learning
+2025-01-23 07:23:42.241776+00,troupes,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,troops,learning
+2024-12-02 18:08:52.302915+00,truco,Spanish,733578cf-dce4-4101-b3c7-82d697019353,trick,learning
+2024-11-27 22:02:09.894732+00,tráfico,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,traffic,learning
+2024-09-19 20:22:07.804085+00,tutorial,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,tutorial,learning
+2025-01-09 12:42:01.466018+00,typical,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,typical,learning
+2024-10-08 17:55:08.343065+00,términos,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,terms,learning
+2024-10-31 14:24:12.218406+00,título,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,title,learning
+2024-06-13 07:24:45.389982+00,ubculturessa,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,subcultures,learning
+2024-06-12 05:54:33.631406+00,uencyflay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,fluency,learning
+2025-01-30 19:19:29.758074+00,ultimately,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,finally,learning
+2024-06-11 05:22:33.337848+00,umbral,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,threshold,learning
+2024-11-25 05:36:11.035741+00,unequivocally,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,in a way that leaves no doubt; unambiguously,learning
+2025-01-30 19:19:08.550672+00,unfulfilled,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,not satisfied,learning
+2024-06-13 06:22:55.918438+00,ungry-hay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,hungry,learning
+2024-08-05 15:14:51.089407+00,uniting,SAT Vocabulary,534a6358-94ad-49d6-ba12-887a1c5d3e55,unir,learning
+2024-08-21 12:27:55.015034+00,uno,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,one,learning
+2025-01-21 07:03:03.541581+00,unrefined,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,raw,learning
+2024-12-24 01:09:11.748172+00,unterstützt,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,supports,learning
+2024-07-05 20:16:47.235258+00,usa,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,uses,learning
+2024-09-30 05:40:43.03595+00,usta,Croatian,ff8b22f3-fa07-41cf-9d68-79caf67442d9,mouth,learning
+2024-06-12 06:02:34.762215+00,utbay,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,but,learning
+2024-08-22 12:47:26.587323+00,utile,French,97ee4d37-9d30-480e-963b-3c6f948018ad,useful,learning
+2024-11-27 00:08:18.30418+00,utilisons,French,89e38037-1daa-46fe-bdbc-a9b50f68dd5f,let us use,learning
+2025-02-04 15:50:49.97255+00,utilisé,French,97ee4d37-9d30-480e-963b-3c6f948018ad,used,learning
+2024-10-16 04:50:32.149262+00,utiliza,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,uses,learning
+2024-08-17 04:51:09.124084+00,utilization,GRE Vocabulary,49453d9f-7f2e-47f8-9edd-5ad0e66d987b,the act of using,learning
+2025-01-21 04:51:55.283684+00,utilizing,SAT Vocabulary,630ecd5b-ef55-443c-ae04-6b34b0212e88,using,learning
+2024-07-09 06:47:38.374378+00,valor,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,value,learning
+2024-09-03 00:03:32.151048+00,vamos,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,we go,learning
+2025-01-13 20:01:05.464239+00,vaso,Spanish,733578cf-dce4-4101-b3c7-82d697019353,glass,learning
+2024-11-19 23:55:01.718722+00,vedrai,Italian,cd9378b2-66c7-4d80-a08e-40ea7ab37a92,you will see,learning
+2024-07-05 20:50:13.908385+00,vemos,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,we see,learning
+2025-01-20 06:37:38.617523+00,venci,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,I beat,learning
+2024-07-04 02:27:00.079703+00,venganza,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,payback,learning
+2024-07-01 02:33:59.934901+00,ver,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,see,learning
+2024-09-03 23:39:20.096052+00,ver,Spanish,b22d66d2-44b6-405e-ac1f-d33ff2f1ceed,to see,learning
+2025-01-21 07:05:09.883191+00,verbose,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,using more words than needed,learning
+2024-08-21 12:17:30.551245+00,verdadera,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,true,learning
+2024-12-23 21:06:45.507872+00,verfügbar,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,available,learning
+2024-09-17 21:37:31.889716+00,vergüenza,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,shame,learning
+2025-01-30 19:15:20.396019+00,versatility,GRE Vocabulary,e3256652-546e-44a4-9966-5e9732699183,flexibility,learning
+2025-01-23 07:22:33.232533+00,version,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,version,learning
+2024-07-08 22:59:38.284693+00,versátil,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,versatile,learning
+2024-08-21 12:13:24.835862+00,viajé,Spanish,b1e30457-e3a3-4903-8253-8a01e93d4cce,I travelled,learning
+2025-01-22 02:20:53.923981+00,vibe,Tiktok Slang,630ecd5b-ef55-443c-ae04-6b34b0212e88,essential part,learning
+2024-09-17 20:15:42.240062+00,vibe,Tiktok Slang,732a92bd-8dec-43d9-83b8-50138871fe4f,a feeling or atmosphere,learning
+2024-06-26 07:31:29.025061+00,vibe,Tiktok Slang,8963c7ff-4e29-4cd5-99ef-954d3dcfc772,immerse,learning
+2024-11-18 05:53:55.629071+00,vibe,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,a feeling or atmosphere,learning
+2024-12-01 05:20:38.23851+00,vibe check,Tiktok Slang,630ecd5b-ef55-443c-ae04-6b34b0212e88,a situation to assess the mood or energy,learning
+2024-09-05 16:39:35.717867+00,vibed,Tiktok Slang,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to enjoy oneself or have a good time,learning
+2024-11-28 05:33:01.989047+00,vibes,Tiktok Slang,85db5d88-12d5-49f7-8793-a0d2f62ac738,good feelings,learning
+2024-12-04 22:29:23.302805+00,vibin',Tiktok Slang,733578cf-dce4-4101-b3c7-82d697019353,enjoying,learning
+2024-12-01 00:13:10.292992+00,vibing,Tiktok Slang,630ecd5b-ef55-443c-ae04-6b34b0212e88,enjoying,learning
+2024-11-26 21:10:33.234904+00,vibing,Tiktok Slang,733578cf-dce4-4101-b3c7-82d697019353,enjoying the moment or feeling good,learning
+2024-06-26 09:32:12.92979+00,vibing,Tiktok Slang,87916478-5b72-451a-8dc1-a26675edc202,involved,learning
+2024-12-02 17:44:43.220371+00,video,Spanish,733578cf-dce4-4101-b3c7-82d697019353,video,learning
+2024-11-28 04:43:17.794737+00,video,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,video,learning
+2024-06-29 22:08:16.248733+00,video,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,video,learning
+2024-11-28 05:02:01.00169+00,videos,Spanish,85db5d88-12d5-49f7-8793-a0d2f62ac738,videos,learning
+2025-02-02 23:59:00.860759+00,vidéo,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,video,learning
+2025-02-07 17:22:46.627045+00,vie,French,97ee4d37-9d30-480e-963b-3c6f948018ad,life,learning
+2024-06-29 16:13:44.257023+00,vielleicht,German,f9034378-44b5-4ab5-babd-dfe40c4ca89b,perhaps,learning
+2025-01-21 06:05:47.416986+00,violence,French,3321eded-48c7-4be3-a4bc-7acd84ceecb1,violence,learning
+2025-02-20 08:04:12.448555+00,visitado,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,visited,learning
+2024-11-13 23:49:50.635608+00,vivienda,Spanish,958f292b-431d-429c-8127-4e790da96f5e,housing,learning
+2024-07-17 00:11:10.712401+00,vivir,Spanish,9daa95e6-bb48-4eff-9f0b-ae0f3623d3e4,to live,learning
+2025-01-20 11:08:14.158769+00,vocabulario,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,vocabulary,learning
+2024-09-30 05:42:48.415507+00,vodka,Spanish,ff8b22f3-fa07-41cf-9d68-79caf67442d9,vodka,learning
+2024-06-26 21:00:22.301223+00,volar,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,to fly,learning
+2024-06-11 05:22:56.751973+00,voluntad,Spanish,a88f454d-bb68-4010-9f05-10aed90ed792,willpower,learning
+2024-06-26 21:31:35.26915+00,válidos,Spanish,819cbf66-fd47-4000-9e89-80c1736d1002,valid,learning
+2025-03-12 02:23:30.154845+00,vídeo,Portuguese,f4095df7-febf-489b-be22-3cf02d090547,video,learning
+2024-12-30 15:08:26.099205+00,wachsen,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,to grow,learning
+2024-11-22 18:26:17.628787+00,wielded,SAT Vocabulary,733578cf-dce4-4101-b3c7-82d697019353,to hold and use (a weapon or tool),learning
+2024-12-23 03:40:52.23722+00,wiki,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,documentation,learning
+2024-11-29 01:30:11.429516+00,worthless,GlizzyTalk,733578cf-dce4-4101-b3c7-82d697019353,glizzy worthless,learning
+2024-06-27 16:26:29.01492+00,years,Tiktok Slang,32ec67e0-cb78-4c25-8451-5fc0334f70f1,yrs,learning
+2024-12-23 21:08:37.94369+00,zinsfreies,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,interest-free,learning
+2024-12-05 00:50:19.59198+00,¯\_(ツ)_/¯,Spanish,733578cf-dce4-4101-b3c7-82d697019353,¯\_(ツ)_/¯,learning
+2024-10-31 13:10:39.086581+00,Únete,Spanish,27729e07-dba6-445b-a4d6-790c5fca0546,Join,learning
+2024-10-31 19:55:54.483444+00,Überprüfung,German,e42db482-b3fb-4d49-82ac-448f63744dd5,review,learning
+2024-12-24 00:08:21.116679+00,Übersicht,German,48cda1d8-f77a-435a-b110-f39b2c543ca4,overview,learning
+2025-01-20 02:12:21.149464+00,énfasis,Spanish,630ecd5b-ef55-443c-ae04-6b34b0212e88,emphasis,learning
+2024-11-28 04:37:26.310497+00,étudiant,French,c2077ddf-5633-4149-aef9-1fb60a51a9a1,student,learning
+2024-10-08 17:59:05.022206+00,única,Spanish,39344461-7e13-4d7f-a025-5dbe38eafbb3,unique,learning
+2024-12-03 02:51:26.118367+00,única,Spanish,733578cf-dce4-4101-b3c7-82d697019353,only,learning
+2024-08-26 12:36:26.350097+00,Асмон,Russian,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,Asmon,learning
+2024-10-09 19:01:39.891443+00,Монголии,Russian,85db5d88-12d5-49f7-8793-a0d2f62ac738,Mongolia,learning
+2024-09-05 14:16:46.43242+00,Спасибо,Russian,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,Thank you,learning
+2024-10-09 19:01:09.998524+00,Ученым,Russian,85db5d88-12d5-49f7-8793-a0d2f62ac738,Scholar,learning
+2025-02-03 05:27:42.186149+00,ассортимент,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,mix,learning
+2024-10-09 19:31:02.230876+00,бакалавра,Russian,85db5d88-12d5-49f7-8793-a0d2f62ac738,bachelor's degree,learning
+2025-02-03 05:24:31.862176+00,выделять,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,to carve out,learning
+2025-01-26 04:28:53.918417+00,деньги,Russian,733578cf-dce4-4101-b3c7-82d697019353,money,learning
+2025-02-11 02:45:50.49557+00,емпатията,Bulgarian,733578cf-dce4-4101-b3c7-82d697019353,the empathy,learning
+2025-02-07 02:14:14.634422+00,еталони,Bulgarian,733578cf-dce4-4101-b3c7-82d697019353,benchmarks,learning
+2025-02-03 05:26:56.357014+00,жаргона,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,jargon,learning
+2025-02-05 11:21:16.55533+00,жилье,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,housing,learning
+2025-01-26 04:28:05.822351+00,исполнительный указ,Russian,733578cf-dce4-4101-b3c7-82d697019353,executive order,learning
+2024-11-28 04:44:54.271944+00,колега,Bulgarian,733578cf-dce4-4101-b3c7-82d697019353,coworker,learning
+2024-10-09 19:33:19.157775+00,короны,Russian,9d697590-7799-4658-820b-85812b1962d6,crowns,learning
+2024-08-21 21:38:45.339895+00,мозги,Russian,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,brains,learning
+2024-08-21 21:51:32.21647+00,мысли,Russian,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,thoughts,learning
+2024-08-26 12:07:31.737359+00,нет,Russian,cfb5b889-a5ca-4613-b8fe-2f1ab519f6f4,no,learning
+2025-02-03 05:31:45.121881+00,огурец,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,cucumber,learning
+2025-02-05 13:05:49.214219+00,отвернулась,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,looked away,learning
+2024-10-09 19:44:46.220539+00,поездка,Russian,9d697590-7799-4658-820b-85812b1962d6,trip,learning
+2024-10-09 19:45:57.51608+00,уроки,Russian,9d697590-7799-4658-820b-85812b1962d6,lessons,learning
+2025-02-03 05:29:14.664063+00,языкам,Russian,f11139a8-fe1d-4823-b3f1-249a0c17ed67,languages,learning
+2024-12-06 10:29:55.374969+00,أطلق,Arabic,85db5d88-12d5-49f7-8793-a0d2f62ac738,shot,learning
+2024-11-05 23:06:21.421306+00,امتحان,Urdu,a88f454d-bb68-4010-9f05-10aed90ed792,exam,learning
+2024-12-06 10:30:18.078402+00,امرأة,Arabic,85db5d88-12d5-49f7-8793-a0d2f62ac738,woman,learning
+2024-06-28 05:40:17.465539+00,جملے,Urdu,a88f454d-bb68-4010-9f05-10aed90ed792,phrases,learning
+2025-01-19 01:20:41.853663+00,طائر,Arabic,85db5d88-12d5-49f7-8793-a0d2f62ac738,bird,learning
+2024-06-28 05:40:08.660095+00,مشق,Urdu,a88f454d-bb68-4010-9f05-10aed90ed792,practice,learning
+2024-12-06 10:29:14.720958+00,نساء,Arabic,85db5d88-12d5-49f7-8793-a0d2f62ac738,women,learning
+2024-08-27 00:24:41.060358+00,அடைய,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to aspire,learning
+2024-08-24 18:12:02.803503+00,அப்பா,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,dad,learning
+2024-11-29 01:44:14.32106+00,அம்சம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,aspect,learning
+2024-08-18 01:13:33.080602+00,அரியை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Ari,learning
+2024-08-18 05:18:49.463726+00,அருமை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,dope,learning
+2024-09-13 01:35:31.793085+00,அர்த்தமில்லை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,doesn't make sense,learning
+2024-08-02 20:27:13.739823+00,ஆதாரங்கள்,Tamil,dfd280a3-4e3a-43ad-a533-0a714885d572,sources,learning
+2024-08-30 19:34:40.325543+00,ஆப்பிள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Apple,learning
+2024-08-23 20:38:29.212037+00,ஆர்வமாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,passionate,learning
+2024-09-24 05:34:35.211191+00,ஆறு,Tamil,daadadf1-b842-4a09-9352-5cf4c459c54e,six,learning
+2024-08-18 18:12:03.181772+00,ஆலோசனை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,advice,learning
+2024-08-18 18:13:42.982515+00,ஆலோசனைகள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,advice,learning
+2024-08-18 02:14:10.399809+00,இங்கே,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,here,learning
+2024-08-21 15:47:00.309661+00,இது,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,this,learning
+2025-01-16 21:04:23.92837+00,இளம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,younger,learning
+2024-09-14 19:49:41.478343+00,உடல்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,body,learning
+2025-01-15 19:57:24.529251+00,உண்மை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,truth,learning
+2024-10-28 01:26:26.138935+00,உதவி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,help,learning
+2024-12-02 22:23:13.739864+00,உதவினர்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,facilitated,learning
+2024-08-28 04:20:34.015841+00,உதவுவதற்காக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to help,learning
+2024-08-18 08:33:32.981409+00,உத்தி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,strategy,learning
+2024-09-15 05:41:29.520792+00,உருவாக்கப்பட்டனர்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,made,learning
+2024-08-26 04:34:02.713701+00,உரை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,speech,learning
+2024-11-29 02:39:18.789418+00,உரையாடல்களை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,conversations,learning
+2024-09-02 01:43:51.856397+00,உறுதி,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,ensure,learning
+2024-11-27 01:50:11.562514+00,எஞ்சைம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,enzyme,learning
+2024-08-21 15:47:25.033716+00,எடுத்துக்காட்டு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,example,learning
+2024-11-29 06:15:52.526999+00,எதிர்காலம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,future,learning
+2024-09-08 20:08:09.289656+00,எளிது,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,easy,learning
+2024-08-26 04:34:34.611306+00,ஒபாமா,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Obama,learning
+2024-08-22 21:21:08.047327+00,ஒப்பிட,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,unmatched,learning
+2024-09-13 01:42:18.531795+00,ஒப்புக்கொள்ளப்படுகிறது,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,is accepted,learning
+2024-09-15 04:57:01.275134+00,ஒரு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,one,learning
+2024-08-17 22:34:51.840782+00,ஒரே,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,one,learning
+2024-11-29 03:18:46.145389+00,ஒலி,Tamil,733578cf-dce4-4101-b3c7-82d697019353,sound,learning
+2024-08-21 04:25:34.388301+00,கடவுள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,God,learning
+2024-08-18 03:04:13.095449+00,கடினமாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,hard,learning
+2024-11-29 04:31:45.461106+00,கடுமையாக,Tamil,733578cf-dce4-4101-b3c7-82d697019353,hard,learning
+2024-08-28 19:42:17.971887+00,கட்டுரை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,article,learning
+2024-09-16 01:30:13.657632+00,கணினி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,computer,learning
+2024-09-16 23:08:13.862018+00,கதை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,story,learning
+2024-08-18 18:42:12.991831+00,கனவுகள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,dreams,learning
+2024-11-29 04:31:56.89067+00,கருத்து,Tamil,733578cf-dce4-4101-b3c7-82d697019353,comment,learning
+2024-08-02 20:31:14.680953+00,கலாச்சாரம்,Tamil,dfd280a3-4e3a-43ad-a533-0a714885d572,culture,learning
+2024-09-02 22:31:39.699835+00,கவலையாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,sad,learning
+2024-09-11 22:11:51.266811+00,கஷ்டம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,bad,learning
+2024-08-24 18:00:30.769392+00,காகரோசு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Cockroach,learning
+2024-11-29 03:47:29.490193+00,காசி,Tamil,733578cf-dce4-4101-b3c7-82d697019353,cough,learning
+2024-09-03 18:37:02.485384+00,காதலிக்கிறேன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,love,learning
+2024-08-18 18:21:21.645891+00,காதலிக்கிறோம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,love,learning
+2024-08-22 18:30:42.719555+00,கால் வைக்கும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,stepping into,learning
+2024-08-23 16:17:05.790689+00,கிடைக்கவில்லை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,not found,learning
+2024-09-04 21:53:39.187002+00,கிரெக்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Greg,learning
+2024-09-08 23:35:35.044102+00,குதிரை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,horse,learning
+2024-09-11 18:52:56.186514+00,குப்பை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,garbage,learning
+2024-08-31 21:40:43.080807+00,குளிர்ந்தது,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,cool,learning
+2024-08-18 02:41:58.84565+00,குழந்தை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,child,learning
+2024-11-29 05:20:58.181154+00,குழப்பமாக,Tamil,733578cf-dce4-4101-b3c7-82d697019353,confused,learning
+2024-10-25 05:50:14.478777+00,குழப்பமாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,confused,learning
+2024-08-18 02:36:49.355576+00,குழு,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,group,learning
+2024-08-02 20:32:14.382446+00,குழு,Tamil,dfd280a3-4e3a-43ad-a533-0a714885d572,group,learning
+2024-08-26 03:07:17.396029+00,குழு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,team,learning
+2024-09-24 05:26:36.937703+00,குழுக்களின்,Tamil,daadadf1-b842-4a09-9352-5cf4c459c54e,teams,learning
+2024-09-24 05:40:17.547196+00,கூடுதல்,Tamil,3af47d47-e5e5-45a6-9e44-9259daafd045,extra,learning
+2024-08-18 02:34:56.341881+00,கூடுதல்,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,extra,learning
+2024-08-02 20:24:11.826316+00,கூடுதல்,Tamil,dfd280a3-4e3a-43ad-a533-0a714885d572,extra,learning
+2024-08-17 22:28:28.568306+00,கூடுதல்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,extra,learning
+2024-11-30 03:50:30.164239+00,கேர்னல்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,kernel,learning
+2024-08-21 15:49:19.05794+00,கைதிகள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,hostages,learning
+2024-08-21 02:28:07.051361+00,கையாளுகிறீர்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,handle,learning
+2024-08-18 18:12:24.410259+00,கொலை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,murder,learning
+2024-08-21 04:25:19.49007+00,கொல்லி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,killer,learning
+2024-09-17 18:39:00.960767+00,சட்ட,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,legal,learning
+2024-09-04 21:31:26.414082+00,சந்தேகிக்கிறேன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,I suspect,learning
+2024-08-29 15:57:53.388478+00,சமாளிக்க,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,cope,learning
+2024-08-21 04:31:13.451596+00,சமைத்தான்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,cooked,learning
+2024-09-08 20:22:28.673048+00,சரி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,correct,learning
+2024-11-30 02:32:07.313758+00,சரியானதாக,Tamil,733578cf-dce4-4101-b3c7-82d697019353,right,learning
+2024-11-29 01:35:27.714394+00,சரியானது,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Correct,learning
+2024-11-30 00:17:14.009174+00,சிக்னல்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,signal,learning
+2024-08-18 06:03:38.9283+00,சிரமமாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,annoying,learning
+2024-09-01 20:20:24.946643+00,சிரிக்கிறான்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,he is laughing,learning
+2024-09-02 01:10:05.623856+00,சிரிக்கிறாள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,laughing,learning
+2024-11-30 03:26:03.363016+00,சிரித்தேன்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,I laughed,learning
+2024-08-28 04:43:56.280158+00,சிரித்தேன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,I laughed,learning
+2024-09-01 22:44:05.868056+00,சிரிப்பு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Laughter,learning
+2024-08-26 06:34:35.082729+00,சிறந்த,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,great,learning
+2024-08-18 02:14:34.91078+00,சிறந்ததாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,great,learning
+2024-09-04 21:18:35.894809+00,சிறந்தது,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,special,learning
+2024-08-26 03:08:09.815554+00,சிறந்தவன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,great,learning
+2024-11-29 02:38:51.934654+00,சிறப்பாக,Tamil,733578cf-dce4-4101-b3c7-82d697019353,better,learning
+2024-09-12 16:49:50.62263+00,சிறிய,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,small,learning
+2024-09-02 03:55:53.728766+00,சுவாரஸ்யமாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,interesting,learning
+2024-11-30 02:50:04.505337+00,செங்க்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Cenk,learning
+2024-11-30 01:08:35.929604+00,செய்வேன்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,would,learning
+2024-09-24 06:08:37.473803+00,சொல்,Tamil,cce3cdfa-906e-4563-a302-e7a11731d0e2,word,learning
+2024-08-02 20:28:30.317855+00,சொல்,Tamil,dfd280a3-4e3a-43ad-a533-0a714885d572,word,learning
+2024-08-26 04:29:53.121641+00,ஜனாதிபதி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,President,learning
+2024-09-11 21:39:09.818286+00,ஜேம்ஸ்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,James,learning
+2024-09-09 23:33:46.630811+00,டபிள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,double,learning
+2024-10-01 19:47:19.782386+00,தடை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,ban,learning
+2024-09-12 05:30:33.715415+00,தப்பிக்கிறேன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,I escape,learning
+2024-08-27 00:24:26.26232+00,தரை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,floor,learning
+2024-11-05 04:41:11.790832+00,தள்ளி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,stay back,learning
+2024-08-18 18:03:12.564898+00,திருத்தங்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,edits,learning
+2024-11-29 03:29:01.924568+00,திரைப்படம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,movie,learning
+2024-09-09 22:42:50.619016+00,திரைப்படம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,movie,learning
+2024-11-30 01:43:55.67118+00,தேர்வு,Tamil,733578cf-dce4-4101-b3c7-82d697019353,pick,learning
+2024-09-11 19:02:41.883079+00,தேவையில்லை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,no need,learning
+2024-08-18 02:05:03.730088+00,தொடங்குங்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Get Started,learning
+2024-08-25 18:22:48.301984+00,தொடருங்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,continue,learning
+2024-08-29 18:48:35.796027+00,தொடர்ந்து,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,keep going,learning
+2024-09-15 01:03:36.257694+00,தோல்வி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,failure,learning
+2024-09-24 06:12:19.000746+00,தோல்வியுற்ற,Tamil,cce3cdfa-906e-4563-a302-e7a11731d0e2,failed,learning
+2024-11-29 03:58:47.92768+00,நகைச்சுவை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,hilarious,learning
+2024-11-05 07:17:38.393708+00,நடிப்பு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,acting,learning
+2024-11-29 03:17:57.324216+00,நண்பனாக,Tamil,733578cf-dce4-4101-b3c7-82d697019353,as a friend,learning
+2024-08-18 18:32:38.107412+00,நண்பன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,friend,learning
+2024-08-28 04:39:56.24132+00,நண்பர்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,friend,learning
+2024-08-18 06:11:03.157126+00,நண்பர்கள்,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,friends,learning
+2024-11-29 03:10:36.663364+00,நன்றி,Tamil,733578cf-dce4-4101-b3c7-82d697019353,thank you,learning
+2024-08-18 01:02:28.6515+00,நன்றி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,thank you,learning
+2024-11-29 01:32:42.313412+00,நம்பிக்கை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,trust,learning
+2024-09-10 18:15:23.921465+00,நம்புகிறேன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,I believe,learning
+2024-11-29 04:01:23.782324+00,நல்ல,Tamil,733578cf-dce4-4101-b3c7-82d697019353,nice,learning
+2024-08-30 19:24:45.785688+00,நல்லது,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,nice,learning
+2024-09-01 02:29:57.210588+00,நாட்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,days,learning
+2024-08-27 02:50:12.817791+00,நாய்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,dogs,learning
+2024-08-21 04:25:53.277935+00,நிகழ்ச்சி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,show,learning
+2024-11-27 02:48:54.486231+00,நினைக்கிறீர்கள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,think,learning
+2024-08-27 00:11:26.466392+00,நிரூபிக்கப்பட்டது,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,proven,learning
+2024-08-18 09:06:27.476138+00,நிற்கும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,standing up,learning
+2024-11-27 01:51:28.407412+00,நீட்டிப்புகள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,extensions,learning
+2024-09-11 22:36:42.492408+00,நெட்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Ned,learning
+2025-02-05 03:18:19.704744+00,நேர்காணலில்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,interview,learning
+2024-11-27 01:50:44.593181+00,நோக்கம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,mission,learning
+2024-12-02 22:20:40.314711+00,பக்கம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,page,learning
+2024-08-21 04:30:32.144272+00,பட்ஜெட்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,budget,learning
+2024-11-01 22:36:41.01943+00,பதிலளிக்க,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to answer,learning
+2024-09-03 18:22:54.960761+00,பதிலளிக்கும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,respond,learning
+2024-11-29 02:31:37.689385+00,பதில்கள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Responses,learning
+2024-08-24 18:11:21.099353+00,பறக்க,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,fly,learning
+2024-08-18 07:56:11.788211+00,பலவீனமாக,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,weak,learning
+2024-11-29 03:40:03.689512+00,பல்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,tooth,learning
+2024-09-10 18:14:58.587348+00,பழிவாங்குதல்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,revenge,learning
+2024-08-21 01:57:12.016696+00,பாருங்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,watch,learning
+2024-10-25 20:01:16.508139+00,பார்த்தேன்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,watched,learning
+2024-11-30 03:51:44.643583+00,பிரச்சினைகள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,problems,learning
+2024-11-27 02:34:27.574319+00,பீர்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Peer,learning
+2024-09-13 01:45:40.336165+00,பேசும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,talking,learning
+2025-01-26 04:36:57.195289+00,பொறியாளர்கள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,engineers,learning
+2024-08-24 18:11:08.912713+00,போயிங்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Boeing,learning
+2024-10-26 23:35:28.383956+00,போலி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,fake,learning
+2024-11-29 03:10:13.927621+00,மகிழ்ச்சி,Tamil,733578cf-dce4-4101-b3c7-82d697019353,happiness,learning
+2024-11-30 02:58:55.683345+00,மக்கள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,people,learning
+2024-10-28 02:31:33.782619+00,மதித்தான்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,appreciated,learning
+2024-08-27 00:25:03.35632+00,மனம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,mind,learning
+2024-08-24 18:00:42.04329+00,மன்னிப்பு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Disclaimer,learning
+2024-09-02 03:42:52.755218+00,மரணங்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,deaths,learning
+2024-09-05 05:43:22.315929+00,மாணவர்கள்,Tamil,732a92bd-8dec-43d9-83b8-50138871fe4f,students,learning
+2024-09-17 03:27:25.390004+00,மாணவர்கள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,students,learning
+2024-08-18 18:21:07.846931+00,மாதிரி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,model,learning
+2024-11-30 01:18:40.817792+00,மாதிரிகள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,models,learning
+2024-09-11 22:27:01.051989+00,மானிடம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,monster,learning
+2024-11-27 01:55:57.964274+00,மாற்று,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Surrogate,learning
+2024-10-31 20:15:16.777813+00,முகமுகமாக,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,face to face,learning
+2024-09-24 06:52:55.013416+00,முகவரி,Tamil,80c10aa0-0638-4683-8b0e-81743e2e512a,agent,learning
+2024-11-30 01:18:59.637044+00,முதலில்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,first,learning
+2024-08-29 15:58:55.508307+00,முத்தம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,kiss,learning
+2024-09-24 05:28:49.495906+00,முறை,Tamil,daadadf1-b842-4a09-9352-5cf4c459c54e,method,learning
+2024-09-11 05:33:16.382842+00,மூளை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,brain,learning
+2024-09-04 21:19:13.382526+00,மூளைகள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,brains,learning
+2024-11-29 03:21:21.585409+00,மெல்லிய,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Subtle,learning
+2024-09-03 18:36:27.077695+00,மேன்மை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,superior,learning
+2024-08-30 19:13:07.805304+00,மேலும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,more,learning
+2024-09-04 07:57:25.989882+00,மோசடி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,cheating,learning
+2024-11-30 01:19:28.965221+00,ராம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,ram,learning
+2024-08-22 21:14:18.309222+00,லிங்க்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Link,learning
+2024-09-08 23:37:56.569608+00,வரிசை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,order,learning
+2024-08-26 06:35:48.956547+00,வாக்களிக்கும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,voting,learning
+2024-11-30 02:57:40.077361+00,வாய்ப்பு,Tamil,733578cf-dce4-4101-b3c7-82d697019353,opportunity,learning
+2024-09-08 22:38:26.168228+00,வாரிசு,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,inheritance,learning
+2024-11-27 03:01:38.668354+00,வார்த்தை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,word,learning
+2024-08-25 19:39:16.452113+00,வார்த்தை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,word,learning
+2024-09-02 01:09:47.54794+00,வாழ்த்துகள்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Congrats,learning
+2024-09-09 22:37:11.739324+00,விக்கிப்பீடியா,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Wikipedia,learning
+2024-09-24 06:10:49.228921+00,விதிகள்,Tamil,cce3cdfa-906e-4563-a302-e7a11731d0e2,rules,learning
+2024-11-27 03:02:09.971901+00,வித்தியாசம்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,whimsy,learning
+2024-08-18 03:03:29.101542+00,விரல்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,finger,learning
+2024-08-25 20:51:03.523667+00,விற்றனர்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,sold,learning
+2024-11-30 03:23:35.375887+00,விலகினால்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,if you stay off,learning
+2024-11-30 03:23:19.925456+00,விலகுங்கள்,Tamil,733578cf-dce4-4101-b3c7-82d697019353,stay off,learning
+2024-11-29 01:32:12.291753+00,விலை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,Price,learning
+2024-08-18 09:15:51.629132+00,விழுந்துவிட்டாய்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,fell off,learning
+2024-08-31 21:18:30.533083+00,விஷயம்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,thing,learning
+2024-09-09 00:41:15.18505+00,வீடியோ,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,video,learning
+2024-08-21 15:59:16.556679+00,வெற்றி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,win,learning
+2024-11-29 01:33:07.406652+00,வேறுபடுத்த,Tamil,733578cf-dce4-4101-b3c7-82d697019353,differentiate,learning
+2024-11-30 03:26:28.142615+00,வேலை,Tamil,733578cf-dce4-4101-b3c7-82d697019353,work,learning
+2024-09-15 00:03:24.809057+00,வேலை,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,work,learning
+2024-08-18 05:16:52.659557+00,வைத்திருக்கவும்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to have,learning
+2024-09-12 06:20:14.788243+00,ஸ்கேனிங்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,scanning,learning
+2024-09-15 01:06:00.321423+00,ஹிலரி,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Hillary,learning
+2024-09-04 07:55:26.784439+00,ஹூவர்,Tamil,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Hoover,learning
+2024-06-23 00:10:50.191769+00,පහළින්,Sinhala,fa40be07-8840-48f0-bfa4-66a6a0230e09,below,learning
+2024-06-23 00:10:11.604627+00,පාසල්,Sinhala,fa40be07-8840-48f0-bfa4-66a6a0230e09,schools,learning
+2024-07-31 15:22:45.049763+00,アプローチ,Japanese,630ecd5b-ef55-443c-ae04-6b34b0212e88,approach,learning
+2024-07-02 05:50:21.59165+00,サミット,Japanese,6ea579ff-b347-499d-9157-b79441db73e9,summit,learning
+2024-07-27 11:45:56.988542+00,ハイキング,Japanese,63045eff-2d97-4b9d-a537-24b2515a17a6,hiking,learning
+2024-08-21 22:27:58.314623+00,上课,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,to attend class,learning
+2024-09-24 05:30:26.497975+00,上课,Mandarin Chinese,732a92bd-8dec-43d9-83b8-50138871fe4f,to attend class,learning
+2024-08-20 18:21:14.785693+00,上课,Mandarin Chinese,cc0e3d6f-3b20-40c2-a3fe-2dc59cf58c50,to attend class,learning
+2025-02-05 03:21:56.778917+00,不幸,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,unfortunate,learning
+2024-10-17 20:59:18.625233+00,个人化,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,personalized,learning
+2024-08-22 07:10:12.097318+00,乐队,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,band,learning
+2024-07-10 05:20:23.596579+00,事实,Mandarin Chinese,0ebdecf7-9b3a-4df8-b8b2-273148f5074a,reality,learning
+2024-07-10 05:20:00.035933+00,今天,Mandarin Chinese,0ebdecf7-9b3a-4df8-b8b2-273148f5074a,Today,learning
+2024-08-21 23:01:21.24513+00,入门,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,starter,learning
+2024-08-21 12:03:43.860785+00,共同創設者,Japanese,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,cofounders,learning
+2024-12-01 00:12:47.13212+00,关闭,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,close,learning
+2024-07-24 09:45:39.510689+00,创业公司,Mandarin Chinese,8963c7ff-4e29-4cd5-99ef-954d3dcfc772,startup,learning
+2024-07-27 11:41:03.827647+00,努力,Mandarin Chinese,63045eff-2d97-4b9d-a537-24b2515a17a6,struggling,learning
+2024-07-31 15:21:34.547479+00,博客,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,blog,learning
+2025-01-25 16:23:03.081288+00,危险,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,hazard,learning
+2025-02-12 06:46:44.31066+00,古怪,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,quirky,learning
+2025-01-26 16:13:11.16888+00,合得来,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,get along,learning
+2024-10-15 21:49:47.352085+00,喃喃自语,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,murmured,learning
+2024-06-28 08:36:21.021725+00,喜欢,Mandarin Chinese,32ec67e0-cb78-4c25-8451-5fc0334f70f1,like,learning
+2024-07-27 11:41:41.765558+00,地方,Mandarin Chinese,63045eff-2d97-4b9d-a537-24b2515a17a6,place,learning
+2024-09-15 23:03:11.062157+00,基本的,Mandarin Chinese,e3256652-546e-44a4-9966-5e9732699183,basic,learning
+2024-07-27 11:42:21.545938+00,学生,Mandarin Chinese,63045eff-2d97-4b9d-a537-24b2515a17a6,students,learning
+2024-06-25 20:05:33.046892+00,密码,Mandarin Chinese,e3256652-546e-44a4-9966-5e9732699183,password,learning
+2024-07-10 05:20:29.763797+00,工作,Mandarin Chinese,287cbb34-e04f-45ca-8319-fc2cb3a6eddd,work,learning
+2024-10-30 22:36:45.47564+00,工作流程,Mandarin Chinese,b518f030-bd98-4eb1-84e8-9a2dec501bf1,workflow,learning
+2024-07-02 05:49:33.732434+00,年,Japanese,6ea579ff-b347-499d-9157-b79441db73e9,year,learning
+2024-08-21 12:03:19.520425+00,幸運,Japanese,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,lucky,learning
+2025-02-05 03:18:53.485283+00,建议,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,recommendations,learning
+2024-08-21 12:05:47.062833+00,役に立った,Japanese,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,useful,learning
+2024-07-27 15:20:19.49805+00,快速,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,quick,learning
+2024-07-10 05:21:13.097919+00,总统,Mandarin Chinese,0ebdecf7-9b3a-4df8-b8b2-273148f5074a,president,learning
+2024-06-26 03:33:03.760409+00,总部,Mandarin Chinese,819cbf66-fd47-4000-9e89-80c1736d1002,headquarters,learning
+2024-08-22 09:22:25.802899+00,感觉,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,feel,learning
+2024-07-31 15:24:56.620341+00,技術,Japanese,630ecd5b-ef55-443c-ae04-6b34b0212e88,technique,learning
+2024-08-21 12:05:02.545837+00,投稿,Japanese,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,post,learning
+2024-10-30 22:35:52.945417+00,指导,Mandarin Chinese,b518f030-bd98-4eb1-84e8-9a2dec501bf1,guides,learning
+2024-08-21 22:34:00.069239+00,损失,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,loss,learning
+2024-06-25 04:30:11.193828+00,数据,Mandarin Chinese,5b9cd4cd-5c82-4fbe-9f3f-ae1e85ffe0f1,data,learning
+2024-07-31 15:20:47.882187+00,数据库,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,database,learning
+2024-10-15 21:51:05.07703+00,方块,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,block,learning
+2024-06-25 20:03:14.15601+00,方法,Mandarin Chinese,e3256652-546e-44a4-9966-5e9732699183,method,learning
+2024-07-27 11:45:23.130195+00,日帰り旅行,Japanese,63045eff-2d97-4b9d-a537-24b2515a17a6,day trip,learning
+2024-06-29 23:29:18.364591+00,时间,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,time,learning
+2024-11-07 01:53:20.497923+00,时间,Mandarin Chinese,94d91aaa-e69a-44c9-863d-16607480b153,time,learning
+2024-10-09 15:19:36.987881+00,时间,Mandarin Chinese,9d03b335-702b-4a46-8d51-75aff611f7c0,time,learning
+2025-01-25 15:40:57.284896+00,时间,Mandarin Chinese,db75c9b3-c50e-40d5-b706-5bd3bcee2527,time,learning
+2024-08-21 12:04:42.937792+00,時間,Japanese,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,time,learning
+2024-11-28 00:55:45.195426+00,有效,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,valid,learning
+2024-10-08 17:53:16.962332+00,术语,Mandarin Chinese,39344461-7e13-4d7f-a025-5dbe38eafbb3,term,learning
+2024-08-20 18:22:21.302271+00,术语,Mandarin Chinese,cc0e3d6f-3b20-40c2-a3fe-2dc59cf58c50,terms,learning
+2024-07-27 15:20:03.547964+00,永远,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,never,learning
+2024-07-27 11:42:13.55842+00,注意力,Mandarin Chinese,63045eff-2d97-4b9d-a537-24b2515a17a6,attention,learning
+2024-06-27 16:31:09.27471+00,生活,Mandarin Chinese,32ec67e0-cb78-4c25-8451-5fc0334f70f1,life,learning
+2024-08-22 00:45:12.108726+00,电子邮件,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,Email,learning
+2024-10-16 19:15:10.018447+00,看到,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,to see,learning
+2024-06-26 02:40:39.243549+00,眼睛,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,eyes,learning
+2024-08-22 09:22:34.19114+00,破,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,broke,learning
+2024-07-31 15:22:04.97832+00,简单,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,simple,learning
+2024-06-27 16:30:28.994524+00,经历,Mandarin Chinese,32ec67e0-cb78-4c25-8451-5fc0334f70f1,experiences,learning
+2024-06-25 20:03:45.196719+00,编辑,Mandarin Chinese,e3256652-546e-44a4-9966-5e9732699183,editors,learning
+2024-08-21 22:38:20.173022+00,考虑,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,consider,learning
+2024-10-09 15:22:10.222558+00,行话,Mandarin Chinese,9d03b335-702b-4a46-8d51-75aff611f7c0,jargon,learning
+2024-10-15 18:52:51.356823+00,计算,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,calculation,learning
+2024-10-15 18:53:43.053773+00,计算机科学,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,computer science,learning
+2024-09-15 23:03:40.662207+00,评估,Mandarin Chinese,e3256652-546e-44a4-9966-5e9732699183,assessment,learning
+2024-08-20 18:22:42.333895+00,词,Mandarin Chinese,cc0e3d6f-3b20-40c2-a3fe-2dc59cf58c50,word,learning
+2024-09-09 15:58:55.027403+00,诗人,Mandarin Chinese,bc32cf7f-c20f-47a9-b45e-1f60d6e71a9c,poet,learning
+2024-08-20 18:23:13.567023+00,询问,Mandarin Chinese,cc0e3d6f-3b20-40c2-a3fe-2dc59cf58c50,to ask,learning
+2024-07-17 10:17:10.98538+00,语言,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,language,learning
+2024-08-22 00:05:49.396524+00,账户,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,account,learning
+2024-08-21 22:34:17.758347+00,费用,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,expenses,learning
+2025-02-20 08:03:16.933905+00,软件开发人员,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,software developers,learning
+2024-07-23 02:35:26.811248+00,这,Mandarin Chinese,8963c7ff-4e29-4cd5-99ef-954d3dcfc772,this,learning
+2024-09-15 23:02:26.619409+00,迟交,Mandarin Chinese,e3256652-546e-44a4-9966-5e9732699183,late submission,learning
+2024-08-21 12:04:22.892194+00,避ける,Japanese,c2dfa0a8-6b1e-4c0a-a621-3c43461fca51,avoid,learning
+2024-10-15 18:53:05.986396+00,阶乘,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,factorial,learning
+2024-10-17 20:59:07.194544+00,隐喻,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,metaphor,learning
+2024-08-22 07:09:59.230378+00,震惊,Mandarin Chinese,5b114043-60f3-42c4-b2e8-74d13468aeaa,shocked,learning
+2025-01-25 16:22:44.909987+00,面向,Mandarin Chinese,630ecd5b-ef55-443c-ae04-6b34b0212e88,oriented towards,learning
+2024-06-26 03:33:35.610709+00,驳回,Mandarin Chinese,819cbf66-fd47-4000-9e89-80c1736d1002,dismissed,learning
+2024-06-26 02:41:29.962266+00,骷髅,Mandarin Chinese,3d670125-dd8d-45db-bba9-c09554598f16,skull,learning
+2025-02-04 15:43:44.104286+00,갈,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,to go,learning
+2025-02-04 16:42:27.628072+00,같아요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,it's like,learning
+2024-07-11 15:20:08.31198+00,거절당했어요,Korean,4c17cf78-13c4-413e-89af-a2185c750396,got rejected,learning
+2025-01-29 18:31:26.336289+00,게임,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,game,learning
+2024-09-30 22:33:06.007001+00,게임,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,game,learning
+2025-02-04 16:11:19.641791+00,결혼,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,marriage,learning
+2025-01-21 03:30:02.680429+00,경계,Korean,4c17cf78-13c4-413e-89af-a2185c750396,frontier,learning
+2025-01-30 17:51:00.275409+00,고백,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,confess,learning
+2025-01-21 03:09:53.987175+00,과학자들,Korean,4c17cf78-13c4-413e-89af-a2185c750396,scientists,learning
+2025-02-03 12:38:09.904432+00,괜찮아요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,fair enough,learning
+2024-09-30 22:26:26.180503+00,궁금하신가요,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Are you curious?,learning
+2025-01-20 14:47:49.064417+00,귀여워요,Korean,87f029ea-b8d4-4501-98de-b1c119388709,cute,learning
+2025-01-27 18:01:14.792609+00,그들,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,they,learning
+2025-02-09 18:23:25.99642+00,그리고,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,and,learning
+2024-09-30 22:30:03.458093+00,그의,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,his,learning
+2024-10-01 19:46:53.425676+00,금지하다,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,to ban,learning
+2025-02-08 13:23:39.395711+00,긍정적으로,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,positively,learning
+2025-02-04 15:44:18.267692+00,기회,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,chance,learning
+2025-01-26 17:39:06.494911+00,날,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,day,learning
+2025-02-03 19:15:51.5275+00,내일,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,tomorrow,learning
+2025-02-05 14:53:55.406628+00,농담,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,joke,learning
+2025-01-27 18:03:21.93887+00,돋보이게,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,stand out,learning
+2025-02-05 19:29:17.935912+00,동사,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,verb,learning
+2025-02-03 18:30:09.649861+00,듣기를,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,to listen,learning
+2025-02-05 19:23:18.817708+00,말하면,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,if I say,learning
+2025-02-04 16:22:33.117881+00,말했죠,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,I told you,learning
+2025-02-03 16:21:11.72993+00,멋져요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,nice,learning
+2025-02-03 16:53:41.665912+00,멋지게,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,cool,learning
+2025-01-30 17:50:29.105769+00,멍청하지,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,not dumb,learning
+2025-01-27 18:03:02.605553+00,모든 것,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,everything,learning
+2025-01-29 19:11:43.134668+00,모르겠어,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,I don't know,learning
+2025-01-26 17:30:25.041547+00,문장,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,sentence,learning
+2025-02-08 13:23:22.363827+00,미래,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,future,learning
+2025-02-04 16:10:44.303364+00,미치게,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,drive crazy,learning
+2025-02-03 16:43:10.909783+00,바다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,ocean,learning
+2025-01-26 17:14:45.695841+00,방전,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,discharge,learning
+2025-01-26 17:36:48.576941+00,배웠다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,learned,learning
+2025-01-26 17:50:04.642117+00,배웠습니다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,learned,learning
+2025-01-30 18:17:12.4751+00,버릇없이,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,spoiled,learning
+2025-01-26 17:37:24.374345+00,번,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,time,learning
+2025-02-03 18:30:29.933899+00,보냈어,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,sent,learning
+2024-09-30 22:30:16.480396+00,보여줍니다,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,shows,learning
+2025-02-09 16:21:15.411103+00,부족하다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,to lack,learning
+2024-09-25 07:31:02.423902+00,비즈니스,Korean,7a3fb8c8-efc2-4597-aa8f-ab21c528b514,business,learning
+2025-01-21 14:41:24.971975+00,비하하다,Korean,4c17cf78-13c4-413e-89af-a2185c750396,disparage,learning
+2025-01-26 17:14:05.498021+00,빌드,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,build,learning
+2025-02-13 17:00:30.702231+00,빨간,Korean,4c17cf78-13c4-413e-89af-a2185c750396,red,learning
+2025-02-05 19:23:59.823553+00,사과,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,apple,learning
+2025-01-26 17:44:29.745715+00,사용됩니다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,is used,learning
+2025-02-03 16:33:14.841775+00,선호해요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,prefer,learning
+2025-01-21 03:07:28.293824+00,소유자,Korean,4c17cf78-13c4-413e-89af-a2185c750396,owner,learning
+2025-01-21 03:32:13.134476+00,소통,Korean,4c17cf78-13c4-413e-89af-a2185c750396,communication,learning
+2025-01-27 17:59:12.360125+00,송금,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,transfer,learning
+2025-02-03 16:21:57.285081+00,쉬고 싶었어요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,wanted to relax,learning
+2025-01-21 14:49:50.966053+00,스트리트,Korean,4c17cf78-13c4-413e-89af-a2185c750396,street,learning
+2025-01-29 19:11:53.447197+00,슬퍼요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,sad,learning
+2025-02-03 16:42:33.861094+00,시력,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,eyesight,learning
+2025-02-05 19:22:00.895774+00,시작,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,start,learning
+2025-01-26 17:10:45.066266+00,신나요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,excited,learning
+2025-02-04 15:43:22.492258+00,신혼여행,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,honeymoon,learning
+2025-02-03 19:14:58.017909+00,싫어하다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,to hate,learning
+2025-02-03 16:34:23.585521+00,아름다워,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,beautiful,learning
+2025-01-21 16:47:55.262778+00,아이,Korean,4c17cf78-13c4-413e-89af-a2185c750396,child,learning
+2025-02-03 16:42:06.274049+00,안경,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,glasses,learning
+2025-02-03 16:41:07.67883+00,알려주세요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,let me know,learning
+2025-01-19 19:19:47.162474+00,알았나요,Korean,87f029ea-b8d4-4501-98de-b1c119388709,did he know,learning
+2025-02-09 05:10:53.282157+00,양식,Korean,4c17cf78-13c4-413e-89af-a2185c750396,form,learning
+2025-01-21 14:42:50.836847+00,엉덩이,Korean,4c17cf78-13c4-413e-89af-a2185c750396,hips,learning
+2025-01-28 16:38:50.931839+00,여자,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,woman,learning
+2025-02-08 16:42:31.880609+00,연구,Korean,4c17cf78-13c4-413e-89af-a2185c750396,research,learning
+2024-09-30 22:28:54.74953+00,영리하다,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,clever,learning
+2025-02-04 16:11:03.445091+00,영향,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,impact,learning
+2025-01-26 17:46:44.128927+00,예,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,example,learning
+2024-09-30 22:28:10.498123+00,우울해,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,depressed,learning
+2025-02-02 15:34:24.169195+00,울,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,cry,learning
+2025-01-21 14:42:01.740259+00,움직이는,Korean,4c17cf78-13c4-413e-89af-a2185c750396,moving,learning
+2025-02-03 16:21:36.35222+00,이국적인,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,exotic,learning
+2024-09-30 22:32:28.363623+00,이기면,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,if I win,learning
+2025-02-04 15:58:41.721856+00,이유,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,reason,learning
+2025-02-05 14:54:07.487077+00,이해하지,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,to understand,learning
+2025-01-21 14:50:22.801067+00,이해해,Korean,4c17cf78-13c4-413e-89af-a2185c750396,understand,learning
+2025-01-26 17:43:12.941956+00,일,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,day,learning
+2024-09-30 22:25:32.40085+00,일어났죠,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,happened,learning
+2025-01-30 01:13:49.146186+00,일찍,Korean,4c17cf78-13c4-413e-89af-a2185c750396,early,learning
+2025-01-21 03:28:59.366077+00,임무,Korean,4c17cf78-13c4-413e-89af-a2185c750396,mission,learning
+2025-01-30 18:57:26.362843+00,입법부,Korean,4c17cf78-13c4-413e-89af-a2185c750396,legislature,learning
+2025-01-26 17:13:47.098485+00,저주,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,curse,learning
+2025-01-30 18:59:20.724495+00,접근,Korean,4c17cf78-13c4-413e-89af-a2185c750396,access,learning
+2025-01-21 15:11:19.957164+00,정회원,Korean,4c17cf78-13c4-413e-89af-a2185c750396,full member,learning
+2025-02-03 16:34:44.437555+00,제주,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,Jeju,learning
+2025-02-05 19:21:43.378033+00,조사,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,particle,learning
+2025-02-05 19:24:26.78028+00,좀,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,some,learning
+2025-01-21 14:39:33.083081+00,좋아요,Korean,4c17cf78-13c4-413e-89af-a2185c750396,like,learning
+2025-02-17 14:30:28.032605+00,좋아하지 않는다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,don’t like,learning
+2025-01-26 17:34:34.099538+00,주,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,week,learning
+2025-02-05 19:22:37.338284+00,주어,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,subject,learning
+2024-08-21 07:04:48.93207+00,주최자들,Korean,4c17cf78-13c4-413e-89af-a2185c750396,organizers,learning
+2025-02-05 19:29:43.5614+00,중요하다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,to be important,learning
+2025-01-26 17:35:11.950042+00,지난,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,last/previous,learning
+2025-01-26 17:16:20.961587+00,진지하게,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,seriously,learning
+2025-02-05 14:53:45.59976+00,질문,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,question,learning
+2025-01-21 14:57:56.325677+00,짜증나게,Korean,4c17cf78-13c4-413e-89af-a2185c750396,irritate,learning
+2025-02-03 16:22:08.284665+00,차,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,car,learning
+2025-02-13 16:59:35.497555+00,차분하다,Korean,4c17cf78-13c4-413e-89af-a2185c750396,calm,learning
+2025-01-30 19:00:12.195088+00,책,Korean,4c17cf78-13c4-413e-89af-a2185c750396,book,learning
+2025-02-23 13:01:18.783736+00,책가방,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,book bag,learning
+2025-01-27 18:26:36.883888+00,초안,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,draft,learning
+2025-01-20 02:39:38.681383+00,최근에,Korean,87f029ea-b8d4-4501-98de-b1c119388709,recently,learning
+2025-02-08 13:16:51.228246+00,친절해,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,friendly,learning
+2025-01-26 17:14:32.778918+00,캐스트,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,cast,learning
+2025-01-20 02:41:34.851981+00,편향된,Korean,87f029ea-b8d4-4501-98de-b1c119388709,biased,learning
+2025-01-21 03:11:28.752845+00,포함됩니다,Korean,4c17cf78-13c4-413e-89af-a2185c750396,include,learning
+2025-02-03 19:15:29.380629+00,피곤하다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,tiring,learning
+2024-09-30 22:25:48.852649+00,피싱,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,phishing,learning
+2025-01-20 11:42:05.539921+00,필요,Korean,3321eded-48c7-4be3-a4bc-7acd84ceecb1,need,learning
+2024-09-30 22:29:39.02333+00,하우스,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,House,learning
+2025-02-03 12:37:51.178187+00,행복한,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,happy,learning
+2025-01-20 11:44:05.036225+00,행정 명령,Korean,3321eded-48c7-4be3-a4bc-7acd84ceecb1,executive orders,learning
+2024-09-30 22:34:02.964247+00,혈세,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,blood tax,learning
+2025-02-05 19:31:34.996229+00,혼란스러워합니다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,are confused,learning
+2024-09-30 22:29:23.459183+00,홀트 선장,Korean,ff8b22f3-fa07-41cf-9d68-79caf67442d9,Captain Holt,learning
+2025-02-04 15:44:03.525934+00,휴가,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,vacation,learning
+2025-02-04 15:55:37.206477+00,흔하지,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,not common,learning
+2025-02-04 15:56:04.616299+00,흔합니다,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,common,learning
+2025-02-02 13:03:16.141781+00,흥미롭네요,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,interesting,learning
+2025-02-03 16:42:50.753812+00,힘든,Korean,b52706af-f86f-4472-a3e9-b2e4e5f0e6d6,rough,learning
