@@ -31,6 +31,8 @@ Jargon enhances the browsing experience by underlining text on websites and gene
 
 Despite being in the market for eight months, Jargon only has 100+ downloads on the Chrome extension store. Jargon faces challenges with user adoption and potential market and product issues. To address these challenges, I have decided to begin by analyzing the company's database to gain insights that could drive improvements in our product and strategies. The primary question I aim to address is: What key factors influence user engagement and sustained usage of Jargon?
 
+Github repo link: https://github.com/cyn900/JSC370-project
+
 ## Methods
 
 The original developers of Jargon designed a database to track real-life usage and store relevant information on Supabase. I downloaded five CSV files (profiles, words, questions, levels, and websites) from Supabase on March 16, 2025 for analysis.
