@@ -15,19 +15,6 @@ library(plotly)
 library(DT)
 ```
 
-<style>
-.page-header {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-.toc-content {
-  padding-top: 0;
-}
-#TOC {
-  margin-top: 35px;
-}
-</style>
-
 ```{=html}
 <div class="nav-header">
   <div class="nav-title">Jargon Analytics</div>
@@ -37,8 +24,6 @@ library(DT)
   </div>
 </div>
 ```
-
-<div class="main-container">
 
 # Detailed Analysis
 
