@@ -26,8 +26,6 @@ library(DT)
 </div>
 ```
 
-# Overview
-
 This dashboard presents an analysis of user engagement with the Jargon Chrome extension, a language learning tool. The analysis is based on data collected from 92 users, examining various aspects of their interaction with the platform.
 
 ```{r data-prep}
@@ -104,10 +102,14 @@ summary_stats <- data.frame(
 datatable(summary_stats,
           options = list(
             dom = 't',  # Only show the table, no other elements
-            pageLength = -1  # Show all rows
+            pageLength = -1,  # Show all rows
+            caption = list(
+              placement = "top",
+              style = "caption-side: top"
+            )
           ),
           rownames = FALSE,
-          caption = "Table 1: Summary Statistics of User Engagement Metrics")
+          caption = htmltools::HTML("<div style='text-align: center; margin-bottom: 15px;'>Table 1: Summary Statistics of User Engagement Metrics</div>"))
 ```
 
 
