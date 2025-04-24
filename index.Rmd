@@ -29,13 +29,15 @@ library(DT)
 }
 </style>
 
-<nav class="nav-header">
+```{=html}
+<div class="nav-header">
   <div class="nav-title">Jargon Analytics</div>
   <div class="nav-links">
-    <a href="./index.html" class="nav-active">Overview</a>
-    <a href="./analysis.html" class="nav-inactive">Detailed Analysis</a>
+    <a href="index.html" class="nav-active">Overview</a>
+    <a href="analysis.html" class="nav-inactive">Detailed Analysis</a>
   </div>
-</nav>
+</div>
+```
 
 <div class="main-container">
 
