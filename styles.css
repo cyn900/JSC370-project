@@ -53,9 +53,43 @@
 
 /* Table of contents adjustments */
 #TOC {
-  z-index: 900;
-  margin-top: 35px !important;
-  padding-top: 20px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 15px !important;
+}
+
+#TOC::before {
+  content: "Contents";
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  display: block;
+  color: #333;
+}
+
+/* Make TOC links more readable */
+#TOC ul {
+  padding-left: 15px !important;
+  margin-bottom: 0;
+}
+
+#TOC li {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+#TOC a {
+  color: #495057;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#TOC a:hover {
+  color: #007bff;
+  text-decoration: none;
 }
 
 /* Header adjustments */
@@ -81,11 +115,21 @@ h1, h2, h3 {
 .title {
   margin-top: 0 !important;
   padding-top: 0 !important;
+  font-size: 2em !important;
 }
 
 /* Ensure proper spacing for floating TOC */
 @media (min-width: 768px) {
   .row-fluid {
     margin-top: 20px;
+  }
+  
+  /* Adjust TOC width and position */
+  .col-xs-12.col-sm-4.col-md-3 {
+    padding-right: 25px;
+  }
+  
+  #TOC.floating {
+    top: 20px !important;
   }
 } 

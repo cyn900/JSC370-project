@@ -32,8 +32,8 @@ library(DT)
 <div class="nav-header">
   <div class="nav-title">Jargon Analytics</div>
   <div class="nav-links">
-    <a href="index.html" class="nav-active">Overview</a>
-    <a href="analysis.html" class="nav-inactive">Detailed Analysis</a>
+    <a href="/JSC370-project/index.html" class="nav-active">Overview</a>
+    <a href="/JSC370-project/analysis.html" class="nav-inactive">Detailed Analysis</a>
   </div>
 </div>
 
