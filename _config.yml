@@ -1,0 +1,6 @@
+title: JSC370 Interactive Visualizations
+description: Interactive data visualizations for JSC370 project
+baseurl: "/JSC370-project"
+url: "https://your-github-username.github.io"
+markdown: kramdown
+theme: minima 
