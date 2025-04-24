@@ -1,6 +1,20 @@
 title: JSC370 Interactive Visualizations
 description: Interactive data visualizations for JSC370 project
 baseurl: "/JSC370-project"
-url: "https://cyn900.github.io/JSC370-project/"
+url: "https://cyn900.github.io"
 markdown: kramdown
-theme: minima 
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - index.html
+  - analysis.html
+exclude:
+  - README.md
+  - .gitignore
+  - .Rproj.user/
+  - .Rhistory
+  - .DS_Store 
