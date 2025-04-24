@@ -1,7 +1,7 @@
 .nav-header {
   background-color: #f8f9fa;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -44,21 +44,48 @@
   background-color: #5a6268;
 }
 
-/* Fix for table of contents overlap */
-#TOC {
-  z-index: 900;
-  position: relative;
-  margin-top: 20px;
-}
-
-/* Main content adjustments */
+/* Main content layout */
 .main-container {
   padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Table of contents adjustments */
+#TOC {
+  z-index: 900;
+  margin-top: 35px !important;
+  padding-top: 20px !important;
+}
+
+/* Header adjustments */
+.page-header {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.toc-content {
+  padding-top: 0;
 }
 
 /* Ensure headers don't overlap */
 h1, h2, h3 {
   clear: both;
+  position: relative;
+  z-index: 1;
   padding-top: 20px;
   margin-top: 0;
+}
+
+/* Title adjustments */
+.title {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure proper spacing for floating TOC */
+@media (min-width: 768px) {
+  .row-fluid {
+    margin-top: 20px;
+  }
 } 

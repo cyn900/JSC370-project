@@ -16,17 +16,28 @@ library(plotly)
 library(DT)
 ```
 
-```{=html}
+<style>
+.page-header {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.toc-content {
+  padding-top: 0;
+}
+#TOC {
+  margin-top: 35px;
+}
+</style>
+
 <div class="nav-header">
   <div class="nav-title">Jargon Analytics</div>
   <div class="nav-links">
-    <a href="{{ site.baseurl }}/index.html" class="nav-active">Overview</a>
-    <a href="{{ site.baseurl }}/analysis.html" class="nav-inactive">Detailed Analysis</a>
+    <a href="index.html" class="nav-active">Overview</a>
+    <a href="analysis.html" class="nav-inactive">Detailed Analysis</a>
   </div>
 </div>
 
 <div class="main-container">
-```
 
 # Overview
 
