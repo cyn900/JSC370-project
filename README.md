@@ -1,1 +1,1 @@
-# JSC370-project
+# JSC370 Interactive Visualizations

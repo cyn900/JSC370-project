@@ -38,11 +38,11 @@ Github repo link: https://github.com/cyn900/JSC370-project
 The original developers of Jargon designed a database to track real-life usage and store relevant information on Supabase. I downloaded five CSV files (profiles, words, questions, levels, and websites) from Supabase on March 16, 2025 for analysis.
 
 ```{r include=FALSE}
-profiles <- read.csv("profiles_rows_cleaned.csv")
-words <- read.csv("words_rows.csv")
-questions <- read.csv("questions_rows.csv")
-levels <- read.csv("levels_rows.csv")
-websites <- read.csv("website_blacklist_rows.csv")
+profiles <- read_csv("data/profiles_rows_cleaned.csv")
+questions <- read_csv("data/questions_rows.csv")
+words <- read_csv("data/words_rows.csv")
+levels <- read_csv("data/levels_rows.csv")
+websites <- read_csv("data/website_blacklist_rows.csv")
 ```
 
 The 1st CSV, profiles, contains 92 user profile information that includes the current settings for each user profile. Each user is represented by a unique ID, which serves as the primary key in this dataset. This dataset includes user_id, level (current proficiency level), paused (whether paused on Chrome or not), chrome_notifs (whether Chrome notifications are open), language (the current language chosen), last_question_time, week_streak, daily_streak, daily_progress, daily_goal, density (density of the questions displayed on the website), highlightStyle (underline or highlight), and bonus_points. The bonus points column was designed for a competition in which users could earn bonus points by following on Instagram, joining Discord, commenting, and participating in activities to spread the word on the Chrome extension store. Note that the username was originally stored in this dataset, but I manually deleted the name column to protect users' privacy.
