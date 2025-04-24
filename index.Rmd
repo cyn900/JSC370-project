@@ -1,0 +1,155 @@
+---
+title: "Jargon User Analytics Dashboard"
+output: 
+  html_document:
+    theme: cosmo
+    highlight: tango
+    toc: true
+    toc_float: true
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(plotly)
+library(DT)
+```
+
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-active">Overview</a>
+    <a href="analysis.html" class="nav-inactive">Detailed Analysis</a>
+  </div>
+</div>
+```
+
+# Overview
+
+This dashboard presents an analysis of user engagement with the Jargon Chrome extension, a language learning tool. The analysis is based on data collected from 92 users, examining various aspects of their interaction with the platform.
+
+```{r data-prep}
+# Load and prepare data
+profiles <- read_csv("data/profiles_rows_cleaned.csv")
+questions <- read_csv("data/questions_rows.csv")
+words <- read_csv("data/words_rows.csv")
+levels <- read_csv("data/levels_rows.csv")
+websites <- read_csv("data/website_blacklist_rows.csv")
+
+# Enhance profiles data
+question_counts <- questions %>%
+  group_by(user_id) %>%
+  summarise(generated_questions = n())
+
+answer_counts <- words %>%
+  group_by(user_id) %>%
+  summarise(answered_questions = n())
+
+blocked_websites <- websites %>%
+  group_by(user_id) %>%
+  summarise(blocked_sites = n())
+
+distinct_levels <- levels %>%
+  group_by(user_id) %>%
+  summarise(levels_attempted = n_distinct(level))
+
+# Merge enhanced data
+enhanced_profiles <- profiles %>%
+  left_join(question_counts, by = "user_id") %>%
+  mutate(generated_questions = ifelse(is.na(generated_questions), 0, generated_questions)) %>%
+  left_join(answer_counts, by = "user_id") %>%
+  mutate(answered_questions = ifelse(is.na(answered_questions), 0, answered_questions)) %>%
+  left_join(blocked_websites, by = "user_id") %>%
+  mutate(blocked_sites = ifelse(is.na(blocked_sites), 0, blocked_sites)) %>%
+  left_join(distinct_levels, by = "user_id") %>%
+  mutate(levels_attempted = ifelse(is.na(levels_attempted), 0, levels_attempted)) %>%
+  mutate(highlightStyle = if_else(highlightStyle == "highlight", 1, 0))
+```
+
+## Key Metrics Summary
+
+```{r data-table}
+# Create summary statistics
+summary_stats <- data.frame(
+  Metric = c("Generated Questions", "Answered Questions", "Blocked Sites", "Levels Attempted"),
+  Mean = c(
+    round(mean(enhanced_profiles$generated_questions, na.rm = TRUE), 2),
+    round(mean(enhanced_profiles$answered_questions, na.rm = TRUE), 2),
+    round(mean(enhanced_profiles$blocked_sites, na.rm = TRUE), 2),
+    round(mean(enhanced_profiles$levels_attempted, na.rm = TRUE), 2)
+  ),
+  Median = c(
+    round(median(enhanced_profiles$generated_questions, na.rm = TRUE), 2),
+    round(median(enhanced_profiles$answered_questions, na.rm = TRUE), 2),
+    round(median(enhanced_profiles$blocked_sites, na.rm = TRUE), 2),
+    round(median(enhanced_profiles$levels_attempted, na.rm = TRUE), 2)
+  ),
+  Maximum = c(
+    max(enhanced_profiles$generated_questions, na.rm = TRUE),
+    max(enhanced_profiles$answered_questions, na.rm = TRUE),
+    max(enhanced_profiles$blocked_sites, na.rm = TRUE),
+    max(enhanced_profiles$levels_attempted, na.rm = TRUE)
+  ),
+  Minimum = c(
+    min(enhanced_profiles$generated_questions, na.rm = TRUE),
+    min(enhanced_profiles$answered_questions, na.rm = TRUE),
+    min(enhanced_profiles$blocked_sites, na.rm = TRUE),
+    min(enhanced_profiles$levels_attempted, na.rm = TRUE)
+  )
+)
+
+# Create interactive data table
+datatable(summary_stats,
+          options = list(pageLength = 10),
+          rownames = FALSE,
+          caption = "Table 1: Summary Statistics of User Engagement Metrics")
+```
+
+**Summary**: The table above shows key statistics for user engagement metrics. There is notable variation in user engagement, with some users being highly active (maximum of 647 generated questions) while others show minimal interaction (minimum of 0 across metrics). The median values suggest that typical user engagement is relatively modest.
+
+## User Engagement Distribution
+
+```{r engagement-metrics}
+# Create individual box plots
+plot_generated <- plot_ly(enhanced_profiles, y = ~generated_questions, type = "box", 
+                         name = "Generated Questions",
+                         marker = list(color = "rgb(55, 83, 109)")) %>%
+  layout(title = "Generated Questions Distribution",
+         yaxis = list(title = "Count"))
+
+plot_answered <- plot_ly(enhanced_profiles, y = ~answered_questions, type = "box", 
+                        name = "Answered Questions",
+                        marker = list(color = "rgb(26, 118, 255)")) %>%
+  layout(title = "Answered Questions Distribution",
+         yaxis = list(title = "Count"))
+
+plot_blocked <- plot_ly(enhanced_profiles, y = ~blocked_sites, type = "box", 
+                       name = "Blocked Sites",
+                       marker = list(color = "rgb(219, 64, 82)")) %>%
+  layout(title = "Blocked Sites Distribution",
+         yaxis = list(title = "Count"))
+
+plot_levels <- plot_ly(enhanced_profiles, y = ~levels_attempted, type = "box", 
+                      name = "Levels Attempted",
+                      marker = list(color = "rgb(44, 160, 44)")) %>%
+  layout(title = "Levels Attempted Distribution",
+         yaxis = list(title = "Count"))
+
+# Combine plots in a 2x2 grid
+subplot(plot_generated, plot_answered, plot_blocked, plot_levels, 
+        nrows = 2, 
+        shareX = FALSE, 
+        shareY = FALSE) %>%
+  layout(
+    title = list(text = "Figure 1: Distribution of User Engagement Metrics",
+                 x = 0.5),
+    showlegend = FALSE,
+    margin = list(t = 60)
+  )
+```
+
+**Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show moderate engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
+
+[Continue to Detailed Analysis →](analysis.html) 
