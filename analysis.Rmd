@@ -29,9 +29,6 @@ library(DT)
 
 This page provides an in-depth analysis of user engagement patterns with the Jargon Chrome extension. 
 
-[← Back to Overview](index.html)
-
-## Data Preparation
 
 ```{r data-prep}
 # Load and prepare data
@@ -124,21 +121,3 @@ plot_ly(timeline_data,
 ```
 
 **Figure 2 Description**: The time series plot reveals the daily pattern of question generation over time. Notable spikes in activity occur periodically, particularly around October, suggesting possible promotional events or user engagement initiatives. The baseline activity shows consistent but relatively low engagement, indicating opportunities for improving regular user participation.
-
-## Key Findings
-
-1. **User Engagement Variation**: There is significant variation in user engagement levels, with a small group of highly active users generating hundreds of questions while most users show moderate activity.
-
-2. **Language Preferences**: Spanish, GRE Vocabulary, and Tamil emerge as the most popular language categories, suggesting these areas resonate most with the user base.
-
-3. **Temporal Patterns**: Usage shows sporadic spikes rather than consistent daily engagement, indicating potential opportunities for improving regular user participation.
-
-## Recommendations
-
-1. **User Engagement**: Implement strategies to convert moderate users into more active participants, possibly through gamification or targeted incentives.
-
-2. **Content Development**: Focus on expanding content in popular language categories while investigating ways to increase engagement in less-utilized categories.
-
-3. **Usage Patterns**: Develop features to encourage more consistent daily usage, such as daily challenges or streak rewards.
-
-[← Back to Overview](index.html) 

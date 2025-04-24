@@ -102,10 +102,14 @@ summary_stats <- data.frame(
 
 # Create interactive data table
 datatable(summary_stats,
-          options = list(pageLength = 10),
+          options = list(
+            dom = 't',  # Only show the table, no other elements
+            pageLength = -1  # Show all rows
+          ),
           rownames = FALSE,
           caption = "Table 1: Summary Statistics of User Engagement Metrics")
 ```
+
 
 **Summary**: The table above shows key statistics for user engagement metrics. There is notable variation in user engagement, with some users being highly active (maximum of 647 generated questions) while others show minimal interaction (minimum of 0 across metrics). The median values suggest that typical user engagement is relatively modest.
 
@@ -151,7 +155,3 @@ subplot(plot_generated, plot_answered, plot_blocked, plot_levels,
 ```
 
 **Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show moderate engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
-
-[Continue to Detailed Analysis →](analysis.html) 
-```
-</div>
