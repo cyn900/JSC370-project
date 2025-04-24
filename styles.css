@@ -1,6 +1,6 @@
 .nav-header {
   background-color: #f8f9fa;
-  padding: 15px;
+  padding: 15px 20px;
   margin-bottom: 30px;
   border-radius: 5px;
   display: flex;
@@ -9,6 +9,8 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: relative;
   z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-title {
@@ -21,6 +23,7 @@
 .nav-links {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .nav-links a {
@@ -29,11 +32,16 @@
   text-decoration: none;
   border-radius: 3px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .nav-active {
   background-color: #007bff;
+}
+
+.nav-active:hover {
+  background-color: #0056b3;
 }
 
 .nav-inactive {
@@ -42,6 +50,7 @@
 
 .nav-inactive:hover {
   background-color: #5a6268;
+  text-decoration: none;
 }
 
 /* Main content layout */
