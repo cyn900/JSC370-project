@@ -24,6 +24,8 @@ library(DT)
     <a href="{{ site.baseurl }}/analysis.html" class="nav-inactive">Detailed Analysis</a>
   </div>
 </div>
+
+<div class="main-container">
 ```
 
 # Overview
@@ -153,3 +155,5 @@ subplot(plot_generated, plot_answered, plot_blocked, plot_levels,
 **Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show moderate engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
 
 [Continue to Detailed Analysis →](analysis.html) 
+```
+</div>

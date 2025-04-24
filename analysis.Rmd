@@ -24,6 +24,8 @@ library(DT)
     <a href="{{ site.baseurl }}/analysis.html" class="nav-active">Detailed Analysis</a>
   </div>
 </div>
+
+<div class="main-container">
 ```
 
 # Detailed Analysis

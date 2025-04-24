@@ -6,11 +6,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1000;
 }
 
 .nav-title {
   margin: 0;
   font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
 }
 
 .nav-links {
@@ -24,6 +29,7 @@
   text-decoration: none;
   border-radius: 3px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .nav-active {
@@ -32,4 +38,27 @@
 
 .nav-inactive {
   background-color: #6c757d;
+}
+
+.nav-inactive:hover {
+  background-color: #5a6268;
+}
+
+/* Fix for table of contents overlap */
+#TOC {
+  z-index: 900;
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Main content adjustments */
+.main-container {
+  padding-top: 20px;
+}
+
+/* Ensure headers don't overlap */
+h1, h2, h3 {
+  clear: both;
+  padding-top: 20px;
+  margin-top: 0;
 } 
