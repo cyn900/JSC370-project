@@ -109,7 +109,7 @@ datatable(summary_stats,
             )
           ),
           rownames = FALSE,
-          caption = htmltools::HTML("<div style='text-align: center; margin-bottom: 15px;'>Table 1: Summary Statistics of User Engagement Metrics</div>"))
+          caption = htmltools::HTML("<div style='text-align: center; margin-bottom: 10px; color: black; font-size: 20px'>Table 1: Summary Statistics of User Engagement Metrics</div>"))
 ```
 
 
@@ -121,27 +121,55 @@ datatable(summary_stats,
 # Create individual box plots
 plot_generated <- plot_ly(enhanced_profiles, y = ~generated_questions, type = "box", 
                          name = "Generated Questions",
-                         marker = list(color = "rgb(55, 83, 109)")) %>%
-  layout(title = "Generated Questions Distribution",
-         yaxis = list(title = "Count"))
+                         marker = list(color = "#6a0dad")) %>%
+  layout(title = list(
+           text = "<span class='content-title'>Generated Questions Distribution</span>",
+           xref = "paper",
+           x = 0.5,
+           y = 1,
+           pad = list(t = 0, b = 0)
+         ),
+         yaxis = list(title = "Count"),
+         margin = list(t = 30, r = 0, l = 0, b = 0))
 
 plot_answered <- plot_ly(enhanced_profiles, y = ~answered_questions, type = "box", 
                         name = "Answered Questions",
-                        marker = list(color = "rgb(26, 118, 255)")) %>%
-  layout(title = "Answered Questions Distribution",
-         yaxis = list(title = "Count"))
+                        marker = list(color = "#8e44ad")) %>%
+  layout(title = list(
+           text = "<span class='content-title'>Answered Questions Distribution</span>",
+           xref = "paper",
+           x = 0.5,
+           y = 1,
+           pad = list(t = 0, b = 0)
+         ),
+         yaxis = list(title = "Count"),
+         margin = list(t = 30, r = 0, l = 0, b = 0))
 
 plot_blocked <- plot_ly(enhanced_profiles, y = ~blocked_sites, type = "box", 
                        name = "Blocked Sites",
-                       marker = list(color = "rgb(219, 64, 82)")) %>%
-  layout(title = "Blocked Sites Distribution",
-         yaxis = list(title = "Count"))
+                       marker = list(color = "#9b59b6")) %>%
+  layout(title = list(
+           text = "<span class='content-title'>Blocked Sites Distribution</span>",
+           xref = "paper",
+           x = 0.5,
+           y = 1,
+           pad = list(t = 0, b = 0)
+         ),
+         yaxis = list(title = "Count"),
+         margin = list(t = 30, r = 0, l = 0, b = 0))
 
 plot_levels <- plot_ly(enhanced_profiles, y = ~levels_attempted, type = "box", 
                       name = "Levels Attempted",
-                      marker = list(color = "rgb(44, 160, 44)")) %>%
-  layout(title = "Levels Attempted Distribution",
-         yaxis = list(title = "Count"))
+                      marker = list(color = "#a569bd")) %>%
+  layout(title = list(
+           text = "<span class='content-title'>Levels Attempted Distribution</span>",
+           xref = "paper",
+           x = 0.5,
+           y = 1,
+           pad = list(t = 0, b = 0)
+         ),
+         yaxis = list(title = "Count"),
+         margin = list(t = 30, r = 0, l = 0, b = 0))
 
 # Combine plots in a 2x2 grid
 subplot(plot_generated, plot_answered, plot_blocked, plot_levels, 
@@ -149,10 +177,14 @@ subplot(plot_generated, plot_answered, plot_blocked, plot_levels,
         shareX = FALSE, 
         shareY = FALSE) %>%
   layout(
-    title = list(text = "Figure 1: Distribution of User Engagement Metrics",
-                 x = 0.5),
+    title = list(
+      text = "<span class='content-title'>Figure 1: Distribution of User Engagement Metrics</span>",
+      x = 0.5,
+      y = 1,
+      pad = list(t = 0, b = 0)
+    ),
     showlegend = FALSE,
-    margin = list(t = 60)
+    margin = list(t = 30, r = 0, l = 0, b = 0)
   )
 ```
 
