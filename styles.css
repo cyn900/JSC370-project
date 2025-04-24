@@ -7,7 +7,8 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   width: 100%;
   box-sizing: border-box;
@@ -55,15 +56,17 @@
 
 /* Main content layout */
 .main-container {
-  padding-top: 20px;
+  padding-top: 40px;
   position: relative;
   z-index: 1;
 }
 
 /* Table of contents adjustments */
 #TOC {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px !important;
+  padding-top: 15px !important;
   background-color: #f8f9fa;
   border: 1px solid #e9ecef;
   border-radius: 5px;
@@ -101,44 +104,41 @@
   text-decoration: none;
 }
 
-/* Header adjustments */
+/* Content preview adjustments */
 .page-header {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .toc-content {
-  padding-top: 0;
-}
-
-/* Ensure headers don't overlap */
-h1, h2, h3 {
-  clear: both;
+  padding-top: 20px;
   position: relative;
   z-index: 1;
-  padding-top: 20px;
-  margin-top: 0;
 }
 
 /* Title adjustments */
 .title {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin-top: 20px !important;
+  padding-top: 20px !important;
   font-size: 2em !important;
+  position: relative;
+  z-index: 1;
 }
 
 /* Ensure proper spacing for floating TOC */
 @media (min-width: 768px) {
   .row-fluid {
-    margin-top: 20px;
-  }
-  
-  /* Adjust TOC width and position */
-  .col-xs-12.col-sm-4.col-md-3 {
-    padding-right: 25px;
+    margin-top: 40px;
   }
   
   #TOC.floating {
-    top: 20px !important;
+    top: 80px !important;
+    margin-top: 0 !important;
+  }
+  
+  .col-xs-12.col-sm-4.col-md-3 {
+    padding-right: 25px;
   }
 } 
