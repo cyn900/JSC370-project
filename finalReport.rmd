@@ -102,13 +102,15 @@ With approximately 93 users after 10 months since launch, this analysis aims to 
 
 These questions will help us understand user behavior and identify opportunities for improving user retention and engagement with the platform.
 
-# Data Description
+# Methods
 
-The analysis uses real-life usage data collected from Jargon's Supabase database on March 16, 2025. The data represents all user interactions from the launch in June 2024 through March 16, 2025.
+## Data Collection and Description
 
-## Original Datasets
+The data for this analysis was collected from Jargon's Supabase database on March 16, 2025, covering all user interactions since the extension's launch in June 2024. The data was exported as CSV files and processed using R for analysis. The analysis pipeline was implemented using the tidyverse ecosystem in R, with particular emphasis on dplyr for data manipulation and lubridate for handling temporal data.
 
-### 1. Profiles Dataset
+### Original Datasets
+
+#### 1. Profiles Dataset
 | Variable | Description | Type | Notes |
 |----------|-------------|------|-------|
 | user_id | Unique identifier for each user | Primary Key | Anonymized identifier |
@@ -125,7 +127,7 @@ The analysis uses real-life usage data collected from Jargon's Supabase database
 | highlightStyle | Text selection preference | String | "highlight" or "underline" |
 | bonus_points | Engagement reward points | Integer | Earned from community activities |
 
-### 2. Questions Dataset
+#### 2. Questions Dataset
 | Variable | Description | Type | Notes |
 |----------|-------------|------|-------|
 | question_id | Unique question identifier | Primary Key | |
@@ -140,7 +142,7 @@ The analysis uses real-life usage data collected from Jargon's Supabase database
 | chosen_option | User's answer | String | NULL if unanswered |
 | user_rating | Question quality rating | Integer | Feature not yet implemented |
 
-### 3. Words Dataset
+#### 3. Words Dataset
 | Variable | Description | Type | Notes |
 |----------|-------------|------|-------|
 | created_at | Word entry timestamp | DateTime | UTC timezone |
@@ -150,40 +152,51 @@ The analysis uses real-life usage data collected from Jargon's Supabase database
 | translation | English translation | Text | AI-generated translation |
 | status | Learning status | String | Currently all set to "learning" |
 
-### 4. Levels Dataset
+#### 4. Levels Dataset
 | Variable | Description | Type | Notes |
 |----------|-------------|------|-------|
 | user_id | Associated user | Foreign Key | References profiles |
 | language | Language mode | String | |
 | level | Difficulty level | Integer | Range: 1-10 |
 
-### 5. Websites Dataset
+#### 5. Websites Dataset
 | Variable | Description | Type | Notes |
 |----------|-------------|------|-------|
 | user_id | Associated user | Foreign Key | References profiles |
 | website | Blocked URL | String | Sites where Jargon is disabled |
 
+### Derived Variables
+For analysis purposes, we enhanced the Profiles dataset with the following derived metrics:
 
+| Variable | Description | Derivation Method | Source Tables |
+|----------|-------------|-------------------|---------------|
+| generated_questions | Total questions per user | Count of entries | questions |
+| answered_questions | Completed questions | Count of answered entries | words |
+| blocked_sites | Number of blocked websites | Count of entries | websites |
+| levels_attempted | Number of unique levels tried | Count of distinct levels | levels |
 
-# Methods
+## Data Processing Steps
 
-## Data Collection and Preparation
-
-The data for this analysis was collected from Jargon's Supabase database on March 16, 2025, covering all user interactions since the extension's launch in June 2024. The data was exported as CSV files and processed using R for analysis.
-
-```{r data_preparation, message=FALSE}
+```{r data_import, echo=FALSE, message=FALSE}
 # Load required libraries
 library(tidyverse)
 library(lubridate)
 
 # Read the CSV files
-profiles <- read.csv("data/profiles_rows.csv")
+profiles <- read.csv("data/profiles_rows_cleaned.csv")
 questions <- read.csv("data/questions_rows.csv")
 words <- read.csv("data/words_rows.csv")
 levels <- read.csv("data/levels_rows.csv")
 websites <- read.csv("data/website_blacklist_rows.csv")
+```
 
-# Clean and enhance profiles data
+1. **Data Import**
+   - Imported required R packages: tidyverse for data manipulation and lubridate for time-based operations
+   - Loaded five primary CSV files containing user interaction data
+   - Files included: profiles, questions, words, levels, and website blacklist data
+
+```{r data_enhancement, echo=FALSE, message=FALSE}
+# Clean and enhance profiles data with derived metrics
 enhanced_profiles <- profiles %>%
   # Add total questions generated per user
   left_join(
@@ -213,8 +226,19 @@ enhanced_profiles <- profiles %>%
       group_by(user_id) %>%
       summarise(levels_attempted = n_distinct(level)),
     by = "user_id"
-  ) %>%
-  # Replace NA values with 0 for derived metrics
+  )
+```
+
+2. **Data Enhancement**
+   - Created an enhanced profiles dataset through a series of left joins
+   - Calculated total questions generated by counting entries in questions table
+   - Determined answered questions by counting non-null answered_at entries
+   - Computed blocked websites count from website blacklist entries
+   - Derived unique levels attempted by counting distinct level values
+
+```{r data_cleaning, echo=FALSE, message=FALSE}
+# Handle missing values
+enhanced_profiles <- enhanced_profiles %>%
   mutate(
     generated_questions = replace_na(generated_questions, 0),
     answered_questions = replace_na(answered_questions, 0),
@@ -224,26 +248,22 @@ enhanced_profiles <- profiles %>%
 
 # Save the enhanced profiles data
 write.csv(enhanced_profiles, "data/enhanced_profiles.csv", row.names = FALSE)
-
-# Display the first few rows and structure of the enhanced dataset
-str(enhanced_profiles)
-head(enhanced_profiles)
 ```
 
-## Data Cleaning and Wrangling
+3. **Data Cleaning**
+   - Handled missing values in derived metrics by replacing NA values with 0
+   - This approach treats absence of activity as zero engagement
+   - Exported the processed dataset as 'enhanced_profiles.csv' for further analysis
 
-The data preparation process involved several key steps:
+```{r data_validation, echo=FALSE, message=FALSE}
+# Display summary statistics for validation
+summary_stats <- enhanced_profiles %>%
+  summarise(
+    total_users = n(),
+    active_users = sum(generated_questions > 0),
+    max_questions = max(generated_questions),
+    avg_questions = mean(generated_questions),
+    completion_rate = mean(answered_questions / generated_questions, na.rm = TRUE)
+  )
+```
 
-1. **Data Loading**: Five primary CSV files were imported containing user profiles, questions, words, levels, and blocked websites information.
-
-2. **Data Enhancement**: The profiles dataset was enriched with derived metrics:
-   - `generated_questions`: Total number of questions created by each user
-   - `answered_questions`: Count of questions completed by each user
-   - `blocked_sites`: Number of websites where users disabled the extension
-   - `levels_attempted`: Count of unique difficulty levels tried by each user
-
-3. **Missing Value Handling**: NA values in the derived metrics were replaced with 0, assuming no activity is equivalent to zero count.
-
-4. **Data Validation**: The enhanced dataset was examined to ensure all joins were performed correctly and derived metrics were calculated accurately.
-
-This processed dataset forms the foundation for our analysis of user engagement patterns and feature usage in the Jargon extension.
