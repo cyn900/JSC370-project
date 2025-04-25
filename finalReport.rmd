@@ -13,6 +13,14 @@ library(tidyverse)
 library(lubridate)
 library(knitr)
 library(kableExtra)
+library(urltools)
+
+# Read the CSV files
+profiles <- read.csv("data/profiles_rows_cleaned.csv")
+questions <- read.csv("data/questions_rows.csv")
+words <- read.csv("data/words_rows.csv")
+levels <- read.csv("data/levels_rows.csv")
+websites <- read.csv("data/website_blacklist_rows.csv")
 ```
 
 # Introduction
@@ -182,96 +190,193 @@ After 10 months of operation and 93 users, this analysis investigates three key 
 
 ## Data Collection
 
-The data was collected from Jargon's Supabase database on March 16, 2025, covering all real-life usage data since launch.
+The data for this analysis was collected from Jargon's Supabase database, covering user interactions from the extension's launch in June 2024 through March 16, 2025. The dataset comprises five main tables:
+
+```{r data_summary_table, echo=FALSE}
+# Create summary statistics for each dataset
+data_summary <- tibble(
+  `Dataset` = c("Profiles", "Questions", "Words", "Levels", "Websites"),
+  `Records` = c(nrow(profiles), nrow(questions), nrow(words), nrow(levels), nrow(websites)),
+  `Description` = c(
+    "User profiles and settings",
+    "Generated practice questions",
+    "Vocabulary entries and translations",
+    "User progression through difficulty levels",
+    "Websites where extension was disabled"
+  )
+)
+
+kable(data_summary, 
+      caption = "<em style='color: black;'>Table 1: Overview of Dataset Components</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+### Dataset Descriptions
+
+#### 1. Profiles Dataset
+```{r profiles_summary, echo=FALSE}
+# Create summary of key variables in profiles
+profile_vars <- tibble(
+  Variable = c("user_id", "level", "paused", "chrome_notifs", "language", 
+               "last_question_time", "week_streak", "daily_streak", "daily_progress",
+               "daily_goal", "density", "highlightStyle"),
+  Type = c("Primary Key", "Integer", "Boolean", "Boolean", "String",
+           "DateTime", "Integer", "Integer", "Integer",
+           "Integer", "Integer", "String"),
+  Description = c(
+    "Unique identifier for each user",
+    "Current proficiency level",
+    "Extension status on Chrome",
+    "Notification preferences",
+    "Current selected language mode",
+    "Timestamp of most recent question",
+    "Consecutive weeks of activity",
+    "Consecutive days of activity",
+    "Questions completed today",
+    "Target questions per day",
+    "Frequency of questions",
+    "Text selection preference"
+  ),
+  Notes = c(
+    "Anonymized identifier",
+    "Range: 1-10",
+    "TRUE/FALSE (Default: TRUE)",
+    "TRUE/FALSE",
+    "e.g., 'GRE Vocabulary', 'TikTok Slang'",
+    "UTC timezone",
+    "",
+    "",
+    "Resets daily",
+    "User-set goal",
+    "Percentage of eligible sentences shown (0-100)",
+    "'highlight' or 'underline'"
+  )
+)
+
+kable(profile_vars,
+      caption = "<em style='color: black;'>Table 2: Key Variables in Profiles Dataset</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+#### 2. Questions Dataset
+```{r questions_summary, echo=FALSE}
+# Create summary of key variables in questions
+question_vars <- tibble(
+  Variable = c("question_id", "user_id", "created_at", "sentence", "word",
+               "language", "original_sentence", "options_array", "answered_at",
+               "chosen_option", "user_rating"),
+  Type = c("Primary Key", "Foreign Key", "DateTime", "Text", "String",
+           "String", "Text", "Array of String", "DateTime",
+           "String", "Integer"),
+  Description = c(
+    "Unique question identifier",
+    "Associated user",
+    "Question generation time",
+    "Original selected text",
+    "Target word for learning",
+    "Transformation mode",
+    "Source text",
+    "Multiple choice options",
+    "Completion timestamp",
+    "User's answer",
+    "Question quality rating"
+  ),
+  Notes = c(
+    "",
+    "References profiles",
+    "UTC timezone",
+    "English source content",
+    "",
+    "Selected language mode",
+    "Pre-transformation content",
+    "Even indices: options in target language; Odd indices: English translations",
+    "NULL if unanswered",
+    "NULL if unanswered",
+    "Feature not yet implemented"
+  )
+)
+
+kable(question_vars,
+      caption = "<em style='color: black;'>Table 3: Key Variables in Questions Dataset</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+#### 3. Words Dataset
+```{r words_summary, echo=FALSE}
+# Create summary of key variables in words
+words_vars <- tibble(
+  Variable = c("created_at", "word", "language", "user_id", "translation", "status"),
+  Type = c("DateTime", "String", "String", "Foreign Key", "Text", "String"),
+  Description = c(
+    "Word entry timestamp",
+    "Target vocabulary",
+    "Language mode",
+    "Associated user",
+    "English translation",
+    "Learning status"
+  ),
+  Notes = c(
+    "UTC timezone",
+    "",
+    "",
+    "References profiles",
+    "AI-generated translation",
+    "Currently all set to 'learning'"
+  )
+)
+
+kable(words_vars,
+      caption = "<em style='color: black;'>Table 4: Key Variables in Words Dataset</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+#### 4. Levels Dataset
+```{r levels_summary, echo=FALSE}
+# Create summary of key variables in levels
+levels_vars <- tibble(
+  Variable = c("user_id", "language", "level"),
+  Type = c("Foreign Key", "String", "Integer"),
+  Description = c(
+    "Associated user",
+    "Language mode",
+    "Difficulty level"
+  ),
+  Notes = c(
+    "References profiles",
+    "",
+    "Range: 1-10"
+  )
+)
+
+kable(levels_vars,
+      caption = "<em style='color: black;'>Table 5: Key Variables in Levels Dataset</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+#### 5. Websites Dataset
+```{r websites_summary, echo=FALSE}
+# Create summary of key variables in websites
+websites_vars <- tibble(
+  Variable = c("user_id", "website"),
+  Type = c("Foreign Key", "String"),
+  Description = c(
+    "Associated user",
+    "Blocked URL"
+  ),
+  Notes = c(
+    "References profiles",
+    "Sites where Jargon is disabled"
+  )
+)
+
+kable(websites_vars,
+      caption = "<em style='color: black;'>Table 6: Key Variables in Websites Dataset</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
 
 ## Data Processing
 
-### Data Sources
-
-#### 1. Profiles Dataset
-
-| Variable | Description | Type | Notes |
-|------------------|-----------------------|----------------|----------------|
-| user_id | Unique identifier for each user | Primary Key | Anonymized identifier |
-| level | Current proficiency level | Integer | Range: 1-10 |
-| paused | Extension status on Chrome | Boolean | TRUE/FALSE (Default: TRUE) |
-| chrome_notifs | Notification preferences | Boolean | TRUE/FALSE |
-| language | Current selected language mode | String | e.g., "GRE Vocabulary", "TikTok Slang" |
-| last_question_time | Timestamp of most recent question | DateTime | UTC timezone |
-| week_streak | Consecutive weeks of activity | Integer |  |
-| daily_streak | Consecutive days of activity | Integer |  |
-| daily_progress | Questions completed today | Integer | Resets daily |
-| daily_goal | Target questions per day | Integer | User-set goal |
-| density | Frequency of questions | Integer | Percentage of eligible sentences shown (0-100) |
-| highlightStyle | Text selection preference | String | "highlight" or "underline" |
-| bonus_points | Engagement reward points | Integer | Earned from community activities |
-
-#### 2. Questions Dataset
-
-| Variable | Description | Type | Notes |
-|------------------|-----------------------|----------------|----------------|
-| question_id | Unique question identifier | Primary Key |  |
-| user_id | Associated user | Foreign Key | References profiles |
-| created_at | Question generation time | DateTime | UTC timezone |
-| sentence | Original selected text | Text | English source content |
-| word | Target word for learning | String |  |
-| language | Transformation mode | String | Selected language mode |
-| original_sentence | Source text | Text | Pre-transformation content |
-| options_array | Multiple choice options | Array of String | Even indices: options in target language; Odd indices: English translations |
-| answered_at | Completion timestamp | DateTime | NULL if unanswered |
-| chosen_option | User's answer | String | NULL if unanswered |
-| user_rating | Question quality rating | Integer | Feature not yet implemented |
-
-#### 3. Words Dataset
-
-| Variable | Description | Type | Notes |
-|----|----|----|----|
-| created_at | Word entry timestamp | DateTime | UTC timezone |
-| word | Target vocabulary | String |  |
-| language | Language mode | String |  |
-| user_id | Associated user | Foreign Key | References profiles |
-| translation | English translation | Text | AI-generated translation |
-| status | Learning status | String | Currently all set to "learning" |
-
-#### 4. Levels Dataset
-
-| Variable | Description      | Type        | Notes               |
-|----------|------------------|-------------|---------------------|
-| user_id  | Associated user  | Foreign Key | References profiles |
-| language | Language mode    | String      |                     |
-| level    | Difficulty level | Integer     | Range: 1-10         |
-
-#### 5. Websites Dataset
-
-| Variable | Description     | Type        | Notes                          |
-|----------|-----------------|-------------|--------------------------------|
-| user_id  | Associated user | Foreign Key | References profiles            |
-| website  | Blocked URL     | String      | Sites where Jargon is disabled |
-
-### Derived Variables
-
-For analysis purposes, we enhanced the Profiles dataset with the following derived metrics based on user id:
-
-| Variable | Description | Derivation Method | Source Tables |
-|-----------------|-----------------|----------------------|-----------------|
-| generated_questions | Total questions per user | Count of entries | questions |
-| answered_questions | Completed questions | Count of answered entries | words |
-| blocked_sites | Number of blocked websites | Count of entries | websites |
-| levels_attempted | Number of unique combinations of levels and languages attempted | Count of distinct levels | levels |
-
-### Data Preparation
-
 ```{r data_processing, echo=FALSE}
-# Load required libraries
-library(tidyverse)
-library(lubridate)
-
-# Read the CSV files
-profiles <- read.csv("data/profiles_rows_cleaned.csv")
-questions <- read.csv("data/questions_rows.csv")
-words <- read.csv("data/words_rows.csv")
-levels <- read.csv("data/levels_rows.csv")
-websites <- read.csv("data/website_blacklist_rows.csv")
 
 # Clean and enhance profiles data
 enhanced_profiles <- profiles %>%
@@ -309,21 +414,47 @@ enhanced_profiles <- profiles %>%
     generated_questions = replace_na(generated_questions, 0),
     answered_questions = replace_na(answered_questions, 0),
     blocked_sites = replace_na(blocked_sites, 0),
-    distinct_combinations = replace_na(distinct_combinations, 0)
+    levels_attempted = replace_na(distinct_combinations, 0)
   )
-
-
 ```
 
-The data preparation workflow involved:
+### Data Cleaning Steps
 
-1.  **Data Integration**: Combined five primary datasets using user_id as the key identifier
-2.  **Feature Engineering**: Created four derived metrics:
-    -   Total questions generated
-    -   Questions answered
-    -   Blocked websites count
-    -   Unique levels attempted
-3.  **Missing Value Treatment**: Replaced NA values with 0 for derived metrics
+**Profile Enhancement**
+
+   - Aggregated user activity metrics from various tables
+   - Created derived engagement metrics:
+     * Total questions generated
+     * Questions answered
+     * Number of blocked websites
+     * Unique difficulty levels attempted
+   - Handled missing values by replacing NAs with 0 for count-based metrics
+
+
+### Derived Variables
+
+```{r derived_vars_summary, echo=FALSE}
+derived_vars <- tibble(
+  Variable = c("generated_questions", "answered_questions", "blocked_sites", 
+               "levels_attempted"),
+  Calculation = c(
+    "Count of questions per user",
+    "Count of questions with answers",
+    "Count of blocked websites",
+    "Count of unique combination of languages and difficulty levels"
+  ),
+  Purpose = c(
+    "Measure overall engagement",
+    "Measure learning completion",
+    "Understand avoidance patterns",
+    "Track learning progression"
+  )
+)
+
+kable(derived_vars,
+      caption = "<em style='color: black;'>Table 7: Overview of Derived Variables</em>") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
 
 ## Analysis Methods
 
