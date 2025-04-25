@@ -181,7 +181,7 @@ subplot(plot_generated, plot_answered, plot_blocked, plot_levels,
       text = "<span class='content-title'>Figure 1: Distribution of User Engagement Metrics</span>",
       x = 0.5,
       y = 1,
-      pad = list(t = 0, b = 0)
+      pad = list(t = 20, b = 0)
     ),
     showlegend = FALSE,
     margin = list(t = 30, r = 0, l = 0, b = 0)
