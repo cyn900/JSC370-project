@@ -133,4 +133,4 @@ plot_ly(timeline_data,
   )
 ```
 
-**Figure 2 Description**: The time series plot reveals the daily pattern of question generation over time. Notable spikes in activity occur periodically, particularly around October, suggesting possible promotional events or user engagement initiatives. The baseline activity shows consistent but relatively low engagement, indicating opportunities for improving regular user participation.
+**Figure 2 Description**: The time series plot reveals the daily pattern of question generation over time. Notable spikes in activity occur periodically, particularly around December, 2024, suggesting possible promotional events or user engagement initiatives. The baseline activity shows consistent but relatively low engagement, indicating opportunities for improving regular user participation.
