@@ -25,8 +25,18 @@ library(DT)
   </div>
 </div>
 ```
+Jargon, a startup launched about a year ago, offers a novel Chrome extension for language learning, available here: https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj. This extension enriches the user's browsing experience by highlighting English text on websites and generating language practice questions from these excerpts, promoting active user engagement. While it focuses on English and does not support foreign languages like Spanish or Chinese, it includes specialized features for learning GRE vocabulary and "TikTalk" slang, which converts English sentences into different styles. This tool targets students looking to enhance their language proficiency through regular practice.
 
-This dashboard presents an analysis of user engagement with the Jargon Chrome extension, a language learning tool. The analysis is based on data collected from 92 users, examining various aspects of their interaction with the platform.
+Despite its innovative approach, Jargon has faced challenges in user adoption, with just over 90 downloads in the Chrome extension store after nearly a year. This dashboard provides an analysis of user engagement with Jargon, based on data from 92 users, and explores different facets of their interaction with the platform.
+
+## Terminology Guide
+
+This dashboard uses several specific terms to describe user engagement metrics:
+
+- **Generated Questions**: The total number of practice questions automatically created by Jargon from text selected on websites for each user.
+- **Answered Questions**: The number of questions that users have completed and submitted responses to.
+- **Blocked Sites**: The count of websites where users have chosen to disable Jargon's functionality.
+- **Levels Attempted**: The number of different combinations of languages and levels a user has engaged with.
 
 ```{r data-prep}
 # Load and prepare data
@@ -51,7 +61,8 @@ blocked_websites <- websites %>%
 
 distinct_levels <- levels %>%
   group_by(user_id) %>%
-  summarise(levels_attempted = n_distinct(level))
+  mutate(language_level = paste(language, level, sep = "_")) %>%
+  summarise(levels_attempted = n_distinct(language_level), .groups = 'drop')
 
 # Merge enhanced data
 enhanced_profiles <- profiles %>%
