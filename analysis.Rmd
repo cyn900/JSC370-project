@@ -72,11 +72,11 @@ enhanced_profiles <- profiles %>%
 # Process language data
 language_data <- questions %>%
   count(language) %>%
-  arrange(desc(n))
+  arrange(desc(n))  # Sort data by count in descending order
 
 # Create interactive bar chart
 plot_ly(language_data,
-        x = ~language,
+        x = ~reorder(language, n),  # Reorder x-axis based on count
         y = ~n,
         type = "bar",
         marker = list(color = "#6a0dad")) %>%
@@ -87,14 +87,19 @@ plot_ly(language_data,
       y = 1,
       pad = list(t = 20, b = 0)
     ),
-    xaxis = list(title = "Language", tickangle = 45),
+    xaxis = list(
+      title = "Language", 
+      tickangle = 45,
+      categoryorder = "array",  # Use the explicit order we defined
+      categoryarray = language_data$language  # Use our sorted order
+    ),
     yaxis = list(title = "Number of Questions"),
     hovermode = "closest",
-    margin = list(t = 40, r = 0, l = 0, b = 0)
+    margin = list(t = 40, r = 10, l = 10, b = 10)
   )
 ```
 
-**Figure 1 Description**: This bar chart shows the distribution of questions generated across different language categories. Spanish leads in question generation, followed by GRE Vocabulary and Tamil, indicating these are the most popular learning categories among users. The variation in question counts suggests different levels of engagement across language options, which could inform future content development priorities.
+**Figure 1 Description**: This bar chart shows the distribution of questions generated across different language categories. Spanish leads in question generation, followed by GlizzyTalk and Tamil, indicating these are the most popular learning categories among users. The variation in question counts suggests different levels of engagement across language options, which could inform future content development priorities.
 
 ## Temporal Usage Patterns
 
@@ -112,7 +117,7 @@ plot_ly(timeline_data,
         y = ~number_of_questions,
         type = "scatter",
         mode = "lines+markers",
-        line = list(color = "#baa2aa"),
+        line = list(color = "#d5c5e8"),
         marker = list(color = "#6a0dad")) %>%
   layout(
     title = list(
@@ -124,7 +129,7 @@ plot_ly(timeline_data,
     xaxis = list(title = "Date"),
     yaxis = list(title = "Number of Questions"),
     hovermode = "closest",
-    margin = list(t = 40, r = 0, l = 0, b = 0)
+    margin = list(t = 40, r = 10, l = 10, b = 10)
   )
 ```
 

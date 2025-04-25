@@ -181,11 +181,11 @@ subplot(plot_generated, plot_answered, plot_blocked, plot_levels,
       text = "<span class='content-title'>Figure 1: Distribution of User Engagement Metrics</span>",
       x = 0.5,
       y = 1,
-      pad = list(t = 20, b = 0)
+      pad = list(t = 20, b = 20)
     ),
     showlegend = FALSE,
-    margin = list(t = 30, r = 0, l = 0, b = 0)
+    margin = list(t = 30, r = 10, l = 10, b = 10)
   )
 ```
 
-**Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show moderate engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
+**Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show low engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
