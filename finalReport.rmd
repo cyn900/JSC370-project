@@ -1,0 +1,249 @@
+---
+title: "Final Report"
+output:
+  html_document: default
+  pdf_document: default
+date: "2025-04-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+# Introduction
+
+Jargon is an innovative Chrome extension ([Chrome Web Store](https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj), [Official Website](https://www.jargonlearn.com/)) created by my friend that transforms English web content into learning opportunities using generative AI technology. Launched in June 2024, Jargon offers two types of learning experiences: foreign language learning (Spanish, Chinese, etc.) and English style adaptation (GRE vocabulary, TikTok slang, etc.).
+
+## How Jargon Works
+
+### Customization Options
+
+<div class="row align-items-center" style="margin: 30px 0;">
+<div class="col-md-6">
+```{r, echo=FALSE, fig.align='center', out.width='90%'}
+knitr::include_graphics("img/userSetting.png")
+```
+*Figure 1: User Settings Interface showing customization options*
+</div>
+
+<div class="col-md-6">
+<div class="settings-description" style="padding: 0 20px;">
+<h4 style="color: #333; margin-bottom: 30px;">Key Features</h4>
+
+<div style="margin-bottom: 12px;">
+<strong style="color: #4a5568;">Language Selection</strong><br>
+Choose between foreign languages (Spanish, Chinese) or English modes (GRE, TikTok)
+</div>
+
+<div style="margin-bottom: 12px;">
+<strong style="color: #4a5568;">Learning Goals</strong><br>
+• Difficulty: Easy/Medium/Hard<br>
+• Daily Target: 10-100 questions
+</div>
+
+<div style="margin-bottom: 12px;">
+<strong style="color: #4a5568;">Question Density</strong><br>
+Controls percentage of eligible sentences (0-100%) highlighted for practice on each webpage
+</div>
+
+<div style="margin-bottom: 0;">
+<strong style="color: #4a5568;">Display Settings</strong><br>
+• Text Style: Highlight or underline<br>
+• Site Controls: Enable/disable per website or temporarily
+</div>
+</div>
+</div>
+</div>
+
+### Text Selection Methods
+<div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+  <figure style="text-align: center; margin: 0;">
+    <img src="img/hilight.png" alt="Highlight Example" style="margin-bottom: 10px;">
+    <figcaption style="margin: 10px 0;"><em>Figure 2a: Highlight Style - Text appears with background color emphasis</em></figcaption>
+  </figure>
+  <figure style="text-align: center; margin: 0;">
+    <img src="img/underline.png" alt="Underline Example" style="margin-bottom: 10px;">
+    <figcaption style="margin: 10px 0;"><em>Figure 2b: Underline Style - Text appears with underline emphasis</em></figcaption>
+  </figure>
+</div>
+
+### Language Transformation Examples
+<div style="text-align: center; margin-top: 20px;">
+  <img src="img/greQuestionGen.png" width="500" alt="Question Generation Process" style="margin: 10px auto;">
+  <figcaption style="margin: 10px 0 30px;"><em>Figure 3: Question Generation Process - Users select text from any webpage to create practice questions</em></figcaption>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto; max-width: 1200px; overflow: hidden;">
+  <figure style="text-align: center; margin: 0; width: 33%;">
+    <img src="img/greQuestionAns.png" width="100%" alt="GRE Question Answer" style="margin-bottom: 10px;">
+    <figcaption style="margin: 10px 0;"><em>Figure 4a: GRE Mode - Advanced vocabulary transformation</em></figcaption>
+  </figure>
+  <figure style="text-align: center; margin: 0; width: 33%;">
+    <img src="img/tiktokQuestionAns.png" width="100%" alt="TikTok Style Question" style="margin-bottom: 10px;">
+    <figcaption style="margin: 10px 0;"><em>Figure 4b: TikTok Style - Contemporary social media language</em></figcaption>
+  </figure>
+  <figure style="text-align: center; margin: 0; width: 33%;">
+    <img src="img/spanishQusestionAns.png" width="100%" alt="Spanish Translation" style="margin-bottom: 10px;">
+    <figcaption style="margin: 10px 0;"><em>Figure 4c: Spanish Mode - English to Spanish translation</em></figcaption>
+  </figure>
+</div>
+
+The GRE mode enhances vocabulary learning by replacing common words with their more sophisticated alternatives (e.g., "good" becomes "exemplary"), while TikTok style transforms formal English into contemporary social media expressions (e.g., "That's cool" becomes "That's bussin fr fr"). These AI-powered transformations maintain the original meaning while adapting to different language registers.
+
+## Current Challenges and Research Focus
+
+With approximately 93 users after 10 months since launch, this analysis aims to answer two main research questions:
+
+1. **"What patterns emerge in how and when users engage with different language modes in Jargon?"**
+   - We analyze the content selection patterns and temporal usage trends to understand when and how users interact with different features of the extension.
+
+2. **"What characteristics distinguish highly engaged users from others, and can we identify key factors that contribute to sustained usage?"**
+   - We examine user behaviors, settings preferences, and interaction patterns to identify features and habits associated with consistent engagement.
+
+These questions will help us understand user behavior and identify opportunities for improving user retention and engagement with the platform.
+
+# Data Description
+
+The analysis uses real-life usage data collected from Jargon's Supabase database on March 16, 2025. The data represents all user interactions from the launch in June 2024 through March 16, 2025.
+
+## Original Datasets
+
+### 1. Profiles Dataset
+| Variable | Description | Type | Notes |
+|----------|-------------|------|-------|
+| user_id | Unique identifier for each user | Primary Key | Anonymized identifier |
+| level | Current proficiency level | Integer | Range: 1-10 |
+| paused | Extension status on Chrome | Boolean | TRUE/FALSE (Default: TRUE) |
+| chrome_notifs | Notification preferences | Boolean | TRUE/FALSE |
+| language | Current selected language mode | String | e.g., "GRE Vocabulary", "TikTok Slang" |
+| last_question_time | Timestamp of most recent question | DateTime | UTC timezone |
+| week_streak | Consecutive weeks of activity | Integer | |
+| daily_streak | Consecutive days of activity | Integer | |
+| daily_progress | Questions completed today | Integer | Resets daily |
+| daily_goal | Target questions per day | Integer | User-set goal |
+| density | Frequency of questions | Integer | Percentage of eligible sentences shown (0-100) |
+| highlightStyle | Text selection preference | String | "highlight" or "underline" |
+| bonus_points | Engagement reward points | Integer | Earned from community activities |
+
+### 2. Questions Dataset
+| Variable | Description | Type | Notes |
+|----------|-------------|------|-------|
+| question_id | Unique question identifier | Primary Key | |
+| user_id | Associated user | Foreign Key | References profiles |
+| created_at | Question generation time | DateTime | UTC timezone |
+| sentence | Original selected text | Text | English source content |
+| word | Target word for learning | String | |
+| language | Transformation mode | String | Selected language mode |
+| original_sentence | Source text | Text | Pre-transformation content |
+| options_array | Multiple choice options | Array of String | Even indices: options in target language; Odd indices: English translations |
+| answered_at | Completion timestamp | DateTime | NULL if unanswered |
+| chosen_option | User's answer | String | NULL if unanswered |
+| user_rating | Question quality rating | Integer | Feature not yet implemented |
+
+### 3. Words Dataset
+| Variable | Description | Type | Notes |
+|----------|-------------|------|-------|
+| created_at | Word entry timestamp | DateTime | UTC timezone |
+| word | Target vocabulary | String | |
+| language | Language mode | String | |
+| user_id | Associated user | Foreign Key | References profiles |
+| translation | English translation | Text | AI-generated translation |
+| status | Learning status | String | Currently all set to "learning" |
+
+### 4. Levels Dataset
+| Variable | Description | Type | Notes |
+|----------|-------------|------|-------|
+| user_id | Associated user | Foreign Key | References profiles |
+| language | Language mode | String | |
+| level | Difficulty level | Integer | Range: 1-10 |
+
+### 5. Websites Dataset
+| Variable | Description | Type | Notes |
+|----------|-------------|------|-------|
+| user_id | Associated user | Foreign Key | References profiles |
+| website | Blocked URL | String | Sites where Jargon is disabled |
+
+
+
+# Methods
+
+## Data Collection and Preparation
+
+The data for this analysis was collected from Jargon's Supabase database on March 16, 2025, covering all user interactions since the extension's launch in June 2024. The data was exported as CSV files and processed using R for analysis.
+
+```{r data_preparation, message=FALSE}
+# Load required libraries
+library(tidyverse)
+library(lubridate)
+
+# Read the CSV files
+profiles <- read.csv("data/profiles_rows.csv")
+questions <- read.csv("data/questions_rows.csv")
+words <- read.csv("data/words_rows.csv")
+levels <- read.csv("data/levels_rows.csv")
+websites <- read.csv("data/website_blacklist_rows.csv")
+
+# Clean and enhance profiles data
+enhanced_profiles <- profiles %>%
+  # Add total questions generated per user
+  left_join(
+    questions %>%
+      group_by(user_id) %>%
+      summarise(generated_questions = n()),
+    by = "user_id"
+  ) %>%
+  # Add total questions answered per user
+  left_join(
+    questions %>%
+      filter(!is.na(answered_at)) %>%
+      group_by(user_id) %>%
+      summarise(answered_questions = n()),
+    by = "user_id"
+  ) %>%
+  # Add number of blocked websites per user
+  left_join(
+    websites %>%
+      group_by(user_id) %>%
+      summarise(blocked_sites = n()),
+    by = "user_id"
+  ) %>%
+  # Add number of unique levels attempted per user
+  left_join(
+    levels %>%
+      group_by(user_id) %>%
+      summarise(levels_attempted = n_distinct(level)),
+    by = "user_id"
+  ) %>%
+  # Replace NA values with 0 for derived metrics
+  mutate(
+    generated_questions = replace_na(generated_questions, 0),
+    answered_questions = replace_na(answered_questions, 0),
+    blocked_sites = replace_na(blocked_sites, 0),
+    levels_attempted = replace_na(levels_attempted, 0)
+  )
+
+# Save the enhanced profiles data
+write.csv(enhanced_profiles, "data/enhanced_profiles.csv", row.names = FALSE)
+
+# Display the first few rows and structure of the enhanced dataset
+str(enhanced_profiles)
+head(enhanced_profiles)
+```
+
+## Data Cleaning and Wrangling
+
+The data preparation process involved several key steps:
+
+1. **Data Loading**: Five primary CSV files were imported containing user profiles, questions, words, levels, and blocked websites information.
+
+2. **Data Enhancement**: The profiles dataset was enriched with derived metrics:
+   - `generated_questions`: Total number of questions created by each user
+   - `answered_questions`: Count of questions completed by each user
+   - `blocked_sites`: Number of websites where users disabled the extension
+   - `levels_attempted`: Count of unique difficulty levels tried by each user
+
+3. **Missing Value Handling**: NA values in the derived metrics were replaced with 0, assuming no activity is equivalent to zero count.
+
+4. **Data Validation**: The enhanced dataset was examined to ensure all joins were performed correctly and derived metrics were calculated accurately.
+
+This processed dataset forms the foundation for our analysis of user engagement patterns and feature usage in the Jargon extension.
