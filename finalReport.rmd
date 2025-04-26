@@ -751,6 +751,8 @@ The scatter plot reveals several key insights about language mode usage patterns
 These patterns suggest that while traditional language learning drives most user activity, there's significant variation in how different language modes are utilized, with some showing intense usage by small groups while others have broader but less intensive adoption.
 
 ```{r word_frequency_analysis, fig.width=15, fig.height=4.2}
+set.seed(370)
+
 # Enhanced stopwords list including domain-specific terms
 custom_stopwords <- c(
   # Common English stopwords
@@ -766,8 +768,6 @@ custom_stopwords <- c(
   # Short words and numbers
   "a", "an", "in", "on", "at", "to", "of", "is", "be", "by", "as", "or",
   "if", "so", "up", "my", "me", "do", "it", "no", "not", "yes", "yet",
-  # Common website terms
-  "com", "www", "http", "https", "html", "php", "asp", "jpg", "png", "gif",
   # Common verbs
   "said", "made", "went", "got", "did", "done", "make", "go", "get", "say",
   # Articles and prepositions
@@ -867,7 +867,7 @@ wordcloud(
   words = single_words$word,
   freq = single_words$freq,
   min.freq = 3,
-  max.words = 35,
+  max.words = 100,
   random.order = FALSE,
   rot.per = 0.2,
   colors = word_cloud_colors,
@@ -891,9 +891,9 @@ legend("center",
 par(mar=c(0,0,1,0))  # Consistent margins
 wordcloud(
   words = bigrams$word,
-  freq = bigrams$freq * 1.3,
+  freq = bigrams$freq,
   min.freq = 2,
-  max.words = 15,
+  max.words = 100,
   random.order = FALSE,
   rot.per = 0.2,
   colors = word_cloud_colors,
