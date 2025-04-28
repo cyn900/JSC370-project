@@ -205,7 +205,7 @@ enhanced_profiles <- profiles %>%
 
 Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
 
-### 1. Platform and Website Interaction Patterns
+### Blocked Website Patterns
 
 ```{r website_exploration, fig.width=18, fig.height=8}
 # Set global theme elements at the start
@@ -364,7 +364,7 @@ The analysis of blocked websites reveals distinct patterns in how users interact
 
 However, it is important to note that there are only 27 blocked sites across 92 users. This limited usage suggests that the blocking feature is not widely utilized, and the current data may not be conclusive. Caution should be exercised when generalizing these findings, as they may not fully represent the broader user population.
 
-### 2. Language Mode and Feature Usage
+### Language Mode Usage
 
 ```{r language_distribution, echo=FALSE}
 library(plotly)
@@ -440,7 +440,7 @@ The scatter plot highlights key patterns in language mode usage:
 Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
 
 
-### 3. Word and Phrase Frequency Analysis
+### Words Frequency Analysis
 
 ```{r word_frequency_analysis, echo=FALSE}
 library(plotly)
@@ -558,7 +558,7 @@ p4 <- ggplot(weekly_data) +
 subplot(ggplotly(p3), ggplotly(p4), nrows = 2, shareX = TRUE, titleX = TRUE)
 ```
 
-### 4. User Engagement Distribution
+### User Engagement Distribution
 
 ```{r engagement_patterns, echo=FALSE}
 library(tidyr)
