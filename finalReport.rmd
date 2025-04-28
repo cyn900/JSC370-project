@@ -1158,6 +1158,135 @@ Overall, the violin plots highlight that engagement is highly skewed: most users
 
 To further address our first research question—"What are the common contexts and platforms where users engage with Jargon?"—we performed sentiment analysis on the English original sentences that users selected for learning. Using the `syuzhet` package in R, each sentence was assigned a sentiment score, where positive values indicate positive sentiment, negative values indicate negative sentiment, and values near zero indicate neutral sentiment. This approach allows us to quantitatively assess the emotional tone of the content users choose to engage with.
 
+#### Topic Modeling of User-Selected Content (LDA)
+
+To further explore the contexts in which users engage with Jargon, we applied Latent Dirichlet Allocation (LDA) topic modeling to the English original sentences selected by users. In addition to standard stopwords, we removed a custom list of common or uninformative words to improve topic quality. This method uncovers the main themes or topics present in the content users choose to learn from.
+
+
+### Research Question 2: Feature Adoption and User Success
+
+#### Correlation Analysis
+
+To explore the relationships between user features and engagement metrics, we computed a correlation matrix for key variables in the enhanced_profiles dataset. This helps identify which features are associated with higher engagement or other usage patterns.
+
+#### K-Means Clustering to Define Active vs. Occasional Users
+
+To provide a data-driven segmentation of user engagement, we applied k-means clustering to the key engagement metrics: generated questions, answered questions, blocked sites, and levels attempted. This approach groups users into clusters based on their overall activity patterns, rather than relying on arbitrary thresholds or quantiles.
+
+```{r kmeans_user_segmentation, echo=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=5}
+library(dplyr)
+library(ggplot2)
+library(scales)
+set.seed(370)
+
+# Select and scale key metrics for clustering
+kmeans_data <- enhanced_profiles %>%
+  select(generated_questions, answered_questions, blocked_sites, levels_attempted) %>%
+  mutate_all(~replace_na(., 0))
+
+kmeans_scaled <- scale(kmeans_data)
+
+# Run k-means clustering (k = 2 for active vs. occasional)
+kmeans_result <- kmeans(kmeans_scaled, centers = 2, nstart = 25)
+
+# Assign cluster labels to users
+cluster_labels <- ifelse(kmeans_result$cluster == which.max(tapply(kmeans_data$generated_questions, kmeans_result$cluster, mean)),
+                         "Active", "Occasional")
+enhanced_profiles$kmeans_group <- cluster_labels
+
+# Visualize clusters (PCA for 2D projection)
+library(FactoMineR)
+library(factoextra)
+pca_res <- prcomp(kmeans_scaled)
+pca_df <- as.data.frame(pca_res$x[, 1:2])
+pca_df$Cluster <- cluster_labels
+
+ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_color_manual(values = c("Active" = jargon_purple, "Occasional" = "#bdbdbd")) +
+  labs(title = "K-Means Clustering of User Engagement", x = "Principal Component 1", y = "Principal Component 2") +
+  theme_minimal()
+```
+
+<em style='color: black; font-size: 16px;'>Figure 16: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
+
+The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement.This finding align with the Figure 10 from our Data Exploration.
+
+##### Summary Statistics by K-Means Group
+```{r kmeans_group_summary, echo=FALSE}
+kmeans_summary <- enhanced_profiles %>%
+  group_by(kmeans_group) %>%
+  summarise(
+    n = n(),
+    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
+    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
+    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
+    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE)
+  )
+kable(kmeans_summary, caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 8: Summary statistics for k-means-defined active and occasional users</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+The summary statistics in Table 8 show a clear gradient in engagement: 'Active' users (identified by k-means) have much higher activity across all metrics, but are few in number. To provide a more meaningful middle group, the 'Occasional' category (top 25% by generated questions among non-active users) was added, since k-means alone identified only a small number of highly engaged users. This three-group segmentation allows for a more nuanced comparison of user behaviors.
+
+#### User Segmentation: Very Active, Active, and Regular Users
+
+To provide a more nuanced segmentation, we define three user groups:
+
+- **Very Active:** Users in the k-means 'Active' cluster (highest engagement across all metrics)
+- **Active:** Among the remaining users, those in the top 25% by generated_questions
+- **Regular:** All other users
+
+```{r user_segmentation_three_groups, echo=FALSE}
+# Start with k-means cluster
+very_active_ids <- enhanced_profiles$user_id[enhanced_profiles$kmeans_group == "Active"]
+
+# Among non-very-active, define top 25% as Active
+non_very_active <- enhanced_profiles %>%
+  filter(!(user_id %in% very_active_ids))
+quantile_cutoff <- quantile(non_very_active$generated_questions, 0.75, na.rm = TRUE)
+active_ids <- non_very_active$user_id[non_very_active$generated_questions >= quantile_cutoff]
+
+# Assign group labels
+enhanced_profiles$user_group3 <- case_when(
+  enhanced_profiles$user_id %in% very_active_ids ~ "Very Active",
+  enhanced_profiles$user_id %in% active_ids ~ "Active",
+  TRUE ~ "Regular"
+)
+
+# Numeric version: Very Active = 2, Active = 1, Regular = 0
+enhanced_profiles$user_group3_int <- case_when(
+  enhanced_profiles$user_group3 == "Very Active" ~ 2L,
+  enhanced_profiles$user_group3 == "Active" ~ 1L,
+  TRUE ~ 0L
+)
+
+
+# Summary statistics for each group
+user_group3_summary <- enhanced_profiles %>%
+  group_by(user_group3) %>%
+  summarise(
+    n = n(),
+    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
+    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
+    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
+    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE),
+  )
+kable(user_group3_summary, caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 9: Summary statistics for Very Active, Active, and Regular users</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+The summary statistics in Table 9 show a clear gradient in engagement: 'Very Active' users (identified by k-means) have much higher activity across all metrics, but are few in number. To provide a more meaningful middle group, the 'Active' category (top 25% by generated questions among non-very-active users) was added, since k-means alone identified only a small number of highly engaged users. This three-group segmentation allows for a more nuanced comparison of user behaviors.
+
+
+
+# Results
+
+## Sentiment Analysis
 ```{r sentiment_bar_by_language, echo=FALSE, fig.width=8, fig.height=5}
 library(ggplot2)
 library(dplyr)
@@ -1196,10 +1325,7 @@ ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
 
 The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
 
-#### Topic Modeling of User-Selected Content (LDA)
-
-To further explore the contexts in which users engage with Jargon, we applied Latent Dirichlet Allocation (LDA) topic modeling to the English original sentences selected by users. In addition to standard stopwords, we removed a custom list of common or uninformative words to improve topic quality. This method uncovers the main themes or topics present in the content users choose to learn from.
-
+## LDA Analysis
 ```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5}
 library(tidytext)
 library(topicmodels)
@@ -1283,11 +1409,7 @@ Despite the weak themes, a tentative interpretation of the topics is as follows:
 
 However, these interpretations are tentative due to the low importance values and the generic nature of the terms.
 
-### Research Question 2: Feature Adoption and User Success
-
-#### Correlation Analysis
-
-To explore the relationships between user features and engagement metrics, we computed a correlation matrix for key variables in the enhanced_profiles dataset. This helps identify which features are associated with higher engagement or other usage patterns.
+## Corelation Matrix
 
 ```{r correlation_matrix, echo=FALSE, message=FALSE, warning=FALSE}
 library(corrplot)
@@ -1320,119 +1442,7 @@ The correlation matrix reveals several notable relationships:
 
 Overall, the strongest signals are that higher engagement (more questions and levels) tends to cluster together, and that highlight style preference is inversely related to engagement. Most other relationships are weak, indicating a diversity of user behaviors and settings.
 
-#### K-Means Clustering to Define Active vs. Occasional Users
-
-To provide a data-driven segmentation of user engagement, we applied k-means clustering to the key engagement metrics: generated questions, answered questions, blocked sites, and levels attempted. This approach groups users into clusters based on their overall activity patterns, rather than relying on arbitrary thresholds or quantiles.
-
-```{r kmeans_user_segmentation, echo=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=5}
-library(dplyr)
-library(ggplot2)
-library(scales)
-set.seed(370)
-
-# Select and scale key metrics for clustering
-kmeans_data <- enhanced_profiles %>%
-  select(generated_questions, answered_questions, blocked_sites, levels_attempted) %>%
-  mutate_all(~replace_na(., 0))
-
-kmeans_scaled <- scale(kmeans_data)
-
-# Run k-means clustering (k = 2 for active vs. occasional)
-kmeans_result <- kmeans(kmeans_scaled, centers = 2, nstart = 25)
-
-# Assign cluster labels to users
-cluster_labels <- ifelse(kmeans_result$cluster == which.max(tapply(kmeans_data$generated_questions, kmeans_result$cluster, mean)),
-                         "Active", "Occasional")
-enhanced_profiles$kmeans_group <- cluster_labels
-
-# Visualize clusters (PCA for 2D projection)
-library(FactoMineR)
-library(factoextra)
-pca_res <- prcomp(kmeans_scaled)
-pca_df <- as.data.frame(pca_res$x[, 1:2])
-pca_df$Cluster <- cluster_labels
-
-ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
-  geom_point(size = 3, alpha = 0.7) +
-  scale_color_manual(values = c("Active" = jargon_purple, "Occasional" = "#bdbdbd")) +
-  labs(title = "K-Means Clustering of User Engagement", x = "Principal Component 1", y = "Principal Component 2") +
-  theme_minimal()
-```
-
-<em style='color: black; font-size: 16px;'>Figure 16: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
-
-The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement.
-
-##### Summary Statistics by K-Means Group
-```{r kmeans_group_summary, echo=FALSE}
-kmeans_summary <- enhanced_profiles %>%
-  group_by(kmeans_group) %>%
-  summarise(
-    n = n(),
-    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
-    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
-    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
-    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE)
-  )
-kable(kmeans_summary, caption = NULL) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
-                position = "center", full_width = FALSE) %>%
-  footnote(general = "<em style='color: black; font-size: 16px;'>Table 8: Summary statistics for k-means-defined active and occasional users</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
-```
-
-
-K-means clustering provides a data-driven segmentation of users based on their engagement patterns. The 'Active' cluster contains users with higher averages across all key metrics, while the 'Occasional' cluster includes users with lower engagement. This approach avoids arbitrary cutoffs and reflects natural groupings in the data. The results confirm that a small subset of users are highly engaged, while most interact with the platform at a lower level. This segmentation can be used for targeted feature development and user retention strategies.
-
-#### User Segmentation: Very Active, Active, and Regular Users
-
-To provide a more nuanced segmentation, we define three user groups:
-
-- **Very Active:** Users in the k-means 'Active' cluster (highest engagement across all metrics)
-- **Active:** Among the remaining users, those in the top 25% by generated_questions
-- **Regular:** All other users
-
-```{r user_segmentation_three_groups, echo=FALSE}
-# Start with k-means cluster
-very_active_ids <- enhanced_profiles$user_id[enhanced_profiles$kmeans_group == "Active"]
-
-# Among non-very-active, define top 25% as Active
-non_very_active <- enhanced_profiles %>%
-  filter(!(user_id %in% very_active_ids))
-quantile_cutoff <- quantile(non_very_active$generated_questions, 0.75, na.rm = TRUE)
-active_ids <- non_very_active$user_id[non_very_active$generated_questions >= quantile_cutoff]
-
-# Assign group labels
-enhanced_profiles$user_group3 <- case_when(
-  enhanced_profiles$user_id %in% very_active_ids ~ "Very Active",
-  enhanced_profiles$user_id %in% active_ids ~ "Active",
-  TRUE ~ "Regular"
-)
-
-# Numeric version: Very Active = 2, Active = 1, Regular = 0
-enhanced_profiles$user_group3_int <- case_when(
-  enhanced_profiles$user_group3 == "Very Active" ~ 2L,
-  enhanced_profiles$user_group3 == "Active" ~ 1L,
-  TRUE ~ 0L
-)
-
-
-# Summary statistics for each group
-user_group3_summary <- enhanced_profiles %>%
-  group_by(user_group3) %>%
-  summarise(
-    n = n(),
-    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
-    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
-    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
-    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE),
-  )
-kable(user_group3_summary, caption = NULL) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
-                position = "center", full_width = FALSE) %>%
-  footnote(general = "<em style='color: black; font-size: 16px;'>Table 9: Summary statistics for Very Active, Active, and Regular users</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
-```
-
-##### Feature Comparison by User Group
+## Feature Comparison by User Group
 
 ```{r feature_comparison_three_groups, echo=FALSE}
 # ANOVA for continuous features
@@ -1451,8 +1461,53 @@ ord_model <- MASS::polr(user_group3_ord ~ daily_goal + density + highlightStyle,
 ord_tidy <- broom::tidy(ord_model)
 # Add p-value column
 ord_tidy$p.value <- 2 * (1 - pnorm(abs(ord_tidy$statistic)))
-kable(ord_tidy, digits = 3, caption = NULL) %>%
+
+# After creating ord_tidy and before kable(), manually override the threshold term names:
+ord_tidy$term[nrow(ord_tidy)-1] <- 'Regular/Active'
+ord_tidy$term[nrow(ord_tidy)] <- 'Active/Very Active'
+
+kable(ord_tidy, digits = 3, caption = NULL, escape = FALSE, sanitize.text.function = identity) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 position = "center", full_width = FALSE) %>%
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 10: Ordinal regression coefficients for user group score (2 = Very Active, 1 = Active, 0 = Regular)</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
+
+Table 10 presents the results of the ordinal regression model comparing user features across the three user groups. The threshold terms (e.g., 'Regular/Active' and 'Active/Very Active') represent the estimated boundaries on the latent engagement scale that separate the user groups; they are not feature effects but model cutpoints.
+
+Among the features, two are statistically significant predictors of user group (p < 0.05):
+
+- **Daily Goal**: The negative coefficient for daily_goal (estimate = -0.031, p = 0.009) indicates that users who set higher daily goals are less likely to be in a more active group. This suggests that overly ambitious targets may discourage sustained engagement, possibly due to unrealistic expectations or burnout.
+- **Highlight Style (Underline)**: The large negative coefficient for highlightStyleunderline (estimate = -4.57, p < 0.001) shows that users who prefer the underline style are much less likely to be highly engaged. This may reflect a preference for a less prominent or less motivating interface.
+
+The density setting is not a significant predictor (p = 0.169), indicating it does not have a clear association with user activity level in this dataset. Overall, these results highlight that both goal-setting behavior and interface preferences are important factors in distinguishing more and less engaged users.
+
+# Conclusions and Summary
+
+This study provides a comprehensive analysis of user engagement and feature adoption on the Jargon platform, with a focus on understanding usage contexts and identifying the characteristics of highly engaged users.
+
+**1. Usage Context and Platform Patterns**
+
+- **Findings:**  
+  Analysis of blocked website data and language mode usage (see Figures 5 and 6) reveals that users most frequently engage with Jargon while browsing professional, educational, and social media sites. Spanish is the most popular language mode, suggesting a strong demand for language learning or bilingual content.  
+- **Implications:**  
+  These insights indicate that Jargon is naturally integrated into users' study routines and leisure browsing. Marketing efforts could be optimized by highlighting Jargon's utility for language learning and academic productivity, especially in Spanish-speaking contexts or for students accessing educational resources.
+
+**2. Feature Adoption and User Success**
+
+- **Findings:**  
+  The segmentation and regression analyses (see Tables 9 and 10, Figures 16 and 17) show that active users are distinguished by their use of achievable daily goals and specific highlight styles. Notably, users who set smaller, more realistic daily goals are more likely to remain engaged, while those who select the underline highlight style are less likely to be highly active. The density setting did not significantly predict engagement.
+- **Implications:**  
+  These results suggest that onboarding should encourage users to set attainable daily goals, potentially by limiting the maximum goal or providing goal-setting guidance. The underline highlight style may be less motivating or visually appealing, so simplifying highlight options or removing less effective styles could improve user experience and engagement.
+
+**Recommendations for Platform Improvement**
+
+- **Feature Tracking:**  
+  Enhance data collection by recording the website URL for each user interaction, enabling more granular analysis of usage context.
+- **Time Zone Awareness:**  
+  Shift from tracking all activity in UTC to using users' local time zones. This would allow for personalized recommendations, such as suggesting study breaks or optimal engagement times (e.g., "Midnight Pal" or midday productivity tips).
+- **Goal Setting:**  
+  Refine the daily goal feature to encourage sustainable engagement, possibly by shortening the range of selectable goals and providing feedback on goal achievability.
+- **Highlight Styles:**  
+  Consider removing or redesigning the underline highlight style to streamline the interface and focus on features that correlate with higher engagement.
+
+Overall, Jargon users are most engaged when the platform aligns with their study habits and offers achievable, motivating features. By leveraging these insights, Jargon can further enhance user retention and satisfaction, supporting both language learning and productivity.
