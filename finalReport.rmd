@@ -28,6 +28,18 @@ library(patchwork)
 library(broom)
 library(caret)
 library(Metrics)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(FactoMineR)
+library(factoextra)
+library(ggplot2)
+library(dplyr)
+library(tidytext)
+library(topicmodels)
+library(stringr)
+library(corrplot)
+
 
 # Try to load required visualization packages
 has_ggrepel <- require(ggrepel)
@@ -1174,9 +1186,6 @@ To explore the relationships between user features and engagement metrics, we co
 To provide a data-driven segmentation of user engagement, we applied k-means clustering to the key engagement metrics: generated questions, answered questions, blocked sites, and levels attempted. This approach groups users into clusters based on their overall activity patterns, rather than relying on arbitrary thresholds or quantiles.
 
 ```{r kmeans_user_segmentation, echo=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=5}
-library(dplyr)
-library(ggplot2)
-library(scales)
 set.seed(370)
 
 # Select and scale key metrics for clustering
@@ -1195,8 +1204,6 @@ cluster_labels <- ifelse(kmeans_result$cluster == which.max(tapply(kmeans_data$g
 enhanced_profiles$kmeans_group <- cluster_labels
 
 # Visualize clusters (PCA for 2D projection)
-library(FactoMineR)
-library(factoextra)
 pca_res <- prcomp(kmeans_scaled)
 pca_df <- as.data.frame(pca_res$x[, 1:2])
 pca_df$Cluster <- cluster_labels
@@ -1288,8 +1295,6 @@ The summary statistics in Table 9 show a clear gradient in engagement: 'Very Act
 
 ## Sentiment Analysis
 ```{r sentiment_bar_by_language, echo=FALSE, fig.width=8, fig.height=5}
-library(ggplot2)
-library(dplyr)
 sentiment_scores <- get_sentiment(questions$original_sentence, method = "syuzhet")
 sentiment_df <- questions
 sentiment_df$score <- sentiment_scores
@@ -1327,12 +1332,6 @@ The stacked bar graph shows the overall distribution of sentiment categories, wi
 
 ## LDA Analysis
 ```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5}
-library(tidytext)
-library(topicmodels)
-library(dplyr)
-library(ggplot2)
-library(stringr)
-
 # Custom stopwords
 custom_stopwords <- c(
   "just", "like", "get", "can", "time", "people", "something", "done", "someone", "year", "company", "everyone", "interface", "every", "it's", "also", "one", "make", "made", "go", "got", "say", "said", "will", "would", "could", "should", "may", "might", "must", "well", "even", "still", "first", "last", "new", "old", "use", "used", "using", "see", "seen", "look", "looked", "looking", "find", "found", "think", "thought", "know", "known", "want", "wanted", "need", "needed", "take", "taken", "give", "given", "put", "putting", "let", "lets", "let's", "much", "many", "more", "most", "some", "any", "all", "each", "other", "another", "others", "back", "around", "across", "through", "over", "under", "again", "always", "never", "sometimes", "often", "usually", "maybe", "perhaps", "about", "because", "since", "though", "although", "however", "therefore", "thus", "yet", "but", "so", "if", "then", "when", "where", "while", "before", "after", "during", "until", "among", "between", "within", "without", "against", "toward", "upon", "onto", "into", "out", "off", "on", "in", "at", "by", "with", "from", "to", "for", "of", "as", "is", "are", "was", "were", "be", "been", "being", "do", "does", "did", "doing", "have", "has", "had", "having", "am", "i", "me", "my", "mine", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "it", "its", "we", "us", "our", "ours", "they", "them", "their", "theirs", "this", "that", "these", "those","im"
@@ -1412,7 +1411,6 @@ However, these interpretations are tentative due to the low importance values an
 ## Corelation Matrix
 
 ```{r correlation_matrix, echo=FALSE, message=FALSE, warning=FALSE}
-library(corrplot)
 # Extract the relevant columns
 cor_data <- enhanced_profiles[, c("daily_goal", "density", "highlightStyle", "blocked_sites", "levels_attempted", "generated_questions", "answered_questions")]
 

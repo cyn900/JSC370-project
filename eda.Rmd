@@ -9,6 +9,14 @@ output:
 ---
 
 ```{r setup-eda, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(urltools) 
+has_ggrepel <- require(ggrepel)
+has_wordcloud <- require(wordcloud)
+library(lubridate)
+library(grid)
+
 # Load data
 profiles <- read.csv("data/profiles_rows_cleaned.csv")
 questions <- read.csv("data/questions_rows.csv")
@@ -193,23 +201,42 @@ enhanced_profiles <- profiles %>%
 </div>
 ```
 
-# Exploratory Data Analysis (EDA)
+## Data Exploration
 
-## 1. Platform and Website Interaction Patterns
+Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
 
-```{r website_exploration, echo=FALSE}
-library(plotly)
-library(urltools)
-# Add domain extraction if not already present
-domain <- function(x) sub("^.*://", "", sub("/.*$", "", x))
+### 1. Platform and Website Interaction Patterns
+
+```{r website_exploration, fig.width=18, fig.height=8}
+# Set global theme elements at the start
+theme_jargon <- function() {
+  theme_minimal() +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+      plot.subtitle = element_text(hjust = 0.5, size = 11, color = "darkgray"),
+      axis.title = element_text(face = "bold", size = 11),
+      axis.text = element_text(size = 10),
+      legend.title = element_text(face = "bold", size = 11),
+      legend.text = element_text(size = 10),
+      legend.position = "right",
+      plot.margin = margin(20, 20, 20, 20),
+      legend.key = element_rect(fill = "white", color = NA)
+    )
+}
+
+# Define consistent color palette
+jargon_purple <- "#ae77f2"  # Main purple color
+jargon_blue<- "#8890eb"  # Lighter purple for variations
+
+# Website analysis plots
 website_categories <- websites %>%
   mutate(
     domain = domain(website),
-    standardized_domain = dplyr::case_when(
+    standardized_domain = case_when(
       grepl("salesforce.com$", domain) ~ "salesforce.com",
       TRUE ~ domain
     ),
-    category = dplyr::case_when(
+    category = case_when(
       grepl("localhost|vercel.com|developers.google.com|dtang.dev|surge.sh", standardized_domain) ~ "Development Tools",
       grepl("youtube.com|instagram.com|medal.tv", standardized_domain) ~ "Social & Entertainment",
       grepl("salesforce.com|okta.com|chatgpt.com|imean.ai", standardized_domain) ~ "Business & AI Tools",
@@ -220,55 +247,222 @@ website_categories <- websites %>%
     )
   )
 
+# Create summary for visualization with group sizes
 website_summary <- website_categories %>%
   group_by(category) %>%
-  summarise(total_sites = n()) %>%
+  summarise(
+    total_sites = n()
+  ) %>%
   arrange(desc(total_sites)) %>%
-  mutate(sites_percent = round(total_sites / sum(total_sites) * 100, 1))
+  # Calculate percentages and add rank
+  mutate(
+    sites_percent = round(total_sites / sum(total_sites) * 100, 1),
+    group_rank = row_number()  # This will be used for secondary sorting
+  )
 
+# Create website frequency summary with group rank for sorting
 website_freq <- website_categories %>%
   group_by(standardized_domain, category) %>%
-  summarise(count = n(), .groups = 'drop') %>%
-  arrange(desc(count))
+  summarise(
+    count = n(),
+    .groups = 'drop'
+  ) %>%
+  # Join with group ranks
+  left_join(select(website_summary, category, group_rank), by = "category") %>%
+  # Sort by count first, then by group rank for ties
+  arrange(desc(count), group_rank) %>%
+  mutate(
+    # Truncate domain names to last 15 characters
+    display_domain = ifelse(
+      nchar(standardized_domain) > 15,
+      paste0("...", substr(standardized_domain, nchar(standardized_domain) - 14, nchar(standardized_domain))),
+      standardized_domain
+    )
+  ) %>%
+  # Ensure specific ordering for count 4 and 2
+  arrange(case_when(
+    count == 4 ~ 1,
+    count == 2 ~ 2,
+    TRUE ~ 3
+  ), desc(count), group_rank) %>%
+  # Create a factor with the correct order
+  mutate(
+    display_domain = factor(display_domain, levels = unique(display_domain))
+  )
 
-# Pie chart (plotly)
-pie <- plot_ly(website_summary, labels = ~category, values = ~total_sites, type = 'pie',
-               textinfo = 'label+percent', insidetextorientation = 'radial') %>%
-  layout(title = 'Distribution by Category')
+# Create pie chart
+p1 <- ggplot(website_summary, 
+       aes(x = "", y = total_sites, fill = reorder(category, -total_sites))) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c(
+    "Business & AI Tools" = "#2E86C1",      # Blue
+    "Development Tools" = "#27AE60",        # Green
+    "Learning Resources" = "#F1C40F",       # Yellow
+    "Communication" = "#E74C3C",            # Red
+    "Social & Entertainment" = "#9B59B6",   # Purple
+    "Financial Services" = "#F39C12",       # Orange
+    "Other" = "#95A5A6"                     # Gray
+  )) +
+  theme_jargon() +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    legend.position = "none"
+  ) +
+  labs(title = "Distribution by Category") +
+  geom_text(aes(label = paste0(sites_percent, "%")), 
+            position = position_stack(vjust = 0.5),
+            size = 3.5)
 
-# Bar chart (plotly)
-bar <- plot_ly(website_freq, x = ~reorder(standardized_domain, count), y = ~count, color = ~category, type = 'bar') %>%
-  layout(title = 'Frequency of Blocked Websites',
-         xaxis = list(title = 'Website'),
-         yaxis = list(title = 'Count'))
+# Update bar chart with square shapes for legend
+p2 <- ggplot(website_freq, 
+       aes(x = display_domain, y = count, fill = category)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c(
+    "Business & AI Tools" = "#2E86C1",      # Blue
+    "Development Tools" = "#27AE60",        # Green
+    "Learning Resources" = "#F1C40F",       # Yellow
+    "Communication" = "#E74C3C",            # Red
+    "Social & Entertainment" = "#9B59B6",   # Purple
+    "Financial Services" = "#F39C12",       # Orange
+    "Other" = "#95A5A6"                     # Gray
+  )) +
+  theme_jargon() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.key.size = unit(1, "lines"),
+    legend.spacing.y = unit(0.5, "lines")
+  ) +
+  guides(fill = guide_legend(
+    override.aes = list(shape = 15, size = 5),  # Use shape 15 for filled square
+    keywidth = unit(1, "lines"),
+    keyheight = unit(1, "lines")
+  )) +
+  labs(
+    title = "Frequency of Blocked Websites",
+    x = NULL,
+    y = "Count",
+    fill = "Category"
+  )
 
-subplot(pie, bar, nrows = 2, shareX = FALSE, shareY = FALSE, titleX = TRUE)
+# Combine plots side by side with adjusted widths
+combined_plot <- cowplot::plot_grid(
+  p1, p2,
+  nrow = 1,
+  rel_widths = c(1, 2.2)  # Increased relative width of bar chart
+)
+
+# Add the combined plot
+combined_plot
 ```
 
-## 2. Language Mode and Feature Usage
+<em style='color: black; font-size: 16px;'>Figure 5: Website Usage Analysis - Distribution of blocked websites by category (left) and frequency of individual websites (right)</em>
+
+The analysis of blocked websites reveals distinct patterns in how users interact with the Jargon extension. Professional tools—particularly Salesforce and AI platforms—are the most frequently blocked, suggesting that users tend to avoid using Jargon during work-related activities. The presence of development environment blocks indicates that some users are technical professionals, though this group represents only a modest portion of the overall user base. Educational content also features prominently among blocked websites, with users often disabling the extension on documentation sites and learning platforms, possibly to maintain focus during concentrated study sessions.
+
+However, it is important to note that there are only 27 blocked sites across 92 users. This limited usage suggests that the blocking feature is not widely utilized, and the current data may not be conclusive. Caution should be exercised when generalizing these findings, as they may not fully represent the broader user population.
+
+### 2. Language Mode and Feature Usage
 
 ```{r language_distribution, echo=FALSE}
+library(plotly)
+# Calculate language statistics
 language_stats <- questions %>%
   group_by(language) %>%
   summarise(
     question_count = n(),
     unique_users = n_distinct(user_id)
   ) %>%
-  arrange(desc(question_count))
+  arrange(desc(question_count)) %>%
+  mutate(label = language)
 
-plot_ly(language_stats, x = ~unique_users, y = ~question_count, type = 'scatter', mode = 'markers+text',
-        color = ~language, text = ~language, marker = list(size = 15),
-        textposition = 'top center') %>%
-  layout(title = 'Language Mode Usage Patterns',
-         xaxis = list(title = 'Number of Unique Users'),
-         yaxis = list(title = 'Number of Questions Generated'))
+# Color palette for languages (expand as needed)
+language_colors <- c(
+  "Spanish" = "#2E86C1",
+  "GlizzyTalk" = "#27AE60",
+  "GRE Vocabulary" = "#F1C40F",
+  "Tamil" = "#E74C3C",
+  "French" = "#9B59B6",
+  "German" = "#F39C12",
+  "Italian" = "#1ABC9C",
+  "Korean" = "#D35400",
+  "Croatian" = "#8E44AD",
+  "Bulgarian" = "#2ECC71",
+  "SAT Vocabulary" = "#E67E22",
+  "Mandarin Chinese" = "#3498DB",
+  "Portuguese" = "#16A085",
+  "Russian" = "#C0392B",
+  "Sinhala" = "#7F8C8D",
+  "Swedish" = "#2C3E50",
+  "Tiktok Slang" = "#E91E63",
+  "Urdu" = "#795548"
+)
+
+# Interactive scatter plot
+plot_ly(
+  language_stats,
+  x = ~unique_users,
+  y = ~question_count,
+  type = 'scatter',
+  mode = 'markers+text',
+  color = ~language,
+  colors = language_colors,
+  text = ~label,
+  textposition = 'top center',
+  marker = list(size = 12, line = list(width = 1, color = '#333')),
+  hoverinfo = 'text',
+  hovertext = ~paste(
+    'Language:', language, '<br>',
+    'Unique Users:', unique_users, '<br>',
+    'Questions:', question_count
+  )
+) %>%
+  layout(
+    title = 'Language Mode Usage Patterns',
+    xaxis = list(title = 'Number of Unique Users'),
+    yaxis = list(title = 'Number of Questions Generated'),
+    legend = list(title = list(text = 'Language Mode'))
+  )
 ```
+
+<em style='color: black; font-size: 16px;'>Figure 6: Scatter plot showing the relationship between user adoption and question generation across different language modes</em>
+
+The scatter plot highlights key patterns in language mode usage:
+
+- Spanish is the most active mode, with the highest number of questions (~800) and users (~30).
+- GlizzyTalk and Tamil show moderate engagement (~300 questions each).
+- Korean and GRE Vocabulary form a middle tier (~200 questions).
+- Most other languages have low adoption, with fewer users and questions.
+- Some modes (e.g., Tamil) have high question counts despite fewer users, indicating intensive use by dedicated learners.
+
+Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
+
 
 ## 3. Word and Phrase Frequency Analysis
 
 ```{r word_frequency_analysis, echo=FALSE}
+library(plotly)
 library(stringr)
-# Single words
+set.seed(370)
+custom_stopwords <- c(
+  "the", "and", "for", "that", "with", "your", "this", "you", "are", "was",
+  "were", "their", "can", "will", "have", "has", "had", "been", "would",
+  "could", "should", "its", "it's", "they", "them", "these", "those", "from",
+  "what", "when", "where", "who", "which", "why", "how", "all", "any", "both",
+  "each", "few", "more", "most", "other", "some", "such", "than", "too",
+  "very", "into", "also", "back", "else", "even", "here", "hers", "his",
+  "just", "like", "more", "much", "must", "well", "were", "first", "being",
+  "sometimes", "together", "billion", "one", "people", "think", "out", "there",
+  "ongoing", "curious", "a", "an", "in", "on", "at", "to", "of", "is", "be", "by", "as", "or",
+  "if", "so", "up", "my", "me", "do", "it", "no", "not", "yes", "yet",
+  "said", "made", "went", "got", "did", "done", "make", "go", "get", "say",
+  "the", "a", "an", "and", "but", "or", "for", "nor", "on", "at", "to", "of",
+  "with", "in", "by", "about", "under", "above", "from", "after", "before"
+)
+custom_stopwords <- tolower(trimws(custom_stopwords))
+
 single_words <- questions %>%
   filter(!is.na(original_sentence)) %>%
   mutate(clean_text = tolower(original_sentence),
@@ -279,50 +473,71 @@ single_words <- questions %>%
   paste(collapse = " ") %>%
   strsplit(" ") %>%
   unlist() %>%
-  subset(nchar(.) > 2) %>%
+  subset(!. %in% custom_stopwords & nchar(.) > 2) %>%
   table() %>%
   as.data.frame() %>%
   setNames(c("word", "freq")) %>%
   arrange(desc(freq)) %>%
-  head(30)
+  head(50)
 
-# Bigrams
-words_vec <- strsplit(paste(single_words$word, collapse = " "), " ")[[1]]
-bigrams <- data.frame(word = paste(words_vec[-length(words_vec)], words_vec[-1])) %>%
+bigrams <- questions %>%
+  filter(!is.na(original_sentence)) %>%
+  mutate(clean_text = tolower(original_sentence),
+         clean_text = gsub("[[:punct:]]", " ", clean_text),
+         clean_text = gsub("[0-9]", " ", clean_text),
+         clean_text = gsub("\\s+", " ", clean_text)) %>%
+  pull(clean_text) %>%
+  paste(collapse = " ") %>%
+  {
+    text <- .
+    words <- unlist(strsplit(text, "\\s+"))
+    words <- words[!words %in% custom_stopwords & nchar(words) > 2]
+    bigrams <- paste(words[-length(words)], words[-1])
+    bigrams[nchar(bigrams) > 5]
+  } %>%
+  as.data.frame() %>%
+  setNames("word") %>%
   count(word, name = "freq") %>%
+  filter(grepl("\\s", word), !grepl("^\\s|\\s$", word)) %>%
   arrange(desc(freq)) %>%
-  head(30)
+  head(50)
 
-subplot(
-  plot_ly(single_words, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Words') %>%
-    layout(title = 'Top 30 Words', xaxis = list(title = 'Word'), yaxis = list(title = 'Frequency')),
-  plot_ly(bigrams, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Bigrams') %>%
-    layout(title = 'Top 30 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency')),
-  nrows = 1, shareY = FALSE, titleX = TRUE
-)
+# Interactive bar for single words
+plot_ly(single_words, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Words',
+        hoverinfo = 'x+y') %>%
+  layout(title = 'Top 50 Words', xaxis = list(title = 'Word'), yaxis = list(title = 'Frequency'))
+
+# Interactive bar for bigrams
+plot_ly(bigrams, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Bigrams',
+        hoverinfo = 'x+y') %>%
+  layout(title = 'Top 50 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency'))
 ```
-
-## 4. Temporal and Engagement Patterns
 
 ### Daily Activity
 ```{r temporal_patterns_timeline, echo=FALSE}
+library(plotly)
 daily_data <- questions %>%
   mutate(date = as.Date(created_at)) %>%
   group_by(date) %>%
   summarise(total_questions = n(), unique_users = n_distinct(user_id))
 
-plot_ly(daily_data, x = ~date, y = ~total_questions, type = 'scatter', mode = 'lines+markers',
-        name = 'Questions', line = list(color = '#ae77f2')) %>%
-  add_trace(y = ~unique_users, name = 'Active Users', yaxis = 'y2', mode = 'lines+markers',
-            line = list(color = '#8890eb')) %>%
-  layout(title = 'Daily Question Generation and Active Users',
-         yaxis = list(title = 'Questions'),
-         yaxis2 = list(overlaying = 'y', side = 'right', title = 'Active Users'))
+p1 <- ggplot(daily_data) +
+  geom_line(aes(x = date, y = total_questions), color = '#ae77f2', size = 1) +
+  labs(title = 'Daily Question Generation', x = 'Date', y = 'Number of Questions') +
+  theme_minimal()
+
+p2 <- ggplot(daily_data) +
+  geom_line(aes(x = date, y = unique_users), color = '#8890eb', size = 1) +
+  labs(title = 'Daily Active Users', x = 'Date', y = 'Number of Users') +
+  theme_minimal()
+
+subplot(ggplotly(p1), ggplotly(p2), nrows = 2, shareX = TRUE, titleX = TRUE)
 ```
 
 ### Weekly Activity
 ```{r temporal_patterns_weekly, echo=FALSE}
 library(lubridate)
+library(plotly)
 weekly_data <- questions %>%
   mutate(date = as.Date(created_at), day_of_week = wday(date, label = TRUE, abbr = FALSE)) %>%
   group_by(date, day_of_week) %>%
@@ -330,73 +545,58 @@ weekly_data <- questions %>%
   group_by(day_of_week) %>%
   summarise(avg_questions = mean(total_questions), avg_users = mean(unique_users))
 
-subplot(
-  plot_ly(weekly_data, x = ~day_of_week, y = ~avg_questions, type = 'bar', name = 'Questions',
-          marker = list(color = '#ae77f2')) %>%
-    layout(title = 'Average Daily Questions by Day of Week', xaxis = list(title = 'Day of Week'), yaxis = list(title = 'Avg Questions')),
-  plot_ly(weekly_data, x = ~day_of_week, y = ~avg_users, type = 'bar', name = 'Active Users',
-          marker = list(color = '#8890eb')) %>%
-    layout(title = 'Average Active Users by Day of Week', xaxis = list(title = 'Day of Week'), yaxis = list(title = 'Avg Users')),
-  nrows = 1, shareY = FALSE, titleX = TRUE
-)
+p3 <- ggplot(weekly_data) +
+  geom_col(aes(x = day_of_week, y = avg_questions), fill = '#ae77f2', alpha = 0.7) +
+  labs(title = 'Average Daily Questions by Day of Week', x = 'Day of Week', y = 'Avg Questions') +
+  theme_minimal()
+
+p4 <- ggplot(weekly_data) +
+  geom_col(aes(x = day_of_week, y = avg_users), fill = '#8890eb', alpha = 0.7) +
+  labs(title = 'Average Active Users by Day of Week', x = 'Day of Week', y = 'Avg Users') +
+  theme_minimal()
+
+subplot(ggplotly(p3), ggplotly(p4), nrows = 2, shareX = TRUE, titleX = TRUE)
 ```
 
-## 5. User Engagement Distribution
+### 4. User Engagement Distribution
 
 ```{r engagement_patterns, echo=FALSE}
-metrics <- c("generated_questions", "answered_questions", "blocked_sites", "levels_attempted")
-metric_names <- c("Generated Questions", "Answered Questions", "Blocked Sites", "Levels Attempted")
-plots <- lapply(seq_along(metrics), function(i) {
-  plot_ly(enhanced_profiles, y = as.formula(paste0("~", metrics[i])), type = 'violin', box = list(visible = TRUE),
-          meanline = list(visible = TRUE), points = 'all', name = metric_names[i],
-          line = list(color = '#ae77f2')) %>%
-    layout(title = metric_names[i], yaxis = list(title = metric_names[i]))
-})
-subplot(plots, nrows = 2, shareX = FALSE, shareY = FALSE, titleX = TRUE)
-```
+library(tidyr)
+library(plotly)
+# Reshape data to long format for all metrics
+engagement_long <- enhanced_profiles %>%
+  pivot_longer(
+    cols = c("generated_questions", "answered_questions", "blocked_sites", "levels_attempted"),
+    names_to = "Metric",
+    values_to = "Value"
+  )
 
-## Distribution of Daily Goals and Density
-
-```{r daily-goal-density, echo=FALSE}
-data_for_plot <- enhanced_profiles %>%
-  select(daily_goal, density) %>%
-  tidyr::pivot_longer(cols = c(daily_goal, density), names_to = "Metric", values_to = "Value") %>%
-  group_by(Metric, Value) %>%
-  summarise(Count = n(), .groups = 'drop')
-
-p <- ggplot(data_for_plot, aes(x = Value, y = Count, fill = Metric)) +
-  geom_col(show.legend = FALSE) +
-  facet_wrap(~ Metric, scales = "free_x") +
-  labs(title = "Distribution of Daily Goals and Density",
-       x = "Value",
-       y = "Frequency") +
+# Faceted violin plot with free y scales, all in the same color, no legend
+p <- ggplot(engagement_long, aes(x = Metric, y = Value)) +
+  geom_violin(fill = '#ae77f2', alpha = 0.7, trim = FALSE) +
+  facet_wrap(~ Metric, scales = "free_y") +
+  labs(
+    title = "Distribution of User Engagement Metrics",
+    x = "",
+    y = "Count"
+  ) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    axis.text.x = element_blank(),
+    axis.title = element_text(size = 12, face = "bold"),
+    legend.position = "none"
+  )
+
 ggplotly(p)
 ```
 
-## Highlight Style and Chrome Notifications
+<em style='color: black; font-size: 16px;'>Figure 10: Distribution of key engagement metrics across users, showing individual violin plots for each metric with median and interquartile range (IQR) statistics. Each plot uses a distinct color and includes summary statistics.</em>
 
-```{r highlight-chrome-pie, echo=FALSE}
-filtered_profiles <- enhanced_profiles %>%
-  filter(!is.na(highlightStyle), !is.na(chrome_notifs))
+The violin plots provide a clearer view of the distribution of user engagement metrics:
 
-highlight_data <- filtered_profiles %>%
-  mutate(category = "Highlight Style",
-         value = if_else(highlightStyle == 1, "Highlight", "Underline")) %>%
-  count(category, value)
+- **Generated Questions & Answered Questions:** Most users generate and answer only a small number of questions, as shown by the wide base near zero. A few users are highly active, producing a long tail of outliers with much higher counts.
+- **Blocked Sites:** The vast majority of users do not block any sites (distribution concentrated at zero), with only a handful blocking more than one site.
+- **Levels Attempted:** Most users attempt only one level, with very few exploring multiple levels. The distribution is sharply peaked at one, with a small tail for higher values.
 
-chrome_notif_data <- filtered_profiles %>%
-  mutate(category = "Chrome Notifications",
-         value = if_else(chrome_notifs == 1, "Enabled", "Disabled")) %>%
-  count(category, value)
-
-pie_data <- bind_rows(highlight_data, chrome_notif_data)
-
-# For plotly, create a pie for each category
-plot_list <- lapply(split(pie_data, pie_data$category), function(df) {
-  plot_ly(df, labels = ~value, values = ~n, type = 'pie', textinfo = 'label+percent',
-          title = unique(df$category))
-})
-subplot(plot_list, nrows = 1, shareY = TRUE, titleX = TRUE)
-```
+Overall, the violin plots highlight that engagement is highly skewed: most users interact minimally, while a small subset are much more active or exploratory. This pattern is consistent across all four metrics.

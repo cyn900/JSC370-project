@@ -16,7 +16,11 @@ required_packages <- c(
   "kableExtra",
   "tidyr",
   "dplyr",
-  "kableExtra"
+  "kableExtra",
+  "urltools",
+  "lubridate",
+  "grid",
+  "wordcloud2"
 )
 
 # Install any missing packages
