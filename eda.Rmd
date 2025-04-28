@@ -201,7 +201,7 @@ enhanced_profiles <- profiles %>%
 </div>
 ```
 
-## Data Exploration
+## Data Exploration {.tabset}
 
 Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
 
@@ -513,7 +513,7 @@ plot_ly(bigrams, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Bigr
   layout(title = 'Top 50 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency'))
 ```
 
-### Daily Activity
+#### Daily Activity
 ```{r temporal_patterns_timeline, echo=FALSE}
 library(plotly)
 daily_data <- questions %>%
@@ -534,7 +534,7 @@ p2 <- ggplot(daily_data) +
 subplot(ggplotly(p1), ggplotly(p2), nrows = 2, shareX = TRUE, titleX = TRUE)
 ```
 
-### Weekly Activity
+#### Weekly Activity
 ```{r temporal_patterns_weekly, echo=FALSE}
 library(lubridate)
 library(plotly)

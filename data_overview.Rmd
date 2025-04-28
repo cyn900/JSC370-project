@@ -9,6 +9,8 @@ output:
 ---
 
 ```{r setup-data-overview, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
 library(DT)
 library(tibble)
 library(kableExtra)
@@ -61,7 +63,7 @@ kable(data_summary,
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 1: Overview of Dataset Components</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
-### Dataset Descriptions
+### Dataset Descriptions {.tabset}
 
 #### 1. Profiles Dataset
 ```{r profiles_summary, echo=FALSE}
