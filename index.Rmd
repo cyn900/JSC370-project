@@ -25,218 +25,163 @@ output:
 
 # Introduction
 
-Jargon is a Chrome extension designed to enhance language learning through active engagement with web content. This dashboard presents a comprehensive analysis of user engagement, platform usage, and feature adoption, based on data from 92 users. The project explores user behavior, feature effectiveness, and provides actionable recommendations for platform improvement.
+## Background and Motivation
 
-- **Home:** Introduction and project overview
-- **EDA:** Exploratory Data Analysis of user and platform data
-- **Methods:** Statistical and machine learning methods used
-- **Results:** Key findings, tables, and interactive figures
-- **Conclusions:** Summary and recommendations
+Jargon is an innovative Chrome extension ([Chrome Web Store](https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj), [Official Website](https://www.jargonlearn.com/)) created by my friend that transforms English web content into learning opportunities using generative AI technology. Launched in June 2024, Jargon offers two types of learning experiences: foreign language learning (Spanish, Chinese, etc.) and English style adaptation (GRE vocabulary, TikTok slang, etc.).
 
-Navigate using the menu above to explore each section of the report.
+### How Jargon Works
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-library(tidyverse)
-library(plotly)
-library(DT)
+#### Customization Options
+
+:::::::::: {.row .align-items-center style="margin: 30px 0;"}
+::: col-md-6
+```{r, echo=FALSE, fig.align='center', out.width='90%'}
+knitr::include_graphics("img/userSetting.png")
 ```
 
-Jargon, a startup launched about a year ago, offers a novel Chrome extension for language learning, available here: https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj. This extension enriches the user's browsing experience by highlighting English text on websites and generating language practice questions from these excerpts, promoting active user engagement. While it focuses on English and does not support foreign languages like Spanish or Chinese, it includes specialized features for learning GRE vocabulary and "TikTalk" slang, which converts English sentences into different styles. This tool targets students looking to enhance their language proficiency through regular practice.
+*Figure 1: User Settings Interface showing customization options*
+:::
 
-Despite its innovative approach, Jargon has faced challenges in user adoption, with just over 90 downloads in the Chrome extension store after nearly a year. This dashboard provides an analysis of user engagement with Jargon, based on data from 92 users, and explores different facets of their interaction with the platform.
+:::::::: col-md-6
+::::::: {.settings-description style="padding: 0 20px;"}
+<h4 style="color: #333; margin-bottom: 30px;">
 
-## Terminology Guide
+Key Features
 
-This dashboard uses several specific terms to describe user engagement metrics:
+</h4>
 
-- **Generated Questions**: The total number of practice questions automatically created by Jargon from text selected on websites for each user.
-- **Answered Questions**: The number of questions that users have completed and submitted responses to.
-- **Blocked Sites**: The count of websites where users have chosen to disable Jargon's functionality.
-- **Levels Attempted**: The number of different combinations of languages and levels a user has engaged with.
+::: {style="margin-bottom: 30px;"}
+<p style="color: #4a5568;">
 
-```{r data-prep}
-# Load and prepare data
-profiles <- read_csv("data/profiles_rows_cleaned.csv")
-questions <- read_csv("data/questions_rows.csv")
-words <- read_csv("data/words_rows.csv")
-levels <- read_csv("data/levels_rows.csv")
-websites <- read_csv("data/website_blacklist_rows.csv")
+Language Selection
 
-# Enhance profiles data
-question_counts <- questions %>%
-  group_by(user_id) %>%
-  summarise(generated_questions = n())
+</p>
 
-answer_counts <- words %>%
-  group_by(user_id) %>%
-  summarise(answered_questions = n())
+All types, from foreign languages like Spanish and Chinese to English variations such as TikTok Slang
+:::
 
-blocked_websites <- websites %>%
-  group_by(user_id) %>%
-  summarise(blocked_sites = n())
+::: {style="margin-bottom: 30px;"}
+<p style="color: #4a5568;">
 
-distinct_levels <- levels %>%
-  group_by(user_id) %>%
-  mutate(language_level = paste(language, level, sep = "_")) %>%
-  summarise(levels_attempted = n_distinct(language_level), .groups = 'drop')
+Learning Goals
 
-# Merge enhanced data
-enhanced_profiles <- profiles %>%
-  left_join(question_counts, by = "user_id") %>%
-  mutate(generated_questions = ifelse(is.na(generated_questions), 0, generated_questions)) %>%
-  left_join(answer_counts, by = "user_id") %>%
-  mutate(answered_questions = ifelse(is.na(answered_questions), 0, answered_questions)) %>%
-  left_join(blocked_websites, by = "user_id") %>%
-  mutate(blocked_sites = ifelse(is.na(blocked_sites), 0, blocked_sites)) %>%
-  left_join(distinct_levels, by = "user_id") %>%
-  mutate(levels_attempted = ifelse(is.na(levels_attempted), 0, levels_attempted)) %>%
-  mutate(highlightStyle = if_else(highlightStyle == "highlight", 1, 0))
-```
+</p>
 
-## Key Metrics Summary
+• Difficulty: Easy-Hard (1-10) <br> • Daily Target: 10-100 questions
+:::
 
-```{r data-table}
-# Create summary statistics
-summary_stats <- data.frame(
-  Metric = c("Generated Questions", "Answered Questions", "Blocked Sites", "Levels Attempted"),
-  Mean = c(
-    round(mean(enhanced_profiles$generated_questions, na.rm = TRUE), 2),
-    round(mean(enhanced_profiles$answered_questions, na.rm = TRUE), 2),
-    round(mean(enhanced_profiles$blocked_sites, na.rm = TRUE), 2),
-    round(mean(enhanced_profiles$levels_attempted, na.rm = TRUE), 2)
-  ),
-  Median = c(
-    round(median(enhanced_profiles$generated_questions, na.rm = TRUE), 2),
-    round(median(enhanced_profiles$answered_questions, na.rm = TRUE), 2),
-    round(median(enhanced_profiles$blocked_sites, na.rm = TRUE), 2),
-    round(median(enhanced_profiles$levels_attempted, na.rm = TRUE), 2)
-  ),
-  Maximum = c(
-    max(enhanced_profiles$generated_questions, na.rm = TRUE),
-    max(enhanced_profiles$answered_questions, na.rm = TRUE),
-    max(enhanced_profiles$blocked_sites, na.rm = TRUE),
-    max(enhanced_profiles$levels_attempted, na.rm = TRUE)
-  ),
-  Minimum = c(
-    min(enhanced_profiles$generated_questions, na.rm = TRUE),
-    min(enhanced_profiles$answered_questions, na.rm = TRUE),
-    min(enhanced_profiles$blocked_sites, na.rm = TRUE),
-    min(enhanced_profiles$levels_attempted, na.rm = TRUE)
-  )
-)
+::: {style="margin-bottom: 30px;"}
+<p style="color: #4a5568;">
 
-# Create interactive data table
-datatable(summary_stats,
-          options = list(
-            dom = 't',  # Only show the table, no other elements
-            pageLength = -1,  # Show all rows
-            caption = list(
-              placement = "top",
-              style = "caption-side: top"
-            )
-          ),
-          rownames = FALSE,
-          caption = htmltools::HTML("<div style='text-align: center; margin-bottom: 10px; color: black; font-size: 20px'>Table 1: Summary Statistics of User Engagement Metrics</div>"))
-```
+Question Density
 
+</p>
 
-**Summary**: The table above shows key statistics for user engagement metrics. There is notable variation in user engagement, with some users being highly active (maximum of 647 generated questions) while others show minimal interaction (minimum of 0 across metrics). The median values suggest that typical user engagement is relatively modest.
+Controls percentage of eligible sentences (0-100%) highlighted for practice on each webpage
+:::
 
-## User Engagement Distribution
+::: {style="margin-bottom: 0;"}
+<p style="color: #4a5568;">
 
-```{r engagement-metrics}
-# Create individual box plots
-plot_generated <- plot_ly(enhanced_profiles, y = ~generated_questions, type = "box", 
-                         name = "Generated Questions",
-                         marker = list(color = "#6a0dad")) %>%
-  layout(title = list(
-           text = "<span class='content-title'>Generated Questions Distribution</span>",
-           xref = "paper",
-           x = 0.5,
-           y = 1,
-           pad = list(t = 0, b = 0)
-         ),
-         yaxis = list(title = "Count"),
-         margin = list(t = 30, r = 0, l = 0, b = 0))
+Display Settings
 
-plot_answered <- plot_ly(enhanced_profiles, y = ~answered_questions, type = "box", 
-                        name = "Answered Questions",
-                        marker = list(color = "#8e44ad")) %>%
-  layout(title = list(
-           text = "<span class='content-title'>Answered Questions Distribution</span>",
-           xref = "paper",
-           x = 0.5,
-           y = 1,
-           pad = list(t = 0, b = 0)
-         ),
-         yaxis = list(title = "Count"),
-         margin = list(t = 30, r = 0, l = 0, b = 0))
+</p>
 
-plot_blocked <- plot_ly(enhanced_profiles, y = ~blocked_sites, type = "box", 
-                       name = "Blocked Sites",
-                       marker = list(color = "#9b59b6")) %>%
-  layout(title = list(
-           text = "<span class='content-title'>Blocked Sites Distribution</span>",
-           xref = "paper",
-           x = 0.5,
-           y = 1,
-           pad = list(t = 0, b = 0)
-         ),
-         yaxis = list(title = "Count"),
-         margin = list(t = 30, r = 0, l = 0, b = 0))
+• Text Style: Highlight or underline<br> • Site Controls: Enable/disable per website or temporarily
+:::
+:::::::
+::::::::
+::::::::::
 
-plot_levels <- plot_ly(enhanced_profiles, y = ~levels_attempted, type = "box", 
-                      name = "Levels Attempted",
-                      marker = list(color = "#a569bd")) %>%
-  layout(title = list(
-           text = "<span class='content-title'>Levels Attempted Distribution</span>",
-           xref = "paper",
-           x = 0.5,
-           y = 1,
-           pad = list(t = 0, b = 0)
-         ),
-         yaxis = list(title = "Count"),
-         margin = list(t = 30, r = 0, l = 0, b = 0))
+#### Text Selection Methods
 
-# Combine plots in a 2x2 grid
-subplot(plot_generated, plot_answered, plot_blocked, plot_levels, 
-        nrows = 2, 
-        shareX = FALSE, 
-        shareY = FALSE) %>%
-  layout(
-    title = list(
-      text = "<span class='content-title'>Figure 1: Distribution of User Engagement Metrics</span>",
-      x = 0.5,
-      y = 1,
-      pad = list(t = 20, b = 20)
-    ),
-    showlegend = FALSE,
-    margin = list(t = 30, r = 10, l = 10, b = 10)
-  )
-```
+::: {style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;"}
+<figure style="text-align: center; margin: 0;">
 
-**Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show low engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
+<img src="img/hilight.png" alt="Highlight Example" style="margin-bottom: 10px;"/>
 
-## Results
+<figcaption style="margin: 10px 0;">
 
-This section presents the final, publication-ready interactive tables and figures from the analysis of user behavior and platform usage in Jargon. Each result is accompanied by a concise description highlighting the main findings. For a detailed summary and actionable recommendations, see the [Conclusions](conclusions.html) page.
+<em>Figure 2a: Highlight Style - Text appears with background color emphasis</em>
 
-### Key Findings
+</figcaption>
 
-- **User Engagement Distribution:**
-  - Most users interact minimally with the platform, while a small subset are highly active (see interactive box plots above).
-  - Engagement metrics are right-skewed, with a few power users driving much of the activity.
+</figure>
 
-- **Platform and Feature Usage:**
-  - Blocked websites are most often professional or educational sites, with limited use of the blocking feature.
-  - Spanish is the most popular language mode, with other modes showing varying levels of engagement (see interactive bar chart in Detailed Analysis).
+<figure style="text-align: center; margin: 0;">
 
-- **Temporal and Sentiment Patterns:**
-  - User activity shows periodic spikes, with baseline engagement remaining modest (see interactive time series in Detailed Analysis).
-  - Sentiment analysis and topic modeling reveal broad, neutral content selection and diffuse themes.
+<img src="img/underline.png" alt="Underline Example" style="margin-bottom: 10px;"/>
 
-- **User Segmentation and Feature Impact:**
-  - Clustering and regression analyses identify a small group of highly active users and highlight the importance of achievable daily goals and interface preferences.
+<figcaption style="margin: 10px 0;">
 
-Explore the [Detailed Analysis](analysis.html) page for more interactive visualizations and in-depth exploration of these findings.
+<em>Figure 2b: Underline Style - Text appears with underline emphasis</em>
+
+</figcaption>
+
+</figure>
+:::
+
+#### Language Transformation Examples
+
+::: {style="text-align: center; margin-top: 20px;"}
+<img src="img/greQuestionGen.png" alt="Question Generation Process" width="500" style="margin: 10px auto;"/>
+
+<figcaption style="margin: 10px 0 30px;">
+
+<em>Figure 3: Question Generation Process - Users select text from any webpage to create practice questions</em>
+
+</figcaption>
+:::
+
+::: {style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto; max-width: 1200px; overflow: hidden;"}
+<figure style="text-align: center; margin: 0; width: 33%;">
+
+<img src="img/greQuestionAns.png" alt="GRE Question Answer" width="100%" style="margin-bottom: 10px;"/>
+
+<figcaption style="margin: 10px 0;">
+
+<em>Figure 4a: GRE Mode - Advanced vocabulary transformation</em>
+
+</figcaption>
+
+</figure>
+
+<figure style="text-align: center; margin: 0; width: 33%;">
+
+<img src="img/tiktokQuestionAns.png" alt="TikTok Style Question" width="100%" style="margin-bottom: 10px;"/>
+
+<figcaption style="margin: 10px 0;">
+
+<em>Figure 4b: TikTok Style - Contemporary social media language</em>
+
+</figcaption>
+
+</figure>
+
+<figure style="text-align: center; margin: 0; width: 33%;">
+
+<img src="img/spanishQusestionAns.png" alt="Spanish Translation" width="100%" style="margin-bottom: 10px;"/>
+
+<figcaption style="margin: 10px 0;">
+
+<em>Figure 4c: Spanish Mode - English to Spanish translation</em>
+
+</figcaption>
+
+</figure>
+:::
+
+The GRE mode enhances vocabulary learning by replacing common words with their more sophisticated alternatives (e.g., "good" becomes "exemplary"), while TikTok style transforms formal English into contemporary social media expressions (e.g., "That's cool" becomes "That's bussin fr fr"). These AI-powered transformations maintain the original meaning while adapting to different language registers.
+
+## Research Questions and Hypotheses
+
+After 10 months of operation and 93 users, this analysis investigates three key aspects of user behavior:
+
+1.  **Usage Context and Platform Patterns**
+    -   Research Question: "What are the common contexts and platforms where users engage with Jargon?"
+    -   Hypothesis: Users primarily engage with Jargon on social media or entertainment sites and banned academic sites.
+    -   Rationale: Understanding where users naturally integrate Jargon into their browsing can inform platform-specific optimization and marketing strategies.
+2.  **Feature Adoption and User Success**
+    -   Research Question: "What features and settings distinguish active users from occasional users?"
+    -   Hypothesis: Active users utilize more customization options (density settings, highlight styles) and has achievable daily goals.
+    -   Rationale: Identifying the features that correlate with sustained engagement can guide onboarding improvements and feature prioritization.
