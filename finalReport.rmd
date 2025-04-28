@@ -22,6 +22,9 @@ library(ggplot2)
 library(treemapify)
 library(RColorBrewer)
 library(grid)
+library(syuzhet)
+library(stopwords)
+library(patchwork)
 
 # Try to load required visualization packages
 has_ggrepel <- require(ggrepel)
@@ -468,16 +471,11 @@ kable(derived_vars,
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-## Analysis Methods
+## Data Exploration
 
-This analysis adopts a sequential approach to address each research question independently, allowing for focused exploration and detailed insights. We first investigate the usage context and platform patterns by analyzing website blocking behavior and user interaction patterns. Following this comprehensive examination of the first question, we then explore feature adoption patterns and their relationship to user success, focusing on how different customization choices correlate with engagement levels.
+Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
 
-### Data Exploration
-
-Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into three main categories:
-
-#### 1. Platform and Website Interaction Patterns
-[Relevant to Research Question 1: Usage Context and Platform Patterns]
+### 1. Platform and Website Interaction Patterns
 
 ```{r website_exploration, fig.width=18, fig.height=8}
 # Set global theme elements at the start
@@ -632,10 +630,11 @@ combined_plot
 
 <em style='color: black;'>Figure 5: Website Usage Analysis - Distribution of blocked websites by category (left) and frequency of individual websites (right)</em>
 
-The analysis of blocked websites reveals distinct patterns in how users interact with the Jargon extension. Professional tools, particularly Salesforce and AI platforms, emerge as the most frequently blocked categories, suggesting that users primarily utilize Jargon during work-related activities. The presence of development environment blocks in the dataset indicates that the user base includes some technical professionals, though this represents a modest portion of the overall usage. Educational content also features prominently in the blocked websites, with users frequently disabling the extension on documentation sites and educational platforms, possibly to maintain focus during concentrated learning sessions. Interestingly, social media platforms show lower blocking rates than initially hypothesized, with users selectively choosing which major platforms to exclude from Jargon's functionality, rather than implementing broad-based social media blocks.
+The analysis of blocked websites reveals distinct patterns in how users interact with the Jargon extension. Professional tools—particularly Salesforce and AI platforms—are the most frequently blocked, suggesting that users tend to avoid using Jargon during work-related activities. The presence of development environment blocks indicates that some users are technical professionals, though this group represents only a modest portion of the overall user base. Educational content also features prominently among blocked websites, with users often disabling the extension on documentation sites and learning platforms, possibly to maintain focus during concentrated study sessions.
 
-#### 2. Language Mode and Feature Usage
-[Relevant to Both Research Questions]
+However, it is important to note that there are only 27 blocked sites across 92 users. This limited usage suggests that the blocking feature is not widely utilized, and the current data may not be conclusive. Caution should be exercised when generalizing these findings, as they may not fully represent the broader user population.
+
+### 2. Language Mode and Feature Usage
 
 ```{r language_distribution, fig.width=14, fig.height=8}
 # Calculate language statistics
@@ -727,28 +726,16 @@ p
 
 <em style='color: black;'>Figure 6: Scatter plot showing the relationship between user adoption and question generation across different language modes</em>
 
-The scatter plot reveals several key insights about language mode usage patterns:
+The scatter plot highlights key patterns in language mode usage:
 
-1. **Language Mode Popularity**:
-   - Spanish emerges as the most active language mode, with both the highest number of questions generated (~800) and a substantial user base (~30 users)
-   - GlizzyTalk and Tamil show moderate adoption, each generating around 300 questions
-   - Korean and GRE Vocabulary form a middle tier with similar question counts (~200)
+- Spanish is the most active mode, with the highest number of questions (~800) and users (~30).
+- GlizzyTalk and Tamil show moderate engagement (~300 questions each).
+- Korean and GRE Vocabulary form a middle tier (~200 questions).
+- Most other languages have low adoption, with fewer users and questions.
+- Some modes (e.g., Tamil) have high question counts despite fewer users, indicating intensive use by dedicated learners.
 
-2. **Usage Intensity Patterns**:
-   - A clear positive correlation exists between the number of unique users and questions generated
-   - However, some language modes (like Tamil) show high question generation despite fewer users, suggesting intense usage by dedicated learners
-   - Mandarin Chinese shows moderate activity with relatively few users, indicating focused learning by a small group
+Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
 
-3. **User Adoption Tiers**:
-   - High adoption (>20 users): Spanish
-   - Medium adoption (10-20 users): Tamil, GlizzyTalk, Mandarin Chinese
-   - Low adoption (<10 users): Most other languages including French, German, and specialized modes like SAT Vocabulary
-
-4. **Engagement Distribution**:
-   - Traditional language learning (Spanish, Tamil, Korean) generally shows higher engagement than specialized English modes (GRE, SAT Vocabulary)
-   - Some newer languages (Croatian, Bulgarian, Urdu) show minimal activity, suggesting potential for growth or need for better promotion
-
-These patterns suggest that while traditional language learning drives most user activity, there's significant variation in how different language modes are utilized, with some showing intense usage by small groups while others have broader but less intensive adoption.
 
 ```{r word_frequency_analysis, fig.width=15, fig.height=4.2}
 set.seed(370)
@@ -774,6 +761,9 @@ custom_stopwords <- c(
   "the", "a", "an", "and", "but", "or", "for", "nor", "on", "at", "to", "of",
   "with", "in", "by", "about", "under", "above", "from", "after", "before"
 )
+
+# Ensure all stopwords are lowercased and trimmed
+custom_stopwords <- tolower(trimws(custom_stopwords))
 
 # Process text data for single words
 single_words <- questions %>%
@@ -916,22 +906,17 @@ legend("center",
 
 <em style='color: black;'>Figure 7: Word frequency analysis showing common words (left) and word pairs (right) in learning content. Colors indicate frequency of occurrence, with darker shades representing higher frequencies.</em>
 
-The word frequency analysis reveals patterns in user-selected content:
+Insights from Word and Phrase Frequency Analysis (based on the English original sentences selected for content generation):
 
-1. **Single Word Patterns**:
-   - Technical terms (e.g., "particle", "incremental") appear frequently
-   - Action words (e.g., "grows", "forms") show dynamic content selection
-   - Descriptive terms (e.g., "gentle", "floating") indicate varied context
+- The most common words and word pairs (e.g., "currents," "ice," "churn," "concentric," "ice form," "churn water") suggest that users frequently select technical or scientific content for practice, possibly from educational or informational sources.
+Descriptive and Process-Oriented Language:
+- Many frequent terms describe physical processes or states (e.g., "breeze," "rolls," "floating ball," "gentle churn"), indicating an emphasis on dynamic or descriptive language in the learning material.
+- The recurrence of similar words and phrases (e.g., "form," "water") implies that certain concepts or topics are repeatedly practiced, which may reflect user interests or the nature of the source material.
 
-2. **Word Pair Patterns**:
-   - Scientific combinations (e.g., "concentric layers", "stiff breeze")
-   - Process descriptions (e.g., "gentle churn", "ice form")
-   - Movement patterns (e.g., "ball rolls", "floating particle")
+Overall, the word frequency analysis reveals that users are engaging most with scientific and descriptive content, focusing on process-oriented vocabulary and recurring technical terms.
 
-These patterns suggest users often engage with technical and descriptive content, particularly in scientific or educational contexts.
 
-#### 3. Temporal and Engagement Patterns
-[Relevant to Both Research Questions]
+### 3. Temporal and Engagement Patterns
 
 ```{r temporal_patterns_timeline, fig.width=15, fig.height=6}
 # Prepare daily data
@@ -1037,37 +1022,22 @@ gridExtra::grid.arrange(p3, p4, ncol = 2)
 
 <em style='color: black;'>Figure 9: Weekly activity patterns showing average questions generated and active users by day of week (UTC timezone), with error bars indicating standard error.</em>
 
-The temporal analysis reveals several key patterns (Note: All timestamps are in UTC, which may shift actual usage patterns by several hours depending on users' local time zones):
 
-1. **Daily Timeline Trends** (Figure 8):
-   - Daily questions show significant fluctuations, with peaks reaching up to 200 questions
-   - The platform averages `r round(avg_questions, 1)` questions per day
-   - Active users average `r round(avg_users, 1)` per day, typically ranging from 1-5
-   - Due to UTC recording, activity peaks may appear shifted from users' actual local time
+The temporal analysis reveals several key patterns in user engagement, based on both daily and weekly activity (all timestamps in UTC):
 
-2. **Weekly Cycle Patterns** (Figure 9):
-   - Box plots reveal the full distribution of activity across each day of the week
-   - Median activity levels show day-to-day variations, with interpretation requiring UTC timezone consideration
-   - Outliers indicate occasional high-activity days across all weekdays
-   - The spread of the boxes shows varying consistency in usage patterns across different days
-   - Some days show wider interquartile ranges, suggesting more variable activity levels
+- **Daily Trends:**: Question generation and active user counts fluctuate considerably day-to-day, with occasional spikes (up to 200 questions or 12 users), but most days remain below the average (12.5 questions, 2.2 users).This indicates a small but steady user base, with 1–5 active users on most days.
 
-3. **Growth and Engagement**:
-   - Overall growth trends are evident despite daily variations
-   - User base shows gradual expansion with periodic adoption spikes
-   - Both casual and intensive usage patterns are observed
-   - Timezone-independent metrics like daily totals and weekly averages provide reliable growth indicators
+- **Weekly Trends:** Question generation is highest on Mondays, Tuesdays, and Wednesdays, then tapers off toward the weekend,suggesting users are more engaged during the workweek. There is substantial variability across days, as shown by the error bars.
 
-Note: Future analysis would benefit from timezone-adjusted data to more accurately reflect users' local activity patterns.
+Together, these patterns indicate that Jargon's usage is characterized by low but regular engagement, with activity peaking midweek and significant day-to-day variability. This suggests a core group of users who interact with the platform most during the workweek.
 
-#### 4. User Engagement Distribution
-[Relevant to Research Question 2: Feature Adoption and User Success]
+### 4. User Engagement Distribution
 
 ```{r engagement_patterns, echo=FALSE, fig.width=12, fig.height=10}
-# Create separate box plots for each metric
+# Create separate violin plots for each metric
 p1 <- enhanced_profiles %>%
   ggplot(aes(x = "Questions", y = generated_questions)) +
-  geom_boxplot(fill = jargon_blue, alpha = 0.7) +
+  geom_violin(fill = jargon_purple, alpha = 0.7, trim = FALSE) +
   labs(
     title = "Generated Questions",
     x = NULL,
@@ -1078,7 +1048,7 @@ p1 <- enhanced_profiles %>%
 
 p2 <- enhanced_profiles %>%
   ggplot(aes(x = "Questions", y = answered_questions)) +
-  geom_boxplot(fill = jargon_blue, alpha = 0.7) +
+  geom_violin(fill = jargon_purple, alpha = 0.7, trim = FALSE) +
   labs(
     title = "Answered Questions",
     x = NULL,
@@ -1089,7 +1059,7 @@ p2 <- enhanced_profiles %>%
 
 p3 <- enhanced_profiles %>%
   ggplot(aes(x = "Sites", y = blocked_sites)) +
-  geom_boxplot(fill = jargon_blue, alpha = 0.7) +
+  geom_violin(fill = jargon_purple, alpha = 0.7, trim = FALSE) +
   labs(
     title = "Blocked Sites",
     x = NULL,
@@ -1100,7 +1070,7 @@ p3 <- enhanced_profiles %>%
 
 p4 <- enhanced_profiles %>%
   ggplot(aes(x = "Levels", y = levels_attempted)) +
-  geom_boxplot(fill = jargon_purple, alpha = 0.7) +
+  geom_violin(fill = jargon_purple, alpha = 0.7, trim = FALSE) +
   labs(
     title = "Levels Attempted",
     x = NULL,
@@ -1153,128 +1123,147 @@ gridExtra::grid.arrange(
 )
 ```
 
-<em style='color: black;'>Figure 10: Distribution of key engagement metrics across users, showing individual box plots for each metric with median and interquartile range (IQR) statistics. Each plot uses a distinct color and includes summary statistics.</em>
+<em style='color: black;'>Figure 10: Distribution of key engagement metrics across users, showing individual violin plots for each metric with median and interquartile range (IQR) statistics. Each plot uses a distinct color and includes summary statistics.</em>
 
-The distribution of engagement metrics reveals distinct patterns in user behavior:
+The violin plots provide a clearer view of the distribution of user engagement metrics:
 
-1. **Question Generation and Completion**:
-   - Generated questions show a median of `r round(median(enhanced_profiles$generated_questions), 1)` with substantial right-skew
-   - Answered questions closely track generation, with a median of `r round(median(enhanced_profiles$answered_questions), 1)`
-   - Both metrics show several high-activity outliers, indicating power users
+- **Generated Questions & Answered Questions:** Most users generate and answer only a small number of questions, as shown by the wide base near zero. A few users are highly active, producing a long tail of outliers with much higher counts.
+- **Blocked Sites:** The vast majority of users do not block any sites (distribution concentrated at zero), with only a handful blocking more than one site.
+- **Levels Attempted:** Most users attempt only one level, with very few exploring multiple levels. The distribution is sharply peaked at one, with a small tail for higher values.
 
-2. **Website Blocking Behavior**:
-   - Users typically block `r round(median(enhanced_profiles$blocked_sites), 1)` sites (median)
-   - The narrow IQR of `r round(quantile(enhanced_profiles$blocked_sites, 0.75) - quantile(enhanced_profiles$blocked_sites, 0.25), 1)` sites suggests consistent blocking patterns
-   - Few users block more than 4 sites
+Overall, the violin plots highlight that engagement is highly skewed: most users interact minimally, while a small subset are much more active or exploratory. This pattern is consistent across all four metrics.
 
-3. **Level Progression**:
-   - Users typically attempt `r round(median(enhanced_profiles$levels_attempted), 1)` levels/languages (median)
-   - The compact IQR of `r round(quantile(enhanced_profiles$levels_attempted, 0.75) - quantile(enhanced_profiles$levels_attempted, 0.25), 1)` levels indicates focused learning
-   - A small number of users explore 4+ different levels
+## Further Analysis
 
-These patterns suggest a typical engagement profile of moderate, focused activity with a distinct subset of highly engaged users.
+### Research Question 1: Usage Context and Platform Patterns
 
-## Results
+#### Sentiment Analysis of User-Selected Content
 
-## Research Question 1: Usage Context and Platform Patterns
+To further address our first research question—"What are the common contexts and platforms where users engage with Jargon?"—we performed sentiment analysis on the English original sentences that users selected for learning. Using the `syuzhet` package in R, each sentence was assigned a sentiment score, where positive values indicate positive sentiment, negative values indicate negative sentiment, and values near zero indicate neutral sentiment. This approach allows us to quantitatively assess the emotional tone of the content users choose to engage with.
 
-### Website Usage Analysis
-[Current website analysis content]
-
-### Platform Usage Patterns
-[To be developed]
-
-## Research Question 2: Feature Adoption and User Success
-
-### Feature Correlation Analysis
-
-```{r feature_correlation, fig.width=10, fig.height=10}
-# Select relevant features for correlation analysis
-correlation_data <- enhanced_profiles %>%
-  select(daily_goal, highlightStyle, levels_attempted, 
-         generated_questions, answered_questions, density, blocked_sites)
-
-# Convert highlightStyle to numeric (1 for highlight, 0 for underline)
-correlation_data$highlightStyle <- as.numeric(correlation_data$highlightStyle == "highlight")
-
-# Calculate correlation matrix
-cor_matrix <- cor(correlation_data, use = "pairwise.complete.obs")
-
-# Create correlation plot
-corrplot::corrplot(
-  cor_matrix,
-  method = "circle",
-  type = "lower",
-  order = "original",
-  tl.col = "black",
-  tl.srt = 45,
-  addCoef.col = "black",
-  number.cex = 0.7,
-  col = colorRampPalette(c("#D73027", "white", "#1a4785"))(200),
-  diag = FALSE
+```{r sentiment_bar_by_language, echo=FALSE, fig.width=8, fig.height=5}
+library(ggplot2)
+library(dplyr)
+sentiment_scores <- get_sentiment(questions$original_sentence, method = "syuzhet")
+sentiment_df <- questions
+sentiment_df$score <- sentiment_scores
+sentiment_df$bin <- cut(sentiment_df$score,
+                        breaks = c(-Inf, -1, -0.5, 0, 0.5, 1, 2, Inf),
+                        labels = c("Very Negative", "Negative", "Slightly Negative", "Neutral", "Slightly Positive", "Positive", "Very Positive"))
+# Top 5 languages by number of sentences
+top_langs <- sentiment_df %>%
+  count(language, sort = TRUE) %>%
+  slice_head(n = 5) %>%
+  pull(language)
+# Group other languages as 'Other'
+sentiment_df$language_grouped <- ifelse(sentiment_df$language %in% top_langs, sentiment_df$language, "Other")
+# Set color palette: assign grey to 'Other'
+language_palette <- c(
+  setNames(RColorBrewer::brewer.pal(5, "Set1"), top_langs),
+  Other = "#bdbdbd"
 )
+# Stacked bar plot: Sentiment distribution by language (top 5 + Other)
+ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
+  geom_bar(position = "stack") +
+  scale_fill_manual(values = language_palette) +
+  labs(
+    title = "Stacked Bar Graph of Sentiment Scores for User-Selected Sentences",
+    x = "Sentiment Category",
+    y = "Number of Sentences",
+    fill = "Language Mode"
+  ) +
+  theme_minimal()
 ```
 
-<em style='color: black;'>Figure 11: Correlation matrix of user engagement features. Circle size and color intensity indicate correlation strength, with blue showing positive correlations and red showing negative correlations.</em>
+<em style='color: black;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
 
-The correlation analysis reveals several key relationships between feature adoption and user engagement:
+The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
 
-1. **Display Preferences and Engagement**:
-   - Users who prefer the highlight style (vs. underline) show significantly higher engagement
-   - Strong positive correlations with both question generation (0.67) and completion (0.59)
-   - This suggests the highlight feature may be more effective for sustained learning
+#### Topic Modeling of User-Selected Content (LDA)
 
-2. **Feature Usage Patterns**:
-   - Very strong correlation (0.92) between question generation and completion rates
-   - Users who block more sites tend to be more active (0.41 correlation with answered questions)
-   - Daily goal setting shows minimal impact on actual usage patterns
+To further explore the contexts in which users engage with Jargon, we applied Latent Dirichlet Allocation (LDA) topic modeling to the English original sentences selected by users. In addition to standard stopwords, we removed a custom list of common or uninformative words to improve topic quality. This method uncovers the main themes or topics present in the content users choose to learn from.
 
-3. **Learning Progression Indicators**:
-   - Strong positive correlations between levels attempted and question metrics (0.71, 0.64)
-   - Users exploring multiple levels/languages show higher overall engagement
-   - This suggests successful users tend to diversify their learning experience
+```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5}
+library(tidytext)
+library(topicmodels)
+library(dplyr)
+library(ggplot2)
+library(stringr)
 
-4. **Feature Customization Impact**:
-   - Positive correlations between customization features (highlight style, blocked sites)
-   - Users who customize their experience show higher engagement levels
-   - This indicates the importance of personalization options
+# Custom stopwords
+custom_stopwords <- c(
+  "just", "like", "get", "can", "time", "people", "something", "done", "someone", "year", "company", "everyone", "interface", "every", "it's", "also", "one", "make", "made", "go", "got", "say", "said", "will", "would", "could", "should", "may", "might", "must", "well", "even", "still", "first", "last", "new", "old", "use", "used", "using", "see", "seen", "look", "looked", "looking", "find", "found", "think", "thought", "know", "known", "want", "wanted", "need", "needed", "take", "taken", "give", "given", "put", "putting", "let", "lets", "let's", "much", "many", "more", "most", "some", "any", "all", "each", "other", "another", "others", "back", "around", "across", "through", "over", "under", "again", "always", "never", "sometimes", "often", "usually", "maybe", "perhaps", "about", "because", "since", "though", "although", "however", "therefore", "thus", "yet", "but", "so", "if", "then", "when", "where", "while", "before", "after", "during", "until", "among", "between", "within", "without", "against", "toward", "upon", "onto", "into", "out", "off", "on", "in", "at", "by", "with", "from", "to", "for", "of", "as", "is", "are", "was", "were", "be", "been", "being", "do", "does", "did", "doing", "have", "has", "had", "having", "am", "i", "me", "my", "mine", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "it", "its", "we", "us", "our", "ours", "they", "them", "their", "theirs", "this", "that", "these", "those","im"
+)
 
-These findings provide strong evidence that certain feature combinations and usage patterns are associated with higher engagement levels, particularly:
-- The choice of highlight style over underlining
-- Active customization of the learning environment
-- Exploration of multiple language levels
-- Consistent completion of generated questions
+# Ensure all stopwords are lowercased and trimmed
+custom_stopwords <- tolower(trimws(custom_stopwords))
 
-[Additional sections on feature adoption patterns...]
+# Prepare data for LDA
+text_df <- questions %>%
+  select(doc_id = question_id, text = original_sentence) %>%
+  filter(!is.na(text))
 
-# Conclusions and Summary
+# Remove all apostrophes before tokenization
+text_df <- text_df %>%
+  mutate(
+    text = str_replace_all(text, "['']", "")  # Removes both straight and curly apostrophes
+  )
 
-## Key Findings
+text_words <- text_df %>%
+  unnest_tokens(word, text) %>%
+  mutate(word = tolower(word)) %>%
+  anti_join(get_stopwords(), by = "word") %>%
+  filter(!word %in% custom_stopwords) %>%
+  filter(!str_detect(word, "^[0-9]+$"))
 
-1.  **Usage Context and Platform Patterns**
-    -   [Summary of actual findings from your data about platform usage]
-    -   [Insights about language mode preferences]
-2.  **Language Learning Behavior**
-    -   [Summary of findings about language mode usage]
-    -   [Patterns in language mode switching]
-3.  **Feature Adoption and User Success**
-    -   [Summary of findings about feature usage]
-    -   [Patterns in feature adoption]
+# Create document-term matrix
+dtm <- text_words %>%
+  count(doc_id, word) %>%
+  cast_dtm(doc_id, word, n)
 
-## Limitations
+# Fit LDA model (choose 4 topics for illustration)
+lda_model <- LDA(dtm, k = 4, control = list(seed = 370))
+top_terms <- tidy(lda_model, matrix = "beta")
 
-1.  **Sample Size**
-    -   Limited user base (93 users) affects statistical power
-    -   Early adoption phase may not represent typical usage
-2.  **Time Frame**
-    -   10-month observation period may not capture long-term learning patterns
-    -   Launch period effects may influence usage patterns
+# Get top 8 terms per topic
+top_terms_per_topic <- top_terms %>%
+  group_by(topic) %>%
+  slice_max(beta, n = 8) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
 
-## Future Directions
+plots <- lapply(unique(top_terms_per_topic$topic), function(t) {
+  ggplot(top_terms_per_topic %>% filter(topic == t),
+         aes(x = reorder(term, beta), y = beta, fill = factor(topic))) +
+    geom_col(fill = jargon_purple,show.legend = FALSE) +
+    labs(
+      title = paste("Topic", t),
+      x = "Term",
+      y = "Importance (beta)"
+    ) +
+    coord_flip() +
+    theme_minimal() +
+    theme(
+      axis.title.x = element_text(size = 12, face = "bold"),
+      axis.text.x = element_text(size = 10),
+      plot.title = element_text(hjust = 0.5)
+    )
+})
 
-1.  **Product Development**
-    -   [Recommendations based on actual findings]
-    -   [Suggested improvements supported by data]
-2.  **Research Extensions**
-    -   Longer-term user tracking needed
-    -   Investigation of specific feature impacts on retention
+wrap_plots(plots, ncol = 2)
+```
+
+<em style='color: black;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
+
+The LDA topic modeling did not yield strong or actionable insights about the contexts or platforms where users engage with Jargon. The "Importance (beta)" values are all quite low (well below 0.05), which is typical for LDA on short texts or small datasets, but it also means that no single word dominates any topic. The topics identified are diffuse, with mostly generic or process-oriented terms. This suggests that either the user-selected content is too varied or generic for topic modeling to be effective, or that the dataset is not large or rich enough for LDA to find meaningful structure. This is a valid finding: not all analyses reveal clear patterns, and reporting this transparently demonstrates scientific rigor. It may also indicate that user engagement with Jargon is broad and not easily categorized, or that more data is needed for deeper insights.
+
+Despite the weak themes, a tentative interpretation of the topics is as follows:
+
+- **Topic 1:** May relate to work processes or technical tasks (e.g., "work," "parsing," "incremental," "curious").
+- **Topic 2:** Appears to focus on scientific or physical phenomena, especially related to water and movement (e.g., "form," "water," "ice," "currents," "breeze").
+- **Topic 3:** Suggests group actions or collective activities (e.g., "together," "collect," "balls," "patterns").
+- **Topic 4:** Includes terms that could relate to data, viewing, or content creation (e.g., "view," "number," "stack," "videos," "write").
+
+However, these interpretations are tentative due to the low importance values and the generic nature of the terms.
+
+### Research Question 2: Feature Adoption and User Success
