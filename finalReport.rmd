@@ -225,8 +225,10 @@ data_summary <- tibble(
 )
 
 kable(data_summary, 
-      caption = "<em style='color: black;'>Table 1: Overview of Dataset Components</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 1: Overview of Dataset Components</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 ### Dataset Descriptions
@@ -272,8 +274,10 @@ profile_vars <- tibble(
 )
 
 kable(profile_vars,
-      caption = "<em style='color: black;'>Table 2: Key Variables in Profiles Dataset</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 2: Key Variables in Profiles Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 #### 2. Questions Dataset
@@ -315,8 +319,10 @@ question_vars <- tibble(
 )
 
 kable(question_vars,
-      caption = "<em style='color: black;'>Table 3: Key Variables in Questions Dataset</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 3: Key Variables in Questions Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 #### 3. Words Dataset
@@ -344,8 +350,10 @@ words_vars <- tibble(
 )
 
 kable(words_vars,
-      caption = "<em style='color: black;'>Table 4: Key Variables in Words Dataset</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 4: Key Variables in Words Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 #### 4. Levels Dataset
@@ -367,8 +375,10 @@ levels_vars <- tibble(
 )
 
 kable(levels_vars,
-      caption = "<em style='color: black;'>Table 5: Key Variables in Levels Dataset</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 5: Key Variables in Levels Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 #### 5. Websites Dataset
@@ -388,8 +398,10 @@ websites_vars <- tibble(
 )
 
 kable(websites_vars,
-      caption = "<em style='color: black;'>Table 6: Key Variables in Websites Dataset</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 6: Key Variables in Websites Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 ## Data Processing
@@ -470,8 +482,10 @@ derived_vars <- tibble(
 )
 
 kable(derived_vars,
-      caption = "<em style='color: black;'>Table 7: Overview of Derived Variables</em>") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 7: Overview of Derived Variables</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 ## Data Exploration
@@ -631,7 +645,7 @@ combined_plot <- cowplot::plot_grid(
 combined_plot
 ```
 
-<em style='color: black;'>Figure 5: Website Usage Analysis - Distribution of blocked websites by category (left) and frequency of individual websites (right)</em>
+<em style='color: black; font-size: 16px;'>Figure 5: Website Usage Analysis - Distribution of blocked websites by category (left) and frequency of individual websites (right)</em>
 
 The analysis of blocked websites reveals distinct patterns in how users interact with the Jargon extension. Professional tools—particularly Salesforce and AI platforms—are the most frequently blocked, suggesting that users tend to avoid using Jargon during work-related activities. The presence of development environment blocks indicates that some users are technical professionals, though this group represents only a modest portion of the overall user base. Educational content also features prominently among blocked websites, with users often disabling the extension on documentation sites and learning platforms, possibly to maintain focus during concentrated study sessions.
 
@@ -727,7 +741,7 @@ if (has_ggrepel) {
 p
 ```
 
-<em style='color: black;'>Figure 6: Scatter plot showing the relationship between user adoption and question generation across different language modes</em>
+<em style='color: black; font-size: 16px;'>Figure 6: Scatter plot showing the relationship between user adoption and question generation across different language modes</em>
 
 The scatter plot highlights key patterns in language mode usage:
 
@@ -907,7 +921,7 @@ legend("center",
        pt.cex = 2)
 ```
 
-<em style='color: black;'>Figure 7: Word frequency analysis showing common words (left) and word pairs (right) in learning content. Colors indicate frequency of occurrence, with darker shades representing higher frequencies.</em>
+<em style='color: black; font-size: 16px;'>Figure 7: Word frequency analysis showing common words (left) and word pairs (right) in learning content. Colors indicate frequency of occurrence, with darker shades representing higher frequencies.</em>
 
 Insights from Word and Phrase Frequency Analysis (based on the English original sentences selected for content generation):
 
@@ -967,7 +981,7 @@ p2 <- daily_data %>%
 gridExtra::grid.arrange(p1, p2, ncol = 2)
 ```
 
-<em style='color: black;'>Figure 8: Daily activity patterns showing question generation and active users with their respective averages (dashed lines) over the observation period, based on UTC timezone. Questions average: `r round(avg_questions, 1)` per day; Users average: `r round(avg_users, 1)` per day.</em>
+<em style='color: black; font-size: 16px;'>Figure 8: Daily activity patterns showing question generation and active users with their respective averages (dashed lines) over the observation period, based on UTC timezone. Questions average: `r round(avg_questions, 1)` per day; Users average: `r round(avg_users, 1)` per day.</em>
 
 ```{r temporal_patterns_weekly, fig.width=15, fig.height=6}
 # Prepare weekly data
@@ -1023,7 +1037,7 @@ p4 <- ggplot(weekly_data) +
 gridExtra::grid.arrange(p3, p4, ncol = 2)
 ```
 
-<em style='color: black;'>Figure 9: Weekly activity patterns showing average questions generated and active users by day of week (UTC timezone), with error bars indicating standard error.</em>
+<em style='color: black; font-size: 16px;'>Figure 9: Weekly activity patterns showing average questions generated and active users by day of week (UTC timezone), with error bars indicating standard error.</em>
 
 
 The temporal analysis reveals several key patterns in user engagement, based on both daily and weekly activity (all timestamps in UTC):
@@ -1126,7 +1140,7 @@ gridExtra::grid.arrange(
 )
 ```
 
-<em style='color: black;'>Figure 10: Distribution of key engagement metrics across users, showing individual violin plots for each metric with median and interquartile range (IQR) statistics. Each plot uses a distinct color and includes summary statistics.</em>
+<em style='color: black; font-size: 16px;'>Figure 10: Distribution of key engagement metrics across users, showing individual violin plots for each metric with median and interquartile range (IQR) statistics. Each plot uses a distinct color and includes summary statistics.</em>
 
 The violin plots provide a clearer view of the distribution of user engagement metrics:
 
@@ -1178,7 +1192,7 @@ ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
   theme_minimal()
 ```
 
-<em style='color: black;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
+<em style='color: black; font-size: 16px;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
 
 The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
 
@@ -1256,7 +1270,7 @@ plots <- lapply(unique(top_terms_per_topic$topic), function(t) {
 wrap_plots(plots, ncol = 2)
 ```
 
-<em style='color: black;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
+<em style='color: black; font-size: 16px;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
 
 The LDA topic modeling did not yield strong or actionable insights about the contexts or platforms where users engage with Jargon. The "Importance (beta)" values are all quite low (well below 0.05), which is typical for LDA on short texts or small datasets, but it also means that no single word dominates any topic. The topics identified are diffuse, with mostly generic or process-oriented terms. This suggests that either the user-selected content is too varied or generic for topic modeling to be effective, or that the dataset is not large or rich enough for LDA to find meaningful structure. This is a valid finding: not all analyses reveal clear patterns, and reporting this transparently demonstrates scientific rigor. It may also indicate that user engagement with Jargon is broad and not easily categorized, or that more data is needed for deeper insights.
 
@@ -1295,7 +1309,7 @@ corrplot(cor_matrix, method = "circle", type = "upper", order = "hclust",
          addCoef.col = "black")  # Add correlation coefficients to the plot
 ```
 
-<em style='color: black;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
+<em style='color: black; font-size: 16px;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
 
 The correlation matrix reveals several notable relationships:
 
@@ -1345,7 +1359,9 @@ ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
   theme_minimal()
 ```
 
-<em style='color: black;'>Figure 16: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
+<em style='color: black; font-size: 16px;'>Figure 16: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
+
+The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement.
 
 ##### Summary Statistics by K-Means Group
 ```{r kmeans_group_summary, echo=FALSE}
@@ -1358,7 +1374,10 @@ kmeans_summary <- enhanced_profiles %>%
     mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
     mean_levels_attempted = mean(levels_attempted, na.rm = TRUE)
   )
-kable(kmeans_summary, caption = "Table 20: Summary statistics for k-means-defined active and occasional users")
+kable(kmeans_summary, caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 8: Summary statistics for k-means-defined active and occasional users</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 
@@ -1367,6 +1386,7 @@ K-means clustering provides a data-driven segmentation of users based on their e
 #### User Segmentation: Very Active, Active, and Regular Users
 
 To provide a more nuanced segmentation, we define three user groups:
+
 - **Very Active:** Users in the k-means 'Active' cluster (highest engagement across all metrics)
 - **Active:** Among the remaining users, those in the top 25% by generated_questions
 - **Regular:** All other users
@@ -1395,7 +1415,6 @@ enhanced_profiles$user_group3_int <- case_when(
   TRUE ~ 0L
 )
 
-table(enhanced_profiles$user_group3)
 
 # Summary statistics for each group
 user_group3_summary <- enhanced_profiles %>%
@@ -1407,7 +1426,10 @@ user_group3_summary <- enhanced_profiles %>%
     mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
     mean_levels_attempted = mean(levels_attempted, na.rm = TRUE),
   )
-kable(user_group3_summary, caption = "Table 23: Summary statistics for Very Active, Active, and Regular users")
+kable(user_group3_summary, caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 9: Summary statistics for Very Active, Active, and Regular users</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
 ##### Feature Comparison by User Group
@@ -1429,15 +1451,8 @@ ord_model <- MASS::polr(user_group3_ord ~ daily_goal + density + highlightStyle,
 ord_tidy <- broom::tidy(ord_model)
 # Add p-value column
 ord_tidy$p.value <- 2 * (1 - pnorm(abs(ord_tidy$statistic)))
-kable(ord_tidy, digits = 3, caption = "Table 24: Ordinal regression coefficients for user group score (2 = Very Active, 1 = Active, 0 = Regular), with p-values")
-
-# Variable importance plot
-ord_tidy$importance <- abs(ord_tidy$estimate)
-ggplot(ord_tidy[ord_tidy$term != "(Intercept)", ], aes(x = reorder(term, importance), y = importance)) +
-  geom_col(fill = jargon_purple) +
-  coord_flip() +
-  labs(title = "Variable Importance for User Group Score", x = "Feature", y = "Importance (|Coefficient|)") +
-  theme_minimal()
+kable(ord_tidy, digits = 3, caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 10: Ordinal regression coefficients for user group score (2 = Very Active, 1 = Active, 0 = Regular)</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
-
-We use ANOVA and chi-squared tests to compare features across user groups, and an ordinal regression to identify which features are most associated with higher engagement (from Regular [0] to Very Active [2]). Positive coefficients in the ordinal regression indicate features that increase the likelihood of being in a higher activity group. The variable importance plot shows the relative influence of each feature on user group score.
