@@ -25,6 +25,9 @@ library(grid)
 library(syuzhet)
 library(stopwords)
 library(patchwork)
+library(broom)
+library(caret)
+library(Metrics)
 
 # Try to load required visualization packages
 has_ggrepel <- require(ggrepel)
@@ -1267,3 +1270,174 @@ Despite the weak themes, a tentative interpretation of the topics is as follows:
 However, these interpretations are tentative due to the low importance values and the generic nature of the terms.
 
 ### Research Question 2: Feature Adoption and User Success
+
+#### Correlation Analysis
+
+To explore the relationships between user features and engagement metrics, we computed a correlation matrix for key variables in the enhanced_profiles dataset. This helps identify which features are associated with higher engagement or other usage patterns.
+
+```{r correlation_matrix, echo=FALSE, message=FALSE, warning=FALSE}
+library(corrplot)
+# Extract the relevant columns
+cor_data <- enhanced_profiles[, c("daily_goal", "density", "highlightStyle", "blocked_sites", "levels_attempted", "generated_questions", "answered_questions")]
+
+# Convert categorical variable 'highlightStyle' to numeric for correlation
+cor_data$highlightStyle <- as.numeric(as.factor(cor_data$highlightStyle))
+
+# Calculate the correlation matrix
+cor_matrix <- cor(cor_data, use = "complete.obs")
+
+# Use a purple-to-orange color scale
+corrplot(cor_matrix, method = "circle", type = "upper", order = "hclust",
+         col = colorRampPalette(c("#f2b277", jargon_purple))(200),
+         tl.col = "black", tl.srt = 45,  # Text label color and rotation
+         tl.cex = 0.7,  # Text label size
+         cl.cex = 0.8,  # Color legend size
+         addCoef.col = "black")  # Add correlation coefficients to the plot
+```
+
+<em style='color: black;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
+
+The correlation matrix reveals several notable relationships:
+
+- **Levels Attempted, Generated Questions, and Answered Questions** are all very strongly and positively correlated (r ≈ 0.87–1.00), indicating that users who attempt more levels also generate and answer more questions—these are the most engaged users.
+- **Highlight Style** shows a strong negative correlation with both Generated and Answered Questions (r ≈ -0.67), suggesting that users who prefer a particular highlight style (as encoded numerically) tend to engage less.
+- **Blocked Sites** is moderately positively correlated with Levels Attempted and Engagement (r ≈ 0.24–0.34), implying that more engaged users are also more likely to block sites, possibly to focus their learning.
+- **Density** and **Daily Goal** show weak or negligible correlations with engagement metrics, suggesting these settings do not strongly predict user activity in this dataset.
+
+Overall, the strongest signals are that higher engagement (more questions and levels) tends to cluster together, and that highlight style preference is inversely related to engagement. Most other relationships are weak, indicating a diversity of user behaviors and settings.
+
+#### K-Means Clustering to Define Active vs. Occasional Users
+
+To provide a data-driven segmentation of user engagement, we applied k-means clustering to the key engagement metrics: generated questions, answered questions, blocked sites, and levels attempted. This approach groups users into clusters based on their overall activity patterns, rather than relying on arbitrary thresholds or quantiles.
+
+```{r kmeans_user_segmentation, echo=FALSE, message=FALSE, warning=FALSE, fig.width=7, fig.height=5}
+library(dplyr)
+library(ggplot2)
+library(scales)
+set.seed(370)
+
+# Select and scale key metrics for clustering
+kmeans_data <- enhanced_profiles %>%
+  select(generated_questions, answered_questions, blocked_sites, levels_attempted) %>%
+  mutate_all(~replace_na(., 0))
+
+kmeans_scaled <- scale(kmeans_data)
+
+# Run k-means clustering (k = 2 for active vs. occasional)
+kmeans_result <- kmeans(kmeans_scaled, centers = 2, nstart = 25)
+
+# Assign cluster labels to users
+cluster_labels <- ifelse(kmeans_result$cluster == which.max(tapply(kmeans_data$generated_questions, kmeans_result$cluster, mean)),
+                         "Active", "Occasional")
+enhanced_profiles$kmeans_group <- cluster_labels
+
+# Visualize clusters (PCA for 2D projection)
+library(FactoMineR)
+library(factoextra)
+pca_res <- prcomp(kmeans_scaled)
+pca_df <- as.data.frame(pca_res$x[, 1:2])
+pca_df$Cluster <- cluster_labels
+
+ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
+  geom_point(size = 3, alpha = 0.7) +
+  scale_color_manual(values = c("Active" = jargon_purple, "Occasional" = "#bdbdbd")) +
+  labs(title = "K-Means Clustering of User Engagement", x = "Principal Component 1", y = "Principal Component 2") +
+  theme_minimal()
+```
+
+<em style='color: black;'>Figure 16: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
+
+##### Summary Statistics by K-Means Group
+```{r kmeans_group_summary, echo=FALSE}
+kmeans_summary <- enhanced_profiles %>%
+  group_by(kmeans_group) %>%
+  summarise(
+    n = n(),
+    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
+    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
+    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
+    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE)
+  )
+kable(kmeans_summary, caption = "Table 20: Summary statistics for k-means-defined active and occasional users")
+```
+
+
+K-means clustering provides a data-driven segmentation of users based on their engagement patterns. The 'Active' cluster contains users with higher averages across all key metrics, while the 'Occasional' cluster includes users with lower engagement. This approach avoids arbitrary cutoffs and reflects natural groupings in the data. The results confirm that a small subset of users are highly engaged, while most interact with the platform at a lower level. This segmentation can be used for targeted feature development and user retention strategies.
+
+#### User Segmentation: Very Active, Active, and Regular Users
+
+To provide a more nuanced segmentation, we define three user groups:
+- **Very Active:** Users in the k-means 'Active' cluster (highest engagement across all metrics)
+- **Active:** Among the remaining users, those in the top 25% by generated_questions
+- **Regular:** All other users
+
+```{r user_segmentation_three_groups, echo=FALSE}
+# Start with k-means cluster
+very_active_ids <- enhanced_profiles$user_id[enhanced_profiles$kmeans_group == "Active"]
+
+# Among non-very-active, define top 25% as Active
+non_very_active <- enhanced_profiles %>%
+  filter(!(user_id %in% very_active_ids))
+quantile_cutoff <- quantile(non_very_active$generated_questions, 0.75, na.rm = TRUE)
+active_ids <- non_very_active$user_id[non_very_active$generated_questions >= quantile_cutoff]
+
+# Assign group labels
+enhanced_profiles$user_group3 <- case_when(
+  enhanced_profiles$user_id %in% very_active_ids ~ "Very Active",
+  enhanced_profiles$user_id %in% active_ids ~ "Active",
+  TRUE ~ "Regular"
+)
+
+# Numeric version: Very Active = 2, Active = 1, Regular = 0
+enhanced_profiles$user_group3_int <- case_when(
+  enhanced_profiles$user_group3 == "Very Active" ~ 2L,
+  enhanced_profiles$user_group3 == "Active" ~ 1L,
+  TRUE ~ 0L
+)
+
+table(enhanced_profiles$user_group3)
+
+# Summary statistics for each group
+user_group3_summary <- enhanced_profiles %>%
+  group_by(user_group3) %>%
+  summarise(
+    n = n(),
+    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
+    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
+    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
+    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE),
+  )
+kable(user_group3_summary, caption = "Table 23: Summary statistics for Very Active, Active, and Regular users")
+```
+
+##### Feature Comparison by User Group
+
+```{r feature_comparison_three_groups, echo=FALSE}
+# ANOVA for continuous features
+anova_goal <- aov(daily_goal ~ user_group3, data = enhanced_profiles)
+anova_density <- aov(density ~ user_group3, data = enhanced_profiles)
+chisq_hl3 <- chisq.test(table(enhanced_profiles$highlightStyle, enhanced_profiles$user_group3))
+
+# Ordinal regression for feature importance (user_group3_int: 2 = Very Active, 1 = Active, 0 = Regular)
+enhanced_profiles$user_group3_ord <- factor(
+  enhanced_profiles$user_group3_int,
+  levels = c(0, 1, 2),
+  labels = c("Regular", "Active", "Very Active"),
+  ordered = TRUE
+)
+ord_model <- MASS::polr(user_group3_ord ~ daily_goal + density + highlightStyle, data = enhanced_profiles, Hess = TRUE)
+ord_tidy <- broom::tidy(ord_model)
+# Add p-value column
+ord_tidy$p.value <- 2 * (1 - pnorm(abs(ord_tidy$statistic)))
+kable(ord_tidy, digits = 3, caption = "Table 24: Ordinal regression coefficients for user group score (2 = Very Active, 1 = Active, 0 = Regular), with p-values")
+
+# Variable importance plot
+ord_tidy$importance <- abs(ord_tidy$estimate)
+ggplot(ord_tidy[ord_tidy$term != "(Intercept)", ], aes(x = reorder(term, importance), y = importance)) +
+  geom_col(fill = jargon_purple) +
+  coord_flip() +
+  labs(title = "Variable Importance for User Group Score", x = "Feature", y = "Importance (|Coefficient|)") +
+  theme_minimal()
+```
+
+We use ANOVA and chi-squared tests to compare features across user groups, and an ordinal regression to identify which features are most associated with higher engagement (from Regular [0] to Very Active [2]). Positive coefficients in the ordinal regression indicate features that increase the likelihood of being in a higher activity group. The variable importance plot shows the relative influence of each feature on user group score.
