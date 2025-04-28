@@ -440,7 +440,7 @@ The scatter plot highlights key patterns in language mode usage:
 Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
 
 
-## 3. Word and Phrase Frequency Analysis
+### 3. Word and Phrase Frequency Analysis
 
 ```{r word_frequency_analysis, echo=FALSE}
 library(plotly)
