@@ -65,7 +65,7 @@ kable(data_summary,
 
 ### Dataset Descriptions {.tabset}
 
-#### 1. Profiles Dataset
+#### Profiles Dataset
 ```{r profiles_summary, echo=FALSE}
 # Create summary of key variables in profiles
 profile_vars <- tibble(
@@ -112,7 +112,7 @@ kable(profile_vars,
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 2: Key Variables in Profiles Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
-#### 2. Questions Dataset
+#### Questions Dataset
 ```{r questions_summary, echo=FALSE}
 # Create summary of key variables in questions
 question_vars <- tibble(
@@ -157,7 +157,7 @@ kable(question_vars,
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 3: Key Variables in Questions Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
-#### 3. Words Dataset
+#### Words Dataset
 ```{r words_summary, echo=FALSE}
 # Create summary of key variables in words
 words_vars <- tibble(
@@ -188,7 +188,7 @@ kable(words_vars,
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 4: Key Variables in Words Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
-#### 4. Levels Dataset
+#### Levels Dataset
 ```{r levels_summary, echo=FALSE}
 # Create summary of key variables in levels
 levels_vars <- tibble(
@@ -213,7 +213,7 @@ kable(levels_vars,
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 5: Key Variables in Levels Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
-#### 5. Websites Dataset
+#### Websites Dataset
 ```{r websites_summary, echo=FALSE}
 # Create summary of key variables in websites
 websites_vars <- tibble(
