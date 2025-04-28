@@ -9,6 +9,32 @@ output:
     css: styles.css
 ---
 
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-active">Home</a>
+    <a href="data_overview.html" class="nav-inactive">Data Overview</a>
+    <a href="eda.html" class="nav-inactive">EDA</a>
+    <a href="methods.html" class="nav-inactive">Methods</a>
+    <a href="results.html" class="nav-inactive">Results</a>
+    <a href="conclusions.html" class="nav-inactive">Conclusions</a>
+  </div>
+</div>
+```
+
+# Introduction
+
+Jargon is a Chrome extension designed to enhance language learning through active engagement with web content. This dashboard presents a comprehensive analysis of user engagement, platform usage, and feature adoption, based on data from 92 users. The project explores user behavior, feature effectiveness, and provides actionable recommendations for platform improvement.
+
+- **Home:** Introduction and project overview
+- **EDA:** Exploratory Data Analysis of user and platform data
+- **Methods:** Statistical and machine learning methods used
+- **Results:** Key findings, tables, and interactive figures
+- **Conclusions:** Summary and recommendations
+
+Navigate using the menu above to explore each section of the report.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(tidyverse)
@@ -16,15 +42,6 @@ library(plotly)
 library(DT)
 ```
 
-```{=html}
-<div class="nav-header">
-  <div class="nav-title">Jargon Analytics</div>
-  <div class="nav-links">
-    <a href="index.html" class="nav-active">Overview</a>
-    <a href="analysis.html" class="nav-inactive">Detailed Analysis</a>
-  </div>
-</div>
-```
 Jargon, a startup launched about a year ago, offers a novel Chrome extension for language learning, available here: https://chromewebstore.google.com/detail/jargon/gghkanaadhldgmknmgggdgfaonhpppoj. This extension enriches the user's browsing experience by highlighting English text on websites and generating language practice questions from these excerpts, promoting active user engagement. While it focuses on English and does not support foreign languages like Spanish or Chinese, it includes specialized features for learning GRE vocabulary and "TikTalk" slang, which converts English sentences into different styles. This tool targets students looking to enhance their language proficiency through regular practice.
 
 Despite its innovative approach, Jargon has faced challenges in user adoption, with just over 90 downloads in the Chrome extension store after nearly a year. This dashboard provides an analysis of user engagement with Jargon, based on data from 92 users, and explores different facets of their interaction with the platform.
@@ -200,3 +217,26 @@ subplot(plot_generated, plot_answered, plot_blocked, plot_levels,
 ```
 
 **Figure 1 Description**: This visualization shows the distribution of four key engagement metrics through box plots. Each plot reveals a right-skewed distribution, indicating that while most users show low engagement levels, there are some highly active users (shown as outlier points) who significantly exceed typical usage patterns. The Generated Questions and Answered Questions metrics show particularly notable outliers, suggesting a small group of power users.
+
+## Results
+
+This section presents the final, publication-ready interactive tables and figures from the analysis of user behavior and platform usage in Jargon. Each result is accompanied by a concise description highlighting the main findings. For a detailed summary and actionable recommendations, see the [Conclusions](conclusions.html) page.
+
+### Key Findings
+
+- **User Engagement Distribution:**
+  - Most users interact minimally with the platform, while a small subset are highly active (see interactive box plots above).
+  - Engagement metrics are right-skewed, with a few power users driving much of the activity.
+
+- **Platform and Feature Usage:**
+  - Blocked websites are most often professional or educational sites, with limited use of the blocking feature.
+  - Spanish is the most popular language mode, with other modes showing varying levels of engagement (see interactive bar chart in Detailed Analysis).
+
+- **Temporal and Sentiment Patterns:**
+  - User activity shows periodic spikes, with baseline engagement remaining modest (see interactive time series in Detailed Analysis).
+  - Sentiment analysis and topic modeling reveal broad, neutral content selection and diffuse themes.
+
+- **User Segmentation and Feature Impact:**
+  - Clustering and regression analyses identify a small group of highly active users and highlight the importance of achievable daily goals and interface preferences.
+
+Explore the [Detailed Analysis](analysis.html) page for more interactive visualizations and in-depth exploration of these findings.

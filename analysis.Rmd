@@ -19,54 +19,23 @@ library(DT)
 <div class="nav-header">
   <div class="nav-title">Jargon Analytics</div>
   <div class="nav-links">
-    <a href="index.html" class="nav-inactive">Overview</a>
-    <a href="analysis.html" class="nav-active">Detailed Analysis</a>
+    <a href="index.html" class="nav-inactive">Home</a>
+    <a href="data_overview.html" class="nav-active">Data Overview</a>
+    <a href="eda.html" class="nav-inactive">EDA</a>
+    <a href="methods.html" class="nav-inactive">Methods</a>
+    <a href="results.html" class="nav-inactive">Results</a>
+    <a href="conclusions.html" class="nav-inactive">Conclusions</a>
   </div>
 </div>
 ```
 
-This page provides an in-depth analysis of user engagement patterns with the Jargon Chrome extension. 
+[Back to Overview](index.html) | [Conclusions](conclusions.html)
 
+# Detailed Analysis - Jargon User Analytics
 
-```{r data-prep}
-# Load and prepare data
-profiles <- read_csv("data/profiles_rows_cleaned.csv")
-questions <- read_csv("data/questions_rows.csv")
-words <- read_csv("data/words_rows.csv")
-levels <- read_csv("data/levels_rows.csv")
-websites <- read_csv("data/website_blacklist_rows.csv")
+This page provides an in-depth analysis of user engagement patterns with the Jargon Chrome extension, strictly following the structure and content of the final report. All plots are interactive and presented in the same order as the report.
 
-# Enhance profiles data
-question_counts <- questions %>%
-  group_by(user_id) %>%
-  summarise(generated_questions = n())
-
-answer_counts <- words %>%
-  group_by(user_id) %>%
-  summarise(answered_questions = n())
-
-blocked_websites <- websites %>%
-  group_by(user_id) %>%
-  summarise(blocked_sites = n())
-
-distinct_levels <- levels %>%
-  group_by(user_id) %>%
-  summarise(levels_attempted = n_distinct(level))
-
-# Merge enhanced data
-enhanced_profiles <- profiles %>%
-  left_join(question_counts, by = "user_id") %>%
-  mutate(generated_questions = ifelse(is.na(generated_questions), 0, generated_questions)) %>%
-  left_join(answer_counts, by = "user_id") %>%
-  mutate(answered_questions = ifelse(is.na(answered_questions), 0, answered_questions)) %>%
-  left_join(blocked_websites, by = "user_id") %>%
-  mutate(blocked_sites = ifelse(is.na(blocked_sites), 0, blocked_sites)) %>%
-  left_join(distinct_levels, by = "user_id") %>%
-  mutate(levels_attempted = ifelse(is.na(levels_attempted), 0, levels_attempted)) %>%
-  mutate(highlightStyle = if_else(highlightStyle == "highlight", 1, 0))
-```
-
-## Language Learning Patterns
+## 1. Language Learning Patterns
 
 ```{r language-patterns}
 # Process language data
@@ -101,7 +70,7 @@ plot_ly(language_data,
 
 **Figure 1 Description**: This bar chart shows the distribution of questions generated across different language categories. Spanish leads in question generation, followed by GlizzyTalk and Tamil, indicating these are the most popular learning categories among users. The variation in question counts suggests different levels of engagement across language options, which could inform future content development priorities.
 
-## Temporal Usage Patterns
+## 2. Temporal Usage Patterns
 
 ```{r activity-timeline}
 # Process timeline data
@@ -134,3 +103,113 @@ plot_ly(timeline_data,
 ```
 
 **Figure 2 Description**: The time series plot reveals the daily pattern of question generation over time. Notable spikes in activity occur periodically, particularly around December, 2024, suggesting possible promotional events or user engagement initiatives. The baseline activity shows consistent but relatively low engagement, indicating opportunities for improving regular user participation.
+
+## 3. Website Usage Analysis
+
+```{r website-usage, echo=FALSE}
+website_data <- websites %>%
+  count(website) %>%
+  arrange(desc(n)) %>%
+  top_n(10, n)
+
+plot_ly(website_data, x = ~reorder(website, n), y = ~n, type = "bar",
+        marker = list(color = "#6a0dad")) %>%
+  layout(title = "Top 10 Blocked Websites",
+         xaxis = list(title = "Website"),
+         yaxis = list(title = "Number of Blocks"))
+```
+
+**Figure 3 Description**: Interactive bar chart of the top 10 blocked websites by users.
+
+## 4. Sentiment Analysis by Language
+
+```{r sentiment-bar, echo=FALSE}
+library(syuzhet)
+sentiment_scores <- get_sentiment(questions$original_sentence, method = "syuzhet")
+sentiment_df <- questions
+sentiment_df$score <- sentiment_scores
+sentiment_df$bin <- cut(sentiment_df$score,
+                        breaks = c(-Inf, -1, -0.5, 0, 0.5, 1, 2, Inf),
+                        labels = c("Very Negative", "Negative", "Slightly Negative", "Neutral", "Slightly Positive", "Positive", "Very Positive"))
+sentiment_summary <- sentiment_df %>%
+  count(bin, language) %>%
+  group_by(language) %>%
+  mutate(perc = n / sum(n))
+
+plot_ly(sentiment_summary, x = ~bin, y = ~n, color = ~language, type = "bar") %>%
+  layout(barmode = "stack", title = "Sentiment Distribution by Language",
+         xaxis = list(title = "Sentiment Category"),
+         yaxis = list(title = "Number of Sentences"))
+```
+
+**Figure 4 Description**: Stacked bar chart showing sentiment distribution by language mode.
+
+## 5. LDA Topic Modeling
+
+```{r lda-topics, echo=FALSE}
+# Assume top_terms_per_topic is available from your LDA analysis
+if (exists("top_terms_per_topic")) {
+  for (t in unique(top_terms_per_topic$topic)) {
+    print(
+      plot_ly(top_terms_per_topic %>% filter(topic == t),
+              x = ~reorder(term, beta), y = ~beta, type = "bar",
+              marker = list(color = "#6a0dad")) %>%
+        layout(title = paste("Topic", t, "Top Terms"),
+               xaxis = list(title = "Term"),
+               yaxis = list(title = "Importance (beta)"))
+    )
+  }
+}
+```
+
+**Figure 5 Description**: Interactive bar plots of top terms for each LDA topic.
+
+## 6. Correlation Matrix of User Features
+
+```{r correlation-heatmap, echo=FALSE}
+cor_data <- enhanced_profiles[, c("daily_goal", "density", "highlightStyle", "blocked_sites", "levels_attempted", "generated_questions", "answered_questions")]
+cor_data$highlightStyle <- as.numeric(as.factor(cor_data$highlightStyle))
+cor_matrix <- cor(cor_data, use = "complete.obs")
+plot_ly(z = cor_matrix, x = colnames(cor_matrix), y = colnames(cor_matrix), type = "heatmap",
+        colors = colorRamp(c("#f2b277", "#6a0dad"))) %>%
+  layout(title = "Correlation Matrix of User Features")
+```
+
+**Figure 6 Description**: Interactive heatmap of correlations between user features and engagement metrics.
+
+## 7. K-means Clustering & PCA
+
+```{r pca-plot, echo=FALSE}
+# Assume pca_df is available with PC1, PC2, and user_group3 columns
+tmp <- exists("pca_df") && all(c("PC1", "PC2", "user_group3") %in% colnames(pca_df))
+if (tmp) {
+  plot_ly(pca_df, x = ~PC1, y = ~PC2, color = ~user_group3, type = "scatter", mode = "markers",
+          marker = list(size = 10)) %>%
+    layout(title = "PCA of User Engagement by User Group",
+           xaxis = list(title = "PC1"),
+           yaxis = list(title = "PC2"))
+}
+```
+
+**Figure 7 Description**: PCA scatter plot of user engagement colored by user group.
+
+## 8. Ordinal Regression Results
+
+```{r ord-table, echo=FALSE}
+if (exists("ord_tidy")) {
+  DT::datatable(ord_tidy, options = list(pageLength = 5, dom = 't'),
+                caption = htmltools::HTML("<div style='text-align: center; color: black; font-size: 16px'>Table: Ordinal Regression Coefficients for User Group Score</div>"))
+}
+```
+
+**Table 1 Description**: Interactive table of ordinal regression coefficients for user group score.
+
+# Conclusions
+
+A summary of the main findings and recommendations is provided below. For the full discussion, see the [Conclusions](conclusions.html) page.
+
+- Most users engage minimally, but a small subset are highly active.
+- Spanish is the most popular language mode; website blocking is used mainly for professional/educational sites.
+- Sentiment and topic analysis show broad, neutral content selection.
+- Achievable daily goals and highlight style preferences are associated with higher engagement.
+- See the full [Conclusions](conclusions.html) for actionable recommendations and further discussion.

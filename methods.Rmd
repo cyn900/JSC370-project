@@ -1,0 +1,48 @@
+---
+title: "Methods - Jargon User Analytics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    css: styles.css
+---
+
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-inactive">Home</a>
+    <a href="data_overview.html" class="nav-inactive">Data Overview</a>
+    <a href="eda.html" class="nav-inactive">EDA</a>
+    <a href="methods.html" class="nav-active">Methods</a>
+    <a href="results.html" class="nav-inactive">Results</a>
+    <a href="conclusions.html" class="nav-inactive">Conclusions</a>
+  </div>
+</div>
+```
+
+# Methods
+
+This section summarizes the statistical and machine learning methods used in the analysis of Jargon user data.
+
+## ANOVA (Analysis of Variance)
+- Used to compare means of continuous features (e.g., daily goal, density) across user groups.
+
+## Chi-Squared Test
+- Used to assess associations between categorical variables (e.g., highlight style vs. user group).
+
+## Ordinal Regression
+- Used to model the relationship between user group (ordered: Regular, Active, Very Active) and user features (e.g., daily goal, density, highlight style).
+
+## K-means Clustering
+- Used to segment users into groups based on engagement metrics, identifying clusters of similar behavior.
+
+## Principal Component Analysis (PCA)
+- Used to reduce dimensionality and visualize user engagement patterns in two dimensions.
+
+## LDA Topic Modeling
+- Used to identify latent topics in user-selected sentences, revealing common themes in content engagement.
+
+## Correlation Analysis
+- Used to measure the strength and direction of relationships between user features and engagement metrics. 

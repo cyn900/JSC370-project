@@ -1,0 +1,402 @@
+---
+title: "Exploratory Data Analysis - Jargon User Analytics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    css: styles.css
+---
+
+```{r setup-eda, include=FALSE}
+# Load data
+profiles <- read.csv("data/profiles_rows_cleaned.csv")
+questions <- read.csv("data/questions_rows.csv")
+words <- read.csv("data/words_rows.csv")
+levels <- read.csv("data/levels_rows.csv")
+websites <- read.csv("data/website_blacklist_rows.csv")
+
+# Data summary table
+library(tibble)
+data_summary <- tibble(
+  `Dataset` = c("Profiles", "Questions", "Words", "Levels", "Websites"),
+  `Records` = c(nrow(profiles), nrow(questions), nrow(words), nrow(levels), nrow(websites)),
+  `Description` = c(
+    "User profiles and settings",
+    "Generated practice questions",
+    "Vocabulary entries and translations",
+    "User progression through difficulty levels",
+    "Websites where extension was disabled"
+  )
+)
+
+# Profiles variables
+profile_vars <- tibble(
+  Variable = c("user_id", "level", "paused", "chrome_notifs", "language", 
+               "last_question_time", "week_streak", "daily_streak", "daily_progress",
+               "daily_goal", "density", "highlightStyle"),
+  Type = c("Primary Key", "Integer", "Boolean", "Boolean", "String",
+           "DateTime", "Integer", "Integer", "Integer",
+           "Integer", "Integer", "String"),
+  Description = c(
+    "Unique identifier for each user",
+    "Current proficiency level",
+    "Extension status on Chrome",
+    "Notification preferences",
+    "Current selected language mode",
+    "Timestamp of most recent question",
+    "Consecutive weeks of activity",
+    "Consecutive days of activity",
+    "Questions completed today",
+    "Target questions per day",
+    "Frequency of questions",
+    "Text selection preference"
+  ),
+  Notes = c(
+    "Anonymized identifier",
+    "Range: 1-10",
+    "TRUE/FALSE (Default: TRUE)",
+    "TRUE/FALSE",
+    "e.g., 'GRE Vocabulary', 'TikTok Slang'",
+    "UTC timezone",
+    "",
+    "",
+    "Resets daily",
+    "User-set goal",
+    "Percentage of eligible sentences shown (0-100)",
+    "'highlight' or 'underline'"
+  )
+)
+
+# Questions variables
+question_vars <- tibble(
+  Variable = c("question_id", "user_id", "created_at", "sentence", "word",
+               "language", "original_sentence", "options_array", "answered_at",
+               "chosen_option", "user_rating"),
+  Type = c("Primary Key", "Foreign Key", "DateTime", "Text", "String",
+           "String", "Text", "Array of String", "DateTime",
+           "String", "Integer"),
+  Description = c(
+    "Unique question identifier",
+    "Associated user",
+    "Question generation time",
+    "Original selected text",
+    "Target word for learning",
+    "Transformation mode",
+    "Source text",
+    "Multiple choice options",
+    "Completion timestamp",
+    "User's answer",
+    "Question quality rating"
+  ),
+  Notes = c(
+    "",
+    "References profiles",
+    "UTC timezone",
+    "English source content",
+    "",
+    "Selected language mode",
+    "Pre-transformation content",
+    "Even indices: options in target language; Odd indices: English translations",
+    "NULL if unanswered",
+    "NULL if unanswered",
+    "Feature not yet implemented"
+  )
+)
+
+# Words variables
+words_vars <- tibble(
+  Variable = c("created_at", "word", "language", "user_id", "translation", "status"),
+  Type = c("DateTime", "String", "String", "Foreign Key", "Text", "String"),
+  Description = c(
+    "Word entry timestamp",
+    "Target vocabulary",
+    "Language mode",
+    "Associated user",
+    "English translation",
+    "Learning status"
+  ),
+  Notes = c(
+    "UTC timezone",
+    "",
+    "",
+    "References profiles",
+    "AI-generated translation",
+    "Currently all set to 'learning'"
+  )
+)
+
+# Levels variables
+levels_vars <- tibble(
+  Variable = c("user_id", "language", "level"),
+  Type = c("Foreign Key", "String", "Integer"),
+  Description = c(
+    "Associated user",
+    "Language mode",
+    "Difficulty level"
+  ),
+  Notes = c(
+    "References profiles",
+    "",
+    "Range: 1-10"
+  )
+)
+
+# Websites variables
+websites_vars <- tibble(
+  Variable = c("user_id", "website"),
+  Type = c("Foreign Key", "String"),
+  Description = c(
+    "Associated user",
+    "Blocked URL"
+  ),
+  Notes = c(
+    "References profiles",
+    "Sites where Jargon is disabled"
+  )
+)
+
+# For EDA plots
+library(dplyr)
+library(tidyr)
+library(plotly)
+library(DT)
+
+# Prepare enhanced_profiles for EDA plots
+question_counts <- questions %>% group_by(user_id) %>% summarise(generated_questions = n())
+answer_counts <- words %>% group_by(user_id) %>% summarise(answered_questions = n())
+blocked_websites <- websites %>% group_by(user_id) %>% summarise(blocked_sites = n())
+distinct_levels <- levels %>% group_by(user_id) %>% summarise(levels_attempted = n_distinct(level))
+enhanced_profiles <- profiles %>%
+  left_join(question_counts, by = "user_id") %>%
+  mutate(generated_questions = ifelse(is.na(generated_questions), 0, generated_questions)) %>%
+  left_join(answer_counts, by = "user_id") %>%
+  mutate(answered_questions = ifelse(is.na(answered_questions), 0, answered_questions)) %>%
+  left_join(blocked_websites, by = "user_id") %>%
+  mutate(blocked_sites = ifelse(is.na(blocked_sites), 0, blocked_sites)) %>%
+  left_join(distinct_levels, by = "user_id") %>%
+  mutate(levels_attempted = ifelse(is.na(levels_attempted), 0, levels_attempted)) %>%
+  mutate(highlightStyle = if_else(highlightStyle == "highlight", 1, 0))
+```
+
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-inactive">Home</a>
+    <a href="data_overview.html" class="nav-inactive">Data Overview</a>
+    <a href="eda.html" class="nav-active">EDA</a>
+    <a href="methods.html" class="nav-inactive">Methods</a>
+    <a href="results.html" class="nav-inactive">Results</a>
+    <a href="conclusions.html" class="nav-inactive">Conclusions</a>
+  </div>
+</div>
+```
+
+# Exploratory Data Analysis (EDA)
+
+## 1. Platform and Website Interaction Patterns
+
+```{r website_exploration, echo=FALSE}
+library(plotly)
+library(urltools)
+# Add domain extraction if not already present
+domain <- function(x) sub("^.*://", "", sub("/.*$", "", x))
+website_categories <- websites %>%
+  mutate(
+    domain = domain(website),
+    standardized_domain = dplyr::case_when(
+      grepl("salesforce.com$", domain) ~ "salesforce.com",
+      TRUE ~ domain
+    ),
+    category = dplyr::case_when(
+      grepl("localhost|vercel.com|developers.google.com|dtang.dev|surge.sh", standardized_domain) ~ "Development Tools",
+      grepl("youtube.com|instagram.com|medal.tv", standardized_domain) ~ "Social & Entertainment",
+      grepl("salesforce.com|okta.com|chatgpt.com|imean.ai", standardized_domain) ~ "Business & AI Tools",
+      grepl("wikipedia.org|readthedocs.io|edstem.org|ground-school", standardized_domain) ~ "Learning Resources",
+      grepl("mail.google.com|linkedin.com", standardized_domain) ~ "Communication",
+      grepl("coinbase.com", standardized_domain) ~ "Financial Services",
+      TRUE ~ "Other"
+    )
+  )
+
+website_summary <- website_categories %>%
+  group_by(category) %>%
+  summarise(total_sites = n()) %>%
+  arrange(desc(total_sites)) %>%
+  mutate(sites_percent = round(total_sites / sum(total_sites) * 100, 1))
+
+website_freq <- website_categories %>%
+  group_by(standardized_domain, category) %>%
+  summarise(count = n(), .groups = 'drop') %>%
+  arrange(desc(count))
+
+# Pie chart (plotly)
+pie <- plot_ly(website_summary, labels = ~category, values = ~total_sites, type = 'pie',
+               textinfo = 'label+percent', insidetextorientation = 'radial') %>%
+  layout(title = 'Distribution by Category')
+
+# Bar chart (plotly)
+bar <- plot_ly(website_freq, x = ~reorder(standardized_domain, count), y = ~count, color = ~category, type = 'bar') %>%
+  layout(title = 'Frequency of Blocked Websites',
+         xaxis = list(title = 'Website'),
+         yaxis = list(title = 'Count'))
+
+subplot(pie, bar, nrows = 2, shareX = FALSE, shareY = FALSE, titleX = TRUE)
+```
+
+## 2. Language Mode and Feature Usage
+
+```{r language_distribution, echo=FALSE}
+language_stats <- questions %>%
+  group_by(language) %>%
+  summarise(
+    question_count = n(),
+    unique_users = n_distinct(user_id)
+  ) %>%
+  arrange(desc(question_count))
+
+plot_ly(language_stats, x = ~unique_users, y = ~question_count, type = 'scatter', mode = 'markers+text',
+        color = ~language, text = ~language, marker = list(size = 15),
+        textposition = 'top center') %>%
+  layout(title = 'Language Mode Usage Patterns',
+         xaxis = list(title = 'Number of Unique Users'),
+         yaxis = list(title = 'Number of Questions Generated'))
+```
+
+## 3. Word and Phrase Frequency Analysis
+
+```{r word_frequency_analysis, echo=FALSE}
+library(stringr)
+# Single words
+single_words <- questions %>%
+  filter(!is.na(original_sentence)) %>%
+  mutate(clean_text = tolower(original_sentence),
+         clean_text = gsub("[[:punct:]]", " ", clean_text),
+         clean_text = gsub("[0-9]", " ", clean_text),
+         clean_text = gsub("\\s+", " ", clean_text)) %>%
+  pull(clean_text) %>%
+  paste(collapse = " ") %>%
+  strsplit(" ") %>%
+  unlist() %>%
+  subset(nchar(.) > 2) %>%
+  table() %>%
+  as.data.frame() %>%
+  setNames(c("word", "freq")) %>%
+  arrange(desc(freq)) %>%
+  head(30)
+
+# Bigrams
+words_vec <- strsplit(paste(single_words$word, collapse = " "), " ")[[1]]
+bigrams <- data.frame(word = paste(words_vec[-length(words_vec)], words_vec[-1])) %>%
+  count(word, name = "freq") %>%
+  arrange(desc(freq)) %>%
+  head(30)
+
+subplot(
+  plot_ly(single_words, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Words') %>%
+    layout(title = 'Top 30 Words', xaxis = list(title = 'Word'), yaxis = list(title = 'Frequency')),
+  plot_ly(bigrams, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Bigrams') %>%
+    layout(title = 'Top 30 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency')),
+  nrows = 1, shareY = FALSE, titleX = TRUE
+)
+```
+
+## 4. Temporal and Engagement Patterns
+
+### Daily Activity
+```{r temporal_patterns_timeline, echo=FALSE}
+daily_data <- questions %>%
+  mutate(date = as.Date(created_at)) %>%
+  group_by(date) %>%
+  summarise(total_questions = n(), unique_users = n_distinct(user_id))
+
+plot_ly(daily_data, x = ~date, y = ~total_questions, type = 'scatter', mode = 'lines+markers',
+        name = 'Questions', line = list(color = '#ae77f2')) %>%
+  add_trace(y = ~unique_users, name = 'Active Users', yaxis = 'y2', mode = 'lines+markers',
+            line = list(color = '#8890eb')) %>%
+  layout(title = 'Daily Question Generation and Active Users',
+         yaxis = list(title = 'Questions'),
+         yaxis2 = list(overlaying = 'y', side = 'right', title = 'Active Users'))
+```
+
+### Weekly Activity
+```{r temporal_patterns_weekly, echo=FALSE}
+library(lubridate)
+weekly_data <- questions %>%
+  mutate(date = as.Date(created_at), day_of_week = wday(date, label = TRUE, abbr = FALSE)) %>%
+  group_by(date, day_of_week) %>%
+  summarise(total_questions = n(), unique_users = n_distinct(user_id), .groups = 'drop') %>%
+  group_by(day_of_week) %>%
+  summarise(avg_questions = mean(total_questions), avg_users = mean(unique_users))
+
+subplot(
+  plot_ly(weekly_data, x = ~day_of_week, y = ~avg_questions, type = 'bar', name = 'Questions',
+          marker = list(color = '#ae77f2')) %>%
+    layout(title = 'Average Daily Questions by Day of Week', xaxis = list(title = 'Day of Week'), yaxis = list(title = 'Avg Questions')),
+  plot_ly(weekly_data, x = ~day_of_week, y = ~avg_users, type = 'bar', name = 'Active Users',
+          marker = list(color = '#8890eb')) %>%
+    layout(title = 'Average Active Users by Day of Week', xaxis = list(title = 'Day of Week'), yaxis = list(title = 'Avg Users')),
+  nrows = 1, shareY = FALSE, titleX = TRUE
+)
+```
+
+## 5. User Engagement Distribution
+
+```{r engagement_patterns, echo=FALSE}
+metrics <- c("generated_questions", "answered_questions", "blocked_sites", "levels_attempted")
+metric_names <- c("Generated Questions", "Answered Questions", "Blocked Sites", "Levels Attempted")
+plots <- lapply(seq_along(metrics), function(i) {
+  plot_ly(enhanced_profiles, y = as.formula(paste0("~", metrics[i])), type = 'violin', box = list(visible = TRUE),
+          meanline = list(visible = TRUE), points = 'all', name = metric_names[i],
+          line = list(color = '#ae77f2')) %>%
+    layout(title = metric_names[i], yaxis = list(title = metric_names[i]))
+})
+subplot(plots, nrows = 2, shareX = FALSE, shareY = FALSE, titleX = TRUE)
+```
+
+## Distribution of Daily Goals and Density
+
+```{r daily-goal-density, echo=FALSE}
+data_for_plot <- enhanced_profiles %>%
+  select(daily_goal, density) %>%
+  tidyr::pivot_longer(cols = c(daily_goal, density), names_to = "Metric", values_to = "Value") %>%
+  group_by(Metric, Value) %>%
+  summarise(Count = n(), .groups = 'drop')
+
+p <- ggplot(data_for_plot, aes(x = Value, y = Count, fill = Metric)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ Metric, scales = "free_x") +
+  labs(title = "Distribution of Daily Goals and Density",
+       x = "Value",
+       y = "Frequency") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+ggplotly(p)
+```
+
+## Highlight Style and Chrome Notifications
+
+```{r highlight-chrome-pie, echo=FALSE}
+filtered_profiles <- enhanced_profiles %>%
+  filter(!is.na(highlightStyle), !is.na(chrome_notifs))
+
+highlight_data <- filtered_profiles %>%
+  mutate(category = "Highlight Style",
+         value = if_else(highlightStyle == 1, "Highlight", "Underline")) %>%
+  count(category, value)
+
+chrome_notif_data <- filtered_profiles %>%
+  mutate(category = "Chrome Notifications",
+         value = if_else(chrome_notifs == 1, "Enabled", "Disabled")) %>%
+  count(category, value)
+
+pie_data <- bind_rows(highlight_data, chrome_notif_data)
+
+# For plotly, create a pie for each category
+plot_list <- lapply(split(pie_data, pie_data$category), function(df) {
+  plot_ly(df, labels = ~value, values = ~n, type = 'pie', textinfo = 'label+percent',
+          title = unique(df$category))
+})
+subplot(plot_list, nrows = 1, shareY = TRUE, titleX = TRUE)
+```

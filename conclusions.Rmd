@@ -1,0 +1,48 @@
+---
+title: "Conclusions - Jargon User Analytics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    css: styles.css
+---
+
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-inactive">Home</a>
+    <a href="data_overview.html" class="nav-inactive">Data Overview</a>
+    <a href="eda.html" class="nav-inactive">EDA</a>
+    <a href="methods.html" class="nav-inactive">Methods</a>
+    <a href="results.html" class="nav-inactive">Results</a>
+    <a href="conclusions.html" class="nav-active">Conclusions</a>
+  </div>
+</div>
+```
+
+# Conclusions and Recommendations
+
+This page summarizes the key findings from the Jargon user analytics project and provides actionable recommendations for platform improvement.
+
+## 1. Usage Context and Platform Patterns
+
+- **Findings:** Users most frequently engage with Jargon while browsing professional, educational, and social media sites. Spanish is the most popular language mode, indicating strong demand for language learning and bilingual content.
+- **Implications:** Jargon is naturally integrated into study routines and leisure browsing. Marketing should highlight Jargon's utility for language learning and academic productivity, especially in Spanish-speaking contexts.
+
+## 2. Feature Adoption and User Success
+
+- **Findings:** Active users set achievable daily goals and prefer certain highlight styles. Smaller, realistic daily goals are linked to higher engagement, while the underline highlight style is associated with lower activity. Density setting is not a significant predictor.
+- **Implications:** Onboarding should encourage attainable daily goals and consider simplifying highlight options to improve engagement.
+
+## Recommendations for Platform Improvement
+
+- **Feature Tracking:** Record the website URL for each user interaction to enable more granular analysis.
+- **Time Zone Awareness:** Use users' local time zones for activity tracking to allow for personalized recommendations.
+- **Goal Setting:** Refine the daily goal feature to encourage sustainable engagement.
+- **Highlight Styles:** Consider removing or redesigning the underline highlight style to streamline the interface.
+
+**Summary:**
+
+Jargon users are most engaged when the platform aligns with their study habits and offers achievable, motivating features. Leveraging these insights can further enhance user retention and satisfaction, supporting both language learning and productivity. 

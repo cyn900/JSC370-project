@@ -1,0 +1,319 @@
+---
+title: "Data Overview - Jargon User Analytics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    css: styles.css
+---
+
+```{r setup-data-overview, include=FALSE}
+library(DT)
+library(tibble)
+library(kableExtra)
+library(dplyr)
+library(tidyr)
+
+profiles <- read.csv("data/profiles_rows_cleaned.csv")
+questions <- read.csv("data/questions_rows.csv")
+words <- read.csv("data/words_rows.csv")
+levels <- read.csv("data/levels_rows.csv")
+websites <- read.csv("data/website_blacklist_rows.csv")
+```
+
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-inactive">Home</a>
+    <a href="data_overview.html" class="nav-active">Data Overview</a>
+    <a href="eda.html" class="nav-inactive">EDA</a>
+    <a href="methods.html" class="nav-inactive">Methods</a>
+    <a href="results.html" class="nav-inactive">Results</a>
+    <a href="conclusions.html" class="nav-inactive">Conclusions</a>
+  </div>
+</div>
+```
+
+## Data Collection
+
+The data for this analysis was collected from Jargon's Supabase database, covering user interactions from the extension's launch in June 2024 through March 16, 2025. The dataset comprises five main tables:
+
+```{r data_summary_table, echo=FALSE}
+# Create summary statistics for each dataset
+data_summary <- tibble(
+  `Dataset` = c("Profiles", "Questions", "Words", "Levels", "Websites"),
+  `Records` = c(nrow(profiles), nrow(questions), nrow(words), nrow(levels), nrow(websites)),
+  `Description` = c(
+    "User profiles and settings",
+    "Generated practice questions",
+    "Vocabulary entries and translations",
+    "User progression through difficulty levels",
+    "Websites where extension was disabled"
+  )
+)
+
+kable(data_summary, 
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 1: Overview of Dataset Components</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+### Dataset Descriptions
+
+#### 1. Profiles Dataset
+```{r profiles_summary, echo=FALSE}
+# Create summary of key variables in profiles
+profile_vars <- tibble(
+  Variable = c("user_id", "level", "paused", "chrome_notifs", "language", 
+               "last_question_time", "week_streak", "daily_streak", "daily_progress",
+               "daily_goal", "density", "highlightStyle"),
+  Type = c("Primary Key", "Integer", "Boolean", "Boolean", "String",
+           "DateTime", "Integer", "Integer", "Integer",
+           "Integer", "Integer", "String"),
+  Description = c(
+    "Unique identifier for each user",
+    "Current proficiency level",
+    "Extension status on Chrome",
+    "Notification preferences",
+    "Current selected language mode",
+    "Timestamp of most recent question",
+    "Consecutive weeks of activity",
+    "Consecutive days of activity",
+    "Questions completed today",
+    "Target questions per day",
+    "Frequency of questions",
+    "Text selection preference"
+  ),
+  Notes = c(
+    "Anonymized identifier",
+    "Range: 1-10",
+    "TRUE/FALSE (Default: TRUE)",
+    "TRUE/FALSE",
+    "e.g., 'GRE Vocabulary', 'TikTok Slang'",
+    "UTC timezone",
+    "",
+    "",
+    "Resets daily",
+    "User-set goal",
+    "Percentage of eligible sentences shown (0-100)",
+    "'highlight' or 'underline'"
+  )
+)
+
+kable(profile_vars,
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 2: Key Variables in Profiles Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+#### 2. Questions Dataset
+```{r questions_summary, echo=FALSE}
+# Create summary of key variables in questions
+question_vars <- tibble(
+  Variable = c("question_id", "user_id", "created_at", "sentence", "word",
+               "language", "original_sentence", "options_array", "answered_at",
+               "chosen_option", "user_rating"),
+  Type = c("Primary Key", "Foreign Key", "DateTime", "Text", "String",
+           "String", "Text", "Array of String", "DateTime",
+           "String", "Integer"),
+  Description = c(
+    "Unique question identifier",
+    "Associated user",
+    "Question generation time",
+    "Original selected text",
+    "Target word for learning",
+    "Transformation mode",
+    "Source text",
+    "Multiple choice options",
+    "Completion timestamp",
+    "User's answer",
+    "Question quality rating"
+  ),
+  Notes = c(
+    "",
+    "References profiles",
+    "UTC timezone",
+    "English source content",
+    "",
+    "Selected language mode",
+    "Pre-transformation content",
+    "Even indices: options in target language; Odd indices: English translations",
+    "NULL if unanswered",
+    "NULL if unanswered",
+    "Feature not yet implemented"
+  )
+)
+
+kable(question_vars,
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 3: Key Variables in Questions Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+#### 3. Words Dataset
+```{r words_summary, echo=FALSE}
+# Create summary of key variables in words
+words_vars <- tibble(
+  Variable = c("created_at", "word", "language", "user_id", "translation", "status"),
+  Type = c("DateTime", "String", "String", "Foreign Key", "Text", "String"),
+  Description = c(
+    "Word entry timestamp",
+    "Target vocabulary",
+    "Language mode",
+    "Associated user",
+    "English translation",
+    "Learning status"
+  ),
+  Notes = c(
+    "UTC timezone",
+    "",
+    "",
+    "References profiles",
+    "AI-generated translation",
+    "Currently all set to 'learning'"
+  )
+)
+
+kable(words_vars,
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 4: Key Variables in Words Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+#### 4. Levels Dataset
+```{r levels_summary, echo=FALSE}
+# Create summary of key variables in levels
+levels_vars <- tibble(
+  Variable = c("user_id", "language", "level"),
+  Type = c("Foreign Key", "String", "Integer"),
+  Description = c(
+    "Associated user",
+    "Language mode",
+    "Difficulty level"
+  ),
+  Notes = c(
+    "References profiles",
+    "",
+    "Range: 1-10"
+  )
+)
+
+kable(levels_vars,
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 5: Key Variables in Levels Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+#### 5. Websites Dataset
+```{r websites_summary, echo=FALSE}
+# Create summary of key variables in websites
+websites_vars <- tibble(
+  Variable = c("user_id", "website"),
+  Type = c("Foreign Key", "String"),
+  Description = c(
+    "Associated user",
+    "Blocked URL"
+  ),
+  Notes = c(
+    "References profiles",
+    "Sites where Jargon is disabled"
+  )
+)
+
+kable(websites_vars,
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 6: Key Variables in Websites Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
+
+## Data Processing
+
+```{r data_processing, echo=FALSE}
+
+# Clean and enhance profiles data
+enhanced_profiles <- profiles %>%
+  # Add total questions generated per user
+  left_join(
+    questions %>%
+      group_by(user_id) %>%
+      summarise(generated_questions = n()),
+    by = "user_id"
+  ) %>%
+  # Add total questions answered per user
+  left_join(
+    questions %>%
+      filter(!is.na(answered_at)) %>%
+      group_by(user_id) %>%
+      summarise(answered_questions = n()),
+    by = "user_id"
+  ) %>%
+  # Add number of blocked websites per user
+  left_join(
+    websites %>%
+      group_by(user_id) %>%
+      summarise(blocked_sites = n()),
+    by = "user_id"
+  ) %>%
+  # Add number of unique levels attempted per user
+  left_join(
+    levels %>%
+      group_by(user_id) %>%
+      mutate(language_level = paste(language, level, sep = "_")) %>%
+      summarise(distinct_combinations = n_distinct(language_level), .groups = 'drop')
+  ) %>%
+  # Replace NA values with 0 for derived metrics
+  mutate(
+    generated_questions = replace_na(generated_questions, 0),
+    answered_questions = replace_na(answered_questions, 0),
+    blocked_sites = replace_na(blocked_sites, 0),
+    levels_attempted = replace_na(distinct_combinations, 0)
+  )
+```
+
+### Data Cleaning Steps
+
+**Profile Enhancement**
+
+   - Aggregated user activity metrics from various tables
+   - Created derived engagement metrics:
+     * Total questions generated
+     * Questions answered
+     * Number of blocked websites
+     * Unique difficulty levels attempted
+   - Handled missing values by replacing NAs with 0 for count-based metrics
+
+
+### Derived Variables
+
+```{r derived_vars_summary, echo=FALSE}
+derived_vars <- tibble(
+  Variable = c("generated_questions", "answered_questions", "blocked_sites", 
+               "levels_attempted"),
+  Calculation = c(
+    "Count of questions per user",
+    "Count of questions with answers",
+    "Count of blocked websites",
+    "Count of unique combination of languages and difficulty levels"
+  ),
+  Purpose = c(
+    "Measure overall engagement",
+    "Measure learning completion",
+    "Understand avoidance patterns",
+    "Track learning progression"
+  )
+)
+
+kable(derived_vars,
+      caption = NULL) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 7: Overview of Derived Variables</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```

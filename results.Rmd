@@ -1,0 +1,90 @@
+---
+title: "Results - Jargon User Analytics"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    css: styles.css
+---
+
+```{=html}
+<div class="nav-header">
+  <div class="nav-title">Jargon Analytics</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-inactive">Home</a>
+    <a href="data_overview.html" class="nav-inactive">Data Overview</a>
+    <a href="eda.html" class="nav-inactive">EDA</a>
+    <a href="methods.html" class="nav-inactive">Methods</a>
+    <a href="results.html" class="nav-active">Results</a>
+    <a href="conclusions.html" class="nav-inactive">Conclusions</a>
+  </div>
+</div>
+```
+
+# Results
+
+This section presents the final, publication-ready tables and interactive figures from the analysis, following the structure of the report.
+
+## Key Findings
+
+- **User Engagement Distribution:**
+  - Most users interact minimally, while a small subset are highly active.
+  - Engagement metrics are right-skewed, with a few power users driving much of the activity.
+
+- **Platform and Feature Usage:**
+  - Blocked websites are most often professional or educational sites.
+  - Spanish is the most popular language mode, with other modes showing varying levels of engagement.
+
+- **Temporal and Sentiment Patterns:**
+  - User activity shows periodic spikes, with baseline engagement remaining modest.
+  - Sentiment analysis and topic modeling reveal broad, neutral content selection and diffuse themes.
+
+- **User Segmentation and Feature Impact:**
+  - Clustering and regression analyses identify a small group of highly active users and highlight the importance of achievable daily goals and interface preferences.
+
+## Publication-Ready Tables and Figures
+
+### 1. User Engagement Metrics
+```{r engagement-metrics, echo=FALSE}
+# ... (interactive box/violin plots)
+```
+
+### 2. Website Usage Analysis
+```{r website-usage, echo=FALSE}
+# ... (interactive bar chart for top blocked websites)
+```
+
+### 3. Language Mode Usage
+```{r language-patterns, echo=FALSE}
+# ... (interactive bar chart for language usage)
+```
+
+### 4. Sentiment Analysis
+```{r sentiment-bar, echo=FALSE}
+# ... (interactive stacked bar for sentiment by language)
+```
+
+### 5. LDA Topic Modeling
+```{r lda-topics, echo=FALSE}
+# ... (interactive bar plots for LDA topics)
+```
+
+### 6. Correlation Matrix
+```{r correlation-heatmap, echo=FALSE}
+# ... (interactive heatmap)
+```
+
+### 7. K-means Clustering & PCA
+```{r pca-plot, echo=FALSE}
+# ... (interactive PCA scatter plot)
+```
+
+### 8. Ordinal Regression Table
+```{r ord-table, echo=FALSE}
+# ... (interactive DT table for regression results)
+```
+
+---
+
+For a full summary and recommendations, see the [Conclusions](conclusions.html) page. 

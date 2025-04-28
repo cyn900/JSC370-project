@@ -11,7 +11,12 @@ relative_links:
   collections: true
 include:
   - index.html
+  - data_overview.html
+  - eda.html
+  - methods.html
   - analysis.html
+  - results.html
+  - conclusions.html
 exclude:
   - README.md
   - .gitignore
