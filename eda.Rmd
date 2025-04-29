@@ -17,6 +17,9 @@ has_wordcloud <- require(wordcloud)
 library(lubridate)
 library(grid)
 
+jargon_purple <- "#ae77f2"  # Main purple color
+jargon_blue<- "#8890eb"  # Lighter purple for variations
+
 # Load data
 profiles <- read.csv("data/profiles_rows_cleaned.csv")
 questions <- read.csv("data/questions_rows.csv")
@@ -201,34 +204,15 @@ enhanced_profiles <- profiles %>%
 </div>
 ```
 
-## Data Exploration {.tabset}
+## Exploratory Data Analysis {.tabset}
 
 Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
 
 ### Blocked Website Patterns
 
-```{r website_exploration, fig.width=18, fig.height=8}
-# Set global theme elements at the start
-theme_jargon <- function() {
-  theme_minimal() +
-    theme(
-      plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
-      plot.subtitle = element_text(hjust = 0.5, size = 11, color = "darkgray"),
-      axis.title = element_text(face = "bold", size = 11),
-      axis.text = element_text(size = 10),
-      legend.title = element_text(face = "bold", size = 11),
-      legend.text = element_text(size = 10),
-      legend.position = "right",
-      plot.margin = margin(20, 20, 20, 20),
-      legend.key = element_rect(fill = "white", color = NA)
-    )
-}
-
-# Define consistent color palette
-jargon_purple <- "#ae77f2"  # Main purple color
-jargon_blue<- "#8890eb"  # Lighter purple for variations
-
-# Website analysis plots
+```{r website_pie, fig.width=8, fig.height=4}
+library(plotly)
+# Prepare data
 website_categories <- websites %>%
   mutate(
     domain = domain(website),
@@ -247,20 +231,41 @@ website_categories <- websites %>%
     )
   )
 
-# Create summary for visualization with group sizes
+# Create summary with group sizes and ranks
 website_summary <- website_categories %>%
   group_by(category) %>%
-  summarise(
-    total_sites = n()
-  ) %>%
+  summarise(total_sites = n()) %>%
   arrange(desc(total_sites)) %>%
-  # Calculate percentages and add rank
   mutate(
     sites_percent = round(total_sites / sum(total_sites) * 100, 1),
-    group_rank = row_number()  # This will be used for secondary sorting
+    group_rank = row_number()
   )
 
-# Create website frequency summary with group rank for sorting
+# Create interactive pie chart
+plot_ly(website_summary, 
+        labels = ~category, 
+        values = ~total_sites,
+        type = 'pie',
+        textinfo = 'label+percent',
+        hoverinfo = 'text',
+        text = ~paste('Category:', category,
+                    '<br>Sites:', total_sites,
+                    '<br>Percentage:', sites_percent, '%'),
+        marker = list(colors = c("#2E86C1", "#27AE60", "#F1C40F", 
+                               "#E74C3C", "#9B59B6", "#F39C12", "#95A5A6"))) %>%
+  layout(
+    title = list(
+      text = "Distribution of Blocked Websites by Category",
+      y = 0.95
+    ),
+    showlegend = FALSE,
+    margin = list(t = 80, b = 50, l = 50, r = 50),
+    height = 400
+  )
+```
+
+```{r website_bar, fig.width=8, fig.height=6}
+# Create website frequency with proper ordering
 website_freq <- website_categories %>%
   group_by(standardized_domain, category) %>%
   summarise(
@@ -290,82 +295,51 @@ website_freq <- website_categories %>%
     display_domain = factor(display_domain, levels = unique(display_domain))
   )
 
-# Create pie chart
-p1 <- ggplot(website_summary, 
-       aes(x = "", y = total_sites, fill = reorder(category, -total_sites))) +
-  geom_bar(stat = "identity", width = 1) +
-  coord_polar("y", start = 0) +
-  scale_fill_manual(values = c(
-    "Business & AI Tools" = "#2E86C1",      # Blue
-    "Development Tools" = "#27AE60",        # Green
-    "Learning Resources" = "#F1C40F",       # Yellow
-    "Communication" = "#E74C3C",            # Red
-    "Social & Entertainment" = "#9B59B6",   # Purple
-    "Financial Services" = "#F39C12",       # Orange
-    "Other" = "#95A5A6"                     # Gray
-  )) +
-  theme_jargon() +
-  theme(
-    axis.text = element_blank(),
-    axis.title = element_blank(),
-    panel.grid = element_blank(),
-    legend.position = "none"
-  ) +
-  labs(title = "Distribution by Category") +
-  geom_text(aes(label = paste0(sites_percent, "%")), 
-            position = position_stack(vjust = 0.5),
-            size = 3.5)
-
-# Update bar chart with square shapes for legend
-p2 <- ggplot(website_freq, 
-       aes(x = display_domain, y = count, fill = category)) +
-  geom_bar(stat = "identity") +
-  scale_fill_manual(values = c(
-    "Business & AI Tools" = "#2E86C1",      # Blue
-    "Development Tools" = "#27AE60",        # Green
-    "Learning Resources" = "#F1C40F",       # Yellow
-    "Communication" = "#E74C3C",            # Red
-    "Social & Entertainment" = "#9B59B6",   # Purple
-    "Financial Services" = "#F39C12",       # Orange
-    "Other" = "#95A5A6"                     # Gray
-  )) +
-  theme_jargon() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    legend.key.size = unit(1, "lines"),
-    legend.spacing.y = unit(0.5, "lines")
-  ) +
-  guides(fill = guide_legend(
-    override.aes = list(shape = 15, size = 5),  # Use shape 15 for filled square
-    keywidth = unit(1, "lines"),
-    keyheight = unit(1, "lines")
-  )) +
-  labs(
-    title = "Frequency of Blocked Websites",
-    x = NULL,
-    y = "Count",
-    fill = "Category"
+# Create interactive bar chart with proper ordering
+plot_ly(website_freq, 
+        x = ~display_domain, 
+        y = ~count, 
+        color = ~category,
+        type = 'bar',
+        text = ~paste('Full Domain:', standardized_domain,
+                     '<br>Category:', category,
+                     '<br>Count:', count),
+        hoverinfo = 'text',
+        colors = c("#2E86C1", "#27AE60", "#F1C40F", 
+                  "#E74C3C", "#9B59B6", "#F39C12", "#95A5A6")) %>%
+  layout(
+    title = list(
+      text = "Frequency of Individual Blocked Websites",
+      y = 0.95
+    ),
+    xaxis = list(
+      title = "",
+      tickangle = 45,
+      ticktext = ~display_domain,
+      tickvals = ~display_domain,
+      categoryorder = "array",
+      categoryarray = ~display_domain
+    ),
+    yaxis = list(title = "Count"),
+    showlegend = TRUE,
+    legend = list(
+      orientation = "h",
+      xanchor = "center",
+      x = 0.5,
+      y = 1.15
+    ),
+    margin = list(t = 150, b = 100, l = 50, r = 50),
+    height = 600
   )
-
-# Combine plots side by side with adjusted widths
-combined_plot <- cowplot::plot_grid(
-  p1, p2,
-  nrow = 1,
-  rel_widths = c(1, 2.2)  # Increased relative width of bar chart
-)
-
-# Add the combined plot
-combined_plot
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 5: Website Usage Analysis - Distribution of blocked websites by category (left) and frequency of individual websites (right)</em>
+<em style='color: black; font-size: 16px;'>Figure 5: Website Usage Analysis - Distribution of blocked websites by category (top) and frequency of individual websites (bottom)</em>
 
 The analysis of blocked websites reveals distinct patterns in how users interact with the Jargon extension. Professional tools—particularly Salesforce and AI platforms—are the most frequently blocked, suggesting that users tend to avoid using Jargon during work-related activities. The presence of development environment blocks indicates that some users are technical professionals, though this group represents only a modest portion of the overall user base. Educational content also features prominently among blocked websites, with users often disabling the extension on documentation sites and learning platforms, possibly to maintain focus during concentrated study sessions.
 
 However, it is important to note that there are only 27 blocked sites across 92 users. This limited usage suggests that the blocking feature is not widely utilized, and the current data may not be conclusive. Caution should be exercised when generalizing these findings, as they may not fully represent the broader user population.
 
 ### Language Mode Usage
-
 ```{r language_distribution, echo=FALSE}
 library(plotly)
 # Calculate language statistics
@@ -430,7 +404,6 @@ plot_ly(
 <em style='color: black; font-size: 16px;'>Figure 6: Scatter plot showing the relationship between user adoption and question generation across different language modes</em>
 
 The scatter plot highlights key patterns in language mode usage:
-
 - Spanish is the most active mode, with the highest number of questions (~800) and users (~30).
 - GlizzyTalk and Tamil show moderate engagement (~300 questions each).
 - Korean and GRE Vocabulary form a middle tier (~200 questions).
@@ -439,9 +412,7 @@ The scatter plot highlights key patterns in language mode usage:
 
 Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
 
-
-#### Words Frequency Analysis
-
+### Words Frequency Analysis
 ```{r word_frequency_analysis, echo=FALSE}
 library(plotly)
 library(stringr)
@@ -564,7 +535,6 @@ ggplotly(p4)
 ```
 
 ### User Engagement Distribution
-
 ```{r engagement_patterns, echo=FALSE}
 library(tidyr)
 library(plotly)
@@ -595,7 +565,6 @@ p <- ggplot(engagement_long, aes(x = Metric, y = Value)) +
 
 ggplotly(p)
 ```
-
 <em style='color: black; font-size: 16px;'>Figure 10: Distribution of key engagement metrics across users, showing individual violin plots for each metric with median and interquartile range (IQR) statistics. Each plot uses a distinct color and includes summary statistics.</em>
 
 The violin plots provide a clearer view of the distribution of user engagement metrics:
