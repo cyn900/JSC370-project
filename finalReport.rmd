@@ -460,9 +460,7 @@ enhanced_profiles <- profiles %>%
   )
 ```
 
-### Data Cleaning Steps
-
-To prepare the data for analysis, we enhanced the profiles dataset by aggregating key user activity metrics from various tables. 
+To prepare the data for analysis, we enhanced the profiles dataset by aggregating key user activity metrics from various tables. Through a series of table joins, we incorporated several derived variables as shown below.
 
 ```{r derived_vars_summary, echo=FALSE}
 derived_vars <- tibble(
@@ -489,8 +487,7 @@ kable(derived_vars,
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 7: Overview of Derived Variables</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
-Through a series of table joins, we incorporated the total number of questions generated and answered from the questions table, the count of blocked websites from the websites table, and the number of unique difficulty levels attempted across different languages from the levels table. For consistency in our analysis, we handled missing values by replacing NAs with zeros in all count-based metrics. This enhanced profiles dataset serves as the foundation for our subsequent analyses of user engagement patterns.
-
+For consistency in our analysis, we handled missing values by replacing NAs with zeros in all count-based metrics. This enhanced profiles dataset serves as the foundation for our subsequent analyses of user engagement patterns.
 ## Data Exploration
 
 Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
