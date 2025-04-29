@@ -40,7 +40,7 @@ websites <- read.csv("data/website_blacklist_rows.csv")
 
 ## Data Collection
 
-The data for this analysis was collected from Jargon's Supabase database, covering user interactions from the extension's launch in June 2024 through March 16, 2025. The dataset comprises five main tables:
+The data for this analysis was collected from Jargon's Supabase database, covering user interactions from the extension's launch in June 2024 through March 16, 2025. The dataset comprises five main tables.
 
 ```{r data_summary_table, echo=FALSE}
 # Create summary statistics for each dataset
@@ -238,62 +238,7 @@ kable(websites_vars,
 
 ## Data Processing
 
-```{r data_processing, echo=FALSE}
-
-# Clean and enhance profiles data
-enhanced_profiles <- profiles %>%
-  # Add total questions generated per user
-  left_join(
-    questions %>%
-      group_by(user_id) %>%
-      summarise(generated_questions = n()),
-    by = "user_id"
-  ) %>%
-  # Add total questions answered per user
-  left_join(
-    questions %>%
-      filter(!is.na(answered_at)) %>%
-      group_by(user_id) %>%
-      summarise(answered_questions = n()),
-    by = "user_id"
-  ) %>%
-  # Add number of blocked websites per user
-  left_join(
-    websites %>%
-      group_by(user_id) %>%
-      summarise(blocked_sites = n()),
-    by = "user_id"
-  ) %>%
-  # Add number of unique levels attempted per user
-  left_join(
-    levels %>%
-      group_by(user_id) %>%
-      mutate(language_level = paste(language, level, sep = "_")) %>%
-      summarise(distinct_combinations = n_distinct(language_level), .groups = 'drop')
-  ) %>%
-  # Replace NA values with 0 for derived metrics
-  mutate(
-    generated_questions = replace_na(generated_questions, 0),
-    answered_questions = replace_na(answered_questions, 0),
-    blocked_sites = replace_na(blocked_sites, 0),
-    levels_attempted = replace_na(distinct_combinations, 0)
-  )
-```
-
-### Data Cleaning Steps
-
-**Profile Enhancement**
-
-   - Aggregated user activity metrics from various tables
-   - Created derived engagement metrics:
-     * Total questions generated
-     * Questions answered
-     * Number of blocked websites
-     * Unique difficulty levels attempted
-   - Handled missing values by replacing NAs with 0 for count-based metrics
-
-
-### Derived Variables
+To prepare the data for analysis, we enhanced the profiles dataset by aggregating key user activity metrics from various tables. Through a series of table joins, we incorporated several derived variables as shown below.
 
 ```{r derived_vars_summary, echo=FALSE}
 derived_vars <- tibble(
@@ -319,3 +264,5 @@ kable(derived_vars,
                 position = "center", full_width = FALSE) %>%
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 7: Overview of Derived Variables</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
+
+For consistency in our analysis, we handled missing values by replacing NAs with zeros in all count-based metrics. This enhanced profiles dataset serves as the foundation for our subsequent analyses of user engagement patterns.

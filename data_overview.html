@@ -1875,7 +1875,7 @@ border-radius: 0px;
 <h2>Data Collection</h2>
 <p>The data for this analysis was collected from Jargon’s Supabase
 database, covering user interactions from the extension’s launch in June
-2024 through March 16, 2025. The dataset comprises five main tables:</p>
+2024 through March 16, 2025. The dataset comprises five main tables.</p>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <thead>
 <tr>
@@ -2587,24 +2587,10 @@ Variables in Websites Dataset</em>
 </div>
 <div id="data-processing" class="section level2">
 <h2>Data Processing</h2>
-<div id="data-cleaning-steps" class="section level3">
-<h3>Data Cleaning Steps</h3>
-<p><strong>Profile Enhancement</strong></p>
-<ul>
-<li>Aggregated user activity metrics from various tables</li>
-<li>Created derived engagement metrics:
-<ul>
-<li>Total questions generated</li>
-<li>Questions answered</li>
-<li>Number of blocked websites</li>
-<li>Unique difficulty levels attempted</li>
-</ul></li>
-<li>Handled missing values by replacing NAs with 0 for count-based
-metrics</li>
-</ul>
-</div>
-<div id="derived-variables" class="section level3">
-<h3>Derived Variables</h3>
+<p>To prepare the data for analysis, we enhanced the profiles dataset by
+aggregating key user activity metrics from various tables. Through a
+series of table joins, we incorporated several derived variables as
+shown below.</p>
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <thead>
 <tr>
@@ -2674,7 +2660,10 @@ of Derived Variables</em>
 </tr>
 </tfoot>
 </table>
-</div>
+<p>For consistency in our analysis, we handled missing values by
+replacing NAs with zeros in all count-based metrics. This enhanced
+profiles dataset serves as the foundation for our subsequent analyses of
+user engagement patterns.</p>
 </div>
 
 

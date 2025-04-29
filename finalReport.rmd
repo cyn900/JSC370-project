@@ -462,18 +462,7 @@ enhanced_profiles <- profiles %>%
 
 ### Data Cleaning Steps
 
-**Profile Enhancement**
-
-   - Aggregated user activity metrics from various tables
-   - Created derived engagement metrics:
-     * Total questions generated
-     * Questions answered
-     * Number of blocked websites
-     * Unique difficulty levels attempted
-   - Handled missing values by replacing NAs with 0 for count-based metrics
-
-
-### Derived Variables
+To prepare the data for analysis, we enhanced the profiles dataset by aggregating key user activity metrics from various tables. 
 
 ```{r derived_vars_summary, echo=FALSE}
 derived_vars <- tibble(
@@ -499,6 +488,8 @@ kable(derived_vars,
                 position = "center", full_width = FALSE) %>%
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 7: Overview of Derived Variables</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
+
+Through a series of table joins, we incorporated the total number of questions generated and answered from the questions table, the count of blocked websites from the websites table, and the number of unique difficulty levels attempted across different languages from the levels table. For consistency in our analysis, we handled missing values by replacing NAs with zeros in all count-based metrics. This enhanced profiles dataset serves as the foundation for our subsequent analyses of user engagement patterns.
 
 ## Data Exploration
 
