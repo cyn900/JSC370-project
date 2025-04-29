@@ -45,7 +45,7 @@ This study provides a comprehensive analysis of user engagement and feature adop
 - **Feature Tracking:**  
   Enhance data collection by recording the website URL for each user interaction, enabling more granular analysis of usage context.
 - **Time Zone Awareness:**  
-  Shift from tracking all activity in UTC to using users' local time zones. This would allow for personalized recommendations, such as suggesting study breaks or optimal engagement times (e.g., "Midnight Pal" or midday productivity tips).
+  Shift from tracking all activity in UTC to using users' local time zones. This would allow for personalized recommendations, such as suggesting study breaks or optimal engagement times.
 - **Goal Setting:**  
   Refine the daily goal feature to encourage sustainable engagement, possibly by shortening the range of selectable goals and providing feedback on goal achievability.
 - **Highlight Styles:**  
