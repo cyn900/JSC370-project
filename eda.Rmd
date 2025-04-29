@@ -505,20 +505,51 @@ daily_data <- questions %>%
   group_by(date) %>%
   summarise(total_questions = n(), unique_users = n_distinct(user_id))
 
+# Calculate averages
+avg_questions <- mean(daily_data$total_questions)
+avg_users <- mean(daily_data$unique_users)
+
 p1 <- ggplot(daily_data) +
   geom_line(aes(x = date, y = total_questions), color = jargon_purple, size = 1) +
+  geom_hline(yintercept = avg_questions, color = "red", linetype = "dashed", size = 1) +
   labs(title = 'Daily Question Generation', x = 'Date', y = 'Number of Questions') +
   theme_minimal()
 
 p2 <- ggplot(daily_data) +
   geom_line(aes(x = date, y = unique_users), color = jargon_blue, size = 1) +
+  geom_hline(yintercept = avg_users, color = "red", linetype = "dashed", size = 1) +
   labs(title = 'Daily Active Users', x = 'Date', y = 'Number of Users') +
   theme_minimal()
 
-ggplotly(p1)
-ggplotly(p2)
+# Add average line annotations to plotly
+p1_plotly <- ggplotly(p1) %>%
+  add_annotations(
+    text = paste(""),
+    x = min(daily_data$date),
+    y = avg_questions,
+    xref = "x",
+    yref = "y",
+    showarrow = FALSE,
+    font = list(color = "red"),
+    xanchor = "left"
+  )
+
+p2_plotly <- ggplotly(p2) %>%
+  add_annotations(
+    text = paste(""),
+    x = min(daily_data$date),
+    y = avg_users,
+    xref = "x",
+    yref = "y",
+    showarrow = FALSE,
+    font = list(color = "red"),
+    xanchor = "left"
+  )
+
+p1_plotly
+p2_plotly
 ```
-<em style='color: black; font-size: 16px;'>Figure 8: Daily activity patterns showing question generation and active users with their respective averages (dashed lines) over the observation period, based on UTC timezone.</em>
+<em style='color: black; font-size: 16px;'>Figure 8: Daily activity patterns showing question generation and active users with their respective averages (red dashed lines) over the observation period, based on UTC timezone.</em>
 
 ##### Weekly Activity
 ```{r temporal_patterns_weekly, echo=FALSE}
@@ -529,23 +560,58 @@ weekly_data <- questions %>%
   group_by(date, day_of_week) %>%
   summarise(total_questions = n(), unique_users = n_distinct(user_id), .groups = 'drop') %>%
   group_by(day_of_week) %>%
-  summarise(avg_questions = mean(total_questions), avg_users = mean(unique_users))
+  summarise(
+    avg_questions = mean(total_questions), 
+    avg_users = mean(unique_users),
+    se_questions = sd(total_questions)/sqrt(n()),
+    se_users = sd(unique_users)/sqrt(n())
+  )
+
+# Calculate overall averages
+overall_avg_questions <- mean(weekly_data$avg_questions)
+overall_avg_users <- mean(weekly_data$avg_users)
 
 p3 <- ggplot(weekly_data) +
   geom_col(aes(x = day_of_week, y = avg_questions), fill = jargon_purple, alpha = 0.7) +
+  geom_errorbar(aes(x = day_of_week, ymin = avg_questions - se_questions, ymax = avg_questions + se_questions), width = 0.2) +
   labs(title = 'Average Daily Questions by Day of Week', x = 'Day of Week', y = 'Avg Questions') +
   theme_minimal()
 
 p4 <- ggplot(weekly_data) +
   geom_col(aes(x = day_of_week, y = avg_users), fill = jargon_blue, alpha = 0.7) +
+  geom_errorbar(aes(x = day_of_week, ymin = avg_users - se_users, ymax = avg_users + se_users), width = 0.2) +
   labs(title = 'Average Active Users by Day of Week', x = 'Day of Week', y = 'Avg Users') +
   theme_minimal()
 
-ggplotly(p3)
+# Add average line annotations to plotly
+p3_plotly <- ggplotly(p3) %>%
+  add_annotations(
+    text = paste("Average:", round(overall_avg_questions, 1)),
+    x = 0,
+    y = overall_avg_questions,
+    xref = "x",
+    yref = "y",
+    showarrow = FALSE,
+    font = list(color = "red"),
+    xanchor = "left"
+  )
 
-ggplotly(p4)
+p4_plotly <- ggplotly(p4) %>%
+  add_annotations(
+    text = paste("Average:", round(overall_avg_users, 1)),
+    x = 0,
+    y = overall_avg_users,
+    xref = "x",
+    yref = "y",
+    showarrow = FALSE,
+    font = list(color = "red"),
+    xanchor = "left"
+  )
+
+p3_plotly
+p4_plotly
 ```
-<em style='color: black; font-size: 16px;'>Figure 9: Weekly activity patterns showing average questions generated and active users by day of week (UTC timezone), with error bars indicating standard error.</em>
+<em style='color: black; font-size: 16px;'>Figure 9: Weekly activity patterns showing average questions generated and active users by day of week (UTC timezone), with error bars indicating standard error and overall averages shown as red dashed lines.</em>
 
 ####
 
