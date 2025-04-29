@@ -921,7 +921,7 @@ legend("center",
        pt.cex = 2)
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 7: Word frequency analysis showing common words (left) and word pairs (right) in learning content. Colors indicate frequency of occurrence, with darker shades representing higher frequencies.</em>
+<em style='color: black; font-size: 16px;'>Figure 7: Word frequency analysis showing common words (left) and word pairs (right) in learning content. Colors indicate frequency of occurrence.</em>
 
 Insights from Word and Phrase Frequency Analysis (based on the English original sentences selected for content generation):
 

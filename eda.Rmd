@@ -412,7 +412,7 @@ The scatter plot highlights key patterns in language mode usage:
 
 Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
 
-### Words Frequency Analysis
+#### Words Frequency Analysis
 ```{r word_frequency_analysis, echo=FALSE}
 library(plotly)
 library(stringr)
@@ -483,10 +483,21 @@ plot_ly(bigrams, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Bigr
         hoverinfo = 'x+y', marker = list(color = jargon_purple)) %>%
   layout(title = 'Top 30 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency'))
 ```
+<em style='color: black; font-size: 16px;'>Figure 7: Word frequency analysis showing common words (top) and word pairs (bottom) in learning content.</em>
+
+Insights from Word and Phrase Frequency Analysis (based on the English original sentences selected for content generation):
+
+- The most common words and word pairs (e.g., "currents," "ice," "churn," "concentric," "ice form," "churn water") suggest that users frequently select technical or scientific content for practice, possibly from educational or informational sources.
+Descriptive and Process-Oriented Language:
+- Many frequent terms describe physical processes or states (e.g., "breeze," "rolls," "floating ball," "gentle churn"), indicating an emphasis on dynamic or descriptive language in the learning material.
+- The recurrence of similar words and phrases (e.g., "form," "water") implies that certain concepts or topics are repeatedly practiced, which may reflect user interests or the nature of the source material.
+
+Overall, the word frequency analysis reveals that users are engaging most with scientific and descriptive content, focusing on process-oriented vocabulary and recurring technical terms.
 
 ### Temporal Patterns
 
-#### Daily Activity
+#### {.tabset}
+##### Daily Activity
 ```{r temporal_patterns_timeline, echo=FALSE}
 library(plotly)
 daily_data <- questions %>%
@@ -507,8 +518,9 @@ p2 <- ggplot(daily_data) +
 ggplotly(p1)
 ggplotly(p2)
 ```
+<em style='color: black; font-size: 16px;'>Figure 8: Daily activity patterns showing question generation and active users with their respective averages (dashed lines) over the observation period, based on UTC timezone.</em>
 
-#### Weekly Activity
+##### Weekly Activity
 ```{r temporal_patterns_weekly, echo=FALSE}
 library(lubridate)
 library(plotly)
@@ -533,6 +545,17 @@ ggplotly(p3)
 
 ggplotly(p4)
 ```
+<em style='color: black; font-size: 16px;'>Figure 9: Weekly activity patterns showing average questions generated and active users by day of week (UTC timezone), with error bars indicating standard error.</em>
+
+####
+
+The temporal analysis reveals several key patterns in user engagement, based on both daily and weekly activity (all timestamps in UTC):
+
+- **Daily Trends:**: Question generation and active user counts fluctuate considerably day-to-day, with occasional spikes (up to 200 questions or 12 users), but most days remain below the average (12.5 questions, 2.2 users).This indicates a small but steady user base, with 1–5 active users on most days.
+
+- **Weekly Trends:** Question generation is highest on Mondays, Tuesdays, and Wednesdays, then tapers off toward the weekend,suggesting users are more engaged during the workweek. There is substantial variability across days, as shown by the error bars.
+
+Together, these patterns indicate that Jargon's usage is characterized by low but regular engagement, with activity peaking midweek and significant day-to-day variability. This suggests a core group of users who interact with the platform most during the workweek.
 
 ### User Engagement Distribution
 ```{r engagement_patterns, echo=FALSE}
