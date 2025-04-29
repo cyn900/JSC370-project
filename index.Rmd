@@ -185,3 +185,42 @@ After 10 months of operation and 93 users, this analysis investigates three key 
     -   Research Question: "What features and settings distinguish active users from occasional users?"
     -   Hypothesis: Active users utilize more customization options (density settings, highlight styles) and has achievable daily goals.
     -   Rationale: Identifying the features that correlate with sustained engagement can guide onboarding improvements and feature prioritization.
+3.  **Language Mode Preferences and Learning Patterns**
+    -   Research Question: "How do users engage with different language modes and what patterns emerge in their learning behavior?"
+    -   Hypothesis: Users show consistent preferences in language modes and exhibit regular usage patterns aligned with their daily routines.
+    -   Rationale: Understanding language mode preferences and temporal patterns can help optimize content delivery and user experience.
+
+```{=html}
+<div style="text-align: center; margin: 50px 0;">
+  <a href="finalReport.html" class="download-button" onclick="alert('To save as PDF:\n1. The report will open in a new tab\n2. Use File > Print or press Ctrl/Cmd + P\n3. Select \"Save as PDF\" as the destination\n4. Click Save');" target="_blank">
+    <i class="fa fa-file-pdf"></i> Download Report as PDF
+  </a>
+</div>
+
+<style>
+.download-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ae77f2;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.download-button:hover {
+  background-color: #8890eb;
+  color: white !important;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fa-file-pdf {
+  margin-right: 10px;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+```
