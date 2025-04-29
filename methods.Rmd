@@ -108,9 +108,9 @@ enhanced_profiles <- profiles %>%
     levels_attempted = replace_na(distinct_combinations, 0)
   )
 ```
-```{r}
 
-```{r website_exploration, fig.width=18, fig.height=8}
+
+```{r color_setup}
 # Set global theme elements at the start
 theme_jargon <- function() {
   theme_minimal() +
@@ -132,7 +132,7 @@ jargon_purple <- "#ae77f2"  # Main purple color
 jargon_blue<- "#8890eb"  # Lighter purple for variations
 
 ```
-## Further Analysis {.tabset}
+## Further Analysis {.tablet}
 
 ### Research Question 1: Usage Context and Platform Patterns
 

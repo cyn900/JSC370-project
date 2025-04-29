@@ -22,27 +22,33 @@ output:
 </div>
 ```
 
-# Conclusions and Recommendations
+# Conclusions and Summary
 
-This page summarizes the key findings from the Jargon user analytics project and provides actionable recommendations for platform improvement.
+This study provides a comprehensive analysis of user engagement and feature adoption on the Jargon platform, with a focus on understanding usage contexts and identifying the characteristics of highly engaged users.
 
-## 1. Usage Context and Platform Patterns
+**1. Usage Context and Platform Patterns**
 
-- **Findings:** Users most frequently engage with Jargon while browsing professional, educational, and social media sites. Spanish is the most popular language mode, indicating strong demand for language learning and bilingual content.
-- **Implications:** Jargon is naturally integrated into study routines and leisure browsing. Marketing should highlight Jargon's utility for language learning and academic productivity, especially in Spanish-speaking contexts.
+- **Findings:**  
+  Analysis of blocked website data and language mode usage (see Figures 5 and 6) reveals that users most frequently engage with Jargon while browsing professional, educational, and social media sites. Spanish is the most popular language mode, suggesting a strong demand for language learning or bilingual content.  
+- **Implications:**  
+  These insights indicate that Jargon is naturally integrated into users' study routines and leisure browsing. Marketing efforts could be optimized by highlighting Jargon's utility for language learning and academic productivity, especially in Spanish-speaking contexts or for students accessing educational resources.
 
-## 2. Feature Adoption and User Success
+**2. Feature Adoption and User Success**
 
-- **Findings:** Active users set achievable daily goals and prefer certain highlight styles. Smaller, realistic daily goals are linked to higher engagement, while the underline highlight style is associated with lower activity. Density setting is not a significant predictor.
-- **Implications:** Onboarding should encourage attainable daily goals and consider simplifying highlight options to improve engagement.
+- **Findings:**  
+  The segmentation and regression analyses (see Tables 9 and 10, Figures 16 and 17) show that active users are distinguished by their use of achievable daily goals and specific highlight styles. Notably, users who set smaller, more realistic daily goals are more likely to remain engaged, while those who select the underline highlight style are less likely to be highly active. The density setting did not significantly predict engagement.
+- **Implications:**  
+  These results suggest that onboarding should encourage users to set attainable daily goals, potentially by limiting the maximum goal or providing goal-setting guidance. The underline highlight style may be less motivating or visually appealing, so simplifying highlight options or removing less effective styles could improve user experience and engagement.
 
-## Recommendations for Platform Improvement
+**Recommendations for Platform Improvement**
 
-- **Feature Tracking:** Record the website URL for each user interaction to enable more granular analysis.
-- **Time Zone Awareness:** Use users' local time zones for activity tracking to allow for personalized recommendations.
-- **Goal Setting:** Refine the daily goal feature to encourage sustainable engagement.
-- **Highlight Styles:** Consider removing or redesigning the underline highlight style to streamline the interface.
+- **Feature Tracking:**  
+  Enhance data collection by recording the website URL for each user interaction, enabling more granular analysis of usage context.
+- **Time Zone Awareness:**  
+  Shift from tracking all activity in UTC to using users' local time zones. This would allow for personalized recommendations, such as suggesting study breaks or optimal engagement times (e.g., "Midnight Pal" or midday productivity tips).
+- **Goal Setting:**  
+  Refine the daily goal feature to encourage sustainable engagement, possibly by shortening the range of selectable goals and providing feedback on goal achievability.
+- **Highlight Styles:**  
+  Consider removing or redesigning the underline highlight style to streamline the interface and focus on features that correlate with higher engagement.
 
-**Summary:**
-
-Jargon users are most engaged when the platform aligns with their study habits and offers achievable, motivating features. Leveraging these insights can further enhance user retention and satisfaction, supporting both language learning and productivity. 
+Overall, Jargon users are most engaged when the platform aligns with their study habits and offers achievable, motivating features. By leveraging these insights, Jargon can further enhance user retention and satisfaction, supporting both language learning and productivity.

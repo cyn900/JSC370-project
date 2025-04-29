@@ -22,69 +22,339 @@ output:
 </div>
 ```
 
-# Results
+```{r setup, include=FALSE}
+# Set chunk options
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
-This section presents the final, publication-ready tables and interactive figures from the analysis, following the structure of the report.
+# Load packages
+library(tidyverse)
+library(lubridate)
+library(knitr)
+library(kableExtra)
+library(urltools)
+library(gridExtra)
+library(ggplot2)
+library(treemapify)
+library(RColorBrewer)
+library(grid)
+library(syuzhet)
+library(stopwords)
+library(patchwork)
+library(broom)
+library(caret)
+library(Metrics)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(FactoMineR)
+library(factoextra)
+library(ggplot2)
+library(dplyr)
+library(tidytext)
+library(topicmodels)
+library(stringr)
+library(corrplot)
 
-## Key Findings
 
-- **User Engagement Distribution:**
-  - Most users interact minimally, while a small subset are highly active.
-  - Engagement metrics are right-skewed, with a few power users driving much of the activity.
+# Try to load required visualization packages
+has_ggrepel <- require(ggrepel)
+has_wordcloud <- require(wordcloud)
 
-- **Platform and Feature Usage:**
-  - Blocked websites are most often professional or educational sites.
-  - Spanish is the most popular language mode, with other modes showing varying levels of engagement.
-
-- **Temporal and Sentiment Patterns:**
-  - User activity shows periodic spikes, with baseline engagement remaining modest.
-  - Sentiment analysis and topic modeling reveal broad, neutral content selection and diffuse themes.
-
-- **User Segmentation and Feature Impact:**
-  - Clustering and regression analyses identify a small group of highly active users and highlight the importance of achievable daily goals and interface preferences.
-
-## Publication-Ready Tables and Figures
-
-### 1. User Engagement Metrics
-```{r engagement-metrics, echo=FALSE}
-# ... (interactive box/violin plots)
+# Read the CSV files
+profiles <- read.csv("data/profiles_rows_cleaned.csv")
+questions <- read.csv("data/questions_rows.csv")
+words <- read.csv("data/words_rows.csv")
+levels <- read.csv("data/levels_rows.csv")
+websites <- read.csv("data/website_blacklist_rows.csv")
 ```
 
-### 2. Website Usage Analysis
-```{r website-usage, echo=FALSE}
-# ... (interactive bar chart for top blocked websites)
+```{r data_processing, echo=FALSE}
+
+# Clean and enhance profiles data
+enhanced_profiles <- profiles %>%
+  # Add total questions generated per user
+  left_join(
+    questions %>%
+      group_by(user_id) %>%
+      summarise(generated_questions = n()),
+    by = "user_id"
+  ) %>%
+  # Add total questions answered per user
+  left_join(
+    questions %>%
+      filter(!is.na(answered_at)) %>%
+      group_by(user_id) %>%
+      summarise(answered_questions = n()),
+    by = "user_id"
+  ) %>%
+  # Add number of blocked websites per user
+  left_join(
+    websites %>%
+      group_by(user_id) %>%
+      summarise(blocked_sites = n()),
+    by = "user_id"
+  ) %>%
+  # Add number of unique levels attempted per user
+  left_join(
+    levels %>%
+      group_by(user_id) %>%
+      mutate(language_level = paste(language, level, sep = "_")) %>%
+      summarise(distinct_combinations = n_distinct(language_level), .groups = 'drop')
+  ) %>%
+  # Replace NA values with 0 for derived metrics
+  mutate(
+    generated_questions = replace_na(generated_questions, 0),
+    answered_questions = replace_na(answered_questions, 0),
+    blocked_sites = replace_na(blocked_sites, 0),
+    levels_attempted = replace_na(distinct_combinations, 0)
+  )
 ```
 
-### 3. Language Mode Usage
-```{r language-patterns, echo=FALSE}
-# ... (interactive bar chart for language usage)
+
+```{r color_setup}
+# Set global theme elements at the start
+theme_jargon <- function() {
+  theme_minimal() +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+      plot.subtitle = element_text(hjust = 0.5, size = 11, color = "darkgray"),
+      axis.title = element_text(face = "bold", size = 11),
+      axis.text = element_text(size = 10),
+      legend.title = element_text(face = "bold", size = 11),
+      legend.text = element_text(size = 10),
+      legend.position = "right",
+      plot.margin = margin(20, 20, 20, 20),
+      legend.key = element_rect(fill = "white", color = NA)
+    )
+}
+
+# Define consistent color palette
+jargon_purple <- "#ae77f2"  # Main purple color
+jargon_blue<- "#8890eb"  # Lighter purple for variations
+
 ```
 
-### 4. Sentiment Analysis
-```{r sentiment-bar, echo=FALSE}
-# ... (interactive stacked bar for sentiment by language)
+```{r user_segmentation_three_groups, echo=FALSE}
+# Start with k-means cluster
+very_active_ids <- enhanced_profiles$user_id[enhanced_profiles$kmeans_group == "Active"]
+
+# Among non-very-active, define top 25% as Active
+non_very_active <- enhanced_profiles %>%
+  filter(!(user_id %in% very_active_ids))
+quantile_cutoff <- quantile(non_very_active$generated_questions, 0.75, na.rm = TRUE)
+active_ids <- non_very_active$user_id[non_very_active$generated_questions >= quantile_cutoff]
+
+# Assign group labels
+enhanced_profiles$user_group3 <- case_when(
+  enhanced_profiles$user_id %in% very_active_ids ~ "Very Active",
+  enhanced_profiles$user_id %in% active_ids ~ "Active",
+  TRUE ~ "Regular"
+)
+
+# Numeric version: Very Active = 2, Active = 1, Regular = 0
+enhanced_profiles$user_group3_int <- case_when(
+  enhanced_profiles$user_group3 == "Very Active" ~ 2L,
+  enhanced_profiles$user_group3 == "Active" ~ 1L,
+  TRUE ~ 0L
+)
+
+
+# Summary statistics for each group
+user_group3_summary <- enhanced_profiles %>%
+  group_by(user_group3) %>%
+  summarise(
+    n = n(),
+    mean_generated_questions = mean(generated_questions, na.rm = TRUE),
+    mean_answered_questions = mean(answered_questions, na.rm = TRUE),
+    mean_blocked_sites = mean(blocked_sites, na.rm = TRUE),
+    mean_levels_attempted = mean(levels_attempted, na.rm = TRUE),
+  )
 ```
 
-### 5. LDA Topic Modeling
-```{r lda-topics, echo=FALSE}
-# ... (interactive bar plots for LDA topics)
+# Results {.tabset}
+
+## Sentiment Analysis
+```{r sentiment_bar_by_language, echo=FALSE, fig.width=8, fig.height=5}
+sentiment_scores <- get_sentiment(questions$original_sentence, method = "syuzhet")
+sentiment_df <- questions
+sentiment_df$score <- sentiment_scores
+sentiment_df$bin <- cut(sentiment_df$score,
+                        breaks = c(-Inf, -1, -0.5, 0, 0.5, 1, 2, Inf),
+                        labels = c("Very Negative", "Negative", "Slightly Negative", "Neutral", "Slightly Positive", "Positive", "Very Positive"))
+# Top 5 languages by number of sentences
+top_langs <- sentiment_df %>%
+  count(language, sort = TRUE) %>%
+  slice_head(n = 5) %>%
+  pull(language)
+# Group other languages as 'Other'
+sentiment_df$language_grouped <- ifelse(sentiment_df$language %in% top_langs, sentiment_df$language, "Other")
+# Set color palette: assign grey to 'Other'
+language_palette <- c(
+  setNames(RColorBrewer::brewer.pal(5, "Set1"), top_langs),
+  Other = "#bdbdbd"
+)
+# Stacked bar plot: Sentiment distribution by language (top 5 + Other)
+ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
+  geom_bar(position = "stack") +
+  scale_fill_manual(values = language_palette) +
+  labs(
+    title = "Stacked Bar Graph of Sentiment Scores for User-Selected Sentences",
+    x = "Sentiment Category",
+    y = "Number of Sentences",
+    fill = "Language Mode"
+  ) +
+  theme_minimal()
 ```
 
-### 6. Correlation Matrix
-```{r correlation-heatmap, echo=FALSE}
-# ... (interactive heatmap)
+<em style='color: black; font-size: 16px;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
+
+The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
+
+## LDA Analysis
+```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5}
+# Custom stopwords
+custom_stopwords <- c(
+  "just", "like", "get", "can", "time", "people", "something", "done", "someone", "year", "company", "everyone", "interface", "every", "it's", "also", "one", "make", "made", "go", "got", "say", "said", "will", "would", "could", "should", "may", "might", "must", "well", "even", "still", "first", "last", "new", "old", "use", "used", "using", "see", "seen", "look", "looked", "looking", "find", "found", "think", "thought", "know", "known", "want", "wanted", "need", "needed", "take", "taken", "give", "given", "put", "putting", "let", "lets", "let's", "much", "many", "more", "most", "some", "any", "all", "each", "other", "another", "others", "back", "around", "across", "through", "over", "under", "again", "always", "never", "sometimes", "often", "usually", "maybe", "perhaps", "about", "because", "since", "though", "although", "however", "therefore", "thus", "yet", "but", "so", "if", "then", "when", "where", "while", "before", "after", "during", "until", "among", "between", "within", "without", "against", "toward", "upon", "onto", "into", "out", "off", "on", "in", "at", "by", "with", "from", "to", "for", "of", "as", "is", "are", "was", "were", "be", "been", "being", "do", "does", "did", "doing", "have", "has", "had", "having", "am", "i", "me", "my", "mine", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "it", "its", "we", "us", "our", "ours", "they", "them", "their", "theirs", "this", "that", "these", "those","im"
+)
+
+# Ensure all stopwords are lowercased and trimmed
+custom_stopwords <- tolower(trimws(custom_stopwords))
+
+# Prepare data for LDA
+text_df <- questions %>%
+  select(doc_id = question_id, text = original_sentence) %>%
+  filter(!is.na(text))
+
+# Remove all apostrophes before tokenization
+text_df <- text_df %>%
+  mutate(
+    text = str_replace_all(text, "['']", "")  # Removes both straight and curly apostrophes
+  )
+
+text_words <- text_df %>%
+  unnest_tokens(word, text) %>%
+  mutate(word = tolower(word)) %>%
+  anti_join(get_stopwords(), by = "word") %>%
+  filter(!word %in% custom_stopwords) %>%
+  filter(!str_detect(word, "^[0-9]+$"))
+
+# Create document-term matrix
+dtm <- text_words %>%
+  count(doc_id, word) %>%
+  cast_dtm(doc_id, word, n)
+
+# Fit LDA model (choose 4 topics for illustration)
+lda_model <- LDA(dtm, k = 4, control = list(seed = 370))
+top_terms <- tidy(lda_model, matrix = "beta")
+
+# Get top 8 terms per topic
+top_terms_per_topic <- top_terms %>%
+  group_by(topic) %>%
+  slice_max(beta, n = 8) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+
+plots <- lapply(unique(top_terms_per_topic$topic), function(t) {
+  ggplot(top_terms_per_topic %>% filter(topic == t),
+         aes(x = reorder(term, beta), y = beta, fill = factor(topic))) +
+    geom_col(fill = jargon_purple,show.legend = FALSE) +
+    labs(
+      title = paste("Topic", t),
+      x = "Term",
+      y = "Importance (beta)"
+    ) +
+    coord_flip() +
+    theme_minimal() +
+    theme(
+      axis.title.x = element_text(size = 12, face = "bold"),
+      axis.text.x = element_text(size = 10),
+      plot.title = element_text(hjust = 0.5)
+    )
+})
+
+wrap_plots(plots, ncol = 2)
 ```
 
-### 7. K-means Clustering & PCA
-```{r pca-plot, echo=FALSE}
-# ... (interactive PCA scatter plot)
+<em style='color: black; font-size: 16px;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
+
+The LDA topic modeling did not yield strong or actionable insights about the contexts or platforms where users engage with Jargon. The "Importance (beta)" values are all quite low (well below 0.05), which is typical for LDA on short texts or small datasets, but it also means that no single word dominates any topic. The topics identified are diffuse, with mostly generic or process-oriented terms. This suggests that either the user-selected content is too varied or generic for topic modeling to be effective, or that the dataset is not large or rich enough for LDA to find meaningful structure. This is a valid finding: not all analyses reveal clear patterns, and reporting this transparently demonstrates scientific rigor. It may also indicate that user engagement with Jargon is broad and not easily categorized, or that more data is needed for deeper insights.
+
+Despite the weak themes, a tentative interpretation of the topics is as follows:
+
+- **Topic 1:** May relate to work processes or technical tasks (e.g., "work," "parsing," "incremental," "curious").
+- **Topic 2:** Appears to focus on scientific or physical phenomena, especially related to water and movement (e.g., "form," "water," "ice," "currents," "breeze").
+- **Topic 3:** Suggests group actions or collective activities (e.g., "together," "collect," "balls," "patterns").
+- **Topic 4:** Includes terms that could relate to data, viewing, or content creation (e.g., "view," "number," "stack," "videos," "write").
+
+However, these interpretations are tentative due to the low importance values and the generic nature of the terms.
+
+## Corelation Matrix
+
+```{r correlation_matrix, echo=FALSE, message=FALSE, warning=FALSE}
+# Extract the relevant columns
+cor_data <- enhanced_profiles[, c("daily_goal", "density", "highlightStyle", "blocked_sites", "levels_attempted", "generated_questions", "answered_questions")]
+
+# Convert categorical variable 'highlightStyle' to numeric for correlation
+cor_data$highlightStyle <- as.numeric(as.factor(cor_data$highlightStyle))
+
+# Calculate the correlation matrix
+cor_matrix <- cor(cor_data, use = "complete.obs")
+
+# Use a purple-to-orange color scale
+corrplot(cor_matrix, method = "circle", type = "upper", order = "hclust",
+         col = colorRampPalette(c("#f2b277", jargon_purple))(200),
+         tl.col = "black", tl.srt = 45,  # Text label color and rotation
+         tl.cex = 0.7,  # Text label size
+         cl.cex = 0.8,  # Color legend size
+         addCoef.col = "black")  # Add correlation coefficients to the plot
 ```
 
-### 8. Ordinal Regression Table
-```{r ord-table, echo=FALSE}
-# ... (interactive DT table for regression results)
+<em style='color: black; font-size: 16px;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
+
+The correlation matrix reveals several notable relationships:
+
+- **Levels Attempted, Generated Questions, and Answered Questions** are all very strongly and positively correlated (r ≈ 0.87–1.00), indicating that users who attempt more levels also generate and answer more questions—these are the most engaged users.
+- **Highlight Style** shows a strong negative correlation with both Generated and Answered Questions (r ≈ -0.67), suggesting that users who prefer a particular highlight style (as encoded numerically) tend to engage less.
+- **Blocked Sites** is moderately positively correlated with Levels Attempted and Engagement (r ≈ 0.24–0.34), implying that more engaged users are also more likely to block sites, possibly to focus their learning.
+- **Density** and **Daily Goal** show weak or negligible correlations with engagement metrics, suggesting these settings do not strongly predict user activity in this dataset.
+
+Overall, the strongest signals are that higher engagement (more questions and levels) tends to cluster together, and that highlight style preference is inversely related to engagement. Most other relationships are weak, indicating a diversity of user behaviors and settings.
+
+## Feature Comparison by User Group
+
+```{r feature_comparison_three_groups, echo=FALSE}
+# ANOVA for continuous features
+anova_goal <- aov(daily_goal ~ user_group3, data = enhanced_profiles)
+anova_density <- aov(density ~ user_group3, data = enhanced_profiles)
+chisq_hl3 <- chisq.test(table(enhanced_profiles$highlightStyle, enhanced_profiles$user_group3))
+
+# Ordinal regression for feature importance (user_group3_int: 2 = Very Active, 1 = Active, 0 = Regular)
+enhanced_profiles$user_group3_ord <- factor(
+  enhanced_profiles$user_group3_int,
+  levels = c(0, 1, 2),
+  labels = c("Regular", "Active", "Very Active"),
+  ordered = TRUE
+)
+ord_model <- MASS::polr(user_group3_ord ~ daily_goal + density + highlightStyle, data = enhanced_profiles, Hess = TRUE)
+ord_tidy <- broom::tidy(ord_model)
+# Add p-value column
+ord_tidy$p.value <- 2 * (1 - pnorm(abs(ord_tidy$statistic)))
+
+# After creating ord_tidy and before kable(), manually override the threshold term names:
+ord_tidy$term[nrow(ord_tidy)-1] <- 'Regular/Active'
+ord_tidy$term[nrow(ord_tidy)] <- 'Active/Very Active'
+
+kable(ord_tidy, digits = 3, caption = NULL, escape = FALSE, sanitize.text.function = identity) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                position = "center", full_width = FALSE) %>%
+  footnote(general = "<em style='color: black; font-size: 16px;'>Table 10: Ordinal regression coefficients for user group score (2 = Very Active, 1 = Active, 0 = Regular)</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
 ```
 
----
+Table 10 presents the results of the ordinal regression model comparing user features across the three user groups. The threshold terms (e.g., 'Regular/Active' and 'Active/Very Active') represent the estimated boundaries on the latent engagement scale that separate the user groups; they are not feature effects but model cutpoints.
 
-For a full summary and recommendations, see the [Conclusions](conclusions.html) page. 
+Among the features, two are statistically significant predictors of user group (p < 0.05):
+
+- **Daily Goal**: The negative coefficient for daily_goal (estimate = -0.031, p = 0.009) indicates that users who set higher daily goals are less likely to be in a more active group. This suggests that overly ambitious targets may discourage sustained engagement, possibly due to unrealistic expectations or burnout.
+- **Highlight Style (Underline)**: The large negative coefficient for highlightStyleunderline (estimate = -4.57, p < 0.001) shows that users who prefer the underline style are much less likely to be highly engaged. This may reflect a preference for a less prominent or less motivating interface.
+
+The density setting is not a significant predictor (p = 0.169), indicating it does not have a clear association with user activity level in this dataset. Overall, these results highlight that both goal-setting behavior and interface preferences are important factors in distinguishing more and less engaged users.
