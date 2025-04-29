@@ -192,7 +192,7 @@ After 10 months of operation and 93 users, this analysis investigates three key 
 
 ```{=html}
 <div style="text-align: center; margin: 50px 0;">
-  <a href="finalReport.html" class="download-button" onclick="alert('To save as PDF:\n1. The report will open in a new tab\n2. Use File > Print or press Ctrl/Cmd + P\n3. Select \"Save as PDF\" as the destination\n4. Click Save');" target="_blank">
+  <a href="finalReport.pdf" class="download-button" onclick="alert('To save as PDF:\n1. The report will open in a new tab\n2. Use File > Print or press Ctrl/Cmd + P\n3. Select \"Save as PDF\" as the destination\n4. Click Save');" target="_blank">
     <i class="fa fa-file-pdf"></i> Download Report as PDF
   </a>
 </div>
