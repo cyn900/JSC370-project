@@ -54,6 +54,7 @@ library(tidytext)
 library(topicmodels)
 library(stringr)
 library(corrplot)
+library(plotly)  # Add plotly for interactive plots
 
 
 # Try to load required visualization packages
@@ -193,8 +194,8 @@ language_palette <- c(
   setNames(RColorBrewer::brewer.pal(5, "Set1"), top_langs),
   Other = "#bdbdbd"
 )
-# Stacked bar plot: Sentiment distribution by language (top 5 + Other)
-ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
+# Create ggplot object
+p_sentiment <- ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
   geom_bar(position = "stack") +
   scale_fill_manual(values = language_palette) +
   labs(
@@ -204,6 +205,13 @@ ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
     fill = "Language Mode"
   ) +
   theme_minimal()
+
+# Convert to interactive plotly
+ggplotly(p_sentiment, tooltip = c("x", "y", "fill")) %>%
+  layout(
+    hoverlabel = list(bgcolor = "white"),
+    legend = list(title = list(text = "Language Mode"))
+  )
 ```
 
 <em style='color: black; font-size: 16px;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
@@ -211,7 +219,7 @@ ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
 The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
 
 ## LDA Analysis
-```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5}
+```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8, fig.height=10}
 # Custom stopwords
 custom_stopwords <- c(
   "just", "like", "get", "can", "time", "people", "something", "done", "someone", "year", "company", "everyone", "interface", "every", "it's", "also", "one", "make", "made", "go", "got", "say", "said", "will", "would", "could", "should", "may", "might", "must", "well", "even", "still", "first", "last", "new", "old", "use", "used", "using", "see", "seen", "look", "looked", "looking", "find", "found", "think", "thought", "know", "known", "want", "wanted", "need", "needed", "take", "taken", "give", "given", "put", "putting", "let", "lets", "let's", "much", "many", "more", "most", "some", "any", "all", "each", "other", "another", "others", "back", "around", "across", "through", "over", "under", "again", "always", "never", "sometimes", "often", "usually", "maybe", "perhaps", "about", "because", "since", "though", "although", "however", "therefore", "thus", "yet", "but", "so", "if", "then", "when", "where", "while", "before", "after", "during", "until", "among", "between", "within", "without", "against", "toward", "upon", "onto", "into", "out", "off", "on", "in", "at", "by", "with", "from", "to", "for", "of", "as", "is", "are", "was", "were", "be", "been", "being", "do", "does", "did", "doing", "have", "has", "had", "having", "am", "i", "me", "my", "mine", "you", "your", "yours", "he", "him", "his", "she", "her", "hers", "it", "its", "we", "us", "our", "ours", "they", "them", "their", "theirs", "this", "that", "these", "those","im"
@@ -254,12 +262,14 @@ top_terms_per_topic <- top_terms %>%
   ungroup() %>%
   arrange(topic, -beta)
 
-plots <- lapply(unique(top_terms_per_topic$topic), function(t) {
-  ggplot(top_terms_per_topic %>% filter(topic == t),
-         aes(x = reorder(term, beta), y = beta, fill = factor(topic))) +
-    geom_col(fill = jargon_purple,show.legend = FALSE) +
+# Create list to store plotly objects
+plotly_plots <- list()
+
+for (t in unique(top_terms_per_topic$topic)) {
+  p <- ggplot(top_terms_per_topic %>% filter(topic == t),
+         aes(x = reorder(term, beta), y = beta, text = paste("Term:", term, "<br>Beta:", round(beta, 4)))) +
+    geom_col(fill = jargon_purple, show.legend = FALSE) +
     labs(
-      title = paste("Topic", t),
       x = "Term",
       y = "Importance (beta)"
     ) +
@@ -268,11 +278,39 @@ plots <- lapply(unique(top_terms_per_topic$topic), function(t) {
     theme(
       axis.title.x = element_text(size = 12, face = "bold"),
       axis.text.x = element_text(size = 10),
-      plot.title = element_text(hjust = 0.5)
+      plot.margin = margin(t = 40, r = 20, b = 20, l = 20)  # Increased top margin
     )
-})
+  
+  p_plotly <- ggplotly(p, tooltip = "text")
+  
+  # Add title as an annotation
+  p_plotly <- p_plotly %>% 
+    layout(
+      annotations = list(
+        list(
+          text = paste("Topic", t),
+          x = 0.5,
+          y = 1,
+          xref = "paper",
+          yref = "paper",
+          xanchor = "center",
+          yanchor = "bottom",
+          showarrow = FALSE,
+          font = list(size = 16, color = "black", face = "bold")
+        )
+      )
+    )
+  
+  plotly_plots[[t]] <- p_plotly
+}
 
-wrap_plots(plots, ncol = 2)
+# Arrange plots in a grid using subplot
+subplot(plotly_plots, nrows = 2, shareX = FALSE, shareY = FALSE) %>%
+  layout(
+    showlegend = FALSE,
+    margin = list(l = 100, r = 50, b = 50, t = 50),
+    grid = list(rows = 2, columns = 2, pattern = "independent")
+  )
 ```
 
 <em style='color: black; font-size: 16px;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
@@ -300,13 +338,44 @@ cor_data$highlightStyle <- as.numeric(as.factor(cor_data$highlightStyle))
 # Calculate the correlation matrix
 cor_matrix <- cor(cor_data, use = "complete.obs")
 
-# Use a purple-to-orange color scale
-corrplot(cor_matrix, method = "circle", type = "upper", order = "hclust",
-         col = colorRampPalette(c("#f2b277", jargon_purple))(200),
-         tl.col = "black", tl.srt = 45,  # Text label color and rotation
-         tl.cex = 0.7,  # Text label size
-         cl.cex = 0.8,  # Color legend size
-         addCoef.col = "black")  # Add correlation coefficients to the plot
+# Create a data frame for plotly heatmap
+cor_df <- expand.grid(
+  Var1 = rownames(cor_matrix),
+  Var2 = colnames(cor_matrix)
+)
+cor_df$value <- as.vector(cor_matrix)
+
+# Create interactive heatmap with plotly
+plot_ly(
+  x = colnames(cor_matrix),
+  y = rownames(cor_matrix),
+  z = cor_matrix,
+  type = "heatmap",
+  colors = colorRampPalette(c("#f2b277", jargon_purple))(200),
+  text = matrix(
+    sprintf("%.2f", cor_matrix),
+    nrow = nrow(cor_matrix)
+  ),
+  hoverongaps = FALSE,
+  showscale = TRUE
+) %>%
+  layout(
+    title = "Correlation Matrix of User Features",
+    xaxis = list(
+      title = "", 
+      tickangle = 45
+    ),
+    yaxis = list(
+      title = ""
+    ),
+    margin = list(l = 100, r = 20, b = 100, t = 50)
+  ) %>%
+  style(
+    line = list(color = "black", width = 1),
+    hoverongaps = FALSE,
+    xgap = 1,
+    ygap = 1
+  )
 ```
 
 <em style='color: black; font-size: 16px;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>

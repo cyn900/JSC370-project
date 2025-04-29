@@ -39,6 +39,7 @@ library(tidytext)
 library(topicmodels)
 library(stringr)
 library(corrplot)
+library(plotly)
 
 
 # Try to load required visualization packages
@@ -178,11 +179,35 @@ pca_res <- prcomp(kmeans_scaled)
 pca_df <- as.data.frame(pca_res$x[, 1:2])
 pca_df$Cluster <- cluster_labels
 
-ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
+# Add original metrics to pca_df
+pca_df$generated_questions <- kmeans_data$generated_questions
+pca_df$answered_questions <- kmeans_data$answered_questions
+pca_df$blocked_sites <- kmeans_data$blocked_sites
+pca_df$levels_attempted <- kmeans_data$levels_attempted
+
+# Create base ggplot with title in the plot
+p <- ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster, 
+                        text = paste("Cluster:", Cluster,
+                                   "<br>PC1:", round(PC1, 2),
+                                   "<br>PC2:", round(PC2, 2),
+                                   "<br>Generated Questions:", generated_questions,
+                                   "<br>Answered Questions:", answered_questions,
+                                   "<br>Blocked Sites:", blocked_sites,
+                                   "<br>Levels Attempted:", levels_attempted))) +
   geom_point(size = 3, alpha = 0.7) +
-  scale_color_manual(values = c("Active" = jargon_purple, "Occasional" = "#bdbdbd")) +
-  labs(title = "K-Means Clustering of User Engagement", x = "Principal Component 1", y = "Principal Component 2") +
-  theme_minimal()
+  scale_color_manual(values = c("Active" = jargon_purple, "Occasional" = "#bdbdbd"),
+                    name = "User Group") +
+  labs(title = "K-Means Clustering of User Engagement", 
+       x = "Principal Component 1", 
+       y = "Principal Component 2") +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(hjust = 0.5)
+  )
+
+# Convert to interactive plot
+ggplotly(p, tooltip = "text")
 ```
 
 <em style='color: black; font-size: 16px;'>Figure 12: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
