@@ -210,9 +210,9 @@ p <- ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster,
 ggplotly(p, tooltip = "text")
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 12: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
+<em style='color: black; font-size: 16px;'>Figure 11: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
 
-The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement.This finding align with the Figure 10 from our Data Exploration.
+The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement. This finding align with the Figure 10 from our Data Exploration.
 
 ##### Summary Statistics by K-Means Group
 ```{r kmeans_group_summary, echo=FALSE}

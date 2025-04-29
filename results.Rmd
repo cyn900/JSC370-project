@@ -214,7 +214,7 @@ ggplotly(p_sentiment, tooltip = c("x", "y", "fill")) %>%
   )
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
+<em style='color: black; font-size: 16px;'>Figure 12: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
 
 The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
 
@@ -313,7 +313,7 @@ subplot(plotly_plots, nrows = 2, shareX = FALSE, shareY = FALSE) %>%
   )
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
+<em style='color: black; font-size: 16px;'>Figure 13: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
 
 The LDA topic modeling did not yield strong or actionable insights about the contexts or platforms where users engage with Jargon. The "Importance (beta)" values are all quite low (well below 0.05), which is typical for LDA on short texts or small datasets, but it also means that no single word dominates any topic. The topics identified are diffuse, with mostly generic or process-oriented terms. This suggests that either the user-selected content is too varied or generic for topic modeling to be effective, or that the dataset is not large or rich enough for LDA to find meaningful structure. This is a valid finding: not all analyses reveal clear patterns, and reporting this transparently demonstrates scientific rigor. It may also indicate that user engagement with Jargon is broad and not easily categorized, or that more data is needed for deeper insights.
 
@@ -378,7 +378,7 @@ plot_ly(
   )
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
+<em style='color: black; font-size: 16px;'>Figure 14: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
 
 The correlation matrix reveals several notable relationships:
 

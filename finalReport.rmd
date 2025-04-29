@@ -4,7 +4,7 @@ output:
   html_document: 
     toc: false
     theme: cosmo
-date: "2025-04-24"
+date: "2025-04-30"
 ---
 
 ```{r setup, include=FALSE}
@@ -1203,7 +1203,7 @@ ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
   theme_minimal()
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 12: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
+<em style='color: black; font-size: 16px;'>Figure 11: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
 
 The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement.This finding align with the Figure 10 from our Data Exploration.
 
@@ -1314,7 +1314,7 @@ ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
   theme_minimal()
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 11: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
+<em style='color: black; font-size: 16px;'>Figure 12: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
 
 The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
 
@@ -1383,7 +1383,7 @@ plots <- lapply(unique(top_terms_per_topic$topic), function(t) {
 wrap_plots(plots, ncol = 2)
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 12: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
+<em style='color: black; font-size: 16px;'>Figure 13: Top terms for each topic identified by LDA topic modeling of user-selected sentences. Each panel shows the most important words for one topic, with x-axis numbering visible for all.</em>
 
 The LDA topic modeling did not yield strong or actionable insights about the contexts or platforms where users engage with Jargon. The "Importance (beta)" values are all quite low (well below 0.05), which is typical for LDA on short texts or small datasets, but it also means that no single word dominates any topic. The topics identified are diffuse, with mostly generic or process-oriented terms. This suggests that either the user-selected content is too varied or generic for topic modeling to be effective, or that the dataset is not large or rich enough for LDA to find meaningful structure. This is a valid finding: not all analyses reveal clear patterns, and reporting this transparently demonstrates scientific rigor. It may also indicate that user engagement with Jargon is broad and not easily categorized, or that more data is needed for deeper insights.
 
@@ -1417,7 +1417,7 @@ corrplot(cor_matrix, method = "circle", type = "upper", order = "hclust",
          addCoef.col = "black")  # Add correlation coefficients to the plot
 ```
 
-<em style='color: black; font-size: 16px;'>Figure 13: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
+<em style='color: black; font-size: 16px;'>Figure 14: Correlation matrix of user features and engagement metrics. Circle size and color indicate the strength and direction of the correlation (purple = positive, orange = negative).</em>
 
 The correlation matrix reveals several notable relationships:
 
