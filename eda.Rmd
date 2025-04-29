@@ -440,7 +440,7 @@ The scatter plot highlights key patterns in language mode usage:
 Overall, while usage intensity and adoption vary widely across languages, traditional language learning modes drive most activity.
 
 
-### Words Frequency Analysis
+#### Words Frequency Analysis
 
 ```{r word_frequency_analysis, echo=FALSE}
 library(plotly)
@@ -478,7 +478,7 @@ single_words <- questions %>%
   as.data.frame() %>%
   setNames(c("word", "freq")) %>%
   arrange(desc(freq)) %>%
-  head(50)
+  head(30)
 
 bigrams <- questions %>%
   filter(!is.na(original_sentence)) %>%
@@ -500,18 +500,20 @@ bigrams <- questions %>%
   count(word, name = "freq") %>%
   filter(grepl("\\s", word), !grepl("^\\s|\\s$", word)) %>%
   arrange(desc(freq)) %>%
-  head(50)
+  head(30)
 
 # Interactive bar for single words
 plot_ly(single_words, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Words',
-        hoverinfo = 'x+y') %>%
-  layout(title = 'Top 50 Words', xaxis = list(title = 'Word'), yaxis = list(title = 'Frequency'))
+        hoverinfo = 'x+y', marker = list(color = jargon_purple)) %>%
+  layout(title = 'Top 30 Words', xaxis = list(title = 'Word'), yaxis = list(title = 'Frequency'))
 
 # Interactive bar for bigrams
 plot_ly(bigrams, x = ~reorder(word, freq), y = ~freq, type = 'bar', name = 'Bigrams',
-        hoverinfo = 'x+y') %>%
-  layout(title = 'Top 50 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency'))
+        hoverinfo = 'x+y', marker = list(color = jargon_purple)) %>%
+  layout(title = 'Top 30 Bigrams', xaxis = list(title = 'Bigram'), yaxis = list(title = 'Frequency'))
 ```
+
+### Temporal Patterns
 
 #### Daily Activity
 ```{r temporal_patterns_timeline, echo=FALSE}
@@ -522,16 +524,17 @@ daily_data <- questions %>%
   summarise(total_questions = n(), unique_users = n_distinct(user_id))
 
 p1 <- ggplot(daily_data) +
-  geom_line(aes(x = date, y = total_questions), color = '#ae77f2', size = 1) +
+  geom_line(aes(x = date, y = total_questions), color = jargon_purple, size = 1) +
   labs(title = 'Daily Question Generation', x = 'Date', y = 'Number of Questions') +
   theme_minimal()
 
 p2 <- ggplot(daily_data) +
-  geom_line(aes(x = date, y = unique_users), color = '#8890eb', size = 1) +
+  geom_line(aes(x = date, y = unique_users), color = jargon_blue, size = 1) +
   labs(title = 'Daily Active Users', x = 'Date', y = 'Number of Users') +
   theme_minimal()
 
-subplot(ggplotly(p1), ggplotly(p2), nrows = 2, shareX = TRUE, titleX = TRUE)
+ggplotly(p1)
+ggplotly(p2)
 ```
 
 #### Weekly Activity
@@ -546,16 +549,18 @@ weekly_data <- questions %>%
   summarise(avg_questions = mean(total_questions), avg_users = mean(unique_users))
 
 p3 <- ggplot(weekly_data) +
-  geom_col(aes(x = day_of_week, y = avg_questions), fill = '#ae77f2', alpha = 0.7) +
+  geom_col(aes(x = day_of_week, y = avg_questions), fill = jargon_purple, alpha = 0.7) +
   labs(title = 'Average Daily Questions by Day of Week', x = 'Day of Week', y = 'Avg Questions') +
   theme_minimal()
 
 p4 <- ggplot(weekly_data) +
-  geom_col(aes(x = day_of_week, y = avg_users), fill = '#8890eb', alpha = 0.7) +
+  geom_col(aes(x = day_of_week, y = avg_users), fill = jargon_blue, alpha = 0.7) +
   labs(title = 'Average Active Users by Day of Week', x = 'Day of Week', y = 'Avg Users') +
   theme_minimal()
 
-subplot(ggplotly(p3), ggplotly(p4), nrows = 2, shareX = TRUE, titleX = TRUE)
+ggplotly(p3)
+
+ggplotly(p4)
 ```
 
 ### User Engagement Distribution
