@@ -1471,8 +1471,7 @@ This study provides a comprehensive analysis of user engagement and feature adop
 
 - **Findings:**  
   Analysis of blocked website data and language mode usage reveals several key patterns:
-  - Users most frequently engage with Jargon while browsing professional, educational, and social media sites
-  - Spanish is the most popular language mode, followed by other foreign languages and English variations
+  - Spanish is the most popular language mode
   - The platform sees consistent usage across different times of day and days of the week, with slight variations in activity patterns
   - Users demonstrate diverse preferences in how they interact with the platform, from casual browsing to focused study sessions
 
