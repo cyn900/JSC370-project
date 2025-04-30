@@ -30,7 +30,7 @@ Data was sourced from Jargon’s Supabase database, covering interactions from t
 ## Summary and Next Steps
 
 ### Diverse User Engagement
-- **Contextual Versatility**: Users engage with Jargon across professional, educational, and social media sites. Highlighting Jargon’s adaptability in these areas could enhance its appeal and utility.
+- **Contextual Versatility**: Spanish is the most popular language. Users engage with Jargon across various sites. 
 
 ### Impact of Features on User Engagement
 - **Optimizing Features**: Features such as goal setting and interface preferences (highlight vs. underline styles) significantly influence engagement. Optimizing these based on user feedback and behavioral patterns can drive higher satisfaction and retention.
