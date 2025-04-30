@@ -14,19 +14,35 @@ The study focuses on:
 1. **Usage Context and Platform Patterns**: To identify how users integrate Jargon into their daily web interactions.
 2. **Feature Adoption and User Success**: To determine which features enhance user engagement and success.
 
-## Data Collection
+## Methods
+
+### Data Collection
 Data was sourced from Jargon’s Supabase database, covering interactions from the launch up to March 16, 2025. The dataset includes user profiles, interaction records, and settings across five main tables.
 
-## Insights and Implications
-- **Engagement Patterns**: Highlights the influence of realistic goal settings and preferred interface styles on user engagement levels.
-- **User Preferences**: Shows the correlation between feature usage and user activity, suggesting areas for interface optimization and feature enhancement.
+### Analysis Techniques
+- **Sentiment Analysis**: Analyzed user feedback to assess overall sentiment towards platform features.
+- **LDA Analysis**: Utilized Latent Dirichlet Allocation to identify key topics within user feedback and documentation.
+- **Correlation Analysis**: Investigated relationships between various user engagement metrics and feature preferences.
+- **Cluster Analysis**: Employed K-means clustering to categorize users into very active, active, and less active groups based on their engagement patterns.
+- **Regression Analysis**: Used ordinal regression models to evaluate the influence of specific features on levels of user engagement.
 
-## Recommendations
-- **Onboarding Optimization**: Implement goal-setting guidance and offer A/B testing of highlight styles.
-- **Interface Refinement**: Consider making the highlight style the default and develop new visual styles based on user feedback.
-- **Engagement Strategy**: Develop personalized engagement paths and feature discovery prompts to enhance user experience.
 
-## Concluding Summary
-This project provides valuable insights into user behavior on the Jargon platform, informing strategies for enhancing both language learning and general productivity through targeted feature improvements and user engagement strategies.
+## Summary and Next Steps
+
+The analysis of Jargon's user engagement has illuminated key usage patterns and user preferences, suggesting substantial opportunities for enhancing platform functionality and user interaction. Here are the strategic insights and actions planned:
+
+### Diverse User Engagement
+- **Contextual Versatility**: Users engage with Jargon across professional, educational, and social media sites. Highlighting Jargon’s adaptability in these areas could enhance its appeal and utility.
+
+### Impact of Features on User Engagement
+- **Optimizing Features**: Features such as goal setting and interface preferences (highlight vs. underline styles) significantly influence engagement. Optimizing these based on user feedback and behavioral patterns can drive higher satisfaction and retention.
+
+### Personalized User Experiences
+- **Customized Strategies**: Developing personalized engagement strategies for different user segments could markedly improve platform effectiveness. This includes tailoring onboarding, feature discovery, and interactions to individual preferences and usage patterns.
+
+### Enhanced Data Collection and Utilization
+- **Data-Driven Enhancements**: Improving data collection methods to more precisely capture user interactions and adapting features to align with local time zones can offer more personalized and contextually relevant experiences.
+
+By leveraging these insights, Jargon aims to not only enhance user engagement but also ensure that the platform continues to evolve in line with user needs and preferences, fostering a productive and satisfying learning environment.
 
 For detailed analysis, please refer to the [final report](https://github.com/cyn900/JSC370-project/blob/main/finalReport.pdf) and [video presentation](https://drive.google.com/file/d/1znOqHIaAsB1tQk7CutbS2I1zb-M2QEyq/view?usp=sharing).
