@@ -151,6 +151,8 @@ Display Settings
 </figure>
 :::
 
+Underline style was the default option initially provided by Jargon. Based on user feedback, the highlight style was introduced, offering an alternative that users can switch to for a better UI experience.
+
 #### Language Transformation Examples
 
 ::: {style="text-align: center; margin-top: 20px;"}
@@ -205,7 +207,7 @@ The GRE mode enhances vocabulary learning by replacing common words with their m
 
 ## Research Questions and Hypotheses
 
-After 10 months of operation and 93 users, this analysis investigates three key aspects of user behavior:
+After 10 months of operation and 92 users, this analysis investigates three key aspects of user behavior:
 
 1.  **Usage Context and Platform Patterns**
     -   Research Question: "What are the common contexts and platforms where users engage with Jargon?"
@@ -250,10 +252,10 @@ kable(data_summary,
 # Create summary of key variables in profiles
 profile_vars <- tibble(
   Variable = c("user_id", "level", "paused", "chrome_notifs", "language", 
-               "last_question_time", "week_streak", "daily_streak", "daily_progress",
+               "last_question_time",
                "daily_goal", "density", "highlightStyle"),
   Type = c("Primary Key", "Integer", "Boolean", "Boolean", "String",
-           "DateTime", "Integer", "Integer", "Integer",
+           "DateTime",
            "Integer", "Integer", "String"),
   Description = c(
     "Unique identifier for each user",
@@ -262,9 +264,6 @@ profile_vars <- tibble(
     "Notification preferences",
     "Current selected language mode",
     "Timestamp of most recent question",
-    "Consecutive weeks of activity",
-    "Consecutive days of activity",
-    "Questions completed today",
     "Target questions per day",
     "Frequency of questions",
     "Text selection preference"
@@ -276,9 +275,6 @@ profile_vars <- tibble(
     "TRUE/FALSE",
     "e.g., 'GRE Vocabulary', 'TikTok Slang'",
     "UTC timezone",
-    "",
-    "",
-    "Resets daily",
     "User-set goal",
     "Percentage of eligible sentences shown (0-100)",
     "'highlight' or 'underline'"
@@ -492,7 +488,7 @@ For consistency in our analysis, we handled missing values by replacing NAs with
 
 Our exploratory data analysis examines patterns that inform both research questions about usage context and feature adoption. We organize our exploration into four main categories:
 
-### 1. Platform and Website Interaction Patterns
+### 1. Blocked Website Patterns
 
 ```{r website_exploration, fig.width=18, fig.height=8}
 # Set global theme elements at the start
@@ -1205,7 +1201,7 @@ ggplot(pca_df, aes(x = PC1, y = PC2, color = Cluster)) +
 
 <em style='color: black; font-size: 16px;'>Figure 11: K-means clustering of users based on engagement metrics. Each point represents a user, colored by cluster (Active or Occasional) in PCA space.</em>
 
-The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement.This finding align with the Figure 10 from our Data Exploration.
+Due to the high dimensionality of the data, PCA was used to reduce the feature dimensions from 4 to 2 for data visualization. The PCA plot of K-means clustering reveals a clear separation between two user groups: 'Active' and 'Occasional'. The majority of users are clustered closely together in the 'Occasional' group, indicating similar and relatively low engagement across key metrics. In contrast, only a few users are classified as 'Active', and these are well separated from the main cluster, highlighting their much higher engagement levels. This pattern suggests that while most users interact with the platform at a modest level, a small subset of users are highly engaged, driving much of the activity. The presence of only a few very active users is typical in many online platforms, where a minority of users contribute disproportionately to overall engagement. This finding aligns with Figure 10 from our Data Exploration.
 
 ##### Summary Statistics by K-Means Group
 ```{r kmeans_group_summary, echo=FALSE}
@@ -1277,7 +1273,7 @@ kable(user_group3_summary, caption = NULL) %>%
 
 The summary statistics in Table 9 show a clear gradient in engagement: 'Very Active' users (identified by k-means) have much higher activity across all metrics, but are few in number. To provide a more meaningful middle group, the 'Active' category (top 25% by generated questions among non-very-active users) was added, since k-means alone identified only a small number of highly engaged users. This three-group segmentation allows for a more nuanced comparison of user behaviors.
 
-
+After user segmentation, we plan to use an ordinal regression model, a statistical technique for modeling ordered categorical outcomes, to identify important features and their significance. This approach is chosen because it effectively assesses the impact of variables on ranked user activity, providing insights crucial for enhancing targeted strategies.
 
 # Results
 
@@ -1316,7 +1312,7 @@ ggplot(sentiment_df, aes(x = bin, fill = language_grouped)) +
 
 <em style='color: black; font-size: 16px;'>Figure 12: Stacked bar graph showing the frequency of user-selected sentences in each sentiment category, stacked by language mode (top 5 languages shown in color, all others in grey).</em>
 
-The stacked bar graph shows the overall distribution of sentiment categories, with the top 5 language modes highlighted in color and all other languages grouped in grey. This visualization highlights both the predominance of neutral and slightly negative content and the relative engagement of different language modes—including less common ones—across sentiment categories.
+The stacked bar graph displays the overall distribution of sentiment categories, highlighting the top five language modes in color and grouping all other languages in grey. This visualization underscores the predominance of neutral and slightly negative content, with a similar sentiment distribution observed across each language.
 
 ## LDA Analysis
 ```{r lda_topic_modeling, echo=FALSE, message=FALSE, warning=FALSE, fig.width=10, fig.height=5}
@@ -1474,26 +1470,54 @@ This study provides a comprehensive analysis of user engagement and feature adop
 **1. Usage Context and Platform Patterns**
 
 - **Findings:**  
-  Analysis of blocked website data and language mode usage (see Figures 5 and 6) reveals that users most frequently engage with Jargon while browsing professional, educational, and social media sites. Spanish is the most popular language mode, suggesting a strong demand for language learning or bilingual content.  
+  Analysis of blocked website data and language mode usage reveals several key patterns:
+  - Users most frequently engage with Jargon while browsing professional, educational, and social media sites
+  - Spanish is the most popular language mode, followed by other foreign languages and English variations
+  - The platform sees consistent usage across different times of day and days of the week, with slight variations in activity patterns
+  - Users demonstrate diverse preferences in how they interact with the platform, from casual browsing to focused study sessions
+
 - **Implications:**  
-  These insights indicate that Jargon is naturally integrated into users' study routines and leisure browsing. Marketing efforts could be optimized by highlighting Jargon's utility for language learning and academic productivity, especially in Spanish-speaking contexts or for students accessing educational resources.
+  These insights suggest multiple opportunities for platform enhancement:
+  - Marketing Strategy: Focus on highlighting Jargon's versatility across different contexts:
+    - Language Learning: Emphasize Spanish and other popular language modes
+    - Academic Enhancement: Showcase GRE vocabulary and professional content features
+    - Social Media Integration: Demonstrate how Jargon enhances casual browsing experiences
+  - User Experience: Consider context-specific optimizations:
+    - Educational Sites: Enhance features for academic content comprehension
+    - Professional Platforms: Develop specialized vocabulary sets for different industries
+    - Social Media: Optimize for quick, engaging interactions
 
 **2. Feature Adoption and User Success**
 
 - **Findings:**  
-  The segmentation and regression analyses (see Tables 9 and 10, Figures 16 and 17) show that active users are distinguished by their use of achievable daily goals and specific highlight styles. Notably, users who set smaller, more realistic daily goals are more likely to remain engaged, while those who select the underline highlight style are less likely to be highly active. The density setting did not significantly predict engagement.
-- **Implications:**  
-  These results suggest that onboarding should encourage users to set attainable daily goals, potentially by limiting the maximum goal or providing goal-setting guidance. The underline highlight style may be less motivating or visually appealing, so simplifying highlight options or removing less effective styles could improve user experience and engagement.
+  The segmentation and regression analyses reveal important insights about user engagement:
+  - Goal Setting: Users with moderate, achievable daily goals (lower targets) show higher sustained engagement
+  - Interface Preferences: The highlight style significantly impacts user activity:
+    - Users preferring the highlight style show higher engagement levels
+    - The underline style correlates with lower activity levels
+  - Feature Usage: While some settings (like density) don't significantly predict engagement, the combination of appropriate goals and preferred visual style appears crucial
+  - User Segments: Clear distinctions emerge between very active, active, and regular users, with each group showing different patterns of feature utilization
 
-**Recommendations for Platform Improvement**
+- **Implications:**  
+  These findings suggest several actionable improvements:
+  - Onboarding Optimization:
+    - Implement smart goal-setting guidance with recommended ranges based on user patterns
+    - Offer A/B testing of highlight styles during initial setup
+    - Provide interactive tutorials for optimal feature configuration
+  - Interface Refinement:
+    - Consider making the highlight style the default option
+    - Develop new visual styles based on user feedback
+    - Implement adaptive settings that adjust based on usage patterns
+  - Engagement Strategy:
+    - Create personalized engagement paths for different user segments
+    - Develop feature discovery prompts based on user activity levels
+    - Implement achievement milestones aligned with realistic usage patterns
+
+**Recommendations for Data Collection Improvement**
 
 - **Feature Tracking:**  
   Enhance data collection by recording the website URL for each user interaction, enabling more granular analysis of usage context.
 - **Time Zone Awareness:**  
   Shift from tracking all activity in UTC to using users' local time zones. This would allow for personalized recommendations, such as suggesting study breaks or optimal engagement times.
-- **Goal Setting:**  
-  Refine the daily goal feature to encourage sustainable engagement, possibly by shortening the range of selectable goals and providing feedback on goal achievability.
-- **Highlight Styles:**  
-  Consider removing or redesigning the underline highlight style to streamline the interface and focus on features that correlate with higher engagement.
 
 Overall, Jargon users are most engaged when the platform aligns with their study habits and offers achievable, motivating features. By leveraging these insights, Jargon can further enhance user retention and satisfaction, supporting both language learning and productivity.

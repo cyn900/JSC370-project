@@ -2064,42 +2064,156 @@ UTC timezone
 </tr>
 <tr>
 <td style="text-align:left;">
-week_streak
+daily_goal
 </td>
 <td style="text-align:left;">
 Integer
 </td>
 <td style="text-align:left;">
-Consecutive weeks of activity
+Target questions per day
 </td>
 <td style="text-align:left;">
+User-set goal
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-daily_streak
+density
 </td>
 <td style="text-align:left;">
 Integer
 </td>
 <td style="text-align:left;">
-Consecutive days of activity
+Frequency of questions
 </td>
 <td style="text-align:left;">
+Percentage of eligible sentences shown (0-100)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-daily_progress
+highlightStyle
+</td>
+<td style="text-align:left;">
+String
+</td>
+<td style="text-align:left;">
+Text selection preference
+</td>
+<td style="text-align:left;">
+‘highlight’ or ‘underline’
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> <em style="color: black; font-size: 16px;">Table 2: Key
+Variables in Profiles Dataset</em>
+</td>
+</tr>
+</tfoot>
+</table>
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Notes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+user_id
+</td>
+<td style="text-align:left;">
+Primary Key
+</td>
+<td style="text-align:left;">
+Unique identifier for each user
+</td>
+<td style="text-align:left;">
+Anonymized identifier
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+level
 </td>
 <td style="text-align:left;">
 Integer
 </td>
 <td style="text-align:left;">
-Questions completed today
+Current proficiency level
 </td>
 <td style="text-align:left;">
-Resets daily
+Range: 1-10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+paused
+</td>
+<td style="text-align:left;">
+Boolean
+</td>
+<td style="text-align:left;">
+Extension status on Chrome
+</td>
+<td style="text-align:left;">
+TRUE/FALSE (Default: TRUE)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+chrome_notifs
+</td>
+<td style="text-align:left;">
+Boolean
+</td>
+<td style="text-align:left;">
+Notification preferences
+</td>
+<td style="text-align:left;">
+TRUE/FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+language
+</td>
+<td style="text-align:left;">
+String
+</td>
+<td style="text-align:left;">
+Current selected language mode
+</td>
+<td style="text-align:left;">
+e.g., ‘GRE Vocabulary’, ‘TikTok Slang’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+last_question_time
+</td>
+<td style="text-align:left;">
+DateTime
+</td>
+<td style="text-align:left;">
+Timestamp of most recent question
+</td>
+<td style="text-align:left;">
+UTC timezone
 </td>
 </tr>
 <tr>
@@ -2154,6 +2268,7 @@ Variables in Profiles Dataset</em>
 </tr>
 </tfoot>
 </table>
+<p>```</p>
 </div>
 <div id="questions-dataset" class="section level4">
 <h4>Questions Dataset</h4>

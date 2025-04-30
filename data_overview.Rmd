@@ -67,13 +67,14 @@ kable(data_summary,
 
 #### Profiles Dataset
 ```{r profiles_summary, echo=FALSE}
+```{r profiles_summary, echo=FALSE}
 # Create summary of key variables in profiles
 profile_vars <- tibble(
   Variable = c("user_id", "level", "paused", "chrome_notifs", "language", 
-               "last_question_time", "week_streak", "daily_streak", "daily_progress",
+               "last_question_time",
                "daily_goal", "density", "highlightStyle"),
   Type = c("Primary Key", "Integer", "Boolean", "Boolean", "String",
-           "DateTime", "Integer", "Integer", "Integer",
+           "DateTime",
            "Integer", "Integer", "String"),
   Description = c(
     "Unique identifier for each user",
@@ -82,9 +83,6 @@ profile_vars <- tibble(
     "Notification preferences",
     "Current selected language mode",
     "Timestamp of most recent question",
-    "Consecutive weeks of activity",
-    "Consecutive days of activity",
-    "Questions completed today",
     "Target questions per day",
     "Frequency of questions",
     "Text selection preference"
@@ -96,9 +94,6 @@ profile_vars <- tibble(
     "TRUE/FALSE",
     "e.g., 'GRE Vocabulary', 'TikTok Slang'",
     "UTC timezone",
-    "",
-    "",
-    "Resets daily",
     "User-set goal",
     "Percentage of eligible sentences shown (0-100)",
     "'highlight' or 'underline'"
@@ -110,6 +105,7 @@ kable(profile_vars,
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
                 position = "center", full_width = FALSE) %>%
   footnote(general = "<em style='color: black; font-size: 16px;'>Table 2: Key Variables in Profiles Dataset</em>", general_title = "", footnote_as_chunk = TRUE, escape = FALSE)
+```
 ```
 
 #### Questions Dataset

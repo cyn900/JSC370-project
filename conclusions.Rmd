@@ -29,26 +29,54 @@ This study provides a comprehensive analysis of user engagement and feature adop
 **1. Usage Context and Platform Patterns**
 
 - **Findings:**  
-  Analysis of blocked website data and language mode usage (see Figures 5 and 6) reveals that users most frequently engage with Jargon while browsing professional, educational, and social media sites. Spanish is the most popular language mode, suggesting a strong demand for language learning or bilingual content.  
+  Analysis of blocked website data and language mode usage reveals several key patterns:
+  - Users most frequently engage with Jargon while browsing professional, educational, and social media sites
+  - Spanish is the most popular language mode, followed by other foreign languages and English variations
+  - The platform sees consistent usage across different times of day and days of the week, with slight variations in activity patterns
+  - Users demonstrate diverse preferences in how they interact with the platform, from casual browsing to focused study sessions
+
 - **Implications:**  
-  These insights indicate that Jargon is naturally integrated into users' study routines and leisure browsing. Marketing efforts could be optimized by highlighting Jargon's utility for language learning and academic productivity, especially in Spanish-speaking contexts or for students accessing educational resources.
+  These insights suggest multiple opportunities for platform enhancement:
+  - Marketing Strategy: Focus on highlighting Jargon's versatility across different contexts:
+    - Language Learning: Emphasize Spanish and other popular language modes
+    - Academic Enhancement: Showcase GRE vocabulary and professional content features
+    - Social Media Integration: Demonstrate how Jargon enhances casual browsing experiences
+  - User Experience: Consider context-specific optimizations:
+    - Educational Sites: Enhance features for academic content comprehension
+    - Professional Platforms: Develop specialized vocabulary sets for different industries
+    - Social Media: Optimize for quick, engaging interactions
 
 **2. Feature Adoption and User Success**
 
 - **Findings:**  
-  The segmentation and regression analyses (see Tables 9 and 10, Figures 16 and 17) show that active users are distinguished by their use of achievable daily goals and specific highlight styles. Notably, users who set smaller, more realistic daily goals are more likely to remain engaged, while those who select the underline highlight style are less likely to be highly active. The density setting did not significantly predict engagement.
-- **Implications:**  
-  These results suggest that onboarding should encourage users to set attainable daily goals, potentially by limiting the maximum goal or providing goal-setting guidance. The underline highlight style may be less motivating or visually appealing, so simplifying highlight options or removing less effective styles could improve user experience and engagement.
+  The segmentation and regression analyses reveal important insights about user engagement:
+  - Goal Setting: Users with moderate, achievable daily goals (lower targets) show higher sustained engagement
+  - Interface Preferences: The highlight style significantly impacts user activity:
+    - Users preferring the highlight style show higher engagement levels
+    - The underline style correlates with lower activity levels
+  - Feature Usage: While some settings (like density) don't significantly predict engagement, the combination of appropriate goals and preferred visual style appears crucial
+  - User Segments: Clear distinctions emerge between very active, active, and regular users, with each group showing different patterns of feature utilization
 
-**Recommendations for Platform Improvement**
+- **Implications:**  
+  These findings suggest several actionable improvements:
+  - Onboarding Optimization:
+    - Implement smart goal-setting guidance with recommended ranges based on user patterns
+    - Offer A/B testing of highlight styles during initial setup
+    - Provide interactive tutorials for optimal feature configuration
+  - Interface Refinement:
+    - Consider making the highlight style the default option
+    - Develop new visual styles based on user feedback
+    - Implement adaptive settings that adjust based on usage patterns
+  - Engagement Strategy:
+    - Create personalized engagement paths for different user segments
+    - Develop feature discovery prompts based on user activity levels
+    - Implement achievement milestones aligned with realistic usage patterns
+
+**Recommendations for Data Collection Improvement**
 
 - **Feature Tracking:**  
   Enhance data collection by recording the website URL for each user interaction, enabling more granular analysis of usage context.
 - **Time Zone Awareness:**  
   Shift from tracking all activity in UTC to using users' local time zones. This would allow for personalized recommendations, such as suggesting study breaks or optimal engagement times.
-- **Goal Setting:**  
-  Refine the daily goal feature to encourage sustainable engagement, possibly by shortening the range of selectable goals and providing feedback on goal achievability.
-- **Highlight Styles:**  
-  Consider removing or redesigning the underline highlight style to streamline the interface and focus on features that correlate with higher engagement.
 
 Overall, Jargon users are most engaged when the platform aligns with their study habits and offers achievable, motivating features. By leveraging these insights, Jargon can further enhance user retention and satisfaction, supporting both language learning and productivity.
