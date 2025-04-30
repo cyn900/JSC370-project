@@ -27,7 +27,7 @@ output:
 ```{=html}
 <iframe src="https://drive.google.com/file/d/1znOqHIaAsB1tQk7CutbS2I1zb-M2QEyq/view?usp=sharing" width="640" height="480"></iframe>
 ```
-Click to view the video presentation. Scroll down to download the report PDF.
+Click to watch the video presentation. If your browser does not support it, view it [here](https://drive.google.com/file/d/1znOqHIaAsB1tQk7CutbS2I1zb-M2QEyq/view?usp=sharing). Scroll down to download the report PDF.
 
 ## Background and Motivation
 
@@ -196,7 +196,7 @@ After 10 months of operation and 92 users, this analysis investigates two key as
 ```{=html}
 <div style="text-align: center; margin: 50px 0;">
   <a href="finalReport.pdf" class="download-button" onclick="alert('To save as PDF:\n1. The report will open in a new tab\n2. Use File > Print or press Ctrl/Cmd + P\n3. Select \"Save as PDF\" as the destination\n4. Click Save');" target="_blank">
-    <i class="fa fa-file-pdf"></i> Download Report as PDF
+    Download Report as PDF
   </a>
 </div>
 
