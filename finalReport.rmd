@@ -207,7 +207,7 @@ The GRE mode enhances vocabulary learning by replacing common words with their m
 
 ## Research Questions and Hypotheses
 
-After 10 months of operation and 92 users, this analysis investigates three key aspects of user behavior:
+After 10 months of operation and 92 users, this analysis investigates two key aspects of user behavior:
 
 1.  **Usage Context and Platform Patterns**
     -   Research Question: "What are the common contexts and platforms where users engage with Jargon?"
