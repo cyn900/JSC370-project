@@ -24,6 +24,13 @@ output:
 ```
 
 # Introduction
+```{=html}
+<video width="600" height="400" controls>
+  <source src="overview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+```
+Click to view the video presentation. Scroll down to download the report PDF.
 
 ## Background and Motivation
 
